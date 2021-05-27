@@ -1,3 +1,4 @@
+const path = require("path");
 module.exports = {
   siteMetadata: {
     title: "Monmouth County Curriculum Consortium",
@@ -7,14 +8,21 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        defaultLayouts: {
+          default: path.resolve("./src/components/layout.js"),
+        },
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: path.join(__dirname, `src`, `images`),
       },
       __key: "images",
     },
@@ -22,9 +30,10 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: path.join(__dirname, `src`, `pages`),
       },
       __key: "pages",
     },
+    "gatsby-plugin-postcss",
   ],
 };

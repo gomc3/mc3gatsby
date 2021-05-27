@@ -1,184 +1,232 @@
-import * as React from "react"
+import React from "react";
+import { Link, graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
+//import Navbar from "../components/navbar";
+import NewNavbar from "../components/newNavbar";
+import Seo from "../components/seo";
+import HeroImage from "../components/heroImage";
+import Footer from "../components/footer";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
-
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
-
-// markup
-const IndexPage = () => {
+export default function IndexPage(props) {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
+    <div id="wrapper">
+      <Seo title="Home" />
+      {/* <Navbar /> */}
+      <NewNavbar />
+      <main>
+        <header className="w-full bg-blue-50 px-4 lg:px-12">
+          <div className="flex flex-col max-w-screen-xl lg:flex-row shrink-1 justify-center mx-auto">
+            <div className="pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2">
+              <div className="">
+                <h1 className="mb-6 font-medium tracking-wide uppercase text-gray-500 sm:leading-none text-lg lg:text-lg xl:text-xl text-center lg:text-left">
+                  <span>M</span>onmouth <span>C</span>ounty <span>C</span>
+                  urriculum <span>C</span>onsortium
+                </h1>
+                <h2 className="mb-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-5xl sm:text-6xl text-center lg:text-left">
+                  Find and Share Ideas to Shape the
+                  <span className="text-blue-500"> Future of Education!</span>
+                </h2>
+                <p className="mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
+                  Join a group of leaders in educaiton that include members from
+                  over 60 districts in Monmouth and Ocean County.
+                </p>
+                <div className="flex justify-center lg:justify-end">
+                  <Link
+                    to="/"
+                    className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-500  focus:shadow-outline-blue transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-xl transform hover:scale-105 focus:border-blue-600 px-8 py-3 md:py-4 md:px-10 md:text-lg"
+                  >
+                    Join MC
+                    <span
+                      className="relative text-sm z-0"
+                      style={{ lineHeight: 0, top: "-0.5em" }}
+                    >
+                      3
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="flex pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2 items-center justify-center ">
+              <HeroImage />
+            </div>
+          </div>
+        </header>
+        <div className="bg-blue-50 pt-12 sm:pt-16">
+          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
+              Ensure your leaders are getting the timely information they
+              deserve.
+            </h2>
+            <p className="mt-3 text-xl leading-7 text-gray-500 sm:mt-4">
+              In addition to the districts which make up the consortium, MC
+              <sup>3</sup> has partnered with the{" "}
               <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
+                href="https://www.nj.gov/education/"
+                className="underline hover:no-underline hover:text-gray-900 transition ease-in-out duration-150"
               >
-                {link.text}
+                New Jersey Department of Education
               </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
-  )
+              ,{" "}
+              <a
+                href="https://njsba.org"
+                className="underline hover:no-underline hover:text-gray-900 transition ease-in-out duration-150"
+              >
+                New Jersey School Boards Association
+              </a>
+              ,{" "}
+              <a
+                href="https://monmouth.edu"
+                className="underline hover:no-underline hover:text-gray-900 transition ease-in-out duration-150"
+              >
+                Monmouth University
+              </a>
+              ,{" "}
+              <a
+                href="https://rutgers.edu"
+                className="underline hover:no-underline hover:text-gray-900 transition ease-in-out duration-150"
+              >
+                Rutgers University
+              </a>
+              , and many education-related organizations.
+            </p>
+          </div>
+          <div className="mt-10 bg-white">
+            <div className="relative">
+              <div className="absolute inset-0 h-1/2 bg-blue-50"></div>
+              <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto">
+                  <dl className="rounded-lg bg-white shadow-lg lg:grid lg:grid-cols-3 items-start">
+                    <div className="border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
+                      <dt className="text-2xl leading-none font-extrabold text-blue-600">
+                        Every member is a{" "}
+                        <abbr
+                          className="no-underline"
+                          title="very important person"
+                        >
+                          VIP
+                        </abbr>
+                      </dt>
+                      <dd className="mt-3 text-gray-600 md:text-center">
+                        Regardless of title or position, each member is invited
+                        to contribute towards the good of the group.
+                      </dd>
+                    </div>
+                    <div className="border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
+                      <dt className="text-2xl leading-none font-extrabold text-blue-600">
+                        <abbr title="professional development">PD</abbr>{" "}
+                        Opportunities
+                      </dt>
+                      <dd className="mt-3 text-gray-600 md:text-center">
+                        We provide in depth training on timely educational
+                        issues and best practices.
+                      </dd>
+                    </div>
+                    <div className="border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
+                      <dt className="text-2xl leading-none font-extrabold text-blue-600">
+                        Attend Virtually or In-person
+                      </dt>
+                      <dd className="mt-3 text-gray-600 md:text-center">
+                        We recognize the need to be flexible in a post pandemic
+                        world. Whether your district requires it, or you need to
+                        remain in the building, we've got you covered.
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-12 lg:grid lg:grid-cols-2 max-w-7xl mx-auto">
+          <div className="px-4 text-center">
+            <StaticImage
+              src="../images/igniteRocket.png"
+              alt="person riding a rocket into flight"
+              loading="lazy"
+              placeholder="tracedSVG"
+              className="w-full sm:w-1/2 lg:w-full filter transition duration-500 ease-in-out contrast-100 hover:contrast-125"
+            />
+          </div>
+          <div className="px-4 py-8 sm:px-6 sm:py-12 lg:py-16 lg:ml-1/2 lg:pl-12">
+            <h2 className="text-4xl leading-tight font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+              Answer the call, and{" "}
+              <span className="whitespace-nowrap text-red-700">
+                ignite the spark{" "}
+              </span>
+              in others.
+            </h2>
+            <p className="mt-6 text-lg leading-7 text-gray-500">
+              Our members are encouraged to volunteer to prepare and deliver
+              Ignite presentations at our regular monthly meetings. What are
+              Ignite presentations? They are presentations in which members get
+              20 slides, which automatically advance every 15 seconds. The
+              result is a fast and fun presentation which lasts just 5 minutes!
+            </p>
+            <div className="text-center lg:text-left mt-8">
+              <span className="inline-flex rounded-md shadow">
+                <a
+                  href="/"
+                  className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-red-700 hover:bg-red-600  focus:border-red-600 focus:shadow-outline-red transition duration-150 ease-in-out hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
+                >
+                  Raise Your Hand
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="mt-6 lg:grid lg:grid-cols-2 max-w-7xl mx-auto">
+          <div className="px-4 py-8 sm:px-6 sm:py-12 lg:py-16 lg:ml-1/2 lg:pl-12">
+            <h2 className="text-4xl leading-tight font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+              Help students{" "}
+              <span className="whitespace-nowrap text-blue-500">
+                find a path{" "}
+              </span>
+              towards a college education.
+            </h2>
+            <p className="mt-6 text-lg leading-7 text-gray-500">
+              Our members are encouraged to volunteer to prepare and deliver
+              Ignite presentations at our regular monthly meetings. What are
+              Ignite presentations? They are presentations in which members get
+              20 slides, which automatically advance every 15 seconds. The
+              result is a fast and fun presentation which lasts just 5 minutes!
+            </p>
+            <div className="text-center lg:text-right mt-8">
+              <span className="inline-flex rounded-md shadow">
+                <Link
+                  to="/"
+                  className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600  focus:border-red-600 focus:shadow-outline-red transition duration-150 ease-in-out hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
+                >
+                  Learn More
+                </Link>
+              </span>
+            </div>
+          </div>
+          <div className="px-4 text-center">
+            <StaticImage
+              src="../images/grad.jpg"
+              alt="female student in cap and gown holding a red diploma"
+              loading="lazy"
+              placeholder="tracedSVG"
+              className="rounded-full w-full sm:w-1/2 lg:w-full filter transition duration-500 ease-in-out contrast-100 hover:contrast-125"
+            />
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
 }
+export const data = graphql`
+  {
+    allFile {
+      nodes {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+          id
+        }
 
-export default IndexPage
+        name
+      }
+    }
+  }
+`;
