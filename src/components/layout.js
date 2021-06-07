@@ -19,7 +19,7 @@ export default function Layout({ children }) {
   const { siteTitle } = site.siteMetadata;
   return (
     <>
-      <Navbar classes="-ml-3.5" />
+      <Navbar classes="" />
       <main className="container mx-auto max-w-screen-xl">{children}</main>
     </>
   );
