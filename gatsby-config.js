@@ -1,6 +1,7 @@
 const path = require("path");
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://vigorous-poincare-546c99.netlify.app`,
     title: "Monmouth County Curriculum Consortium",
   },
   plugins: [
