@@ -61,28 +61,28 @@ export default function IndexPage(props) {
               <sup>3</sup> has partnered with the{" "}
               <a
                 href="https://www.nj.gov/education/"
-                className="underline hover:no-underline hover:text-gray-900 transition ease-in-out duration-150"
+                className="underline hover:text-gray-900 transition ease-in-out duration-150"
               >
                 New Jersey Department of Education
               </a>
               ,{" "}
               <a
                 href="https://njsba.org"
-                className="underline hover:no-underline hover:text-gray-900 transition ease-in-out duration-150"
+                className="underline hover:text-gray-900 transition ease-in-out duration-150"
               >
                 New Jersey School Boards Association
               </a>
               ,{" "}
               <a
                 href="https://monmouth.edu"
-                className="underline hover:no-underline hover:text-gray-900 transition ease-in-out duration-150"
+                className="underline hover:text-gray-900 transition ease-in-out duration-150"
               >
                 Monmouth University
               </a>
               ,{" "}
               <a
                 href="https://rutgers.edu"
-                className="underline hover:no-underline hover:text-gray-900 transition ease-in-out duration-150"
+                className="underline hover:text-gray-900 transition ease-in-out duration-150"
               >
                 Rutgers University
               </a>
