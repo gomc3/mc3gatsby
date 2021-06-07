@@ -1,4 +1,7 @@
 const path = require("path");
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   siteMetadata: {
     siteUrl: `https://vigorous-poincare-546c99.netlify.app`,
@@ -18,6 +21,14 @@ module.exports = {
       },
     },
     "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `5c70jkxf9dev`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
@@ -35,6 +46,5 @@ module.exports = {
       },
       __key: "pages",
     },
-    "gatsby-plugin-postcss",
   ],
 };

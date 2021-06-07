@@ -6,11 +6,10 @@ import Seo from "../components/seo";
 import HeroImage from "../components/heroImage";
 import Footer from "../components/footer";
 
-export default function IndexPage(props) {
+export default function IndexPage() {
   return (
     <div id="wrapper">
       <Seo title="Home" />
-      {/* <Navbar /> */}
       <Navbar />
       <main>
         <header className="w-full bg-blue-50 px-4 lg:px-12">
@@ -219,17 +218,15 @@ export default function IndexPage(props) {
     </div>
   );
 }
-export const data = graphql`
-  {
-    allFile {
-      nodes {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-          id
-        }
-
-        name
-      }
-    }
-  }
-`;
+// export const data = graphql`
+//   {
+//     allContentfulMenuItem(sort: { fields: menuOrder, order: ASC }) {
+//       nodes {
+//         linkText
+//         url
+//         type
+//         menuOrder
+//       }
+//     }
+//   }
+// `;
