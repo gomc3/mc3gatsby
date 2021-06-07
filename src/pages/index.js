@@ -96,7 +96,7 @@ export default function IndexPage(props) {
               <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
                   <dl className="rounded-lg bg-white shadow-lg lg:grid lg:grid-cols-3 items-start">
-                    <div className="border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
+                    <div className="h-full border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
                       <dt className="text-2xl leading-none font-extrabold text-blue-600">
                         Every member is a{" "}
                         <abbr
@@ -111,7 +111,7 @@ export default function IndexPage(props) {
                         to contribute towards the good of the group.
                       </dd>
                     </div>
-                    <div className="border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
+                    <div className="h-full border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
                       <dt className="text-2xl leading-none font-extrabold text-blue-600">
                         <abbr title="professional development">PD</abbr>{" "}
                         Opportunities
