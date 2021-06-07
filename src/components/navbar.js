@@ -39,17 +39,17 @@ export default function Navbar(props) {
     allContentfulMenuItem: { nodes },
   } = useStaticQuery(query);
   return (
-    <div className="">
+    <div className={props.classes}>
       <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
             <div className="w-0 flex-1 flex">
-              <a className="inline-flex flex-col" href="/">
+              <Link className="inline-flex flex-col" to="/">
                 <p className="text-2xl font-semibold text-blue-600">
                   MC<sup>3</sup>
                 </p>
                 <p className="text-xs">Monmouth County Curriculum Consortium</p>
-              </a>
+              </Link>
             </div>
             {/* Mobile Navigation begins here */}
             <div
