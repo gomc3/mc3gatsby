@@ -23,7 +23,7 @@ export default function IndexPage(props) {
                 </h1>
                 <h2 className="mb-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-5xl sm:text-6xl text-center lg:text-left">
                   Find and Share Ideas to Shape the
-                  <span className="text-blue-500"> Future of Education!</span>
+                  <span className="text-blue-700"> Future of Education!</span>
                 </h2>
                 <p className="mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
                   Join a group of leaders in educaiton that include members from
@@ -32,7 +32,7 @@ export default function IndexPage(props) {
                 <div className="flex justify-center lg:justify-end">
                   <Link
                     to="/"
-                    className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-500  focus:shadow-outline-blue transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-xl transform hover:scale-105 focus:border-blue-600 px-8 py-3 md:py-4 md:px-10 md:text-lg"
+                    className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700  focus:shadow-outline-blue transition duration-150 ease-in-out hover:bg-blue-800 hover:shadow-xl transform hover:scale-105 focus:border-blue-500 px-8 py-3 md:py-4 md:px-10 md:text-lg"
                   >
                     Join MC
                     <span
@@ -96,7 +96,7 @@ export default function IndexPage(props) {
                 <div className="max-w-7xl mx-auto">
                   <dl className="rounded-lg bg-white shadow-lg lg:grid lg:grid-cols-3 items-start">
                     <div className="h-full border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
-                      <dt className="text-2xl leading-none font-extrabold text-blue-600">
+                      <dt className="text-2xl leading-none font-extrabold text-blue-700">
                         Every member is a{" "}
                         <abbr
                           className="no-underline"
@@ -111,7 +111,7 @@ export default function IndexPage(props) {
                       </dd>
                     </div>
                     <div className="h-full border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
-                      <dt className="text-2xl leading-none font-extrabold text-blue-600">
+                      <dt className="text-2xl leading-none font-extrabold text-blue-700">
                         <abbr title="professional development">PD</abbr>{" "}
                         Opportunities
                       </dt>
@@ -121,7 +121,7 @@ export default function IndexPage(props) {
                       </dd>
                     </div>
                     <div className="border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
-                      <dt className="text-2xl leading-none font-extrabold text-blue-600">
+                      <dt className="text-2xl leading-none font-extrabold text-blue-700">
                         Attend Virtually or In-person
                       </dt>
                       <dd className="mt-3 text-gray-600 md:text-center">
@@ -154,12 +154,13 @@ export default function IndexPage(props) {
               </span>
               in others.
             </h2>
-            <p className="mt-6 text-lg leading-7 text-gray-500">
+            <p className="mt-6 text-lg leading-7 text-gray-600">
               Our members are encouraged to volunteer to prepare and deliver
-              Ignite presentations at our regular monthly meetings. What are
-              Ignite presentations? They are presentations in which members get
-              20 slides, which automatically advance every 15 seconds. The
-              result is a fast and fun presentation which lasts just 5 minutes!
+              Ignite presentations at our regular monthly meetings.{" "}
+              <strong>What are Ignite presentations?</strong> They are
+              presentations in which members get 20 slides, which automatically
+              advance every 15 seconds. The result is a fast and fun
+              presentation which lasts just 5 minutes!
             </p>
             <div className="text-center lg:text-left mt-8">
               <span className="inline-flex rounded-md shadow">
@@ -177,23 +178,26 @@ export default function IndexPage(props) {
           <div className="px-4 py-8 sm:px-6 sm:py-12 lg:py-16 lg:ml-1/2 lg:pl-12">
             <h2 className="text-4xl leading-tight font-extrabold tracking-tight text-gray-900 sm:text-5xl">
               Help students{" "}
-              <span className="whitespace-nowrap text-blue-500">
+              <span className="whitespace-nowrap text-blue-700">
                 find a path{" "}
               </span>
               towards a college education.
             </h2>
-            <p className="mt-6 text-lg leading-7 text-gray-500">
-              Our members are encouraged to volunteer to prepare and deliver
-              Ignite presentations at our regular monthly meetings. What are
-              Ignite presentations? They are presentations in which members get
-              20 slides, which automatically advance every 15 seconds. The
-              result is a fast and fun presentation which lasts just 5 minutes!
+            <p className="mt-6 text-lg leading-7 text-gray-600">
+              Each year, students throughout our membership districts are
+              awarded scholarships. These scholarships are awarded based on the
+              merits of the students. A team of MC3 members reviews submissions
+              and selects a group of winners. These winners are recognized at a
+              MC3 meeting.{" "}
+              <strong>
+                Your membership helps provide these important opportunities!
+              </strong>
             </p>
             <div className="text-center lg:text-right mt-8">
               <span className="inline-flex rounded-md shadow">
                 <Link
                   to="/"
-                  className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600  focus:border-red-600 focus:shadow-outline-red transition duration-150 ease-in-out hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
+                  className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800  focus:border-blue-500 focus:shadow-outline-blue transition duration-150 ease-in-out hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
                 >
                   Learn More
                 </Link>

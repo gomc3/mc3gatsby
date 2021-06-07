@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="inline-flex rounded-md shadow">
           <Link
             to="/"
-            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
           >
             Get Started
           </Link>
@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="ml-3 inline-flex">
           <Link
             to="/"
-            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-300 hover:bg-gray-400 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 hover:text-black bg-gray-200 hover:bg-gray-300 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
           >
             Contact Us
           </Link>
@@ -39,19 +39,19 @@ export default function Footer() {
       <nav className="mx-auto mt-3 lg:mt-6 flex justify-between max-w-lg">
         <Link
           to="/"
-          className="text-gray-500 font-medium hover:text-gray-900 transition ease-in-out duration-150 "
+          className="text-gray-600 font-medium hover:text-gray-900 transition ease-in-out duration-150 "
         >
           Terms of Use
         </Link>
         <Link
           to="/"
-          className="text-gray-500 font-medium hover:text-gray-900 transition ease-in-out duration-150"
+          className="text-gray-600 font-medium hover:text-gray-900 transition ease-in-out duration-150"
         >
           Privacy Policy
         </Link>
         <Link
           to="/"
-          className="text-gray-500 font-medium hover:text-gray-900 transition ease-in-out duration-150"
+          className="text-gray-600 font-medium hover:text-gray-900 transition ease-in-out duration-150"
         >
           Leadership &amp; Contacts
         </Link>

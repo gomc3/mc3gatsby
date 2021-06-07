@@ -32,7 +32,7 @@ export default function NewNavbar() {
               <div className="text-right">
                 <Menu as="div" className="relative inline-block text-left">
                   <div>
-                    <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-opacity-50 hover:text-blue-900 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                    <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-md hover:bg-opacity-50 hover:text-blue-900 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                       Menu
                       <HiChevronDown
                         className="w-5 h-5 ml-2 -mr-1 text-blue-200"
@@ -57,7 +57,7 @@ export default function NewNavbar() {
                               to="/"
                               className={`${
                                 active
-                                  ? "bg-blue-500 text-white"
+                                  ? "bg-blue-700 text-white"
                                   : "text-gray-900"
                               } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                             >
@@ -81,7 +81,7 @@ export default function NewNavbar() {
                             <button
                               className={`${
                                 active
-                                  ? "bg-blue-500 text-white"
+                                  ? "bg-blue-700 text-white"
                                   : "text-gray-900"
                               } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                             >
@@ -106,7 +106,7 @@ export default function NewNavbar() {
                               to="/"
                               className={`${
                                 active
-                                  ? "bg-blue-500 text-white"
+                                  ? "bg-blue-700 text-white"
                                   : "text-gray-900"
                               } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                             >
@@ -133,7 +133,7 @@ export default function NewNavbar() {
                               to="/"
                               className={`${
                                 active
-                                  ? "bg-blue-500 text-white"
+                                  ? "bg-blue-700 text-white"
                                   : "text-gray-900"
                               } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                             >
@@ -161,25 +161,25 @@ export default function NewNavbar() {
             {/* Desktop Navigation begins here */}
             <nav className="hidden md:flex space-x-10">
               <Link
-                className="text-gray-500 inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150"
+                className="text-gray-600 inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150"
                 to="/"
               >
                 Calendar
               </Link>
               <Link
-                className="text-gray-500 inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150"
+                className="text-gray-600 inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150"
                 to="/"
               >
                 Ignite
               </Link>
               <Link
-                className="text-gray-500 inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150"
+                className="text-gray-600 inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150"
                 to="/"
               >
                 Scholarship
               </Link>
               <Link
-                className="text-gray-500 inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150"
+                className="text-gray-600 inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150"
                 to="/"
               >
                 Blog
@@ -188,7 +188,7 @@ export default function NewNavbar() {
             <div className="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
               <span className="inline-flex rounded-md shadow-sm">
                 <Link
-                  className="whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:border-blue-600 focus:shadow-outline-teal active:bg-teal-600 transition ease-in-out duration-150"
+                  className="whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:border-blue-600 focus:shadow-outline-teal active:bg-teal-600 transition ease-in-out duration-150"
                   to="/"
                 >
                   Join MC3
