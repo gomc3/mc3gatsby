@@ -1,5 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import Navbar from "../components/navbar";
 
 import Header from "./header";
 
@@ -18,8 +19,8 @@ export default function Layout({ children }) {
   const { siteTitle } = site.siteMetadata;
   return (
     <>
-      <Header siteTitle={siteTitle} />
-      <main className="container mx-auto max-w-3xl">{children}</main>
+      <Navbar classes="-ml-3.5" />
+      <main className="container mx-auto max-w-screen-xl">{children}</main>
     </>
   );
 }
