@@ -187,12 +187,12 @@ export default function NewNavbar() {
             </nav>
             <div className="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
               <span className="inline-flex rounded-md shadow-sm">
-                <a
+                <Link
                   className="whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:border-blue-600 focus:shadow-outline-teal active:bg-teal-600 transition ease-in-out duration-150"
-                  href="/"
+                  to="/"
                 >
                   Join MC3
-                </a>
+                </Link>
               </span>
             </div>
           </div>
