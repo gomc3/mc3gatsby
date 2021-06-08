@@ -39,19 +39,19 @@ export default function Footer() {
       <nav className="mx-auto mt-3 lg:mt-6 flex justify-between max-w-lg">
         <Link
           to="/"
-          className="text-gray-600 font-medium hover:text-gray-900 transition ease-in-out duration-150 "
+          className="text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150 "
         >
           Terms of Use
         </Link>
         <Link
           to="/"
-          className="text-gray-600 font-medium hover:text-gray-900 transition ease-in-out duration-150"
+          className="text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150"
         >
           Privacy Policy
         </Link>
         <Link
           to="/"
-          className="text-gray-600 font-medium hover:text-gray-900 transition ease-in-out duration-150"
+          className="text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150"
         >
           Leadership &amp; Contacts
         </Link>

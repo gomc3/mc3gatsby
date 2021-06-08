@@ -4,7 +4,6 @@ import { StaticImage } from "gatsby-plugin-image";
 import Seo from "../components/seo";
 import HeroImage from "../components/heroImage";
 import Layout from "../components/layout";
-import Footer from "../components/footer";
 
 export default function IndexPage() {
   return (
@@ -50,37 +49,37 @@ export default function IndexPage() {
         </header>
         <div className="bg-blue-50 pt-12 sm:pt-16">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
+            <h2 className="text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10 mx-auto">
               Ensure your leaders are getting the timely information they
               deserve.
             </h2>
-            <p className="mt-3 text-xl leading-7 text-gray-500 sm:mt-4">
+            <p className="mt-3 text-xl leading-8 text-gray-700 sm:mt-4 max-w-screen-sm mx-auto">
               In addition to the districts which make up the consortium, MC
               <sup>3</sup> has partnered with the{" "}
               <a
                 href="https://www.nj.gov/education/"
-                className="underline hover:text-gray-900 transition ease-in-out duration-150"
+                className="underline hover:text-blue-700 transition ease-in-out duration-150"
               >
                 New Jersey Department of Education
               </a>
               ,{" "}
               <a
                 href="https://njsba.org"
-                className="underline hover:text-gray-900 transition ease-in-out duration-150"
+                className="underline hover:text-blue-700 transition ease-in-out duration-150"
               >
                 New Jersey School Boards Association
               </a>
               ,{" "}
               <a
                 href="https://monmouth.edu"
-                className="underline hover:text-gray-900 transition ease-in-out duration-150"
+                className="underline hover:text-blue-700 transition ease-in-out duration-150"
               >
                 Monmouth University
               </a>
               ,{" "}
               <a
                 href="https://rutgers.edu"
-                className="underline hover:text-gray-900 transition ease-in-out duration-150"
+                className="underline hover:text-blue-700 transition ease-in-out duration-150"
               >
                 Rutgers University
               </a>
