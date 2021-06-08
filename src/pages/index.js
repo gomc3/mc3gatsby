@@ -1,16 +1,15 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import Navbar from "../components/navbar";
 import Seo from "../components/seo";
 import HeroImage from "../components/heroImage";
+import Layout from "../components/layout";
 import Footer from "../components/footer";
 
 export default function IndexPage() {
   return (
-    <div id="wrapper">
+    <Layout id="wrapper">
       <Seo title="Home" />
-      <Navbar />
       <main>
         <header className="w-full bg-blue-50 px-4 lg:px-12">
           <div className="flex flex-col max-w-screen-xl lg:flex-row shrink-1 justify-center mx-auto">
@@ -214,8 +213,7 @@ export default function IndexPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>
+    </Layout>
   );
 }
 // export const data = graphql`
