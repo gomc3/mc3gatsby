@@ -16,7 +16,7 @@ export default function Footer() {
             to="/"
             className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
           >
-            Get Started
+            Become a Member
           </Link>
         </div>
         <div className="ml-3 inline-flex">
