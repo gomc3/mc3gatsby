@@ -11,8 +11,8 @@ export default function IndexPage() {
       <Seo title="Home" />
       <main>
         <header className="w-full bg-blue-50 px-4 lg:px-12">
-          <div className="flex flex-col max-w-screen-xl lg:flex-row shrink-1 justify-center mx-auto">
-            <div className="pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2">
+          <div className="flex flex-wrap items-center justify-center mx-auto lg:space-x-12">
+            <div className="pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2 flex-1">
               <div className="">
                 <h1 className="mb-6 font-medium tracking-wide uppercase text-gray-500 sm:leading-none text-lg lg:text-lg xl:text-xl text-center lg:text-left">
                   <span>M</span>onmouth <span>C</span>ounty <span>C</span>
@@ -26,7 +26,7 @@ export default function IndexPage() {
                   Join a group of leaders in educaiton that include members from
                   over 60 districts in Monmouth and Ocean County.
                 </p>
-                <div className="flex justify-center lg:justify-end">
+                <div className="flex justify-center">
                   <Link
                     to="/"
                     className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700  focus:shadow-outline-blue transition duration-150 ease-in-out hover:bg-blue-800 hover:shadow-xl transform hover:scale-105 focus:border-blue-500 px-8 py-3 md:py-4 md:px-10 md:text-lg"
@@ -42,7 +42,7 @@ export default function IndexPage() {
                 </div>
               </div>
             </div>
-            <div className="flex pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2 items-center justify-center ">
+            <div className="flex pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2 flex-1 items-center justify-center">
               <HeroImage />
             </div>
           </div>
