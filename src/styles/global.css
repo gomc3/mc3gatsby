@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.event-description a {
+  text-decoration: underline;
+}
+.event-description a:hover {
+  color: #1d4ed8;
+}
