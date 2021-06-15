@@ -17,6 +17,8 @@ import {
   HiOutlineExternalLink,
   HiCloud,
   HiOutlineCloud,
+  HiHome,
+  HiOutlineHome,
 } from "react-icons/hi";
 
 const query = graphql`
@@ -39,42 +41,42 @@ export default function Navbar(props) {
     allContentfulMenuItem: { nodes },
   } = useStaticQuery(query);
   return (
-    <div className="bg-white container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
-        <div className="flex-1 flex">
-          <Link className="flex-col" to="/">
-            <p className="text-2xl font-semibold text-blue-600">
+    <div className='bg-white container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <div className='flex justify-between items-center py-6 md:justify-start md:space-x-10'>
+        <div className='flex-1 flex'>
+          <Link className='flex-col' to='/'>
+            <p className='text-2xl font-semibold text-blue-600'>
               MC<sup>3</sup>
             </p>
-            <p className="text-xs">Monmouth County Curriculum Consortium</p>
+            <p className='text-xs'>Monmouth County Curriculum Consortium</p>
           </Link>
         </div>
         {/* Mobile Navigation begins here */}
         <div
           className={`${nodes.length > 5 ? " " : " md:hidden"} -mr-2 -my-2 `}
         >
-          <div className="text-right">
-            <Menu as="div" className="relative inline-block text-left">
+          <div className='text-right'>
+            <Menu as='div' className='relative inline-block text-left'>
               <div>
-                <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-md hover:bg-opacity-95 hover:text-blue-50 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                <Menu.Button className='inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-md hover:bg-opacity-95 hover:text-blue-50 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'>
                   Menu
                   <HiChevronDown
-                    className="w-5 h-5 ml-2 -mr-1 text-blue-200"
-                    aria-hidden="true"
+                    className='w-5 h-5 ml-2 -mr-1 text-blue-200'
+                    aria-hidden='true'
                   />
                 </Menu.Button>
               </div>
               <Transition
                 as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
+                enter='transition ease-out duration-100'
+                enterFrom='transform opacity-0 scale-95'
+                enterTo='transform opacity-100 scale-100'
+                leave='transition ease-in duration-75'
+                leaveFrom='transform opacity-100 scale-100'
+                leaveTo='transform opacity-0 scale-95'
               >
-                <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="px-1 py-1 ">
+                <Menu.Items className='absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+                  <div className='px-1 py-1 '>
                     {nodes.map((node) => {
                       const icons = {
                         Calendar: HiCalendar,
@@ -111,13 +113,13 @@ export default function Navbar(props) {
                               >
                                 {active ? (
                                   <MenuIcon
-                                    className="w-5 h-5 mr-2"
-                                    aria-hidden="true"
+                                    className='w-5 h-5 mr-2'
+                                    aria-hidden='true'
                                   />
                                 ) : (
                                   <MenuIconOutline
-                                    className="w-5 h-5 mr-2"
-                                    aria-hidden="true"
+                                    className='w-5 h-5 mr-2'
+                                    aria-hidden='true'
                                   />
                                 )}
                                 {node.linkText}
@@ -139,13 +141,13 @@ export default function Navbar(props) {
                               >
                                 {active ? (
                                   <MenuIcon
-                                    className="w-5 h-5 mr-2"
-                                    aria-hidden="true"
+                                    className='w-5 h-5 mr-2'
+                                    aria-hidden='true'
                                   />
                                 ) : (
                                   <MenuIconOutline
-                                    className="w-5 h-5 mr-2"
-                                    aria-hidden="true"
+                                    className='w-5 h-5 mr-2'
+                                    aria-hidden='true'
                                   />
                                 )}
                                 {node.linkText}
@@ -156,29 +158,60 @@ export default function Navbar(props) {
                       }
                     })}
                   </div>
-                  <div className="px-1 py-1">
+                  <div className='px-1 py-1'>
+                    {props.path !== "/" ? (
+                      <>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              to='/'
+                              className={`${
+                                active
+                                  ? "bg-blue-700 text-white"
+                                  : "text-gray-900"
+                              } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                            >
+                              {active ? (
+                                <HiHome
+                                  className='w-5 h-5 mr-2'
+                                  aria-hidden='true'
+                                />
+                              ) : (
+                                <HiOutlineHome
+                                  className='w-5 h-5 mr-2'
+                                  aria-hidden='true'
+                                />
+                              )}
+                              Home
+                            </Link>
+                          )}
+                        </Menu.Item>
+                      </>
+                    ) : (
+                      ""
+                    )}
                     <Menu.Item>
                       {({ active }) => (
                         <Link
-                          to="/"
+                          to='/'
                           className={`${
                             active ? "bg-blue-700 text-white" : "text-gray-900"
                           } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                         >
                           {active ? (
                             <HiPlus
-                              className="w-5 h-5 mr-2"
-                              aria-hidden="true"
+                              className='w-5 h-5 mr-2'
+                              aria-hidden='true'
                             />
                           ) : (
                             <HiOutlinePlus
-                              className="w-5 h-5 mr-2"
-                              aria-hidden="true"
+                              className='w-5 h-5 mr-2'
+                              aria-hidden='true'
                             />
                           )}
                           Join MC
                           <span
-                            className="relative text-sm z-0"
+                            className='relative text-sm z-0'
                             style={{ lineHeight: 0, top: "-0.5em" }}
                           >
                             3
@@ -202,7 +235,7 @@ export default function Navbar(props) {
             if (node.type === "Internal") {
               return (
                 <Link
-                  className="text-gray-600 inline-flex items-center text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150"
+                  className='text-gray-600 inline-flex items-center text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150'
                   to={node.url}
                   key={node.menuOrder}
                 >
@@ -212,7 +245,7 @@ export default function Navbar(props) {
             } else {
               return (
                 <a
-                  className="text-gray-600 inline-flex items-center text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150"
+                  className='text-gray-600 inline-flex items-center text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150'
                   href={node.url}
                   key={node.menuOrder}
                 >
@@ -227,14 +260,14 @@ export default function Navbar(props) {
             nodes.length > 5 ? "hidden" : " hidden md:flex "
           }   items-center justify-end space-x-8 md:flex-1 lg:w-0`}
         >
-          <span className="inline-flex rounded-md shadow-sm flex-none">
+          <span className='inline-flex rounded-md shadow-sm flex-none'>
             <Link
-              className="whitespace-no-wrap text-center items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:border-blue-600 focus:shadow-outline-blue active:bg-blue-600 transition ease-in-out duration-150"
-              to="/"
+              className='whitespace-no-wrap text-center items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:border-blue-600 focus:shadow-outline-blue active:bg-blue-600 transition ease-in-out duration-150'
+              to='/'
             >
               Join MC
               <span
-                className="relative text-sm z-0"
+                className='relative text-sm z-0'
                 style={{ lineHeight: 0, top: "-0.5em" }}
               >
                 3

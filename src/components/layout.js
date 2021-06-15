@@ -13,13 +13,13 @@ const SiteTitleQuery = graphql`
   }
 `;
 
-export default function Layout({ children }) {
+export default function Layout({ children, path }) {
   const { site } = useStaticQuery(SiteTitleQuery);
   const { siteTitle } = site.siteMetadata;
   return (
     <>
-      <Navbar classes="" />
-      <main className="mx-auto">{children}</main>
+      <Navbar path={path} />
+      <main className='mx-auto'>{children}</main>
       <Footer />
     </>
   );
