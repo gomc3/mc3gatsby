@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import Seo from "../components/seo";
 import HeroImage from "../components/heroImage";
@@ -13,7 +13,7 @@ export default function IndexPage(props) {
         <div className='flex flex-wrap items-center justify-center mx-auto lg:space-x-12'>
           <div className='pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2'>
             <div className=''>
-              <h1 className='mb-6 font-medium tracking-wide uppercase text-gray-500 sm:leading-none text-lg lg:text-lg xl:text-xl text-center lg:text-left'>
+              <h1 className='mb-6 font-medium tracking-wide uppercase text-gray-700 sm:leading-none text-lg lg:text-lg xl:text-xl text-center lg:text-left'>
                 <span>M</span>onmouth <span>C</span>ounty <span>C</span>
                 urriculum <span>C</span>onsortium
               </h1>
@@ -22,7 +22,7 @@ export default function IndexPage(props) {
                 <span className='text-blue-700'> Future of Education!</span>
               </h2>
               <p className='mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none'>
-                Join a group of leaders in educaiton that include members from
+                Join a group of leaders in educaton that include members from
                 over 60 districts in Monmouth and Ocean County.
               </p>
               <div className='flex justify-center'>
@@ -142,7 +142,7 @@ export default function IndexPage(props) {
           />
         </div>
         <div className='px-4 py-8 sm:px-6 sm:py-12 lg:py-16 lg:ml-1/2 lg:pl-12'>
-          <h2 className='text-center sm:text-right text-3xl sm:text-4xl leading-tight font-extrabold tracking-tight text-gray-900'>
+          <h2 className='text-center lg:text-right text-3xl sm:text-4xl leading-tight font-extrabold tracking-tight text-gray-900'>
             Answer the call, and{" "}
             <span className='whitespace-nowrap text-red-700'>
               ignite the spark{" "}
@@ -171,7 +171,7 @@ export default function IndexPage(props) {
       </div>
       <div className='mt-6 lg:grid lg:grid-cols-2 max-w-7xl mx-auto'>
         <div className='px-4 py-8 sm:px-6 sm:py-12 lg:py-16 lg:ml-1/2 lg:pl-12'>
-          <h2 className='text-center sm:text-left text-3xl sm:text-4xl leading-tight font-extrabold tracking-tight text-gray-900'>
+          <h2 className='text-center lg:text-left text-3xl sm:text-4xl leading-tight font-extrabold tracking-tight text-gray-900'>
             Help students{" "}
             <span className='whitespace-nowrap text-blue-700'>
               find a path{" "}

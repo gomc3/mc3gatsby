@@ -77,12 +77,12 @@ export default function Calendar(props) {
                             <h4 className='text-sm font-semibold text-gray-700'>
                               Additional Event Details:
                             </h4>
-                            <p
+                            <div
                               className='text-base event-description'
                               dangerouslySetInnerHTML={{
                                 __html: item.description,
                               }}
-                            ></p>
+                            ></div>
                           </>
                         ) : (
                           ""
