@@ -48,7 +48,7 @@ export default function IndexPage(props) {
       </header>
       <div className='bg-blue-50 pt-12 sm:pt-16'>
         <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <h2 className='text-center sm:text-left text-2xl sm:text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10 mx-auto'>
+          <h2 className='text-center sm:text-left text-2xl sm:text-3xl leading-9 font-extrabold text-gray-900 sm:leading-10 mx-auto'>
             Ensure your leaders are getting the timely information they deserve.
           </h2>
           <p className='mt-3 text-xl leading-8 text-gray-700 sm:mt-4 max-w-screen-sm mx-auto'>
@@ -142,7 +142,7 @@ export default function IndexPage(props) {
           />
         </div>
         <div className='px-4 py-8 sm:px-6 sm:py-12 lg:py-16 lg:ml-1/2 lg:pl-12'>
-          <h2 className='text-center sm:text-right text-3xl sm:text-4xl leading-tight font-extrabold tracking-tight text-gray-900 sm:text-5xl'>
+          <h2 className='text-center sm:text-right text-3xl sm:text-4xl leading-tight font-extrabold tracking-tight text-gray-900'>
             Answer the call, and{" "}
             <span className='whitespace-nowrap text-red-700'>
               ignite the spark{" "}
@@ -171,7 +171,7 @@ export default function IndexPage(props) {
       </div>
       <div className='mt-6 lg:grid lg:grid-cols-2 max-w-7xl mx-auto'>
         <div className='px-4 py-8 sm:px-6 sm:py-12 lg:py-16 lg:ml-1/2 lg:pl-12'>
-          <h2 className='text-center sm:text-left text-3xl sm:text-4xl leading-tight font-extrabold tracking-tight text-gray-900 sm:text-5xl'>
+          <h2 className='text-center sm:text-left text-3xl sm:text-4xl leading-tight font-extrabold tracking-tight text-gray-900'>
             Help students{" "}
             <span className='whitespace-nowrap text-blue-700'>
               find a path{" "}
