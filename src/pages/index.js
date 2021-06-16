@@ -7,7 +7,7 @@ import Layout from "../components/layout";
 
 export default function IndexPage(props) {
   return (
-    <Layout id="wrapper" path={props.path}>
+    <Layout path={props.path}>
       <Seo title="Home" />
       <header className="w-full bg-blue-50 px-4 lg:px-12">
         <div className="flex flex-wrap items-center justify-center mx-auto lg:space-x-12">

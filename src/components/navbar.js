@@ -41,14 +41,16 @@ export default function Navbar(props) {
     allContentfulMenuItem: { nodes },
   } = useStaticQuery(query);
   return (
-    <div className="bg-white container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
+    <div className="bg-white mx-auto px-4 sm:px-6 lg:px-8 w-full shadow-sm">
+      <div className="max-w-screen-xl flex justify-between items-center py-6 md:justify-start md:space-x-10 mx-auto">
         <div className="flex-1 flex">
           <Link className="flex-col focus:outline-none" to="/">
-            <p className="text-2xl font-semibold text-blue-600">
+            <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-blue-600">
               MC<sup>3</sup>
             </p>
-            <p className="text-xs">Monmouth County Curriculum Consortium</p>
+            <p className="text-xs sm:text-sm lg:text-base">
+              Monmouth County Curriculum Consortium
+            </p>
           </Link>
         </div>
         {/* Mobile Navigation begins here */}
