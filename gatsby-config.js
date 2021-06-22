@@ -13,8 +13,20 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
+      resolve: "gatsby-source-google-docs",
+      options: {
+        folder: `0AJ6So4BEbH5XUk9PVA`,
+        createPages: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-mdx",
       options: {
+        gatsbyRemarkPlugins: [
+          "gatsby-remark-unwrap-images",
+          "gatsby-remark-images",
+          "gatsby-remark-gifs",
+        ],
         defaultLayouts: {
           default: path.resolve("./src/components/layout.js"),
         },

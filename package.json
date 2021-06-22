@@ -12,7 +12,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "getToken": "gatsby-source-google-docs-token"
   },
   "dependencies": {
     "@headlessui/react": "^1.2.0",
@@ -28,8 +29,12 @@
     "gatsby-plugin-react-helmet": "^4.7.1",
     "gatsby-plugin-sharp": "^3.5.0",
     "gatsby-plugin-sitemap": "^4.1.0",
+    "gatsby-remark-gifs": "^1.0.0",
+    "gatsby-remark-images": "^5.4.1",
+    "gatsby-remark-unwrap-images": "^1.0.2",
     "gatsby-source-contentful": "^5.6.1",
     "gatsby-source-filesystem": "^3.5.0",
+    "gatsby-source-google-docs": "^2.1.1",
     "gatsby-transformer-sharp": "^3.5.0",
     "postcss": "^8.3.0",
     "react": "^17.0.1",
