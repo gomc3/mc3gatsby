@@ -14,37 +14,53 @@ export default function BlogCard({
   },
 }) {
   return (
-    <div className='rounded-md shadow-md my-2 sm:my-3 lg:my-4 bg-gray-100 hover:bg-gray-50 hover:shadow-xl h-full'>
+    <div className="rounded-md shadow-md my-2 sm:my-3 lg:my-4 bg-gray-100 h-full">
       {cover ? (
-        <aside className='relative rounded-tl-md rounded-tr-md text-white h-40 sm:h-48 md:h-56 lg:h-60 w-full text-center overflow-hidden'>
+        <aside className="relative rounded-tl-md rounded-tr-md text-white h-40 sm:h-48 md:h-56 lg:h-60 w-full text-center overflow-hidden">
           <GatsbyImage
             image={getImage(cover.image)}
-            className='inset-0 z-0 rounded-tl-md rounded-tr-md'
-            alt=''
+            className="inset-0 z-0 rounded-tl-md rounded-tr-md"
+            alt={cover.alt}
+            title={cover.title}
           />
         </aside>
       ) : (
         <></>
       )}
 
-      <article className='px-2 sm:px-3 lg:px-4 h-full'>
-        <header className='flex justify-between items-center flex-1'>
-          <h1 className='text-2xl text-gray-900'>{name}</h1>
-          <p className='text-sm text-blue-600'>
-            <Link to={slug}>{timeToRead} minute read</Link>
+      <section className="px-2 sm:px-3 lg:px-4 h-full">
+        <header className="flex justify-between items-center flex-1">
+          <Link
+            to={slug}
+            className="no-underline hover:underline hover:text-blue-800"
+          >
+            <h1 className="text-2xl  my-1 sm:my-2 md:my-3 text-blue-800">
+              {name}
+            </h1>
+          </Link>
+
+          <p className="text-sm text-blue-600">
+            <Link to={slug} className="underline hover:no-underline">
+              {timeToRead} minute read
+            </Link>
           </p>
         </header>
-        <div className='-mt-1 sm:-mt-2 md:-mt-3 text-sm'>
-          Last Updated {modifiedTime}
+        <div className="text-gray-700 text-sm sm:text-xs">
+          Last Updated{" "}
+          {new Date(modifiedTime).toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          })}
         </div>
-        <p className='text-base'>{excerpt}</p>
+        <p className="text-base mt-2 sm:mt-3 md:mt-4 lg:mt-5 mb-6">{excerpt}</p>
         <Link
           to={slug}
-          className='px-5 py-3 text-base font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:shadow-outline transition duration-500 ease-in-out'
+          className="px-5 py-3 text-base font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:shadow-outline transition duration-500 ease-in-out"
         >
           Continue to Full Article
         </Link>
-      </article>
+      </section>
     </div>
   );
 }

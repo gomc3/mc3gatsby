@@ -16,15 +16,15 @@ export default function Blog({
 }) {
   return (
     <Layout>
-      <Seo title='Blog' />
-      <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12'>
-        <header className='mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center'>
-          <PageTitle title='Blog'>
+      <Seo title="Blog" />
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <header className="mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center">
+          <PageTitle title="Blog">
             Discover great things happening in districts near you.
           </PageTitle>
-          <HiNewspaper className='text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-3' />
+          <HiNewspaper className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-3" />
         </header>
-        <section className='grid grid-cols-1 gap-y-8 md:gap-y-10 max-w-2xl mx-auto my-2 sm:my-4 lg:my-6 '>
+        <section className="grid grid-cols-1 gap-y-8 md:gap-y-10 max-w-2xl mx-auto my-2 sm:my-4 lg:my-6 ">
           {nodes.map((post) => {
             return <BlogCard key={post.id} postData={post} />;
           })}
@@ -56,10 +56,12 @@ export const data = graphql`
           timeToRead
         }
         id
-        modifiedTime(fromNow: true)
+        modifiedTime
         name
         slug
         cover {
+          alt
+          title
           image {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)

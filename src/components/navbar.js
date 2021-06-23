@@ -41,7 +41,7 @@ export default function Navbar(props) {
     allContentfulMenuItem: { nodes },
   } = useStaticQuery(query);
   return (
-    <div className="bg-white mx-auto px-4 sm:px-6 lg:px-8 w-full shadow-sm">
+    <div className="bg-white mx-auto px-4 sm:px-6 lg:px-8 w-full shadow-sm z-10">
       <div className="max-w-screen-xl flex justify-between items-center py-6 md:justify-start md:space-x-10 mx-auto">
         <div className="flex-1 flex">
           <Link className="flex-col focus:outline-none" to="/">
