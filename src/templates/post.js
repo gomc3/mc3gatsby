@@ -9,6 +9,7 @@ export const postQuery = graphql`
   query Post($path: String!) {
     post: googleDocs(slug: { eq: $path }) {
       name
+      slug
       cover {
         image {
           childImageSharp {
@@ -19,8 +20,15 @@ export const postQuery = graphql`
       childMdx {
         body
         timeToRead
+        excerpt
       }
+      locale
       modifiedTime
+    }
+    site {
+      siteMetadata {
+        siteUrl
+      }
     }
   }
 `;
@@ -29,15 +37,26 @@ export default function PostTemplate({
   data: {
     post: {
       name,
+      slug,
       cover,
-      childMdx: { body, timeToRead },
+      childMdx: { body, timeToRead, excerpt },
+      locale,
       modifiedTime,
+    },
+    site: {
+      siteMetadata: { siteUrl },
     },
   },
 }) {
   return (
     <Layout>
-      <Seo title={name} />
+      <Seo
+        title={name}
+        description={excerpt}
+        locale={locale}
+        url={`${siteUrl}${slug}`}
+        image={`${siteUrl}${getImage(cover.image).images.fallback.src}`}
+      />
       <article className="text-base md:text-lg lg:text-xl">
         <header className="relative bg-gray-900 w-screen -z-10">
           {cover ? (

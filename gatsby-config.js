@@ -4,8 +4,12 @@ require("dotenv").config({
 });
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://vigorous-poincare-546c99.netlify.app`,
+    siteUrl: `https://mc3.gatsbyjs.io`,
     title: "Monmouth County Curriculum Consortium",
+    description:
+      "The Monmouth County Curriculum Consortium (MC3) is a non-profit educational organization dedicated to sharing ideas and resources to improve learning and leadership in our schools.",
+    twitterUsername: "@mc3network",
+    siteImage: "/siteMc3Image.png",
   },
   plugins: [
     "gatsby-plugin-postcss",

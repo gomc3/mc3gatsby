@@ -16,7 +16,7 @@ export default function Blog({
 }) {
   return (
     <Layout>
-      <Seo title="Blog" />
+      <Seo title="Blog" locale="en-US" />
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <header className="mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center">
           <PageTitle title="Blog">
