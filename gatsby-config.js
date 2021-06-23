@@ -27,9 +27,6 @@ module.exports = {
           "gatsby-remark-images",
           "gatsby-remark-gifs",
         ],
-        defaultLayouts: {
-          default: path.resolve("./src/components/layout.js"),
-        },
       },
     },
     "gatsby-plugin-sharp",

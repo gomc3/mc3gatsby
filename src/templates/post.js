@@ -7,7 +7,7 @@ import Seo from "../components/seo";
 
 export const postQuery = graphql`
   query Post($path: String!) {
-    page: googleDocs(slug: { eq: $path }) {
+    post: googleDocs(slug: { eq: $path }) {
       name
       cover {
         image {
@@ -18,6 +18,7 @@ export const postQuery = graphql`
       }
       childMdx {
         body
+        timeToRead
       }
     }
   }
@@ -25,7 +26,11 @@ export const postQuery = graphql`
 
 export default function PostTemplate({
   data: {
-    page: { name, cover, childMdx },
+    post: {
+      name,
+      cover,
+      childMdx: { body, timeToRead },
+    },
   },
 }) {
   console.log(cover);
@@ -50,13 +55,16 @@ export default function PostTemplate({
                 : "absolute inset-0 flex flex-col items-center justify-center"
             }
           >
-            <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold rounded-xl  p-12 text-white'>
+            <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold rounded-xl text-white'>
               {name}
             </h1>
+            <h2 className='text-gray-50 text-sm my-1'>
+              {timeToRead} minute read
+            </h2>
           </div>
         </header>
         <div className='mx-auto max-w-screen-md py-2 sm:py-3 md:py-4 lg:py-5 px-3 sm:px-4 md:px-6 lg:px-8'>
-          <MDXRenderer>{childMdx.body}</MDXRenderer>
+          <MDXRenderer>{body}</MDXRenderer>
         </div>
       </article>
     </Layout>
