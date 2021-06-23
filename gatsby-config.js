@@ -12,6 +12,7 @@ module.exports = {
     siteImage: "/siteMc3Image.png",
   },
   plugins: [
+    "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
