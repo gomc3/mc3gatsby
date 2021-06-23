@@ -28,6 +28,7 @@ export const postQuery = graphql`
     site {
       siteMetadata {
         siteUrl
+        siteImage
       }
     }
   }
@@ -44,7 +45,7 @@ export default function PostTemplate({
       modifiedTime,
     },
     site: {
-      siteMetadata: { siteUrl },
+      siteMetadata: { siteUrl, siteImage },
     },
   },
 }) {
@@ -55,7 +56,11 @@ export default function PostTemplate({
         description={excerpt}
         locale={locale}
         url={`${siteUrl}${slug}`}
-        image={`${siteUrl}${getImage(cover.image).images.fallback.src}`}
+        image={
+          cover
+            ? `${siteUrl}${getImage(cover.image).images.fallback.src}`
+            : `${siteUrl}${siteImage}`
+        }
       />
       <article className="text-base md:text-lg lg:text-xl">
         <header className="relative bg-gray-900 w-screen -z-10">
