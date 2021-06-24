@@ -8,8 +8,16 @@ export const pageQuery = graphql`
   query Page($path: String!) {
     page: googleDocs(slug: { eq: $path }) {
       name
+      locale
+      modifiedTime
       childMdx {
         body
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
+        siteImage
       }
     }
   }
@@ -17,14 +25,25 @@ export const pageQuery = graphql`
 
 export default function PageTemplate({
   data: {
-    page: { name, childMdx },
+    page: { name, modifiedTime, childMdx },
   },
 }) {
   return (
     <Layout>
       <Seo title={name} />
-      <h1>{name}</h1>
-      <MDXRenderer>{childMdx.body}</MDXRenderer>
+
+      <div className="mx-auto max-w-screen-md py-2 sm:py-3 md:py-4 lg:py-5 px-3 sm:px-4 md:px-6 lg:px-8 prose prose-blue md:prose-lg lg:prose-xl">
+        <h1>{name}</h1>
+        <h2 className="text-sm text-gray-600">
+          Last Updated{" "}
+          {new Date(modifiedTime).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })}
+        </h2>
+        <MDXRenderer>{childMdx.body}</MDXRenderer>
+      </div>
     </Layout>
   );
 }

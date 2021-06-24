@@ -35,22 +35,22 @@ export default function Footer() {
       </div>
       <nav className="mx-auto mt-3 lg:mt-6 flex flex-col sm:flex-row max-w-lg text-center space-y-12 sm:space-y-0">
         <Link
-          to="/"
+          to="/terms"
           className="text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150 flex-1"
         >
-          Terms of Use
+          Terms &amp; Conditions
         </Link>
         <Link
-          to="/"
+          to="/privacy"
           className="text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150 flex-1"
         >
           Privacy Policy
         </Link>
         <Link
-          to="/"
+          to="/about"
           className="text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150 flex-1"
         >
-          Leadership
+          About
         </Link>
       </nav>
     </footer>
