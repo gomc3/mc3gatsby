@@ -69,11 +69,18 @@ export default function Calendar(props) {
         <Seo title="Event Calendar" />
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           <header className="mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center">
-            <PageTitle title="Calendar" />
+            <div>
+              <PageTitle
+                title="Calendar"
+                icon={
+                  <HiCalendar className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block" />
+                }
+              />
+            </div>
+
             <h2 className="font-light text-lg text-gray-700">
               Upcoming Events for MC3 Members
             </h2>
-            <HiCalendar className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-3" />
             <p className="text-md max-w-md italic mt-2 sm:mt-4 lg:mt-6">
               The events scheduled below are subject to change and will be
               updated as we have more information. Check back often for updated

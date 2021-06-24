@@ -10,10 +10,14 @@ export default function Resources() {
       <Seo title="Resources" />
       <Layout>
         <header className="mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center">
-          <PageTitle title="Resources">
+          <PageTitle
+            title="Resources"
+            icon={
+              <HiCloud className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block" />
+            }
+          >
             Check out some of these helpful resources.
           </PageTitle>
-          <HiCloud className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-3" />
         </header>
       </Layout>
     </>

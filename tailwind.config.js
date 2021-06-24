@@ -16,6 +16,7 @@ module.exports = {
   variants: {
     extend: {
       contrast: ["hover"],
+      grayscale: ["hover"],
     },
   },
   plugins: [

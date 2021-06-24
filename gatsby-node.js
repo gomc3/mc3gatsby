@@ -40,7 +40,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allGoogleDocs.nodes;
   const postsPerPage = 10;
   const numPages = Math.ceil(posts.length / postsPerPage);
-  console.log(posts.length);
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
