@@ -4,7 +4,7 @@ import Seo from "../components/seo";
 import Layout from "../components/layout";
 import PageTitle from "../components/page-title";
 import Thinker from "../components/thinker";
-import { HiCloudDownload, HiCalendar } from "react-icons/hi";
+import { HiCloudDownload, HiCalendar, HiMap } from "react-icons/hi";
 
 export default function Calendar(props) {
   const [data, setData] = useState({ items: [] });
@@ -26,6 +26,7 @@ export default function Calendar(props) {
         .catch((error) => {
           console.log(error);
         });
+      console.log(axiosData);
       setData({ items: axiosData });
     }
     fetchData();
@@ -106,12 +107,12 @@ export default function Calendar(props) {
                           )}
                         </p>
                       </aside>
-                      <article className="flex-1 flex items-center p-2 sm:p-3 lg:p-4 overflow-hidden">
-                        <div>
-                          <h3 className="text-2xl font-semibold">
+                      <article className="w-full flex items-center p-2 sm:p-3 lg:p-4 overflow-hidden">
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-semibold text-center">
                             {item.summary}
                           </h3>
-                          {item.description ? (
+                          {item.description && (
                             <>
                               <h4 className="text-sm font-semibold text-gray-700">
                                 Additional Event Details:
@@ -123,8 +124,23 @@ export default function Calendar(props) {
                                 }}
                               ></div>
                             </>
-                          ) : (
-                            ""
+                          )}
+                          {item.location && (
+                            <div className="text-center">
+                              <p className="text-sm font-semibold text-gray-700 my-1 text-left">
+                                Event Location
+                              </p>
+                              <p className="text-sm sm:text-xs my-1 text-left">
+                                {item.location}
+                              </p>
+                              <a
+                                href={`https://maps.google.com/?daddr=${item.location}`}
+                                className="mx-auto text-white px-3 py-2 bg-blue-700 rounded-md inline-block my-3 sm:my-2"
+                              >
+                                <HiMap className="inline text-xl" /> Get
+                                Directions
+                              </a>
+                            </div>
                           )}
 
                           {item.attachments ? (
