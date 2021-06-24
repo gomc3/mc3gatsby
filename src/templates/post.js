@@ -62,16 +62,16 @@ export default function PostTemplate({
             : `${siteUrl}${siteImage}`
         }
       />
-      <article className="text-base md:text-lg lg:text-xl">
-        <header className="relative bg-gray-900 w-screen -z-10">
+      <article className='text-base md:text-lg lg:text-xl'>
+        <header className='relative bg-gray-900 w-screen -z-10'>
           {cover ? (
             <GatsbyImage
               image={getImage(cover.image)}
-              className="inset-0 z-0 max-h-28 sm:max-h-32 md:max-h-52 lg:max-h-60 filter blur-sm"
-              alt=""
+              className='inset-0 z-0 max-h-28 sm:max-h-32 md:max-h-52 lg:max-h-60 filter blur-sm'
+              alt=''
             />
           ) : (
-            <div className="inset-0 z-0 h-28 w-screen bg-blue-700"></div>
+            <div className='inset-0 z-0 h-28 w-screen bg-blue-700'></div>
           )}
           <div
             className={
@@ -80,13 +80,13 @@ export default function PostTemplate({
                 : "absolute inset-0 flex flex-col items-center justify-center"
             }
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold rounded-xl text-white">
+            <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold rounded-xl text-white'>
               {name}
             </h1>
-            <h2 className="text-gray-50 text-sm my-1">
+            <h2 className='text-gray-50 text-sm my-1'>
               {timeToRead} minute read
             </h2>
-            <h2 className="text-sm text-gray-50 my-1">
+            <h2 className='text-sm text-gray-50 my-1'>
               Last Updated:{" "}
               {new Date(modifiedTime).toLocaleDateString("en-US", {
                 month: "long",
@@ -96,7 +96,7 @@ export default function PostTemplate({
             </h2>
           </div>
         </header>
-        <div className="mx-auto max-w-screen-md py-2 sm:py-3 md:py-4 lg:py-5 px-3 sm:px-4 md:px-6 lg:px-8 prose md:prose-lg lg:prose-xl">
+        <div className='mx-auto max-w-screen-md py-2 sm:py-3 md:py-4 lg:py-5 px-3 sm:px-4 md:px-6 lg:px-8 prose prose-blue md:prose-lg lg:prose-xl'>
           <MDXRenderer>{body}</MDXRenderer>
         </div>
       </article>
