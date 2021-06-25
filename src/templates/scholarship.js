@@ -64,7 +64,7 @@ export default function Scholarship({
         </header>
         <article className='mx-auto max-w-screen-md'>
           <div className='flex flex-col sm:items-start sm:flex-row sm:p-2'>
-            <div className='shadow-md w-52 sm:w-1/3 p-5 rounded-md bg-blue-200 transform -rotate-6'>
+            <div className='mx-auto shadow-md w-52 sm:w-1/3 p-5 rounded-md bg-blue-200 transform -rotate-6'>
               <StaticImage
                 src='../images/happyGrad.jpg'
                 alt='graduate jumping in the air waving a peace sign while smiling'
