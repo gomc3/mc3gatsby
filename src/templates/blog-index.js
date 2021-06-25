@@ -16,19 +16,19 @@ export default function Blog({
 }) {
   return (
     <Layout>
-      <Seo title="Blog" locale="en-US" />
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <header className="mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center">
+      <Seo title='Blog' locale='en-US' />
+      <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12'>
+        <header className='mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center'>
           <PageTitle
-            title="Blog"
+            title='Blog'
             icon={
-              <HiNewspaper className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block" />
+              <HiNewspaper className='text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block' />
             }
           >
             Discover great things happening in districts near you.
           </PageTitle>
         </header>
-        <section className="grid grid-cols-1 gap-y-8 md:gap-y-10 max-w-2xl mx-auto my-2 sm:my-4 lg:my-6 ">
+        <section className='grid grid-cols-1 gap-y-8 md:gap-y-10 max-w-2xl mx-auto my-2 sm:my-4 lg:my-6 '>
           {nodes.map((post) => {
             return <BlogCard key={post.id} postData={post} />;
           })}
@@ -68,7 +68,7 @@ export const data = graphql`
           title
           image {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
             }
           }
         }
