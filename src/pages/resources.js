@@ -4,16 +4,16 @@ import Layout from "../components/layout";
 import PageTitle from "../components/page-title";
 import { HiCloud } from "react-icons/hi";
 
-export default function Resources() {
+export default function Resources({ path }) {
   return (
     <>
-      <Seo title="Resources" />
+      <Seo title='Resources' />
       <Layout>
-        <header className="mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center">
+        <header className='mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center'>
           <PageTitle
-            title="Resources"
+            title='Resources'
             icon={
-              <HiCloud className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block" />
+              <HiCloud className='text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block' />
             }
           >
             Check out some of these helpful resources.

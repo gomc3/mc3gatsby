@@ -24,17 +24,18 @@ export const pageQuery = graphql`
 `;
 
 export default function PageTemplate({
+  path,
   data: {
     page: { name, modifiedTime, childMdx },
   },
 }) {
   return (
-    <Layout>
+    <Layout path={path}>
       <Seo title={name} />
 
-      <div className="mx-auto max-w-screen-md py-2 sm:py-3 md:py-4 lg:py-5 px-3 sm:px-4 md:px-6 lg:px-8 prose prose-blue md:prose-lg lg:prose-xl">
+      <div className='mx-auto max-w-screen-md py-2 sm:py-3 md:py-4 lg:py-5 px-3 sm:px-4 md:px-6 lg:px-8 prose prose-blue md:prose-lg lg:prose-xl'>
         <h1>{name}</h1>
-        <h2 className="text-sm text-gray-600">
+        <h2 className='text-sm text-gray-600'>
           Last Updated{" "}
           {new Date(modifiedTime).toLocaleDateString("en-US", {
             month: "long",

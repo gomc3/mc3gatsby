@@ -35,6 +35,7 @@ export const postQuery = graphql`
 `;
 
 export default function PostTemplate({
+  path,
   data: {
     post: {
       name,
@@ -50,7 +51,7 @@ export default function PostTemplate({
   },
 }) {
   return (
-    <Layout>
+    <Layout path={path}>
       <Seo
         title={name}
         description={excerpt}

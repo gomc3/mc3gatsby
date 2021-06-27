@@ -29,6 +29,7 @@ export const scholarshipQuery = graphql`
 `;
 
 export default function Scholarship({
+  path,
   data: {
     page: {
       name,
@@ -43,7 +44,7 @@ export default function Scholarship({
   },
 }) {
   return (
-    <Layout>
+    <Layout path={path}>
       <Seo
         title={name}
         description={excerpt}

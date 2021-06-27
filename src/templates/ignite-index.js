@@ -14,8 +14,9 @@ export default function Ignite({
     allGoogleDocs: { nodes },
   },
 }) {
+  console.log(path);
   return (
-    <Layout>
+    <Layout path={path}>
       <Seo
         title='Ignite'
         locale='en-US'

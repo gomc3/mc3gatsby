@@ -5,9 +5,10 @@ import Seo from "../components/seo";
 import HeroImage from "../components/heroImage";
 import Layout from "../components/layout";
 
-export default function IndexPage(props) {
+export default function IndexPage({ path }) {
+  console.log(path);
   return (
-    <Layout path={props.path}>
+    <Layout path={path}>
       <Seo title='Home' />
       <header className='w-full bg-blue-50 px-4 lg:px-12'>
         <div className='flex flex-wrap items-center justify-center mx-auto lg:space-x-12'>
