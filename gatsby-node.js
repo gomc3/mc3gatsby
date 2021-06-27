@@ -6,7 +6,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       {
         allGoogleDocs(
-          filter: { template: { eq: "post" } }
+          filter: { template: { eq: "post" }, tags: { ne: "ignite" } }
           sort: { fields: date, order: DESC }
         ) {
           nodes {

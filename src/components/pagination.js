@@ -16,14 +16,8 @@ export default function Pagination({
     basePath = path.slice(0, -1);
   }
   return (
-    <div
-      className={
-        numPages > 1
-          ? "bg-white px-4 py-3 flex flex-col items-center justify-between border-t border-gray-200 sm:px-6"
-          : "hidden"
-      }
-    >
-      <div className="flex-1 flex justify-between sm:hidden">
+    <div className='bg-white px-4 py-3 flex flex-col items-center justify-between border-t border-gray-200 sm:px-6'>
+      <div className='flex-1 flex justify-between sm:hidden'>
         <Link
           to={currentPage > 2 ? `${basePath}${currentPage - 1}` : `${basePath}`}
           className={
@@ -47,19 +41,19 @@ export default function Pagination({
           Next
         </Link>
       </div>
-      <div className="hidden sm:flex sm:justify-center">
+      <div className='hidden sm:flex sm:justify-center'>
         <div>
-          <p className="text-sm text-gray-700">
-            Showing <span className="font-medium">{limit}</span> of{" "}
-            <span className="font-medium">{totalPosts}</span> results
+          <p className='text-sm text-gray-700'>
+            Showing <span className='font-medium'>{limit}</span> of{" "}
+            <span className='font-medium'>{totalPosts}</span> results
           </p>
         </div>
       </div>
-      <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+      <div className='hidden sm:flex-1 sm:flex sm:items-center sm:justify-between'>
         <div>
           <nav
-            className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
-            aria-label="Pagination"
+            className='relative z-0 inline-flex rounded-md shadow-sm -space-x-px'
+            aria-label='Pagination'
           >
             <Link
               to={
@@ -73,8 +67,8 @@ export default function Pagination({
                   : "relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
               }
             >
-              <span className="sr-only">Previous</span>
-              <HiChevronLeft className="h-5 w-5" aria-hidden="true" />
+              <span className='sr-only'>Previous</span>
+              <HiChevronLeft className='h-5 w-5' aria-hidden='true' />
             </Link>
             {Array.from({ length: numPages }, (_, i) => (
               <Link
@@ -104,8 +98,8 @@ export default function Pagination({
               }
               disabled={currentPage === numPages}
             >
-              <span className="sr-only">Next</span>
-              <HiChevronRight className="h-5 w-5" aria-hidden="true" />
+              <span className='sr-only'>Next</span>
+              <HiChevronRight className='h-5 w-5' aria-hidden='true' />
             </Link>
           </nav>
         </div>

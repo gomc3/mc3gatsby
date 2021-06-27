@@ -9,7 +9,7 @@ import { HiSun } from "react-icons/hi";
 
 export default function Ignite({
   path,
-  pageContext: { currentPage, limit, numPages, totalPosts },
+  pageContext: { currentPage, limit, ignitePages, totalPosts },
   data: {
     allGoogleDocs: { nodes },
   },
@@ -38,14 +38,15 @@ export default function Ignite({
             return <BlogCard key={post.id} postData={post} />;
           })}
         </section>
-
-        <Pagination
-          path={path}
-          numPages={numPages}
-          currentPage={currentPage}
-          limit={nodes.length}
-          totalPosts={totalPosts}
-        />
+        {ignitePages > 1 && (
+          <Pagination
+            path={path}
+            numPages={ignitePages}
+            currentPage={currentPage}
+            limit={nodes.length}
+            totalPosts={totalPosts}
+          />
+        )}
       </div>
     </Layout>
   );

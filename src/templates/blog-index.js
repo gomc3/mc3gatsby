@@ -33,14 +33,15 @@ export default function Blog({
             return <BlogCard key={post.id} postData={post} />;
           })}
         </section>
-
-        <Pagination
-          path={path}
-          numPages={numPages}
-          currentPage={currentPage}
-          limit={nodes.length}
-          totalPosts={totalPosts}
-        />
+        {numPages > 1 && (
+          <Pagination
+            path={path}
+            numPages={numPages}
+            currentPage={currentPage}
+            limit={nodes.length}
+            totalPosts={totalPosts}
+          />
+        )}
       </div>
     </Layout>
   );
