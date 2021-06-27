@@ -109,8 +109,11 @@ export default function Navbar(props) {
                                 to={node.url}
                                 className={`${
                                   active
-                                    ? "bg-blue-700 text-white"
-                                    : "text-gray-900"
+                                    ? "bg-blue-700 hover:text-white"
+                                    : "text-gray-900 "
+                                } ${
+                                  props.path.includes(node.url) &&
+                                  `border-b-2 bg-blue-100 text-black font-semibold shadow-sm `
                                 } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                               >
                                 {active ? (
