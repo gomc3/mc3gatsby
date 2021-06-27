@@ -5,9 +5,9 @@ import Layout from "../components/layout";
 import BlogCard from "../components/blog-card";
 import Pagination from "../components/pagination";
 import PageTitle from "../components/page-title";
-import { HiNewspaper } from "react-icons/hi";
+import { HiSun } from "react-icons/hi";
 
-export default function Blog({
+export default function Ignite({
   path,
   pageContext: { currentPage, limit, numPages, totalPosts },
   data: {
@@ -16,16 +16,21 @@ export default function Blog({
 }) {
   return (
     <Layout>
-      <Seo title='Blog' locale='en-US' />
+      <Seo
+        title='Ignite'
+        locale='en-US'
+        description='Check out one of our ignite presentations. They are designed to start conversations.'
+      />
       <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12'>
         <header className='mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center'>
           <PageTitle
-            title='Blog'
+            title='Ignite'
             icon={
-              <HiNewspaper className='text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block' />
+              <HiSun className='text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block' />
             }
           >
-            Discover great things happening in districts near you.
+            Perhaps one of these ignites will be the start of something great
+            for you and your students.
           </PageTitle>
         </header>
         <section className='grid grid-cols-1 gap-y-8 md:gap-y-10 max-w-2xl mx-auto my-2 sm:my-4 lg:my-6 '>
@@ -49,7 +54,7 @@ export default function Blog({
 export const data = graphql`
   query($skip: Int!, $limit: Int!) {
     allGoogleDocs(
-      filter: { template: { eq: "post" }, tags: { ne: "ignite" } }
+      filter: { template: { eq: "post" }, tags: { in: "ignite" } }
       sort: { fields: date, order: DESC }
       limit: $limit
       skip: $skip
