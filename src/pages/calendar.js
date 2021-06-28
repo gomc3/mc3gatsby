@@ -66,7 +66,6 @@ export default function Calendar({ path }) {
     <>
       <Seo title='Calendar' />
       <Layout path={path}>
-        <Seo title='Event Calendar' />
         <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12'>
           <header className='mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center'>
             <div>
