@@ -196,7 +196,7 @@ export default function Navbar(props) {
                     <Menu.Item>
                       {({ active }) => (
                         <Link
-                          to='/'
+                          to='/join'
                           className={`${
                             active ? "bg-blue-700 text-white" : "text-gray-900"
                           } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
@@ -275,7 +275,7 @@ export default function Navbar(props) {
           <span className='inline-flex rounded-md shadow-sm flex-none'>
             <Link
               className='whitespace-no-wrap text-center items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:border-blue-600 focus:shadow-outline-blue active:bg-blue-600 transition ease-in-out duration-150'
-              to='/'
+              to='/join'
             >
               Join MC
               <span
