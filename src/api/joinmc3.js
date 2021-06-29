@@ -33,30 +33,38 @@ export default function formHandler(req, res) {
     }
   });
   const data = [
-    timeStamp,
-    email,
-    phone,
-    memberPackage,
-    registrantName,
-    registrantEmail,
-    leaName,
-    billingAddress,
-    purchaseOrder,
-    accountsPayableName,
-    accountsPayableEmail,
-    memberEmails,
+    [
+      timeStamp,
+      email,
+      phone,
+      memberPackage,
+      registrantName,
+      registrantEmail,
+      leaName,
+      billingAddress,
+      purchaseOrder,
+      accountsPayableName,
+      accountsPayableEmail,
+      memberEmails,
+    ],
   ];
-  async function gsapi(client) {
+  async function gsrun(client) {
     const gsapi = google.sheets({ version: "v4", auth: client });
-    const opt = {
+    const request = {
       spreadsheetId: "1-_o0Gf6LgR_l0sTA0J9VtOve45z9egkv0DDfA6w47b8",
       range: "Sheet1!A1:L1",
       valueInputOption: "USER_ENTERED",
+      insertDataOption: "INSERT_ROWS",
       resource: { values: data },
     };
-    let googleResponse = await gsapi.spreadsheets.values.append(opt);
-    console.log(googleResponse);
+    try {
+      let googleResponse = await gsapi.spreadsheets.values.append(request);
+      console.log(googleResponse);
+    } catch (err) {
+      console.log(err);
+    }
   }
+  gsrun();
   // req.body has the form values
   //console.log(req.body);
   // Here is where you would validate the form values and
