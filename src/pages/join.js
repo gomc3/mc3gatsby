@@ -119,7 +119,7 @@ export default function Join({ path }) {
                 name="phone"
                 id="phone"
                 placeholder="Enter phone number here..."
-                {...register("name", {
+                {...register("phone", {
                   required: "Contact phone number is required.",
                 })}
                 className="form-input mt-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500"
@@ -138,8 +138,10 @@ export default function Join({ path }) {
                 Winter Summit fee, and 5 Topical Breakout Sessions fee for up to
                 5 Registrants per district.
               </p>
-              {errors.package && (
-                <p className="text-red-700">&darr; {errors.package.message}</p>
+              {errors.memberPackage && (
+                <p className="text-red-700">
+                  &darr; {errors.memberPackage.message}
+                </p>
               )}
               <label
                 htmlFor="general-package"
@@ -148,9 +150,9 @@ export default function Join({ path }) {
                 <input
                   type="radio"
                   id="general-package"
-                  name="package"
+                  name="memberPackage"
                   value="general"
-                  {...register("package", {
+                  {...register("memberPackage", {
                     required: "Please indicate which package you would like",
                   })}
                   className="form-radio text-blue-800 mr-3 h-5 w-5 border border-blue-700"
@@ -161,9 +163,9 @@ export default function Join({ path }) {
                 <input
                   type="radio"
                   id="pd-package"
-                  name="package"
+                  name="memberPackage"
                   value="pd"
-                  {...register("package", {
+                  {...register("memberPackage", {
                     required: "Please indicate which package you would like",
                   })}
                   className="form-radio text-blue-800 mr-3 h-5 w-5 border border-blue-800"

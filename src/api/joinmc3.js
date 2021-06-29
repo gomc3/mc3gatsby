@@ -2,6 +2,20 @@ import fetch from "node-fetch";
 const { google } = require("googleapis");
 
 export default function formHandler(req, res) {
+  const {
+    email,
+    phone,
+    memberPackage,
+    registrantName,
+    registrantEmail,
+    leaName,
+    billingAddress,
+    purchaseOrder,
+    accountsPayableName,
+    accountsPayableEmail,
+    memberEmails,
+    timeStamp,
+  } = req.body;
   const keys = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEYS);
   const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
   const client = new google.auth.JWT(
@@ -18,16 +32,31 @@ export default function formHandler(req, res) {
       console.log("Connected!");
     }
   });
-
-  const gsrun = async (client) => {
+  const data = [
+    timeStamp,
+    email,
+    phone,
+    memberPackage,
+    registrantName,
+    registrantEmail,
+    leaName,
+    billingAddress,
+    purchaseOrder,
+    accountsPayableName,
+    accountsPayableEmail,
+    memberEmails,
+  ];
+  async function gsapi(client) {
     const gsapi = google.sheets({ version: "v4", auth: client });
     const opt = {
-      spreadsheetid: "1-_o0Gf6LgR_l0sTA0J9VtOve45z9egkv0DDfA6w47b8",
+      spreadsheetId: "1-_o0Gf6LgR_l0sTA0J9VtOve45z9egkv0DDfA6w47b8",
       range: "Sheet1!A1:L1",
       valueInputOption: "USER_ENTERED",
-      insertDataOption: "INSERT_ROWS",
+      resource: { values: data },
     };
-  };
+    let googleResponse = await gsapi.spreadsheets.values.append(opt);
+    console.log(googleResponse);
+  }
   // req.body has the form values
   //console.log(req.body);
   // Here is where you would validate the form values and
