@@ -59,21 +59,12 @@ export default function formHandler(req, res) {
     };
     try {
       let googleResponse = await gsapi.spreadsheets.values.append(request);
-      console.log(googleResponse);
+      console.log(googleResponse.status);
     } catch (err) {
-      console.log(err);
+      console.log("Errors in appending: ", err);
+      return JSON.stringify(err);
     }
   }
-  gsrun();
-  // req.body has the form values
-  //console.log(req.body);
-  // Here is where you would validate the form values and
-  // do any other actions with it you need (e.g. save it somewhere or
-  // trigger an action for the user).
-  //
-  // e.g.
-  //   if (!req.body.name) {
-  //     return res.status(422).json("Name field is required");
-  //   }
-  return res.json(`OK`);
+  gsrun(client);
+  return res.json(`Ok`);
 }
