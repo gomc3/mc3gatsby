@@ -8,7 +8,7 @@ export default function Resources({ path }) {
   return (
     <>
       <Seo title='Resources' />
-      <Layout>
+      <Layout path={path}>
         <header className='mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center'>
           <PageTitle
             title='Resources'
