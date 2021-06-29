@@ -14,7 +14,10 @@ export default function Join({ path }) {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    setDisabled(true);
+  };
   return (
     <Layout path={path}>
       <Seo title='Join MC3' />
@@ -66,7 +69,7 @@ export default function Join({ path }) {
                 {...register("email", {
                   required: "Your email address is required.",
                 })}
-                className='mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                className='form-input mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
               />
               {errors.email && (
                 <p className='text-red-700'> &uarr; {errors.email.message}</p>
@@ -85,7 +88,7 @@ export default function Join({ path }) {
                 {...register("name", {
                   required: "Contact phone number is required.",
                 })}
-                className='mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                className='form-input mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
               />
               {errors.name && (
                 <p className='text-red-700'>&uarr; {errors.name.message}</p>
@@ -146,7 +149,7 @@ export default function Join({ path }) {
                 {...register("name", {
                   required: "Registrant full name is required.",
                 })}
-                className='mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                className='form-input mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
               />
               {errors.name && (
                 <p className='text-red-700'>&uarr; {errors.name.message}</p>
@@ -161,11 +164,11 @@ export default function Join({ path }) {
                 type='email'
                 name='registrantEmail'
                 id='registrantEmail'
-                placeholder='Your email'
+                placeholder="Enter registrant's email address..."
                 {...register("registrantEmail", {
                   required: "This email address is required.",
                 })}
-                className='mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                className='form-input mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
               />
               {errors.registrantEmail && (
                 <p className='text-red-700'>
@@ -174,17 +177,17 @@ export default function Join({ path }) {
                 </p>
               )}
             </label>
-            <label htmlFor='lea'>
+            <label htmlFor='leaName'>
               <h3 className='font-semibold text-lg'>
                 Name of School District:
               </h3>
               <input
                 type='text'
-                name='lea'
-                id='lea'
+                name='leaName'
+                id='leaName'
                 placeholder='Enter the school district name here...'
-                {...register("lea")}
-                className='mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                {...register("leaName")}
+                className='form-input mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
               />
             </label>
             <label htmlFor='billingAddress'>
@@ -197,8 +200,14 @@ export default function Join({ path }) {
                 {...register("billingAddress", {
                   required: "This billing address is required.",
                 })}
-                className='mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                className='form-input mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
               />
+              {errors.billingAddress && (
+                <p className='text-red-700'>
+                  {" "}
+                  &uarr; {errors.billingAddress.message}
+                </p>
+              )}
             </label>
             <label htmlFor='purchaseOrder'>
               <h3 className='font-semibold text-lg'>
@@ -208,10 +217,49 @@ export default function Join({ path }) {
                 type='text'
                 name='purchaseOrder'
                 id='purchaseOrder'
-                value='Will Follow'
                 placeholder='Leave Blank for "Will Follow"'
-                {...register("billingAddress")}
-                className='mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                {...register("purchaseOrder")}
+                className='form-input mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+              />
+            </label>
+            <label htmlFor='accountsPayableName'>
+              <h3 className='font-semibold text-lg'>
+                Name of Accounts Payable Contact:
+              </h3>
+              <input
+                type='text'
+                name='accountsPayableName'
+                id='accountsPayableName'
+                placeholder='Enter the full name accounts payable contact'
+                {...register("accountsPayableName")}
+                className='form-input mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+              />
+            </label>
+            <label htmlFor='accountsPayableEmail'>
+              <h3 className='font-semibold text-lg'>
+                Email of Accounts Payable Contact:
+              </h3>
+              <input
+                type='email'
+                name='accountsPayableEmail'
+                id='accountsPayableEmail'
+                placeholder='Enter accounts payable email here...'
+                {...register("accountsPayableEmail")}
+                className='form-input mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+              />
+            </label>
+            <label htmlFor='memberEmails'>
+              <h3 className='font-semibold text-lg'>
+                Email address of members (up to 5 if PD Package selected):
+              </h3>
+              <input
+                type='email'
+                multiple
+                name='memberEmails'
+                id='memberEmails'
+                placeholder='Example: name1@district.com, name2@district.com, ...'
+                {...register("memberEmails")}
+                className='form-input mt-3 max-w-sm block w-full px-0.5 text-blue-700 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
               />
             </label>
             <input
