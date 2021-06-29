@@ -31,14 +31,14 @@ export default function Join({ path }) {
           "content-type": "application/json; charset=UTF-8",
         },
         body: JSON.stringify(data),
-      })
-        .then((res) => res.json())
-        .then((body) => {
-          console.log(body);
+      }).then((res) => {
+        res.json();
+        //console.log(res);
+        if (res.status === 200) {
           reset();
           setDisabled(false);
-          console.log(`response from API:`, body);
-        });
+        }
+      });
     } catch (error) {
       console.log(errors);
     }

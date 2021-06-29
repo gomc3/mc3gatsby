@@ -28,8 +28,6 @@ export default function formHandler(req, res) {
     if (err) {
       console.log(err);
       return;
-    } else {
-      console.log("Connected!");
     }
   });
   const data = [
@@ -59,12 +57,12 @@ export default function formHandler(req, res) {
     };
     try {
       let googleResponse = await gsapi.spreadsheets.values.append(request);
-      console.log(googleResponse.status);
+      return googleResponse.status;
     } catch (err) {
       console.log("Errors in appending: ", err);
       return JSON.stringify(err);
     }
   }
   gsrun(client);
-  return res.json(`Ok`);
+  return res.json(`ok`);
 }
