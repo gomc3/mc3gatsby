@@ -1,20 +1,7 @@
 const { google } = require("googleapis");
 
 export default function formHandler(req, res) {
-  const {
-    email,
-    phone,
-    memberPackage,
-    registrantName,
-    registrantEmail,
-    leaName,
-    billingAddress,
-    purchaseOrder,
-    accountsPayableName,
-    accountsPayableEmail,
-    memberEmails,
-    timeStamp,
-  } = req.body;
+  const { name, email, reason, question, timeStamp } = req.body;
   const keys = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEYS);
   const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
   const client = new google.auth.JWT(
@@ -29,27 +16,12 @@ export default function formHandler(req, res) {
       return;
     }
   });
-  const data = [
-    [
-      timeStamp,
-      email,
-      phone,
-      memberPackage,
-      registrantName,
-      registrantEmail,
-      leaName,
-      billingAddress,
-      purchaseOrder,
-      accountsPayableName,
-      accountsPayableEmail,
-      memberEmails,
-    ],
-  ];
+  const data = [[timeStamp, name, email, reason, question]];
   async function gsrun(client) {
     const gsapi = google.sheets({ version: "v4", auth: client });
     const request = {
-      spreadsheetId: "1-_o0Gf6LgR_l0sTA0J9VtOve45z9egkv0DDfA6w47b8",
-      range: "Sheet1!A1:L1",
+      spreadsheetId: "1y_sMor7OYiU4rxGABQeXJbjvR3MDHNg6jaZ9xFTG-K0",
+      range: "Sheet1!A1:E1",
       valueInputOption: "USER_ENTERED",
       insertDataOption: "INSERT_ROWS",
       resource: { values: data },
