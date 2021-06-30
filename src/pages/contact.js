@@ -12,7 +12,7 @@ export default function Contact({ path }) {
     "Agenda Item",
     "Billing",
     "Professional Development",
-    "Volunteer to Author Blog Post",
+    "Volunteer to Write a Blog Post",
     "Volunteer to Present",
     "Other...",
   ];
