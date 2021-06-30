@@ -36,9 +36,9 @@ export default function Calendar({ path }) {
       <>
         <Seo title='Calendar' />
         <Layout path={path}>
-          <div className='max-w-md flex flex-col justify-center items-center h-screen'>
+          <div className='mx-auto max-w-md flex flex-col justify-center items-center h-screen'>
             <svg
-              className='animate-spin -ml-1 mr-3 h-12 w-12 text-blue-700'
+              className='animate-spin -ml-1 mr-3 h-12 w-12 text-blue-700 block'
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
               viewBox='0 0 24 24'
