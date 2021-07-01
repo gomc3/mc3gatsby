@@ -131,7 +131,7 @@ export default function About({ path }) {
               <StaticImage
                 src="https://via.placeholder.com/100"
                 alt="Melanie Harding"
-                className="w-24 mr-4 rounded-full flex-initial border border-gray-300"
+                className="filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300"
               />
             </a>
             <div className="flex-1">
@@ -150,7 +150,7 @@ export default function About({ path }) {
               <StaticImage
                 src="https://media-exp1.licdn.com/dms/image/C4D03AQFgHodkab20gQ/profile-displayphoto-shrink_100_100/0/1531602460120?e=1630540800&v=beta&t=y4TQwZLMezjB9Q-MntbeHGPXNYOnELbQcC1snnIsRjw"
                 alt="Neil Mastroianni"
-                className="w-24 mr-4 rounded-full flex-initial border border-gray-300"
+                className="filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300"
               />
             </a>
             <div className="flex-1">
@@ -256,7 +256,7 @@ export default function About({ path }) {
               <StaticImage
                 src="https://via.placeholder.com/100"
                 alt="Melanie Harding"
-                className="w-24 mr-4 rounded-full flex-initial border border-gray-300"
+                className="filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300"
               />
             </a>
             <div className="flex-1">
@@ -376,7 +376,7 @@ export default function About({ path }) {
               <StaticImage
                 src="https://via.placeholder.com/100"
                 alt="Michael Liebmann"
-                className="w-24 mr-4 rounded-full flex-initial border border-gray-300"
+                className="filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300"
               />
             </a>
             <div className="flex-1">
@@ -496,7 +496,7 @@ export default function About({ path }) {
               <StaticImage
                 src="https://via.placeholder.com/100"
                 alt="Michael Liebmann"
-                className="w-24 mr-4 rounded-full flex-initial border border-gray-300"
+                className="filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300"
               />
             </a>
             <div className="flex-1">
