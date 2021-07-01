@@ -164,7 +164,7 @@ export default function IndexPage({ path }) {
                 to="/contact"
                 className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-red-700 hover:bg-red-600  focus:outline-none transition duration-150 ease-in-out hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
               >
-                Raise Your Hand
+                Let Us Know You're Interested
               </Link>
             </span>
           </div>
@@ -194,7 +194,7 @@ export default function IndexPage({ path }) {
                 to="/scholarship"
                 className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800  focus:outline-none transition duration-150 ease-in-out hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
               >
-                Learn More
+                Discover Scholarship Opportunities
               </Link>
             </span>
           </div>
