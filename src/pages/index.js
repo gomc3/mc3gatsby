@@ -118,12 +118,12 @@ export default function IndexPage({ path }) {
                   </div>
                   <div className="border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
                     <dt className="text-2xl leading-none font-extrabold text-blue-700">
-                      Attend Virtually or In-person
+                      Tap Into Our Network
                     </dt>
                     <dd className="mt-3 text-gray-600 md:text-center">
-                      We recognize the need to be flexible in a post pandemic
-                      world. Whether your district requires it, or you need to
-                      remain in the building, we've got you covered.
+                      When surveyed, our members emphatically told us that
+                      connecting with like-minded professionals is truely
+                      beneficial for them.
                     </dd>
                   </div>
                 </dl>
