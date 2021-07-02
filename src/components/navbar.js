@@ -1,6 +1,7 @@
 import { Menu, Transition } from "@headlessui/react";
 import React, { Fragment } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import {
   HiChevronDown,
   HiCalendar,
@@ -43,13 +44,21 @@ export default function Navbar(props) {
   return (
     <div className='bg-white mx-auto px-4 sm:px-6 lg:px-8 w-full shadow-sm z-10'>
       <div className='max-w-screen-xl flex justify-between items-center py-6 md:justify-start md:space-x-10 mx-auto'>
-        <div className='flex-1 flex'>
-          <Link className='flex-col focus:outline-none' to='/'>
-            <p className='text-xl sm:text-2xl lg:text-3xl font-semibold text-blue-600'>
-              MC<sup>3</sup>
-            </p>
-            <p className='text-xs sm:text-sm lg:text-base'>
-              Monmouth County Curriculum Consortium
+        <div className='flex-1'>
+          <Link
+            className='focus:outline-none flex items-center flex-wrap'
+            to='/'
+          >
+            <StaticImage
+              src='../images/favicon-icon.png'
+              alt='Monmouth County Curriculum Consortium logo'
+              loading='lazy'
+              placeholder='tracedSVG'
+              className='w-16 block mr-3 flex-initial'
+            />
+            <p className='font-medium text-sm md:text-base lg:text-xl'>
+              Monmouth County <br />
+              Curriculum Consortium
             </p>
           </Link>
         </div>
@@ -243,7 +252,7 @@ export default function Navbar(props) {
                 <Link
                   className={`${
                     props.path.includes(node.url) &&
-                    `transition ease-in-out duration-150 hover:border-red-700 border-b-4 border-blue-700 `
+                    `transition ease-in-out duration-150 hover:border-blue-700 border-b-4 border-blue-500 `
                   }inline-flex items-center text-base leading-6 font-medium`}
                   to={node.url}
                   key={node.menuOrder}
