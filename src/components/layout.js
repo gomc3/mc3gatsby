@@ -1,12 +1,14 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 import YouTube from "./youtube";
+import AudioFile from "./audio";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
 export default function Layout({ children, path }) {
   const components = {
     YouTube: YouTube,
+    AudioFile: AudioFile,
   };
   return (
     <MDXProvider components={components}>
