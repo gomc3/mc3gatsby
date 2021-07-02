@@ -59,7 +59,7 @@ export default function Join({ path }) {
             />
           </div>
 
-          <h2 className='font-light text-lg text-gray-700 max-w-screen-sm'>
+          <h2 className='text-lg text-gray-700 max-w-screen-sm'>
             If you or your district are interested in joining MC3, fill out the
             form below to let us know. When we receive your message, we will
             contact you.

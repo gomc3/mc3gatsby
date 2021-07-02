@@ -5,6 +5,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Montserrat"],
+      },
       zIndex: {
         "-10": "-10",
       },

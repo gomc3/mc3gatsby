@@ -56,7 +56,7 @@ export default function Navbar(props) {
               placeholder='tracedSVG'
               className='w-16 block mr-3 flex-initial'
             />
-            <p className='font-medium text-sm md:text-base lg:text-xl'>
+            <p className='font-sans font-medium text-sm md:text-base lg:text-xl'>
               Monmouth County <br />
               Curriculum Consortium
             </p>

@@ -77,7 +77,7 @@ export default function Calendar({ path }) {
               />
             </div>
 
-            <h2 className='font-light text-lg text-gray-700'>
+            <h2 className='font-medium text-lg text-gray-700'>
               Upcoming Events for MC3 Members
             </h2>
             <p className='text-md max-w-md italic mt-2 sm:mt-4 lg:mt-6'>

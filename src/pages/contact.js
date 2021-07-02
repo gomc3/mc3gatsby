@@ -65,7 +65,7 @@ export default function Contact({ path }) {
               }
             />
           </div>
-          <h2 className='font-light text-lg text-gray-700 max-w-screen-sm'>
+          <h2 className='text-lg text-gray-700 max-w-screen-sm'>
             Would you like to volunteer to do an Ignite Presentation, or do you
             have a question for us?
           </h2>
