@@ -60,5 +60,17 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Monmouth County Curriculum Consortium`,
+        short_name: `MC3`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#1d4ed8`,
+        display: `standalone`,
+        icon: `src/images/favicon-icon.png`,
+      },
+    },
   ],
 };
