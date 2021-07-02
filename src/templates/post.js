@@ -65,14 +65,12 @@ export default function PostTemplate({
       />
       <article className='text-base md:text-lg lg:text-xl'>
         <header className='relative bg-gray-900 w-screen -z-10'>
-          {cover ? (
+          {cover && (
             <GatsbyImage
               image={getImage(cover.image)}
               className='inset-0 z-0 max-h-28 sm:max-h-32 md:max-h-52 lg:max-h-60 filter blur-sm'
               alt='decorative blog post banner'
             />
-          ) : (
-            <div className='inset-0 z-0 h-28 w-screen bg-blue-700'></div>
           )}
           <div
             className={
