@@ -64,11 +64,11 @@ export default function PostTemplate({
         }
       />
       <article className='text-base md:text-lg lg:text-xl'>
-        <header className='relative bg-gray-900 w-screen -z-10'>
+        <header className='relative bg-gray-900 w-screen -z-10 text-center'>
           {cover && (
             <GatsbyImage
               image={getImage(cover.image)}
-              className='inset-0 z-0 max-h-28 sm:max-h-32 md:max-h-52 lg:max-h-60 filter blur-sm'
+              className='inset-0 z-0 max-h-60 filter blur-sm'
               alt='decorative blog post banner'
             />
           )}
@@ -79,7 +79,7 @@ export default function PostTemplate({
                 : "absolute inset-0 flex flex-col items-center justify-center"
             }
           >
-            <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold rounded-xl text-white'>
+            <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold rounded-xl text-white px-3'>
               {name}
             </h1>
             <h2 className='text-gray-50 text-sm my-1'>
