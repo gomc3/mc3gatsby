@@ -17,11 +17,74 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allGoogleDocs {
+              nodes {
+                modifiedTime
+                slug
+              }
+            }
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: ({
+          site: {
+            siteMetadata: { siteUrl },
+          },
+        }) => {
+          return siteUrl;
+        },
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allGoogleDocs: { nodes: allGoogleDocs },
+        }) => {
+          const allSiteGooglePages = allGoogleDocs.map((page) => {
+            return { ...page };
+          });
+          let allSitePages = allPages.map((page) => {
+            return { ...page };
+          });
+          allSitePages.forEach((page) => {
+            allSiteGooglePages.forEach((gpage) => {
+              page.path === gpage.slug &&
+                (page.modifiedTime = new Date(
+                  gpage.modifiedTime
+                ).toGMTString());
+            });
+          });
+          return allSitePages;
+        },
+        serialize: ({ path, modifiedTime }) => {
+          if (modifiedTime) {
+            return {
+              url: path,
+              lastmod: modifiedTime,
+            };
+          } else {
+            return {
+              url: path,
+            };
+          }
+        },
+      },
+    },
     {
       resolve: "gatsby-source-google-docs",
       options: {
-        folder: `0AJ6So4BEbH5XUk9PVA`,
+        folder: `1eCR2XpJ1CMD7lqsnHLp2VzVIsydEl9Fl`,
         createPages: true,
       },
     },
@@ -71,6 +134,16 @@ module.exports = {
         theme_color: `#1d4ed8`,
         display: `standalone`,
         icon: `src/images/favicon-icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.GOOGLE_GTAG_MEASUREMENT_ID],
+      },
+      pluginConfig: {
+        head: true,
+        respectDNT: true,
       },
     },
   ],
