@@ -28,7 +28,7 @@ export default function IndexPage({ path }) {
               </p>
               <div className='flex justify-center'>
                 <Link
-                  to='/'
+                  to='/join'
                   className='flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700  focus:outline-none transition duration-150 ease-in-out hover:bg-blue-800 hover:shadow-xl transform hover:scale-105 focus:border-blue-500 px-8 py-3 md:py-4 md:px-10 md:text-lg'
                 >
                   Join MC
