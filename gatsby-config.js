@@ -4,7 +4,7 @@ require("dotenv").config({
 });
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://mc3.gatsbyjs.io`,
+    siteUrl: `https://gomc3.org`,
     title: "Monmouth County Curriculum Consortium",
     description:
       "The Monmouth County Curriculum Consortium (MC3) is a non-profit educational organization dedicated to sharing ideas and resources to improve learning and leadership in our schools.",
