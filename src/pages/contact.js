@@ -46,7 +46,7 @@ export default function Contact({ path }) {
         body: JSON.stringify(data),
       }).then((res) => {
         res.json();
-        //console.log(res);
+        console.log("The value of res is: ", res);
         if (res.status === 200) {
           reset();
           setFormComplete(true);

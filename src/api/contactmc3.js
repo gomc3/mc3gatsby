@@ -3,7 +3,8 @@ import axios from "axios";
 
 export default function formHandler(req, res) {
   const { name, email, reason, question, timeStamp, token } = req.body;
-  const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secrett=${process.env.GOOGLE_RECAPTCHA_SECRETKEY}&response=${token}`;
+  const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_SECRETKEY}&response=${token}`;
+  let gRc = false;
   async function getRecaptcha(url) {
     const axiosResponse = await axios
       .get(url)
@@ -13,6 +14,7 @@ export default function formHandler(req, res) {
       .catch((error) => {
         console.log(error);
       });
+    gRc = axiosResponse.success;
     //axiosResponse.success = false;
     // if reCaptcha passes, write the form to a Google Sheet
     if (axiosResponse.success === true) {
@@ -52,6 +54,5 @@ export default function formHandler(req, res) {
     }
   }
   getRecaptcha(recaptchaUrl);
-
   return res.json(`ok`);
 }
