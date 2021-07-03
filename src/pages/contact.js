@@ -163,7 +163,7 @@ export default function Contact({ path }) {
               <p className='text-red-700'> &uarr; {errors.question.message}</p>
             )}
             <ReCAPTCHA
-              sitekey={process.env.GOOGLE_RECAPTCHA_SITEKEY}
+              sitekey={`6LeIMHIbAAAAAF-Eu5prLZNWXnwaadSsV8OYN1mP`}
               size='invisible'
               ref={reRef}
             />
