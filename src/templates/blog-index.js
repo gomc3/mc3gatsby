@@ -25,7 +25,14 @@ export default function Blog({
               <HiNewspaper className='text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block' />
             }
           >
-            Discover great things happening in districts near you.
+            Discover great things happening at MC
+            <span
+              className='relative text-sm z-0'
+              style={{ lineHeight: 0, top: "-0.5em" }}
+            >
+              3
+            </span>{" "}
+            and in districts near you.
           </PageTitle>
         </header>
         <section className='grid grid-cols-1 gap-y-8 md:gap-y-10 max-w-2xl mx-auto my-2 sm:my-4 lg:my-6 '>
