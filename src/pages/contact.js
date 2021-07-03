@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import PageTitle from "../components/page-title";
@@ -24,8 +25,11 @@ export default function Contact({ path }) {
     reset,
     formState: { errors },
   } = useForm();
+  const reRef = React.useRef();
   const onSubmit = async (data) => {
     setDisabled(true);
+    const token = await reRef.current.executeAsync();
+    data.token = token;
     data.timeStamp = `${new Date().toLocaleDateString("en-US", {
       month: "2-digit",
       day: "numeric",
@@ -158,6 +162,11 @@ export default function Contact({ path }) {
             {errors.question && (
               <p className='text-red-700'> &uarr; {errors.question.message}</p>
             )}
+            <ReCAPTCHA
+              sitekey={process.env.GOOGLE_RECAPTCHA_SITEKEY}
+              size='invisible'
+              ref={reRef}
+            />
             <input
               name='submit'
               type='submit'
