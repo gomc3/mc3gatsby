@@ -1,39 +1,26 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://gomc3.org">
+    <img alt="Gatsby" src="https://mc3.gatsbyjs.io/static/04582a6fad9fa9129381b7c295299221/d689f/favicon-icon.webp" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Monmouth County Curriculum Consortium
 </h1>
 
-## 🚀 Quick start
+## About MC<sup>3</sup>
 
-1.  **Create a Gatsby site.**
+The Monmouth County Curriculum Consortium (MC<sup>3</sup>) is a non-profit educational organization dedicated to sharing ideas and resources to improve learning and leadership in our schools. Since its founding in 2009, it has expanded beyond Monmouth County to include over 60 districts in central New Jersey. Its September-June monthly meeting schedule presents a variety of opportunities to discuss topics like assessment, curriculum, technology, and pedagogy. Attendees typically include district and building administrators, teachers, tech specialists, and representatives from the NJ Department of Education.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+MC<sup>3</sup> also organizes workshops 3-4 times per year to provide in depth training on educational issues. In the past few years, these have included summits on Common Core, the Next Gen Science standards, Instructional Technology, and ESL, to name a few.
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+In addition to the districts which make up the consortium, MC<sup>3</sup> has partnered with the NJDOE, NJ School Boards Association, Monmouth University, Rutgers University, and many education-related organizations.
 
-2.  **Start developing.**
+## Interested In Learning More About GatsbyJS?
 
-    Navigate into your new site’s directory and start it up.
+If you clone this repository, you will need to ensure you address the **environment variables** first!
+We use [Contentful](https://www.contentful.com) and [Google API](https://developers.google.com)
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
+1.  **Learn more**
 
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
@@ -46,9 +33,3 @@
     - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
