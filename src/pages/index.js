@@ -122,8 +122,8 @@ export default function IndexPage({ path }) {
                     </dt>
                     <dd className='mt-3 text-gray-600 md:text-center'>
                       When surveyed, our members emphatically told us that
-                      connecting with like-minded professionals is truely
-                      beneficial for them.
+                      connecting with like-minded professionals is truly
+                      helpful.
                     </dd>
                   </div>
                 </dl>
