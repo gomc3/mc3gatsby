@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 export default function Contact({ path }) {
   const [disabled, setDisabled] = useState(false);
   const [formComplete, setFormComplete] = useState(false);
+  const [recaptchaPassed, setRecaptchaPassed] = useState(null);
   const selectReason = [
     "Agenda Item",
     "Billing",
@@ -46,11 +47,13 @@ export default function Contact({ path }) {
         body: JSON.stringify(data),
       }).then((res) => {
         res.json();
-        console.log("The value of res is: ", res);
         if (res.status === 200) {
           reset();
           setFormComplete(true);
           setDisabled(false);
+        } else {
+          console.log(res.status);
+          setRecaptchaPassed(false);
         }
       });
     } catch (error) {
@@ -77,6 +80,12 @@ export default function Contact({ path }) {
         </header>
         <hr />
         <section className='max-w-screen-sm mx-auto my-3 sm:my-4 md:my-5 lg:my-6'>
+          {recaptchaPassed === false && (
+            <p className='text-center text-red-600 text-xl border border-red-600 p-4 rounded-md'>
+              Oops! It looks like Google blocked your submission because it
+              thinks you are a robot. Your submission was not sent to us.
+            </p>
+          )}
           {formComplete && (
             <button
               onClick={() => setFormComplete(!formComplete)}

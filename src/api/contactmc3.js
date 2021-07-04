@@ -1,7 +1,7 @@
 const { google } = require("googleapis");
 import axios from "axios";
 
-export default function formHandler(req, res) {
+export default async function formHandler(req, res) {
   const { name, email, reason, question, timeStamp, token } = req.body;
   const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_SECRETKEY}&response=${token}`;
   let gRc = false;
@@ -14,8 +14,9 @@ export default function formHandler(req, res) {
       .catch((error) => {
         console.log(error);
       });
+
+    // axiosResponse.success = false; // uncomment this line to simulate a failed recaptcha test
     gRc = axiosResponse.success;
-    //axiosResponse.success = false;
     // if reCaptcha passes, write the form to a Google Sheet
     if (axiosResponse.success === true) {
       const keys = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEYS);
@@ -53,6 +54,9 @@ export default function formHandler(req, res) {
       gsrun(client);
     }
   }
-  getRecaptcha(recaptchaUrl);
-  return res.json(`ok`);
+  await getRecaptcha(recaptchaUrl);
+  if (gRc === false) {
+    return res.status(422).json(`ReCaptcha Error`);
+  }
+  return res.json(`wassup`);
 }
