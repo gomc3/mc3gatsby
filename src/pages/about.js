@@ -62,6 +62,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='Luigi Laugelli'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -81,6 +82,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='Michael Ballone'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -100,6 +102,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://media-exp1.licdn.com/dms/image/C4E03AQGleSOdcUG8lQ/profile-displayphoto-shrink_400_400/0/1516782823674?e=1630540800&v=beta&t=pjHgFILoVqSxcvcwgPkwos6dB1t0_D8pQRZzl84SNJk'
                 alt='Christine Formica'
+                placeholder='tracedSVG'
                 className='filter grayscale transition ease-in-out duration-500 hover:grayscale-0 w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -119,6 +122,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='Sarah Poppe Seeley'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -138,6 +142,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='Melanie Harding'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -157,6 +162,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://media-exp1.licdn.com/dms/image/C4D03AQFgHodkab20gQ/profile-displayphoto-shrink_100_100/0/1531602460120?e=1630540800&v=beta&t=y4TQwZLMezjB9Q-MntbeHGPXNYOnELbQcC1snnIsRjw'
                 alt='Neil Mastroianni'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -187,6 +193,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://media-exp1.licdn.com/dms/image/C5603AQFSBHdfQvSPsA/profile-displayphoto-shrink_100_100/0/1517546417983?e=1630540800&v=beta&t=Fike4kAEO90Gt1bSTkv65Qcz8H2KkWoQoDJGHWRDCz8'
                 alt='Kelly Weldon'
+                placeholder='tracedSVG'
                 className='filter grayscale transition ease-in-out duration-500 hover:grayscale-0 w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -206,6 +213,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://media-exp1.licdn.com/dms/image/C4D03AQHDQcYVsSFTdQ/profile-displayphoto-shrink_400_400/0/1531255856414?e=1630540800&v=beta&t=IOJYaRZ8kIlzPS2ZZcfxQmV7bcjZSruzN0VGmih_4rU'
                 alt='Matt Kukoda'
+                placeholder='tracedSVG'
                 className='filter grayscale transition ease-in-out duration-500 hover:grayscale-0 w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -225,6 +233,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='Cheryl Romano'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -244,6 +253,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='Tara Micciulla'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -263,6 +273,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='Melanie Harding'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -282,6 +293,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://media-exp1.licdn.com/dms/image/C5603AQFVxPWYRabOlg/profile-displayphoto-shrink_100_100/0/1516965027119?e=1630540800&v=beta&t=G225vJg4PllfkZQ0Cp7l9cU6gR7YXoUy_h-l71MWOQ0'
                 alt='Chris Alworth'
+                placeholder='tracedSVG'
                 className='w-24 filter grayscale transition ease-in-out duration-500 hover:grayscale-0 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -307,6 +319,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='Erica Reynolds'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -326,6 +339,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://media-exp1.licdn.com/dms/image/C4D03AQGXNQ--dlK67w/profile-displayphoto-shrink_100_100/0/1574806326558?e=1630540800&v=beta&t=CTun4KWNb0-1iUDS351QWUgFoMR4KFOONvmib-qGTGE'
                 alt='Mark Guterl'
+                placeholder='tracedSVG'
                 className='filter grayscale transition ease-in-out duration-500 hover:grayscale-0 w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -345,6 +359,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='Kelly Harmon'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -364,6 +379,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://media-exp1.licdn.com/dms/image/C5603AQFtsr3wb1AeNA/profile-displayphoto-shrink_400_400/0/1516523860341?e=1630540800&v=beta&t=vOo5PVY9-YLYeHbnvSVXx-ZfF2xnNd9v7bjFv6DGIJY'
                 alt='Marc Natanagara, Ed.D.'
+                placeholder='tracedSVG'
                 className='filter grayscale transition ease-in-out duration-500 hover:grayscale-0 w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -383,6 +399,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='Michael Liebmann'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -402,6 +419,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://media-exp1.licdn.com/dms/image/C4D03AQHDQcYVsSFTdQ/profile-displayphoto-shrink_400_400/0/1531255856414?e=1630540800&v=beta&t=IOJYaRZ8kIlzPS2ZZcfxQmV7bcjZSruzN0VGmih_4rU'
                 alt='Neil Mastroianni'
+                placeholder='tracedSVG'
                 className='w-24 filter grayscale transition ease-in-out duration-500 hover:grayscale-0 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -427,6 +445,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='Karen Barry'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -446,6 +465,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='John Bombardier'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -465,6 +485,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://media-exp1.licdn.com/dms/image/C4E03AQGphjD7mM9FUA/profile-displayphoto-shrink_100_100/0/1517526137485?e=1630540800&v=beta&t=Vt_VWb8fmkqi8vtckpSKWw1WgN3-wo0MUdj-8vEjxfk'
                 alt='Jennifer Donnelly'
+                placeholder='tracedSVG'
                 className='filter grayscale transition ease-in-out duration-500 hover:grayscale-0 w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -484,6 +505,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://media-exp1.licdn.com/dms/image/C5603AQFtsr3wb1AeNA/profile-displayphoto-shrink_400_400/0/1516523860341?e=1630540800&v=beta&t=vOo5PVY9-YLYeHbnvSVXx-ZfF2xnNd9v7bjFv6DGIJY'
                 alt='Marc Natanagara, Ed.D.'
+                placeholder='tracedSVG'
                 className='filter grayscale transition ease-in-out duration-500 hover:grayscale-0 w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -503,6 +525,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://via.placeholder.com/100'
                 alt='Michael Liebmann'
+                placeholder='tracedSVG'
                 className='filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -522,6 +545,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://media-exp1.licdn.com/dms/image/C4E03AQFZ-xhADtfYYg/profile-displayphoto-shrink_100_100/0/1591400023196?e=1630540800&v=beta&t=apCmh2yfy58gAOkgjxj9nelyJA5ykvlzNoDHtqgdQL4'
                 alt='Lauren Basselini'
+                placeholder='tracedSVG'
                 className='w-24 filter grayscale transition ease-in-out duration-500 hover:grayscale-0 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
@@ -541,6 +565,7 @@ export default function About({ path }) {
               <StaticImage
                 src='https://media-exp1.licdn.com/dms/image/C5603AQHaez_N9EernA/profile-displayphoto-shrink_100_100/0/1517748259247?e=1630540800&v=beta&t=i4JOxa8YA508dwFsjkEsT-zPoG6dI3QM3DS84M7pQ7c'
                 alt='Tom Semko'
+                placeholder='tracedSVG'
                 className='w-24 filter grayscale transition ease-in-out duration-500 hover:grayscale-0 mr-4 rounded-full flex-initial border border-gray-300'
               />
             </a>
