@@ -58,5 +58,5 @@ export default async function formHandler(req, res) {
   if (gRc === false) {
     return res.status(422).json(`ReCaptcha Error`);
   }
-  return res.json(`wassup`);
+  return res.json(`ok`);
 }

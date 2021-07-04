@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { Link } from "gatsby";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
@@ -10,14 +11,18 @@ import { useForm } from "react-hook-form";
 export default function Join({ path }) {
   const [disabled, setDisabled] = useState(false);
   const [formComplete, setFormComplete] = useState(false);
+  const [recaptchaPassed, setRecaptchaPassed] = useState(null);
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+  const reRef = React.useRef();
   const onSubmit = async (data) => {
     setDisabled(true);
+    const token = await reRef.current.executeAsync();
+    data.token = token;
     data.timeStamp = `${new Date().toLocaleDateString("en-US", {
       month: "2-digit",
       day: "numeric",
@@ -39,6 +44,9 @@ export default function Join({ path }) {
           reset();
           setFormComplete(true);
           setDisabled(false);
+        } else {
+          console.log(res.status);
+          setRecaptchaPassed(false);
         }
       });
     } catch (error) {
@@ -77,6 +85,12 @@ export default function Join({ path }) {
         </header>
         <hr />
         <section className='max-w-screen-sm mx-auto my-3 sm:my-4 md:my-5 lg:my-6'>
+          {recaptchaPassed === false && (
+            <p className='text-center text-red-600 text-xl border border-red-600 p-4 rounded-md mb-6'>
+              Oops! It looks like Google blocked your submission because it
+              thinks you are a robot. Your submission was not sent to us.
+            </p>
+          )}
           {formComplete && (
             <button
               onClick={() => setFormComplete(!formComplete)}
@@ -307,6 +321,11 @@ export default function Join({ path }) {
                 className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
               />
             </label>
+            <ReCAPTCHA
+              sitekey={process.env.GOOGLE_RECAPTCHA_SITEKEY}
+              size='invisible'
+              ref={reRef}
+            />
             <input
               type='submit'
               disabled={disabled}
@@ -315,6 +334,12 @@ export default function Join({ path }) {
               } transition duration-300 hover:bg-blue-800`}
             />
           </form>
+          {recaptchaPassed === false && (
+            <p className='text-center text-red-600 text-xl border border-red-600 p-4 rounded-md mt-6'>
+              Oops! It looks like Google blocked your submission because it
+              thinks you are a robot. Your submission was not sent to us.
+            </p>
+          )}
         </section>
       </div>
     </Layout>
