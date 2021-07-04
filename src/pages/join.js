@@ -322,7 +322,7 @@ export default function Join({ path }) {
               />
             </label>
             <ReCAPTCHA
-              sitekey={`${process.env.GOOGLE_RECAPTCHA_SITEKEY}`}
+              sitekey={`6LeIMHIbAAAAAF-Eu5prLZNWXnwaadSsV8OYN1mP`}
               size='invisible'
               ref={reRef}
             />
