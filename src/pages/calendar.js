@@ -5,9 +5,9 @@ import Layout from "../components/layout";
 import PageTitle from "../components/page-title";
 import Thinker from "../components/thinker";
 import { HiCloudDownload, HiCalendar, HiMap } from "react-icons/hi";
+import { FcGoogle } from "react-icons/fc";
 
 export default function Calendar({ path }) {
-  //path = path.slice(0, -1);
   const [data, setData] = useState({ items: [] });
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -90,6 +90,9 @@ export default function Calendar({ path }) {
           <section className='grid grid-cols-1 gap-2 max-w-2xl mx-auto my-2 sm:my-4 lg:my-6 '>
             {data.items.length ? (
               data.items.map((item, i) => {
+                const urlSearchParams = new URLSearchParams(item.htmlLink);
+                const params = Object.fromEntries(urlSearchParams.entries());
+                const copyUrl = `https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${params["https://www.google.com/calendar/event?eid"]}&tmsrc=${process.env.GATSBY_GOOGLE_CALENDAR_ID}&catt=false&pprop=HowCreated:DUPLICATE&hl=en&scp=ONE`;
                 return (
                   <div key={item.id}>
                     <div className='rounded-md shadow-md flex flex-col sm:flex-row mb-1 my-1 sm:my-2 lg:my-3 bg-gray-50 hover:bg-gray-100 hover:shadow-xl'>
@@ -148,6 +151,15 @@ export default function Calendar({ path }) {
                               </a>
                             </div>
                           )}
+                          <div className='flex justify-center'>
+                            <a
+                              href={copyUrl}
+                              className='inline-block mx-auto my-4 px-3 py-2 bg-gray-200 hover:bg-gray-300 rounded-md text-gray-800 hover:text-black'
+                            >
+                              <FcGoogle className='inline mr-2 text-xl' /> Add
+                              to Your Calendar
+                            </a>
+                          </div>
 
                           {item.attachments ? (
                             <ul className='flex flex-col sm:flex-row space-between items-center justify-center my-6 sm:my-3 space-x-0 sm:space-x-2 lg:space-x-3 space-y-6 sm:space-y-0'>
@@ -155,7 +167,7 @@ export default function Calendar({ path }) {
                                 return (
                                   <li
                                     key={file.fileId}
-                                    className='t px-3 py-2 bg-gray-200 hover:bg-gray-300 rounded-md'
+                                    className='px-3 py-2 bg-gray-200 hover:bg-gray-300 rounded-md'
                                   >
                                     <a
                                       href={file.fileUrl}
