@@ -54,7 +54,7 @@ export default function About({ path }) {
           Current Exective Team Members
         </h2>
         <h3 className='text-3xl my-2 md:my-3 lg:my-5  text-gray-600 text-center'>
-          2021-2022
+          2021-2023
         </h3>
         <div className='w-4/5  mx-auto rounded-md border border-gray-500 p-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4'>
           <div className='p-4 flex flex-wrap items-center'>
