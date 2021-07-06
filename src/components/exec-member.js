@@ -17,7 +17,7 @@ export default function execMember({
             <GatsbyImage
               image={getImage(socialMediaImage.gatsbyImageData)}
               alt=""
-              className="filter grayscale w-24 mr-4 rounded-full flex-initial border border-gray-300"
+              className="filter grayscale transition duration-500 ease-in-out hover:grayscale-0 w-24 mr-4 rounded-full flex-initial border border-gray-300"
             />
           ) : (
             <img

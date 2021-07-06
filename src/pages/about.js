@@ -32,7 +32,7 @@ export default function About({ path, data }) {
   return (
     <Layout path={path}>
       <Seo title="About MC3" />
-      <header className="mb-2 px-5 md:px-0 sm:mb-4 lg:mb-6 flex flex-col items-center space-y-3">
+      <header className="mb-2 px-5 md:px-0 sm:mb-1 lg:mb-3 flex flex-col items-center space-y-3">
         <PageTitle
           title="About Us"
           icon={
@@ -72,6 +72,19 @@ export default function About({ path, data }) {
       </header>
       <hr />
       {teams.map((team, i) => {
+        //team.executive_members.reverse();
+        function compare(a, b) {
+          const fullNameA = a.fullName.toUpperCase();
+          const fullNameB = b.fullName.toUpperCase();
+          let comparison = 0;
+          if (fullNameA > fullNameB) {
+            comparison = 1;
+          } else if (fullNameA < fullNameB) {
+            comparison = -1;
+          }
+          return comparison;
+        }
+        team.executive_members.sort(compare);
         return (
           <ExecTeam
             teamNumber={i + 1}
