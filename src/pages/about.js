@@ -11,16 +11,16 @@ export const data = graphql`
   {
     allContentfulExecutiveTeams {
       nodes {
+        execTeamName
         executive_members {
-          fullName
           id
+          fullName
           role
+          socialMediaLink
           socialMediaImage {
             gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
           }
-          socialMediaLink
         }
-        execTeamName
         id
       }
     }
@@ -29,7 +29,6 @@ export const data = graphql`
 
 export default function About({ path, data }) {
   const teams = data.allContentfulExecutiveTeams.nodes.reverse();
-  console.log(teams);
   return (
     <Layout path={path}>
       <Seo title="About MC3" />
