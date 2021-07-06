@@ -28,7 +28,21 @@ export const data = graphql`
 `;
 
 export default function About({ path, data }) {
-  const teams = data.allContentfulExecutiveTeams.nodes.reverse();
+  function compareTeamNames(a, b) {
+    const execNameA = a.execTeamName.toUpperCase();
+    const execNameB = b.execTeamName.toUpperCase();
+    let comparison = 0;
+    if (execNameA > execNameB) {
+      comparison = 1;
+    } else if (execNameA < execNameB) {
+      comparison = -1;
+    }
+    return comparison;
+  }
+  const teams = data.allContentfulExecutiveTeams.nodes
+    .sort(compareTeamNames)
+    .reverse();
+  console.log(data);
   return (
     <Layout path={path}>
       <Seo title="About MC3" />

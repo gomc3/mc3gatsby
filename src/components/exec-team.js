@@ -2,7 +2,7 @@ import * as React from "react";
 
 export default function execTeam({ execTeamName, children, teamNumber }) {
   return (
-    <section className={`${teamNumber > 1 && `bg-blue-100`} mt-6 py-6`}>
+    <section className={`${teamNumber > 1 && `bg-blue-100`} py-6`}>
       {teamNumber === 1 ? (
         <h2 className="text-4xl my-3 md:my-4 lg:my-6 font-medium text-blue-700 text-center">
           Current Exective Team Members
