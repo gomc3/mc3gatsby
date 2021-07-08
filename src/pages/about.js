@@ -42,7 +42,6 @@ export default function About({ path, data }) {
   const teams = data.allContentfulExecutiveTeams.nodes
     .sort(compareTeamNames)
     .reverse();
-  console.log(data);
   return (
     <Layout path={path}>
       <Seo title="About MC3" />
