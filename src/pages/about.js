@@ -42,20 +42,52 @@ export default function About({ path, data }) {
   const teams = data.allContentfulExecutiveTeams.nodes
     .sort(compareTeamNames)
     .reverse();
+  const foundingMembers = [
+    {
+      fullName: "Claire Engle",
+      role: "Founding Member",
+      socialMediaImage: "none",
+      socialMediaLink: null,
+    },
+    {
+      fullName: "MaryJane Garibay",
+      role: "Founding Member",
+      socialMediaImage: "none",
+      socialMediaLink: null,
+    },
+    {
+      fullName: "Lisa Gleason",
+      role: "Founding Member",
+      socialMediaImage: "none",
+      socialMediaLink: null,
+    },
+    {
+      fullName: "Melissa Jones",
+      role: "Founding Member",
+      socialMediaImage: "none",
+      socialMediaLink: null,
+    },
+    {
+      fullName: "Bruce Preston",
+      role: "Founding Member",
+      socialMediaImage: "none",
+      socialMediaLink: null,
+    },
+  ];
   return (
     <Layout path={path}>
-      <Seo title="About MC3" />
-      <header className="mb-2 px-5 md:px-0 sm:mb-1 lg:mb-3 flex flex-col items-center space-y-3">
+      <Seo title='About MC3' />
+      <header className='mb-2 px-5 md:px-0 sm:mb-1 lg:mb-3 flex flex-col items-center space-y-3'>
         <PageTitle
-          title="About Us"
+          title='About Us'
           icon={
-            <HiIdentification className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block" />
+            <HiIdentification className='text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block' />
           }
         />
-        <p className="text-lg text-gray-700 max-w-screen-sm">
+        <p className='text-lg text-gray-700 max-w-screen-sm'>
           The Monmouth County Curriculum Consortium (MC
           <span
-            className="relative text-sm z-0"
+            className='relative text-sm z-0'
             style={{ lineHeight: 0, top: "-0.5em" }}
           >
             3
@@ -70,13 +102,13 @@ export default function About({ path, data }) {
           teachers, tech specialists, and representatives from the NJ Department
           of Education.
         </p>
-        <p className="text-lg text-gray-700 max-w-screen-sm">
+        <p className='text-lg text-gray-700 max-w-screen-sm'>
           MC3 also organizes workshops 3-4 times per year to provide in depth
           training on educational issues. In the past few years, these have
           included summits on Common Core, the Next Gen Science standards,
           Instructional Technology, and ESL, to name a few.
         </p>
-        <p className="text-lg text-gray-700 max-w-screen-sm">
+        <p className='text-lg text-gray-700 max-w-screen-sm'>
           In addition to the districts which make up the consortium, MC3 has
           partnered with the NJDOE, NJ School Boards Association, Monmouth
           University, Rutgers University, and many education-related
@@ -107,7 +139,7 @@ export default function About({ path, data }) {
             {team.executive_members.map((member) => {
               return (
                 <ExecMember
-                  key={member.id}
+                  key={member.fullName}
                   fullName={member.fullName}
                   role={member.role}
                   socialMediaImage={member.socialMediaImage}
@@ -118,6 +150,23 @@ export default function About({ path, data }) {
           </ExecTeam>
         );
       })}
+      <ExecTeam
+        execTeamName='Founding Members'
+        key='Founding Members'
+        teamNumber={0}
+      >
+        {foundingMembers.map((member) => {
+          return (
+            <ExecMember
+              key={member.id}
+              fullName={member.fullName}
+              role={member.role}
+              socialMediaImage={member.socialMediaImage}
+              socialMediaLink={member.socialMediaLink}
+            />
+          );
+        })}
+      </ExecTeam>
     </Layout>
   );
 }

@@ -5,25 +5,30 @@ import { FaLinkedin } from "react-icons/fa";
 export default function execMember({
   fullName,
   role,
-  id,
   socialMediaImage,
   socialMediaLink,
 }) {
   return (
     <>
-      <div className='p-4 flex flex-col text-center md:text-left md:flex-row flex-wrap items-center'>
+      <div
+        className={`p-4 flex flex-col text-center md:flex-row flex-wrap items-center ${
+          socialMediaImage !== "none" && ` md:text-left`
+        }`}
+      >
         <a href={socialMediaLink}>
-          {socialMediaImage ? (
-            <GatsbyImage
-              image={getImage(socialMediaImage.gatsbyImageData)}
-              alt=''
-              className='filter grayscale transition duration-500 ease-in-out hover:grayscale-0 w-24 md:mr-4 rounded-full flex-initial border border-gray-300'
-            />
-          ) : (
+          {socialMediaImage === "none" && <></>}
+          {!socialMediaImage && (
             <img
               src='https://via.placeholder.com/100'
               alt={`placeholder for portrait of ${fullName}`}
               className='w-24 md:mr-4 rounded-full flex-initial border border-gray-300'
+            />
+          )}
+          {socialMediaImage && socialMediaImage !== "none" && (
+            <GatsbyImage
+              image={getImage(socialMediaImage.gatsbyImageData)}
+              alt=''
+              className='filter grayscale transition duration-500 ease-in-out hover:grayscale-0 w-24 md:mr-4 rounded-full flex-initial border border-gray-300'
             />
           )}
         </a>
