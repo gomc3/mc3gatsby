@@ -16,8 +16,10 @@ export default function Join({ path }) {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm();
+  const watchSelectedPackage = watch("memberPackage", false);
   const reRef = React.useRef();
   const onSubmit = async (data) => {
     setDisabled(true);
@@ -103,53 +105,11 @@ export default function Join({ path }) {
             onSubmit={handleSubmit(onSubmit)}
             method='POST'
             action='/api/joinmc3'
-            className={`${formComplete && `hidden`}`}
+            className={`${formComplete && `hidden`} grid grid-cols-1 space-y-3`}
           >
-            <label htmlFor='email'>
+            <div className='p-4 border border-blue-400 border-dotted rounded-md'>
               <h3 className='font-semibold text-lg text-blue-800'>
-                Email of person completing this form:
-              </h3>
-              <p className='text-sm font-medium'>
-                This is the individual with whom we will correspond.
-              </p>
-              <input
-                type='email'
-                name='email'
-                id='email'
-                placeholder='Your email'
-                {...register("email", {
-                  required: "Your email address is required.",
-                })}
-                className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
-              />
-              {errors.email && (
-                <p className='text-red-700'> &uarr; {errors.email.message}</p>
-              )}
-            </label>
-            <label htmlFor='phone'>
-              <h3 className='font-semibold text-lg text-blue-800'>
-                Contact Phone:
-              </h3>
-              <p className='text-sm font-medium'>
-                This is the phone number we may call.
-              </p>
-              <input
-                type='tel'
-                name='phone'
-                id='phone'
-                placeholder='Enter phone number here...'
-                {...register("phone", {
-                  required: "Contact phone number is required.",
-                })}
-                className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
-              />
-              {errors.name && (
-                <p className='text-red-700'>&uarr; {errors.name.message}</p>
-              )}
-            </label>
-            <div className=''>
-              <h3 className='font-semibold text-lg text-blue-800'>
-                Membership Package:
+                Step 1: Select a Membership Package:
               </h3>
               <p className='text-sm font-medium'>
                 Please indicate the package you anticipate selecting.
@@ -194,145 +154,248 @@ export default function Join({ path }) {
                 Professional Development Package $375.00
               </label>
             </div>
-            <label htmlFor='registrantName'>
-              <h3 className='font-semibold text-lg text-blue-800 mt-6'>
-                Full Name of Registrant:
-              </h3>
-              <input
-                type='text'
-                name='registrantName'
-                id='registrantName'
-                placeholder='Enter the full name of the registrant here...'
-                {...register("registrantName", {
-                  required: "Registrant full name is required.",
-                })}
-                className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
-              />
-              {errors.name && (
-                <p className='text-red-700'>&uarr; {errors.name.message}</p>
-              )}
-            </label>
-            <label htmlFor='registrantEmail'>
-              <h3 className='font-semibold text-lg text-blue-800'>
-                Email of individual or district representative seeking
-                membership:
-              </h3>
-              <input
-                type='email'
-                name='registrantEmail'
-                id='registrantEmail'
-                placeholder="Enter registrant's email address..."
-                {...register("registrantEmail", {
-                  required: "This email address is required.",
-                })}
-                className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
-              />
-              {errors.registrantEmail && (
-                <p className='text-red-700'>
-                  {" "}
-                  &uarr; {errors.registrantEmail.message}
+            {watchSelectedPackage !== false && (
+              <div className='p-4 border border-blue-400 border-dotted rounded-md'>
+                <h3 className='font-semibold text-lg text-blue-800'>
+                  Step 2: Tell Us Who Is Registering:
+                </h3>
+                <p className='text-sm font-medium'>
+                  Please add the member details below.
                 </p>
-              )}
-            </label>
-            <label htmlFor='leaName'>
-              <h3 className='font-semibold text-lg text-blue-800'>
-                Name of School District:
-              </h3>
-              <input
-                type='text'
-                name='leaName'
-                id='leaName'
-                placeholder='Enter the school district name here...'
-                {...register("leaName")}
-                className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
-              />
-            </label>
-            <label htmlFor='billingAddress'>
-              <h3 className='font-semibold text-lg text-blue-800'>
-                Billing Address:
-              </h3>
-              <input
-                type='text'
-                name='billingAddress'
-                id='billingAddress'
-                placeholder='Enter the billing address here...'
-                {...register("billingAddress", {
-                  required: "This billing address is required.",
-                })}
-                className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
-              />
-              {errors.billingAddress && (
-                <p className='text-red-700'>
-                  {" "}
-                  &uarr; {errors.billingAddress.message}
+                <label htmlFor='registrantName1' className='block ml-6'>
+                  <h3 className='font-semibold text-lg text-blue-800 mt-6'>
+                    Full Name of {watchSelectedPackage === "pd" && `First `}{" "}
+                    Registrant:
+                  </h3>
+                  <input
+                    type='text'
+                    name='registrantName1'
+                    id='registrantName1'
+                    placeholder='Enter the full name of the registrant here...'
+                    {...register("registrantName1", {
+                      required: "Registrant full name is required.",
+                    })}
+                    className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                  />
+                  {errors.name && (
+                    <p className='text-red-700'>&uarr; {errors.name.message}</p>
+                  )}
+                </label>
+                <label htmlFor='registrantEmail1' className='block ml-6'>
+                  <h3 className='font-semibold text-lg text-blue-800'>
+                    Email of {watchSelectedPackage === "pd" && `First `}{" "}
+                    Registrant:
+                  </h3>
+                  <input
+                    type='email'
+                    name='registrantEmail1'
+                    id='registrantEmail1'
+                    placeholder="Enter registrant's email address..."
+                    {...register("registrantEmail1", {
+                      required: "This email address is required.",
+                    })}
+                    className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                  />
+                  {errors.registrantEmail1 && (
+                    <p className='text-red-700'>
+                      {" "}
+                      &uarr; {errors.registrantEmail1.message}
+                    </p>
+                  )}
+                </label>
+                {watchSelectedPackage === "pd" && (
+                  <>
+                    <label
+                      htmlFor='registrantName2'
+                      className='block border-t border-dashed border-blue-500 ml-6'
+                    >
+                      <h3 className='font-semibold text-lg text-blue-800 mt-6'>
+                        Full Name of 2nd Registrant:
+                      </h3>
+                      <input
+                        type='text'
+                        name='registrantName2'
+                        id='registrantName2'
+                        placeholder='Enter the full name of the registrant here...'
+                        {...register("registrantName2", {
+                          required: "Registrant full name is required.",
+                        })}
+                        className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                      />
+                      {errors.name && (
+                        <p className='text-red-700'>
+                          &uarr; {errors.registrantName2.message}
+                        </p>
+                      )}
+                    </label>
+                    <label htmlFor='registrantEmail2' className='block ml-6'>
+                      <h3 className='font-semibold text-lg text-blue-800'>
+                        Email of individual or district representative seeking
+                        membership:
+                      </h3>
+                      <input
+                        type='email'
+                        name='registrantEmail2'
+                        id='registrantEmail2'
+                        placeholder="Enter registrant's email address..."
+                        {...register("registrantEmail2", {
+                          required: "This email address is required.",
+                        })}
+                        className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                      />
+                      {errors.registrantEmail2 && (
+                        <p className='text-red-700'>
+                          {" "}
+                          &uarr; {errors.registrantEmail2.message}
+                        </p>
+                      )}
+                    </label>
+                    <label
+                      htmlFor='registrantName3'
+                      className='block border-t border-dashed border-blue-500 ml-6'
+                    >
+                      <h3 className='font-semibold text-lg text-blue-800 mt-6'>
+                        Full Name of Third Registrant:
+                      </h3>
+                      <input
+                        type='text'
+                        name='registrantName3'
+                        id='registrantName3'
+                        placeholder='Enter the full name of the third registrant here...'
+                        {...register("registrantName3")}
+                        className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                      />
+                    </label>
+                    <label htmlFor='registrantEmail3' className='block ml-6'>
+                      <h3 className='font-semibold text-lg text-blue-800'>
+                        Email of Third Registrant:
+                      </h3>
+                      <input
+                        type='email'
+                        name='registrantEmail3'
+                        id='registrantEmail3'
+                        placeholder="Enter 3rd registrant's email address..."
+                        {...register("registrantEmail3")}
+                        className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                      />
+                    </label>
+                    <label
+                      htmlFor='registrantName4'
+                      className='block border-t border-dashed border-blue-500 ml-6'
+                    >
+                      <h3 className='font-semibold text-lg text-blue-800 mt-6'>
+                        Full Name of Fourth Registrant:
+                      </h3>
+                      <input
+                        type='text'
+                        name='registrantName4'
+                        id='registrantName$'
+                        placeholder='Enter the full name of the fourth registrant here...'
+                        {...register("registrantName4")}
+                        className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                      />
+                    </label>
+                    <label htmlFor='registrantEmail4' className='block ml-6'>
+                      <h3 className='font-semibold text-lg text-blue-800'>
+                        Email of Fourth Registrant:
+                      </h3>
+                      <input
+                        type='email'
+                        name='registrantEmail4'
+                        id='registrantEmail4'
+                        placeholder="Enter 4th registrant's email address..."
+                        {...register("registrantEmail4")}
+                        className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                      />
+                    </label>
+                  </>
+                )}
+              </div>
+            )}
+            {watchSelectedPackage !== false && (
+              <div className='p-4 border border-blue-400 border-dotted rounded-md'>
+                <h3 className='font-semibold text-lg text-blue-800'>
+                  Step 3: Tell Us About Your District/Organization:
+                </h3>
+                <p className='text-sm font-medium'>
+                  Please add the district/organization details below.
                 </p>
-              )}
-            </label>
-            <label htmlFor='purchaseOrder'>
-              <h3 className='font-semibold text-lg text-blue-800'>
-                Enter Purchase Order # or Leave Blank for Will Follow:
-              </h3>
-              <input
-                type='text'
-                name='purchaseOrder'
-                id='purchaseOrder'
-                placeholder='Leave Blank for "Will Follow"'
-                {...register("purchaseOrder")}
-                className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
-              />
-            </label>
-            <label htmlFor='accountsPayableName'>
-              <h3 className='font-semibold text-lg text-blue-800'>
-                Name of Accounts Payable Contact:
-              </h3>
-              <input
-                type='text'
-                name='accountsPayableName'
-                id='accountsPayableName'
-                placeholder='Enter the full name accounts payable contact'
-                {...register("accountsPayableName")}
-                className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
-              />
-            </label>
-            <label htmlFor='accountsPayableEmail'>
-              <h3 className='font-semibold text-lg text-blue-800'>
-                Email of Accounts Payable Contact:
-              </h3>
-              <input
-                type='email'
-                name='accountsPayableEmail'
-                id='accountsPayableEmail'
-                placeholder='Enter accounts payable email here...'
-                {...register("accountsPayableEmail")}
-                className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
-              />
-            </label>
-            <label htmlFor='memberEmails'>
-              <h3 className='font-semibold text-lg text-blue-800'>
-                Email address of members (up to 5 if PD Package selected):
-              </h3>
-              <input
-                type='email'
-                multiple
-                name='memberEmails'
-                id='memberEmails'
-                placeholder='Example: name1@district.com, name2@district.com, ...'
-                {...register("memberEmails")}
-                className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
-              />
-            </label>
-            <ReCAPTCHA
-              sitekey={`6LeIMHIbAAAAAF-Eu5prLZNWXnwaadSsV8OYN1mP`}
-              size='invisible'
-              ref={reRef}
-            />
-            <input
-              type='submit'
-              disabled={disabled}
-              className={`w-1/3 px-6 py-3 mt-6 font-medium rounded-md text-white bg-blue-700 ${
-                disabled && ` opacity-40 text-gray-50 `
-              } transition duration-300 hover:bg-blue-800`}
-            />
+                <label htmlFor='leaName' className='block mt-6 ml-6'>
+                  <h3 className='font-semibold text-lg text-blue-800'>
+                    A) Name of School District/Organization:
+                  </h3>
+                  <input
+                    type='text'
+                    name='leaName'
+                    id='leaName'
+                    placeholder='Enter the school district name here...'
+                    {...register("leaName")}
+                    className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                  />
+                </label>
+                <label htmlFor='purchaseOrder' className='block mt-6 ml-6'>
+                  <h3 className='font-semibold text-lg text-blue-800'>
+                    B) Enter Purchase Order # or Leave Blank for Will Follow:
+                  </h3>
+                  <input
+                    type='text'
+                    name='purchaseOrder'
+                    id='purchaseOrder'
+                    placeholder='Leave Blank for "Will Follow"'
+                    {...register("purchaseOrder")}
+                    className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                  />
+                </label>
+                <label
+                  htmlFor='accountsPayableName'
+                  className='block mt-6 ml-6'
+                >
+                  <h3 className='font-semibold text-lg text-blue-800'>
+                    C) Name of Accounts Payable Contact:
+                  </h3>
+                  <input
+                    type='text'
+                    name='accountsPayableName'
+                    id='accountsPayableName'
+                    placeholder='Enter the full name accounts payable contact'
+                    {...register("accountsPayableName")}
+                    className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                  />
+                </label>
+                <label
+                  htmlFor='accountsPayableEmail'
+                  className='block mt-6 ml-6'
+                >
+                  <h3 className='font-semibold text-lg text-blue-800'>
+                    D) Email of Accounts Payable Contact:
+                  </h3>
+                  <input
+                    type='email'
+                    name='accountsPayableEmail'
+                    id='accountsPayableEmail'
+                    placeholder='Enter accounts payable email here...'
+                    {...register("accountsPayableEmail")}
+                    className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                  />
+                </label>
+              </div>
+            )}
+            {watchSelectedPackage !== false && (
+              <>
+                <ReCAPTCHA
+                  sitekey={`6LeIMHIbAAAAAF-Eu5prLZNWXnwaadSsV8OYN1mP`}
+                  size='invisible'
+                  ref={reRef}
+                />
+                <input
+                  type='submit'
+                  disabled={disabled}
+                  className={`w-1/3 px-6 py-3 mt-6 font-medium rounded-md text-white bg-blue-700 ${
+                    disabled && ` opacity-40 text-gray-50 `
+                  } transition duration-300 hover:bg-blue-800`}
+                />
+              </>
+            )}
           </form>
           {recaptchaPassed === false && (
             <p className='text-center text-red-600 text-xl border border-red-600 p-4 rounded-md mt-6'>
