@@ -1,6 +1,7 @@
 {
   "name": "monmouth-county-curriculum-consortium",
   "version": "1.0.0",
+  "license": "MIT",
   "private": true,
   "description": "Monmouth County Curriculum Consortium",
   "author": "Neil Mastroianni",
