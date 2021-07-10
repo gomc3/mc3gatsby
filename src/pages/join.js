@@ -17,6 +17,7 @@ export default function Join({ path }) {
     handleSubmit,
     reset,
     watch,
+    setValue,
     formState: { errors },
   } = useForm();
   const watchSelectedPackage = watch("memberPackage", false);
@@ -74,6 +75,11 @@ export default function Join({ path }) {
             form below to let us know. When we receive your message, we will
             contact you.
           </h2>
+          <div id='contact-info' className='text-center mt-4 text-sm'>
+            <p>PO Box 549</p>
+            <p>Neptune, NJ 07754</p>
+            <p>Tax ID: 462-572-217/000</p>
+          </div>
           <p className='text-md max-w-md italic mt-2 sm:mt-4 lg:mt-6'>
             The information collected below is handled in accordance with{" "}
             <Link
@@ -95,7 +101,10 @@ export default function Join({ path }) {
           )}
           {formComplete && (
             <button
-              onClick={() => setFormComplete(!formComplete)}
+              onClick={() => {
+                setFormComplete(!formComplete);
+                setValue("memberPackage", false);
+              }}
               className='block mx-auto text-center items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:border-blue-600 focus:shadow-outline-blue active:bg-blue-600 transition ease-in-out duration-150'
             >
               Begin Another Registration Form
@@ -308,6 +317,35 @@ export default function Join({ path }) {
                         className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
                       />
                     </label>
+                    <label
+                      htmlFor='registrantName5'
+                      className='block border-t border-dashed border-blue-500 ml-6'
+                    >
+                      <h3 className='font-semibold text-lg text-blue-800 mt-6'>
+                        Full Name of Fifth Registrant:
+                      </h3>
+                      <input
+                        type='text'
+                        name='registrantName5'
+                        id='registrantName$'
+                        placeholder='Enter the full name of the fifth registrant here...'
+                        {...register("registrantName5")}
+                        className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                      />
+                    </label>
+                    <label htmlFor='registrantEmail5' className='block ml-6'>
+                      <h3 className='font-semibold text-lg text-blue-800'>
+                        Email of Fifth Registrant:
+                      </h3>
+                      <input
+                        type='email'
+                        name='registrantEmail5'
+                        id='registrantEmail5'
+                        placeholder="Enter 5th registrant's email address..."
+                        {...register("registrantEmail5")}
+                        className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
+                      />
+                    </label>
                   </>
                 )}
               </div>
@@ -318,8 +356,14 @@ export default function Join({ path }) {
                   Step 3: Tell Us About Your District/Organization:
                 </h3>
                 <p className='text-sm font-medium'>
-                  Please add the district/organization details below.
+                  Please add the district/organization details below. <br />
+                  Then send the purchase order to (our tax id is located at the
+                  bottom of every page):
                 </p>
+                <div id='contact-info' className='text-left mt-4 ml-6 text-sm'>
+                  <p>PO Box 549</p>
+                  <p>Neptune, NJ 07754</p>
+                </div>
                 <label htmlFor='leaName' className='block mt-6 ml-6'>
                   <h3 className='font-semibold text-lg text-blue-800'>
                     A) Name of School District/Organization:
@@ -328,7 +372,7 @@ export default function Join({ path }) {
                     type='text'
                     name='leaName'
                     id='leaName'
-                    placeholder='Enter the school district name here...'
+                    placeholder='Enter the school district/organization name here...'
                     {...register("leaName")}
                     className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
                   />
@@ -373,7 +417,7 @@ export default function Join({ path }) {
                     type='email'
                     name='accountsPayableEmail'
                     id='accountsPayableEmail'
-                    placeholder='Enter accounts payable email here...'
+                    placeholder='email@accountspayable.com'
                     {...register("accountsPayableEmail")}
                     className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
                   />
