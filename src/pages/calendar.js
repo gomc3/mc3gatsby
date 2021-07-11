@@ -97,10 +97,15 @@ export default function Calendar({ path }) {
                   <div key={item.id}>
                     <div className='rounded-md shadow-md flex flex-col sm:flex-row mb-1 my-1 sm:my-2 lg:my-3 bg-gray-50 hover:bg-gray-100 hover:shadow-xl'>
                       <aside className='bg-blue-700 flex-none rounded-tl-md rounded-tr-md sm:rounded-tr-none sm:rounded-bl-md text-white flex flex-col justify-center w-full sm:w-32 text-center p-2'>
+                        <p className='text-xl'>
+                          {new Date(
+                            item.start.dateTime
+                          ).toLocaleDateString("en-US", { weekday: "long" })}
+                        </p>
                         <p className='text-md'>
                           {new Date(
                             item.start.dateTime
-                          ).toLocaleDateString("en-US", { month: "short" })}
+                          ).toLocaleDateString("en-US", { month: "long" })}
                         </p>
                         <p className='text-5xl font-bold'>
                           {new Date(
