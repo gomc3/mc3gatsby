@@ -183,8 +183,10 @@ export default function Join({ path }) {
                     })}
                     className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
                   />
-                  {errors.name && (
-                    <p className='text-red-700'>&uarr; {errors.name.message}</p>
+                  {errors.registrantEmail1 && (
+                    <p className='text-red-700'>
+                      &uarr; {errors.registrantName1.message}
+                    </p>
                   )}
                 </label>
                 <label htmlFor='registrantEmail1' className='block ml-6'>
@@ -399,9 +401,16 @@ export default function Join({ path }) {
                     name='accountsPayableName'
                     id='accountsPayableName'
                     placeholder='Enter the full name accounts payable contact'
-                    {...register("accountsPayableName")}
+                    {...register("accountsPayableName", {
+                      required: "Accounts Payable Name Required",
+                    })}
                     className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
                   />
+                  {errors.accountsPayableName && (
+                    <p className='text-red-700'>
+                      &uarr; {errors.accountsPayableName.message}
+                    </p>
+                  )}
                 </label>
                 <label
                   htmlFor='accountsPayableEmail'
@@ -415,9 +424,16 @@ export default function Join({ path }) {
                     name='accountsPayableEmail'
                     id='accountsPayableEmail'
                     placeholder='email@accountspayable.com'
-                    {...register("accountsPayableEmail")}
+                    {...register("accountsPayableEmail", {
+                      required: "Accounts Payable Email Required",
+                    })}
                     className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
                   />
+                  {errors.accountsPayableEmail && (
+                    <p className='text-red-700'>
+                      &uarr; {errors.accountsPayableEmail.message}
+                    </p>
+                  )}
                 </label>
               </div>
             )}
