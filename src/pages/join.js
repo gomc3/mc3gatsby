@@ -116,7 +116,7 @@ export default function Join({ path }) {
             action='/api/joinmc3'
             className={`${formComplete && `hidden`} grid grid-cols-1 space-y-3`}
           >
-            <div className='p-4 border border-blue-400 border-dotted rounded-md'>
+            <div className='p-4 border-2 border-blue-400 border-dotted rounded-md'>
               <h3 className='font-semibold text-lg text-blue-800'>
                 Step 1: Select a Membership Package:
               </h3>
@@ -164,7 +164,7 @@ export default function Join({ path }) {
               </label>
             </div>
             {watchSelectedPackage !== false && (
-              <div className='p-4 border border-blue-400 border-dotted rounded-md'>
+              <div className='p-4 border-2 border-blue-500 border-dotted rounded-md'>
                 <h3 className='font-semibold text-lg text-blue-800'>
                   Step 2: Tell Us Who Is Registering:
                 </h3>
@@ -351,7 +351,7 @@ export default function Join({ path }) {
               </div>
             )}
             {watchSelectedPackage !== false && (
-              <div className='p-4 border border-blue-400 border-dotted rounded-md'>
+              <div className='p-4 border-2 border-blue-600 border-dotted rounded-md'>
                 <h3 className='font-semibold text-lg text-blue-800'>
                   Step 3: Tell Us About Your District/Organization:
                 </h3>
