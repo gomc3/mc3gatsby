@@ -71,9 +71,8 @@ export default function Join({ path }) {
           </div>
 
           <h2 className='text-lg text-gray-700 max-w-screen-sm'>
-            If you or your district are interested in joining MC3, fill out the
-            form below to let us know. When we receive your message, we will
-            contact you.
+            If you or your district are interested in joining MC3, please
+            complete the form below.
           </h2>
           <div id='contact-info' className='text-center mt-4 text-sm'>
             <p>PO Box 549</p>
@@ -120,13 +119,11 @@ export default function Join({ path }) {
               <h3 className='font-semibold text-lg text-blue-800'>
                 Step 1: Select a Membership Package:
               </h3>
-              <p className='text-sm font-medium'>
-                Please indicate the package you anticipate selecting.
-              </p>
               <p className='text-sm mt-4 mb-6'>
-                The PD Package includes General Membership fee for 5 attendees,
-                Winter Summit fee, and 5 Topical Breakout Sessions fee for up to
-                5 Registrants per district.
+                The Professional Development Package is for five participants
+                from the same District and includes General Membership,
+                attendance at the Winter Summit and admittance to 5 Topical
+                Breakout Sessions.
               </p>
               {errors.memberPackage && (
                 <p className='text-red-700'>
@@ -147,7 +144,7 @@ export default function Join({ path }) {
                   })}
                   className='form-radio text-blue-800 my-2 mr-3 h-5 w-5 border border-blue-700'
                 />
-                General Package $75.00 per person
+                General Package $75.00 (General Membership for 1 Person)
               </label>
               <label htmlFor='pd-package' className='flex items-center'>
                 <input
@@ -199,7 +196,7 @@ export default function Join({ path }) {
                     type='email'
                     name='registrantEmail1'
                     id='registrantEmail1'
-                    placeholder="Enter registrant's email address..."
+                    placeholder='registrant@example.com'
                     {...register("registrantEmail1", {
                       required: "This email address is required.",
                     })}
@@ -219,13 +216,13 @@ export default function Join({ path }) {
                       className='block border-t border-dashed border-blue-500 ml-6'
                     >
                       <h3 className='font-semibold text-lg text-blue-800 mt-6'>
-                        Full Name of 2nd Registrant:
+                        Full Name of Second Registrant:
                       </h3>
                       <input
                         type='text'
                         name='registrantName2'
                         id='registrantName2'
-                        placeholder='Enter the full name of the registrant here...'
+                        placeholder='Enter the full name of the second registrant here...'
                         {...register("registrantName2", {
                           required: "Registrant full name is required.",
                         })}
@@ -246,7 +243,7 @@ export default function Join({ path }) {
                         type='email'
                         name='registrantEmail2'
                         id='registrantEmail2'
-                        placeholder="Enter registrant's email address..."
+                        placeholder='registrant2@example.com'
                         {...register("registrantEmail2", {
                           required: "This email address is required.",
                         })}
@@ -283,7 +280,7 @@ export default function Join({ path }) {
                         type='email'
                         name='registrantEmail3'
                         id='registrantEmail3'
-                        placeholder="Enter 3rd registrant's email address..."
+                        placeholder='registrant3@example.com'
                         {...register("registrantEmail3")}
                         className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
                       />
@@ -312,7 +309,7 @@ export default function Join({ path }) {
                         type='email'
                         name='registrantEmail4'
                         id='registrantEmail4'
-                        placeholder="Enter 4th registrant's email address..."
+                        placeholder='registrant4@example.com'
                         {...register("registrantEmail4")}
                         className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
                       />
@@ -341,7 +338,7 @@ export default function Join({ path }) {
                         type='email'
                         name='registrantEmail5'
                         id='registrantEmail5'
-                        placeholder="Enter 5th registrant's email address..."
+                        placeholder='registrant5@example.com'
                         {...register("registrantEmail5")}
                         className='form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500'
                       />
