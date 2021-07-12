@@ -33,13 +33,7 @@ export default function IndexPage({ path }) {
                   to="/join"
                   className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700  focus:outline-none transition duration-150 ease-in-out hover:bg-blue-800 hover:shadow-xl transform hover:scale-105 focus:border-blue-500 px-8 py-3 md:py-4 md:px-10 md:text-lg"
                 >
-                  Join MC
-                  <span
-                    className="relative text-sm z-0"
-                    style={{ lineHeight: 0, top: "-0.5em" }}
-                  >
-                    3
-                  </span>
+                  Become a Member
                 </Link>
                 <button
                   onClick={() => handleSignup()}
