@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import * as React from "react";
 import { MDXProvider } from "@mdx-js/react";
 import YouTube from "./youtube";
 import AudioFile from "./audio";
@@ -6,11 +6,6 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
 export default function Layout({ children, path }) {
-  useEffect(() => {
-    const scriptTag = document.createElement("script");
-    scriptTag.src = "/mailer.js";
-    document.head.appendChild(scriptTag);
-  });
   const components = {
     YouTube: YouTube,
     AudioFile: AudioFile,
