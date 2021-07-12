@@ -238,8 +238,7 @@ export default function Join({ path }) {
                     </label>
                     <label htmlFor='registrantEmail2' className='block ml-6'>
                       <h3 className='font-semibold text-lg text-blue-800'>
-                        Email of individual or district representative seeking
-                        membership:
+                        Email of Second Registrant:
                       </h3>
                       <input
                         type='email'
