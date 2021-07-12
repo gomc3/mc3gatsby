@@ -73,12 +73,6 @@ export default function About({ path, data }) {
       socialMediaImage: "none",
       socialMediaLink: null,
     },
-    {
-      fullName: "Deborah Bleisnick",
-      role: "Executive County Representative",
-      socialMediaImage: "none",
-      socialMediaLink: null,
-    },
   ];
   return (
     <Layout path={path}>
