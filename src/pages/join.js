@@ -71,10 +71,12 @@ export default function Join({ path }) {
           </div>
 
           <h2 className='text-lg text-gray-700 max-w-screen-sm'>
-            If you or your district are interested in joining MC3, please
-            complete the form below.
+            Ready to take the next step? If you or your district are interested
+            in joining MC3, please complete the form below. Our mailing address
+            is listed below.
           </h2>
           <div id='contact-info' className='text-center mt-4 text-sm'>
+            <p>Monmouth County Curriculum Consortium (MC3)</p>
             <p>PO Box 549</p>
             <p>Neptune, NJ 07754</p>
             <p>Tax ID: 462-572-217/000</p>
@@ -120,10 +122,15 @@ export default function Join({ path }) {
                 Step 1: Select a Membership Package:
               </h3>
               <p className='text-sm mt-4 mb-6'>
-                The Professional Development Package is for five participants
-                from the same District and includes General Membership,
-                attendance at the Winter Summit and admittance to 5 Topical
-                Breakout Sessions.
+                We offer two membership packages.{" "}
+                <span className='font-bold'>General Membership</span> is for an
+                individual ($75).{" "}
+                <span className='font-bold'>
+                  The Professional Development Package
+                </span>{" "}
+                is for up to five participants from the same District and
+                includes General Membership, attendance at the Winter Summit and
+                admittance to 5 Topical Breakout Sessions.
               </p>
               {errors.memberPackage && (
                 <p className='text-red-700'>
@@ -144,7 +151,7 @@ export default function Join({ path }) {
                   })}
                   className='form-radio text-blue-800 my-2 mr-3 h-5 w-5 border border-blue-700'
                 />
-                General Package $75.00 (General Membership for 1 Person)
+                General Membership - $75.00 (1 Participant)
               </label>
               <label htmlFor='pd-package' className='flex items-center'>
                 <input
@@ -157,7 +164,8 @@ export default function Join({ path }) {
                   })}
                   className='form-radio text-blue-800 my-2 mr-3 h-5 w-5 border border-blue-800'
                 />
-                Professional Development Package $375.00
+                Professional Development Package - $375.00 (Up to 5
+                Participants)
               </label>
             </div>
             {watchSelectedPackage !== false && (
