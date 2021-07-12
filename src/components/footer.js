@@ -46,12 +46,12 @@ export default function Footer() {
         >
           Privacy Policy
         </Link>
-        <Link
-          to='/about'
+        <a
+          href='https://www.nj.gov/education/broadcasts/'
           className='text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150 flex-1'
         >
-          About
-        </Link>
+          NJDOE (broadcasts)
+        </a>
       </nav>
       <div id='contact-info' className='text-center mt-4 text-sm'>
         <p>PO Box 549</p>
