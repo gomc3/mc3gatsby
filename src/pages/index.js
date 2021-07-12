@@ -6,12 +6,10 @@ import HeroImage from "../components/heroImage";
 import Layout from "../components/layout";
 
 export default function IndexPage({ path }) {
-  const handleSignup = () => {
-    window.ml_webform_4381822("show");
-  };
   return (
     <Layout path={path}>
       <Seo title="Home" />
+
       <header className="w-full bg-blue-50 px-4 lg:px-12">
         <div className="flex flex-wrap items-center justify-center mx-auto lg:space-x-12">
           <div className="pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2">
@@ -35,12 +33,6 @@ export default function IndexPage({ path }) {
                 >
                   Become a Member
                 </Link>
-                <button
-                  onClick={() => handleSignup()}
-                  className="text-blue-700 mt-6 hidden"
-                >
-                  Sign Up for Email Updates
-                </button>
               </div>
             </div>
           </div>

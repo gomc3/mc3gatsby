@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { FaTwitter } from "react-icons/fa";
+import Subscribe from "../components/subscribe";
 
 export default function Footer() {
   return (
@@ -59,7 +60,11 @@ export default function Footer() {
           NJDOE Broadcasts
         </a>
       </nav>
+      <div className="flex justify-center items-center mt-4">
+        <Subscribe />
+      </div>
       <div id="contact-info" className="text-center mt-4 text-sm">
+        <p>Monmouth County Curriculum Consortium</p>
         <p>PO Box 549</p>
         <p>Neptune, NJ 07754</p>
         <p>Tax ID: 462-572-217/000</p>
