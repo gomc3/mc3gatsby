@@ -33,7 +33,7 @@ export default function Footer() {
           <span className='sr-only'>view the Twitter profile for MC3</span>
         </a>
       </div>
-      <nav className='mx-auto mt-3 lg:mt-6 flex flex-col sm:flex-row max-w-lg text-center space-y-12 sm:space-y-0'>
+      <nav className='mx-auto mt-3 lg:mt-6 flex flex-col sm:flex-row max-w-xl text-center space-y-12 sm:space-y-0'>
         <Link
           to='/terms'
           className='text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150 flex-1'
@@ -45,6 +45,12 @@ export default function Footer() {
           className='text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150 flex-1'
         >
           Privacy Policy
+        </Link>
+        <Link
+          to='/scholarship'
+          className='text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150 flex-1'
+        >
+          Scholarships
         </Link>
         <a
           href='https://www.nj.gov/education/broadcasts/'
