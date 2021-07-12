@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import PageTitle from "../components/page-title";
 import Thinker from "../components/thinker";
 import { HiCloudDownload, HiCalendar, HiMap } from "react-icons/hi";
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 
 export default function Calendar({ path }) {
   const [data, setData] = useState({ items: [] });
@@ -90,9 +90,9 @@ export default function Calendar({ path }) {
           <section className="grid grid-cols-1 gap-2 max-w-2xl mx-auto my-2 sm:my-4 lg:my-6 ">
             {data.items.length ? (
               data.items.map((item, i) => {
-                const urlSearchParams = new URLSearchParams(item.htmlLink);
-                const params = Object.fromEntries(urlSearchParams.entries());
-                const copyUrl = `https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${params["https://www.google.com/calendar/event?eid"]}&tmsrc=${process.env.GATSBY_GOOGLE_CALENDAR_ID}&catt=false&pprop=HowCreated:DUPLICATE&hl=en&scp=ONE`;
+                // const urlSearchParams = new URLSearchParams(item.htmlLink);
+                // const params = Object.fromEntries(urlSearchParams.entries());
+                // const copyUrl = `https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${params["https://www.google.com/calendar/event?eid"]}&tmsrc=${process.env.GATSBY_GOOGLE_CALENDAR_ID}&catt=false&pprop=HowCreated:DUPLICATE&hl=en&scp=ONE`;
                 return (
                   <div key={item.id}>
                     <div className="rounded-md shadow-md flex flex-col sm:flex-row mb-1 my-1 sm:my-2 lg:my-3 bg-gray-50 hover:bg-gray-100 hover:shadow-xl">
