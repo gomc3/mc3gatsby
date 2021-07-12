@@ -22,6 +22,8 @@ import {
   HiOutlineHome,
   HiIdentification,
   HiOutlineIdentification,
+  HiChatAlt,
+  HiOutlineChatAlt,
 } from "react-icons/hi";
 
 const query = graphql`
@@ -100,6 +102,7 @@ export default function Navbar(props) {
                         Link: HiExternalLink,
                         Cloud: HiCloud,
                         Identification: HiIdentification,
+                        ChatAlt: HiChatAlt,
                       };
                       const iconsOutline = {
                         Calendar: HiOutlineCalendar,
@@ -110,6 +113,7 @@ export default function Navbar(props) {
                         Link: HiOutlineExternalLink,
                         Cloud: HiOutlineCloud,
                         Identification: HiOutlineIdentification,
+                        ChatAlt: HiOutlineChatAlt,
                       };
                       const MenuIcon = icons[node.menuIcon];
                       const MenuIconOutline = iconsOutline[node.menuIcon];
