@@ -145,7 +145,7 @@ export default function Subscribe() {
                       id="email"
                       name="email"
                       placeholder="Example: username@yourdomain.com"
-                      className="w-full p-1 bg-white text-blue-800 h-10 text-xl text-center"
+                      className="w-full p-1 bg-white text-blue-800 h-10 text-sm md:text-xl text-center"
                       {...register("email", {
                         required: "Please provide your best email address",
                       })}
