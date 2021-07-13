@@ -25,15 +25,6 @@ export default function Footer() {
           Contact Us
         </Link>
       </div>
-      <div className="mt-4 lg:mt-8 flex justify-center text-center">
-        <a href="https://twitter.com/Mc3Network" alt="Twitter bird icon">
-          <FaTwitter
-            color="3B82F6"
-            className="w-7 h-7 my-8 sm:my-3 lg:my-1 inline transition duration-500 ease-in-out transform hover:scale-150"
-          />
-          <span className="sr-only">view the Twitter profile for MC3</span>
-        </a>
-      </div>
       <nav className="mx-auto mt-3 lg:mt-6 flex flex-col sm:flex-row justify-between  max-w-xl text-center space-y-12 sm:space-y-0">
         <Link
           to="/terms"
@@ -60,10 +51,17 @@ export default function Footer() {
           NJDOE Broadcasts
         </a>
       </nav>
-      <div className="flex justify-center items-center mt-4">
+      <div className="mt-2 flex items-center justify-center text-center">
+        <a href="https://twitter.com/Mc3Network" alt="Twitter bird icon">
+          <FaTwitter
+            color="3B82F6"
+            className="w-6 h-6 my-6 sm:my-3 lg:my-1 inline transition duration-500 ease-in-out transform hover:scale-150"
+          />
+          <span className="sr-only">view the Twitter profile for MC3</span>
+        </a>
         <Subscribe />
       </div>
-      <div id="contact-info" className="text-center mt-4 text-sm">
+      <div id="contact-info" className="text-center mt-1 text-sm">
         <p>Monmouth County Curriculum Consortium</p>
         <p>PO Box 549</p>
         <p>Neptune, NJ 07754</p>

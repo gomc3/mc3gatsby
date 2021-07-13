@@ -56,55 +56,58 @@ export default function Subscribe() {
   return (
     <>
       <button
-        type='button'
+        type="button"
         onClick={openModal}
-        className='px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 hover:text-black bg-gray-200 hover:bg-gray-300 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
+        className="px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-gray-600 hover:text-black focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
       >
-        <HiMail className='inline mr-3 text-lg' />
-        Subscribe to Email Updates
+        <HiMail
+          color="3B82F6"
+          className="inlinetext-lg w-6 h-6 transition duration-500 ease-in-out transform hover:scale-150"
+        />
+        <span className="sr-only">Subscribe to Email Updates</span>
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
-          as='div'
-          className='fixed inset-0 z-10 overflow-y-auto'
+          as="div"
+          className="fixed inset-0 z-10 overflow-y-auto"
           onClose={closeModal}
         >
-          <div className='min-h-screen px-4 text-center'>
-            <Dialog.Overlay className='fixed inset-0 bg-black opacity-40' />
+          <div className="min-h-screen px-4 text-center">
+            <Dialog.Overlay className="fixed inset-0 bg-black opacity-40" />
 
             {/* This element is to trick the browser into centering the modal contents. */}
             <span
-              className='inline-block h-screen align-middle'
-              aria-hidden='true'
+              className="inline-block h-screen align-middle"
+              aria-hidden="true"
             >
               &#8203;
             </span>
             <Transition.Child
               as={Fragment}
-              enter='ease-out duration-300'
-              enterFrom='opacity-0 scale-95'
-              enterTo='opacity-100 scale-100'
-              leave='ease-in duration-200'
-              leaveFrom='opacity-100 scale-100'
-              leaveTo='opacity-0 scale-95'
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
             >
-              <div className=' bg-gradient-to-br to-white from-blue-100 inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl'>
+              <div className=" bg-gradient-to-br to-white from-blue-100 inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                 <Dialog.Title
-                  as='h3'
-                  className='text-xl text-center font-medium leading-6 text-blue-900 mb-4'
+                  as="h3"
+                  className="text-2xl text-center font-medium leading-6 text-blue-900 mb-4"
                 >
                   Want to Receive our Email Updates?
                 </Dialog.Title>
                 {recaptchaPassed === false && (
-                  <p className='text-center text-red-600 text-xl border border-red-600 p-4 rounded-md'>
+                  <p className="text-center text-red-600 text-xl border border-red-600 p-4 rounded-md">
                     Oops! It looks like Google blocked your submission because
                     it thinks you are a robot. Your submission was not sent to
                     us.
                   </p>
                 )}
                 {formComplete && (
-                  <p className='text-xl text-blue-600 text-center'>
+                  <p className="text-xl text-blue-600 text-center">
                     Almost There! <br />
                     Please check the email you entered to confirm your
                     subscription.
@@ -115,34 +118,34 @@ export default function Subscribe() {
                     formComplete && `hidden`
                   }`}
                   onSubmit={handleSubmit(onSubmit)}
-                  method='POST'
-                  action='/api/subscribe'
+                  method="POST"
+                  action="/api/subscribe"
                 >
-                  <label htmlFor='name' className='block'>
-                    <h3 className='text-xs text-gray-600 uppercase'>
+                  <label htmlFor="name" className="block">
+                    <h3 className="text-xs text-gray-600 uppercase mb-2 text-center">
                       Your Name:
                     </h3>
                     <input
-                      type='text'
-                      id='name'
-                      name='name'
-                      placeholder='Example: Melissa Bruce'
-                      className='w-full p-1 bg-white text-blue-800'
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Example: Melissa Bruce"
+                      className="w-full p-1 bg-white text-blue-800 h-10 text-xl text-center"
                       {...register("name", {
                         required: "Please provide a name",
                       })}
                     />
                   </label>
-                  <label htmlFor='email' className='blox'>
-                    <h3 className='text-xs text-gray-600 uppercase'>
+                  <label htmlFor="email" className="block">
+                    <h3 className="text-xs text-gray-600 uppercase mb-2 text-center">
                       Your Email:
                     </h3>
                     <input
-                      type='email'
-                      id='email'
-                      name='email'
-                      placeholder='Example: username@yourdomain.com'
-                      className='w-full p-1 bg-white text-blue-800'
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Example: username@yourdomain.com"
+                      className="w-full p-1 bg-white text-blue-800 h-10 text-xl text-center"
                       {...register("email", {
                         required: "Please provide your best email address",
                       })}
@@ -150,12 +153,12 @@ export default function Subscribe() {
                   </label>
                   <ReCAPTCHA
                     sitekey={`6LeIMHIbAAAAAF-Eu5prLZNWXnwaadSsV8OYN1mP`}
-                    size='invisible'
+                    size="invisible"
                     ref={reRef}
                   />
                   <input
-                    type='submit'
-                    value='Subscribe'
+                    type="submit"
+                    value="Subscribe"
                     className={`${
                       disabled && `opacity-25 `
                     } hover:shadow-md  px-4 py-2 text-sm font-medium bg-gradient-to-b from-blue-900 to-blue-700 ${
@@ -166,25 +169,25 @@ export default function Subscribe() {
                   />
                 </form>
                 <div className={`mt-2 ${formComplete && `hidden`}`}>
-                  <p className='text-sm text-gray-500'>
+                  <p className="text-sm text-gray-500">
                     You can unsubscribe anytime. For more details, review our{" "}
                     <Link
-                      to='/privacy'
-                      className='text-blue-700 hover:underline'
+                      to="/privacy"
+                      className="text-blue-700 hover:underline"
                     >
                       Privacy Policy
                     </Link>
                     .
                   </p>
                 </div>
-                <div className='flex justify-center mt-3'>
+                <div className="flex justify-center mt-3">
                   <button
-                    type='button'
+                    type="button"
                     onClick={() => {
                       closeModal();
                       setFormComplete(false);
                     }}
-                    className='px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 hover:text-black bg-gray-200 hover:bg-gray-300 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
+                    className="px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 hover:text-black bg-gray-200 hover:bg-gray-300 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
                   >
                     Close
                   </button>
