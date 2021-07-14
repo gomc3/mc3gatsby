@@ -166,7 +166,7 @@ export default function Calendar({ path }) {
                             </a>
                           </div> */}
 
-                          {item.attachments ? (
+                          {/* {item.attachments ? (
                             <ul className="flex flex-col sm:flex-row space-between items-center justify-center my-6 sm:my-3 space-x-0 sm:space-x-2 lg:space-x-3 space-y-6 sm:space-y-0">
                               {item.attachments.map((file) => {
                                 return (
@@ -188,7 +188,7 @@ export default function Calendar({ path }) {
                             </ul>
                           ) : (
                             ""
-                          )}
+                          )} */}
                         </div>
                       </article>
                     </div>
