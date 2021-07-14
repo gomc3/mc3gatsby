@@ -35,7 +35,7 @@ export default async function formHandler(req, res) {
       });
       const data = [[timeStamp, name, email, reason, question]];
       let today = new Date();
-      const listEmails = {
+      const memberIds = {
         "Agenda Item": ["60ee3b02a70c66502f74972a", "60ee3b0210af375d669d7c4d"],
         Billing: ["60ee3b0290b94052ef2511c0", "60ee3b0303303083d5a2aaf9"],
         "Professional Development": [
@@ -69,7 +69,7 @@ export default async function formHandler(req, res) {
             name: `Question from ${name}: ${email}`,
             desc: question,
             pos: "bottom",
-            idMembers: listEmails[reason],
+            idMembers: memberIds[reason],
             due: `${today.setDate(today.getDate() + 2)}`,
             idLabels: ["60ed99f9c824613830751364"],
           },
