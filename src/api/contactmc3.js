@@ -1,5 +1,4 @@
 const { google } = require("googleapis");
-import fetch from "node-fetch";
 import axios from "axios";
 
 export default async function formHandler(req, res) {
