@@ -51,11 +51,15 @@ export default function Footer() {
           NJDOE Broadcasts
         </a>
       </nav>
-      <div className="mt-2 flex items-center justify-center text-center">
-        <a href="https://twitter.com/Mc3Network" alt="Twitter bird icon">
+      <div className="my-3 sm:my-4 md:my-6 mx-auto max-w-sm flex items-center justify-around text-center">
+        <a
+          href="https://twitter.com/Mc3Network"
+          alt="Twitter bird icon"
+          className="w-10"
+        >
           <FaTwitter
             color="3B82F6"
-            className="w-6 h-6 my-6 sm:my-3 lg:my-1 inline transition duration-500 ease-in-out transform hover:scale-150"
+            className="w-6 h-6 inline transition duration-500 ease-in-out transform hover:scale-150"
           />
           <span className="sr-only">view the Twitter profile for MC3</span>
         </a>

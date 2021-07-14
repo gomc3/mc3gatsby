@@ -58,11 +58,11 @@ export default function Subscribe() {
       <button
         type="button"
         onClick={openModal}
-        className="px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-gray-600 hover:text-black focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+        className="w-10 text-center border border-transparent text-base leading-6 font-medium rounded-md text-gray-600 hover:text-black focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
       >
         <HiMail
           color="3B82F6"
-          className="inlinetext-lg w-6 h-6 transition duration-500 ease-in-out transform hover:scale-150"
+          className="inline text-lg w-6 h-6 transition duration-500 ease-in-out transform hover:scale-150"
         />
         <span className="sr-only">Subscribe to Email Updates</span>
       </button>
