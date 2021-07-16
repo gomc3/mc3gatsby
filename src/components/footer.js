@@ -44,6 +44,12 @@ export default function Footer() {
         >
           Scholarships
         </Link>
+        <Link
+          to="/archive"
+          className="text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150"
+        >
+          Archive
+        </Link>
         <a
           href="https://www.nj.gov/education/broadcasts/"
           className="text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150"
