@@ -16,7 +16,7 @@ export default function BlogCard({
   return (
     <div className='rounded-md shadow-md my-2 sm:my-3 lg:my-4 bg-gray-100 h-full'>
       {cover ? (
-        <aside className='relative rounded-tl-md rounded-tr-md text-white h-40 sm:h-48 md:h-56 lg:h-60 w-full text-center overflow-hidden'>
+        <aside className='relative rounded-tl-md rounded-tr-md text-white h-40 sm:h-48 md:h-56 lg:h-60 w-full text-center overflow-hidden aspect-w-2 aspect-h-1'>
           <Link
             to={slug}
             className='no-underline hover:underline hover:text-blue-800'
