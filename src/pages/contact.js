@@ -69,7 +69,7 @@ export default function Contact({ path }) {
             <PageTitle
               title="Contact Us"
               icon={
-                <HiChatAlt2 className="text-3xl sm:text-5xl lg:text-6xl mt-0 inline-block" />
+                <HiChatAlt2 className="text-3xl sm:text-5xl lg:text-6xl -mt-3 inline-block" />
               }
             />
           </div>

@@ -80,7 +80,7 @@ export default function Join({ path }) {
             <PageTitle
               title="Join MC3"
               icon={
-                <HiPlus className="text-3xl sm:text-5xl lg:text-6xl mt-0 inline-block" />
+                <HiPlus className="text-3xl sm:text-5xl lg:text-6xl -mt-3 inline-block" />
               }
             />
           </div>

@@ -18,23 +18,23 @@ export default function Ignite({
   return (
     <Layout path={path}>
       <Seo
-        title='Ignite'
-        locale='en-US'
-        description='Check out one of our ignite presentations. They are designed to start conversations.'
+        title="Ignite"
+        locale="en-US"
+        description="Check out one of our ignite presentations. They are designed to start conversations."
       />
-      <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12'>
-        <header className='mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center'>
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <header className="mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center">
           <PageTitle
-            title='Ignite'
+            title="Ignite"
             icon={
-              <HiSun className='text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block' />
+              <HiSun className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 -mt-3 inline-block" />
             }
           >
             Perhaps one of these ignites will be the start of something great
             for you and your students.
           </PageTitle>
         </header>
-        <section className='grid grid-cols-1 gap-y-8 md:gap-y-10 max-w-2xl mx-auto my-2 sm:my-4 lg:my-6 '>
+        <section className="grid grid-cols-1 gap-y-8 md:gap-y-10 max-w-2xl mx-auto my-2 sm:my-4 lg:my-6 ">
           {nodes.map((post) => {
             return <BlogCard key={post.id} postData={post} />;
           })}

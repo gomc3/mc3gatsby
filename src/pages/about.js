@@ -81,7 +81,7 @@ export default function About({ path, data }) {
         <PageTitle
           title="About Us"
           icon={
-            <HiIdentification className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block" />
+            <HiIdentification className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 -mt-3 inline-block" />
           }
         />
         <p className="text-lg text-gray-700 max-w-screen-sm">

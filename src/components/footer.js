@@ -11,7 +11,7 @@ export default function Footer() {
           Are you ready to join us?
         </h2>
       </header>
-      <div className="mt-8 flex flex-col items-center sm:flex-row sm:justify-center text-center space-y-12 sm:space-y-0 sm:space-x-4">
+      <div className="my-6 flex flex-col items-center sm:flex-row sm:justify-center text-center space-y-12 sm:space-y-0 sm:space-x-4">
         <Link
           to="/join"
           className="px-5 py-3 text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
@@ -25,7 +25,7 @@ export default function Footer() {
           Contact Us
         </Link>
       </div>
-      <nav className="mx-auto mt-3 lg:mt-6 flex flex-col sm:flex-row justify-between  max-w-xl text-center space-y-12 sm:space-y-0">
+      <nav className="mx-auto my-6 flex flex-col sm:flex-row justify-between  max-w-xl text-center space-y-12 sm:space-y-0">
         <Link
           to="/terms"
           className="text-gray-600 font-medium hover:text-blue-700 transition ease-in-out duration-150"
