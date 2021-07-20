@@ -2,9 +2,8 @@ const { google } = require("googleapis");
 import axios from "axios";
 
 export default async function formHandler(req, res) {
-  const {
-    email,
-    phone,
+  let {
+    timeStamp,
     memberPackage,
     registrantName1,
     registrantEmail1,
@@ -17,12 +16,9 @@ export default async function formHandler(req, res) {
     registrantName5,
     registrantEmail5,
     leaName,
-    billingAddress,
     purchaseOrder,
     accountsPayableName,
     accountsPayableEmail,
-    memberEmails,
-    timeStamp,
     token,
   } = req.body;
   const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_SECRETKEY}&response=${token}`;
@@ -75,9 +71,9 @@ export default async function formHandler(req, res) {
           purchaseOrder,
           accountsPayableName,
           accountsPayableEmail,
-          memberEmails,
         ],
       ];
+
       async function gsrun(client) {
         const gsapi = google.sheets({ version: "v4", auth: client });
         const request = {
