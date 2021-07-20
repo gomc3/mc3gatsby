@@ -52,30 +52,30 @@ export default function Scholarship({
         url={`${siteUrl}${slug}`}
       />
 
-      <div className='mx-auto px-4 sm:px-6 lg:px-8 mb-12'>
-        <header className='mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center'>
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <header className="mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center">
           <PageTitle
-            title='Scholarship'
+            title="Scholarship"
             icon={
-              <HiAcademicCap className='text-3xl sm:text-5xl lg:text-6xl text-blue-700 mt-0 inline-block' />
+              <HiAcademicCap className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 -mt-3 inline-block" />
             }
           >
             It's your time students! Exlpore scholarship opportunities below:
           </PageTitle>
         </header>
-        <article className='mx-auto max-w-screen-md'>
-          <div className='flex flex-col sm:items-start sm:flex-row sm:p-2'>
-            <div className='mx-auto shadow-md w-52 sm:w-1/3 p-5 rounded-md bg-blue-200 transform -rotate-6'>
+        <article className="mx-auto max-w-screen-md">
+          <div className="flex flex-col sm:items-start sm:flex-row sm:p-2">
+            <div className="mx-auto shadow-md w-52 sm:w-1/3 p-5 rounded-md bg-blue-200 transform -rotate-6">
               <StaticImage
-                src='../images/happyGrad.jpg'
-                alt='graduate jumping in the air waving a peace sign while smiling'
-                loading='lazy'
-                placeholder='tracedSVG'
-                className='rounded-md shadow-sm hover:shadow-lg filter transition duration-500 ease-in-out grayscale hover:grayscale-0 transform -rotate-3 hover:rotate-0 hover:scale-105 self-center'
+                src="../images/happyGrad.jpg"
+                alt="graduate jumping in the air waving a peace sign while smiling"
+                loading="lazy"
+                placeholder="tracedSVG"
+                className="rounded-md shadow-sm hover:shadow-lg filter transition duration-500 ease-in-out grayscale hover:grayscale-0 transform -rotate-3 hover:rotate-0 hover:scale-105 self-center"
               />
             </div>
 
-            <div className='mt-3 sm:mt-0 sm:w-2/3 sm:pl-6 prose prose-blue lg:prose-lg'>
+            <div className="mt-3 sm:mt-0 sm:w-2/3 sm:pl-6 prose prose-blue lg:prose-lg">
               <h2>Upcoming Graduates...</h2>
               <p>
                 <strong>We salute you!</strong> Providing you with opportunities
@@ -94,8 +94,8 @@ export default function Scholarship({
               </p>
             </div>
           </div>
-          <hr className='my-6 border-blue-200 w-2/3 mx-auto' />
-          <p className='text-sm text-center mx-auto'>
+          <hr className="my-6 border-blue-200 w-2/3 mx-auto" />
+          <p className="text-sm text-center mx-auto">
             Scholarship Information Last Updated{" "}
             {new Date(modifiedTime).toLocaleDateString("en-US", {
               month: "short",
@@ -103,7 +103,7 @@ export default function Scholarship({
               year: "numeric",
             })}
           </p>
-          <div className='mx-auto max-w-screen-md py-2 sm:py-3 md:py-4 lg:py-5 px-3 sm:px-4 md:px-6 lg:px-8 prose prose-blue md:prose-lg lg:prose-xl'>
+          <div className="mx-auto max-w-screen-md py-2 sm:py-3 md:py-4 lg:py-5 px-3 sm:px-4 md:px-6 lg:px-8 prose prose-blue md:prose-lg lg:prose-xl">
             <MDXRenderer>{body}</MDXRenderer>
           </div>
         </article>
