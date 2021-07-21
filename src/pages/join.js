@@ -394,13 +394,40 @@ export default function Join({ path }) {
                     name="leaName"
                     id="leaName"
                     placeholder="Enter the school district/organization name here..."
-                    {...register("leaName")}
+                    {...register("leaName", {
+                      required: "District/Organization name is required.",
+                    })}
                     className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500"
                   />
+                  {errors.leaName && (
+                    <p className="text-red-700">
+                      &uarr; {errors.leaName.message}
+                    </p>
+                  )}
+                </label>
+                <label htmlFor="billingAddress" className="block mt-6 ml-6">
+                  <h3 className="font-semibold text-lg text-blue-800">
+                    B) Billing Address:
+                  </h3>
+                  <input
+                    type="text"
+                    name="billingAddress"
+                    id="billingAddress"
+                    placeholder="Example: 540 Broadway Long Branch, NJ 07740"
+                    {...register("billingAddress", {
+                      required: "Billing address is required.",
+                    })}
+                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500"
+                  />
+                  {errors.billingAddress && (
+                    <p className="text-red-700">
+                      &uarr; {errors.billingAddress.message}
+                    </p>
+                  )}
                 </label>
                 <label htmlFor="purchaseOrder" className="block mt-6 ml-6">
                   <h3 className="font-semibold text-lg text-blue-800">
-                    B) Enter Purchase Order # or Leave Blank for Will Follow:
+                    C) Enter Purchase Order # or Leave Blank for Will Follow:
                   </h3>
                   <input
                     type="text"
@@ -416,7 +443,7 @@ export default function Join({ path }) {
                   className="block mt-6 ml-6"
                 >
                   <h3 className="font-semibold text-lg text-blue-800">
-                    C) Name of Accounts Payable Contact:
+                    D) Name of Accounts Payable Contact:
                   </h3>
                   <input
                     type="text"
@@ -439,7 +466,7 @@ export default function Join({ path }) {
                   className="block mt-6 ml-6"
                 >
                   <h3 className="font-semibold text-lg text-blue-800">
-                    D) Email of Accounts Payable Contact:
+                    E) Email of Accounts Payable Contact:
                   </h3>
                   <input
                     type="email"
