@@ -120,7 +120,9 @@ export default async function formHandler(req, res) {
                 text: "{{purchaseOrder}}",
                 matchCase: true,
               },
-              replaceText: `${purchaseOrder === "Will Follow" && ""}`,
+              replaceText: `${
+                purchaseOrder === "Will Follow" ? "" : purchaseOrder
+              }`,
             },
           },
           {
