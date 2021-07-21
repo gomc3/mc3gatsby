@@ -243,25 +243,25 @@ export default async function formHandler(req, res) {
           console.log("Errors in the catch");
         }
       }
-      // gsInvoice(client);
-      // async function gsrun(client) {
-      //   const gsapi = google.sheets({ version: "v4", auth: client });
-      //   const request = {
-      //     spreadsheetId: "1-_o0Gf6LgR_l0sTA0J9VtOve45z9egkv0DDfA6w47b8",
-      //     range: "Sheet1!A1:L1",
-      //     valueInputOption: "USER_ENTERED",
-      //     insertDataOption: "INSERT_ROWS",
-      //     resource: { values: data },
-      //   };
-      //   try {
-      //     let googleResponse = await gsapi.spreadsheets.values.append(request);
-      //     return googleResponse.status;
-      //   } catch (err) {
-      //     console.log("Errors in appending: ", err);
-      //     return JSON.stringify(err);
-      //   }
-      // }
-      // gsrun(client);
+      gsInvoice(client);
+      async function gsrun(client) {
+        const gsapi = google.sheets({ version: "v4", auth: client });
+        const request = {
+          spreadsheetId: "1-_o0Gf6LgR_l0sTA0J9VtOve45z9egkv0DDfA6w47b8",
+          range: "Sheet1!A1:L1",
+          valueInputOption: "USER_ENTERED",
+          insertDataOption: "INSERT_ROWS",
+          resource: { values: data },
+        };
+        try {
+          let googleResponse = await gsapi.spreadsheets.values.append(request);
+          return googleResponse.status;
+        } catch (err) {
+          console.log("Errors in appending: ", err);
+          return JSON.stringify(err);
+        }
+      }
+      gsrun(client);
     }
   }
   await getRecaptcha(recaptchaUrl);
