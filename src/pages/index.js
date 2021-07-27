@@ -23,7 +23,7 @@ export default function IndexPage({ path }) {
                 <span className="text-blue-700"> Future of Education!</span>
               </h2>
               <p className="mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
-                Join a group of leaders in educaton that include members from
+                Join a group of leaders in education that include members from
                 over 60 districts in Monmouth and Ocean County.
               </p>
               <div className="flex flex-col items-center justify-center">
