@@ -85,22 +85,15 @@ export default function About({ path, data }) {
           }
         />
         <p className="text-lg text-gray-700 max-w-screen-sm">
-          The Monmouth County Curriculum Consortium (MC
-          <span
-            className="relative text-sm z-0"
-            style={{ lineHeight: 0, top: "-0.5em" }}
-          >
-            3
-          </span>
-          ) is a non-profit educational organization dedicated to sharing ideas
-          and resources to improve learning and leadership in our schools. Since
-          its founding in 2009, it has expanded beyond Monmouth County to
-          include over 60 districts in central New Jersey. Its September-June
-          monthly meeting schedule presents a variety of opportunities to
-          discuss topics like assessment, curriculum, technology, and pedagogy.
-          Attendees typically include district and building administrators,
-          teachers, tech specialists, and representatives from the NJ Department
-          of Education.
+          The Monmouth County Curriculum Consortium (MC3) is a non-profit
+          educational organization dedicated to sharing ideas and resources to
+          improve learning and leadership in our schools. Since its founding in
+          2009, it has expanded beyond Monmouth County to include over 60
+          districts in central New Jersey. Its September-June monthly meeting
+          schedule presents a variety of opportunities to discuss topics like
+          assessment, curriculum, technology, and pedagogy. Attendees typically
+          include district and building administrators, teachers, tech
+          specialists, and representatives from the NJ Department of Education.
         </p>
         <p className="text-lg text-gray-700 max-w-screen-sm">
           MC3 also organizes workshops 3-4 times per year to provide in depth

@@ -13,27 +13,24 @@ export default function IndexPage({ path }) {
       <header className="w-full bg-blue-50 px-4 lg:px-12">
         <div className="flex flex-wrap items-center justify-center mx-auto lg:space-x-12">
           <div className="pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2">
-            <div className="">
-              <h1 className="mb-6 font-medium tracking-wide uppercase text-blue-700 sm:leading-none text-xl lg:text-2xl xl:text-3xl text-center lg:text-left">
-                <span>M</span>onmouth <span>C</span>ounty <span>C</span>
-                urriculum <span>C</span>onsortium
-              </h1>
-              <h2 className="mb-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-5xl sm:text-6xl text-center lg:text-left">
-                Find and Share Ideas to Shape the
-                <span className="text-blue-700"> Future of Education!</span>
-              </h2>
-              <p className="mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
-                Join a group of leaders in education that include members from
-                over 60 districts in Monmouth and Ocean County.
-              </p>
-              <div className="flex flex-col items-center justify-center">
-                <Link
-                  to="/join"
-                  className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700  focus:outline-none transition duration-150 ease-in-out hover:bg-blue-800 hover:shadow-xl transform hover:scale-105 focus:border-blue-500 px-8 py-3 md:py-4 md:px-10 md:text-lg"
-                >
-                  Become a Member
-                </Link>
-              </div>
+            <h1 className="mb-6 font-medium tracking-wide uppercase text-blue-700 sm:leading-none text-xl lg:text-2xl xl:text-3xl text-center lg:text-left">
+              Monmouth County Curriculum Consortium
+            </h1>
+            <h2 className="mb-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-5xl sm:text-6xl text-center lg:text-left">
+              Find and Share Ideas to Shape the
+              <span className="text-blue-700"> Future of Education!</span>
+            </h2>
+            <p className="mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
+              Join a group of leaders in education that include members from
+              over 60 districts in Monmouth and Ocean County.
+            </p>
+            <div className="flex flex-col items-center justify-center">
+              <Link
+                to="/join"
+                className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700  focus:outline-none transition duration-150 ease-in-out hover:bg-blue-800 hover:shadow-xl transform hover:scale-105 focus:border-blue-500 px-8 py-3 md:py-4 md:px-10 md:text-lg"
+              >
+                Become a Member
+              </Link>
             </div>
           </div>
           <div className="flex pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2 flex-1 items-center justify-center">
@@ -47,12 +44,13 @@ export default function IndexPage({ path }) {
             Ensure your leaders are getting the timely information they deserve.
           </h2>
           <p className="mt-3 text-xl leading-8 text-gray-700 sm:mt-4 max-w-screen-sm mx-auto">
-            In addition to the districts which make up the consortium, MC
-            <sup>3</sup> has partnered with the{" "}
+            In addition to the districts which make up the consortium, MC3 has
+            partnered with the
             <a
               href="https://www.nj.gov/education/"
               className="underline hover:text-blue-700 transition ease-in-out duration-150"
             >
+              {" "}
               New Jersey Department of Education
             </a>
             ,{" "}
