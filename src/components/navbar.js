@@ -50,7 +50,7 @@ export default function Navbar(props) {
       <div className="max-w-screen-xl flex justify-between items-center py-6 md:justify-start md:space-x-10 mx-auto">
         <div className="flex-1">
           <Link
-            className="focus:outline-none flex items-center flex-wrap"
+            className="flex items-center flex-wrap focus:outline-none focus:ring-4 focus:ring-yellow-300"
             to="/"
           >
             <StaticImage
@@ -247,7 +247,14 @@ export default function Navbar(props) {
               : "hidden lg:flex space-x-10 text-blue-700 font-semibold"
           } `}
         >
-          {props.path !== "/" && <Link to="/">Home</Link>}
+          {props.path !== "/" && (
+            <Link
+              to="/"
+              className="inline-flex items-center text-base leading-6 font-medium focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
+            >
+              Home
+            </Link>
+          )}
           {nodes.map((node) => {
             if (node.type === "Internal") {
               return (
@@ -255,7 +262,7 @@ export default function Navbar(props) {
                   className={`${
                     props.path.includes(node.url) &&
                     `transition ease-in-out duration-150 hover:border-blue-700 border-b-4 border-blue-500 `
-                  }inline-flex items-center text-base leading-6 font-medium`}
+                  }inline-flex items-center text-base leading-6 font-medium focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150`}
                   to={node.url}
                   key={node.menuOrder}
                 >
@@ -268,7 +275,7 @@ export default function Navbar(props) {
                   className={`${
                     props.path.includes(node.url) &&
                     `transition ease-in-out duration-150 hover:border-red-700 border-b-4 border-blue-700 `
-                  }inline-flex items-center text-base leading-6 font-medium`}
+                  }inline-flex items-center text-base leading-6 font-medium focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150`}
                   href={node.url}
                   key={node.menuOrder}
                 >
@@ -285,7 +292,7 @@ export default function Navbar(props) {
         >
           <span className="inline-flex rounded-md shadow-sm flex-none">
             <Link
-              className=" whitespace-no-wrap text-center items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:border-blue-600 focus:shadow-outline-blue active:bg-blue-600 transition ease-in-out duration-150"
+              className=" whitespace-no-wrap text-center items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 active:bg-blue-600 transition ease-in-out duration-150"
               to="/join"
             >
               Become a Member

@@ -58,7 +58,7 @@ export default function Subscribe() {
       <button
         type="button"
         onClick={openModal}
-        className="w-10 text-center border border-transparent text-base leading-6 font-medium rounded-md text-gray-600 hover:text-black focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+        className="w-10 text-center text-base leading-6 font-medium rounded-sm text-blue-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition ease-in-out duration-150"
       >
         <HiMail
           color="3B82F6"

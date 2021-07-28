@@ -27,7 +27,7 @@ export default function IndexPage({ path }) {
             <div className="flex flex-col items-center justify-center">
               <Link
                 to="/join"
-                className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700  focus:outline-none transition duration-150 ease-in-out hover:bg-blue-800 hover:shadow-xl transform hover:scale-105 focus:border-blue-500 px-8 py-3 md:py-4 md:px-10 md:text-lg"
+                className="flex items-center justify-center border border-transparent text-base leading-6 font-medium text-white bg-blue-700  focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150 hover:bg-blue-800 hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
               >
                 Become a Member
               </Link>
@@ -48,7 +48,7 @@ export default function IndexPage({ path }) {
             partnered with the
             <a
               href="https://www.nj.gov/education/"
-              className="underline hover:text-blue-700 transition ease-in-out duration-150"
+              className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
             >
               {" "}
               New Jersey Department of Education
@@ -56,21 +56,21 @@ export default function IndexPage({ path }) {
             ,{" "}
             <a
               href="https://njsba.org"
-              className="underline hover:text-blue-700 transition ease-in-out duration-150"
+              className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
             >
               New Jersey School Boards Association
             </a>
             ,{" "}
             <a
               href="https://monmouth.edu"
-              className="underline hover:text-blue-700 transition ease-in-out duration-150"
+              className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
             >
               Monmouth University
             </a>
             ,{" "}
             <a
               href="https://rutgers.edu"
-              className="underline hover:text-blue-700 transition ease-in-out duration-150"
+              className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
             >
               Rutgers University
             </a>
@@ -154,7 +154,7 @@ export default function IndexPage({ path }) {
             <span className="inline-flex rounded-md shadow">
               <Link
                 to="/contact"
-                className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-600  focus:outline-none transition duration-150 ease-in-out hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
+                className="flex items-center justify-center border border-transparent text-base leading-6 font-medium text-white bg-blue-700 hover:bg-blue-600  focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
               >
                 Let Us Know You're Interested
               </Link>
@@ -184,7 +184,7 @@ export default function IndexPage({ path }) {
             <span className="inline-flex rounded-md shadow">
               <Link
                 to="/scholarship"
-                className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-600  focus:outline-none transition duration-150 ease-in-out hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
+                className="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-600  focus:outline-none focus:ring-4 focus:ring-yellow-300 transition ease-in-out duration-150 hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
               >
                 Discover Scholarship Opportunities
               </Link>

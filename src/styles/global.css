@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Global Styles */
+a {
+  @apply focus:outline-none focus:ring-4 focus:ring-yellow-300 transition duration-150 ease-in-out rounded-sm;
+}
 /* Calendar Styles */
 .event-description a {
   text-decoration: underline;

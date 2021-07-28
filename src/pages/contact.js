@@ -111,7 +111,7 @@ export default function Contact({ path }) {
               {...register("name", {
                 required: "Your name is required.",
               })}
-              className="form-input block w-full mb-3 px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500"
+              className="form-input block w-full mb-3 px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
             />
             {errors.name && (
               <p className="text-red-700"> &uarr; {errors.name.message}</p>
@@ -129,7 +129,7 @@ export default function Contact({ path }) {
               {...register("email", {
                 required: "Your email address is required.",
               })}
-              className="form-input block w-full mb-3 px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500"
+              className="form-input block w-full mb-3 px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
             />
             {errors.email && (
               <p className="text-red-700"> &uarr; {errors.email.message}</p>
@@ -146,7 +146,7 @@ export default function Contact({ path }) {
                 required: "A reason is required.",
                 pattern: "^((?!Select).)*$",
               })}
-              className="form-select text-gray-500 block w-full mb-3 px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500"
+              className="form-select text-gray-500 block w-full mb-3 px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
             >
               {selectReason.map((reason, i) => (
                 <option key={reason} value={reason}>
@@ -163,7 +163,7 @@ export default function Contact({ path }) {
             <textarea
               name="question"
               placeholder="Enter your question or comment here..."
-              className="form-textarea block w-full mb-3 px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:border-blue-500"
+              className="form-textarea block w-full mb-3 px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
               {...register("question", {
                 required: "Your question/comment is required.",
               })}
@@ -171,17 +171,18 @@ export default function Contact({ path }) {
             {errors.question && (
               <p className="text-red-700"> &uarr; {errors.question.message}</p>
             )}
+            <input
+              name="submit"
+              type="submit"
+              value="Submit"
+              className={`w-1/3 px-6 py-3 mt-6 font-medium rounded-md text-white bg-blue-700 ${
+                disabled && ` opacity-40 text-gray-50 `
+              } hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out`}
+            />
             <ReCAPTCHA
               sitekey={`6LeIMHIbAAAAAF-Eu5prLZNWXnwaadSsV8OYN1mP`}
               size="invisible"
               ref={reRef}
-            />
-            <input
-              name="submit"
-              type="submit"
-              className={`w-1/3 px-6 py-3 mt-6 font-medium rounded-md text-white bg-blue-700 ${
-                disabled && ` opacity-40 text-gray-50 `
-              } transition duration-300 hover:bg-blue-800`}
             />
           </form>
         </section>
