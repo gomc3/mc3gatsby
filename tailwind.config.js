@@ -17,6 +17,8 @@ module.exports = {
     extend: {
       contrast: ["hover"],
       grayscale: ["hover"],
+      inset: ["focus"],
+      transitionProperty: ["focus"],
     },
   },
   plugins: [
