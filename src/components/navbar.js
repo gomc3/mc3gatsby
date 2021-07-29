@@ -73,7 +73,7 @@ export default function Navbar(props) {
           <div className="text-right">
             <Menu as="div" className="relative inline-block text-left">
               <div>
-                <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-md hover:bg-opacity-95 hover:text-blue-50 focus:outline-none ">
+                <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-md hover:bg-opacity-95 hover:text-blue-50 focus:outline-none focus:ring-4 focus:ring-yellow-300">
                   Menu
                   <HiChevronDown
                     className="w-5 h-5 ml-2 -mr-1 text-blue-200"
@@ -90,8 +90,8 @@ export default function Navbar(props) {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="px-1 py-1 ">
+                <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-yellow-300 ring-opacity-5 focus:outline-none">
+                  <div className="px-1 py-1 text-white">
                     {nodes.map((node) => {
                       const icons = {
                         Calendar: HiCalendar,
@@ -126,12 +126,12 @@ export default function Navbar(props) {
                                 to={node.url}
                                 className={`${
                                   active
-                                    ? "bg-blue-700 hover:text-white"
+                                    ? "bg-blue-700 hover:text-white focus:text-white"
                                     : "text-gray-900 "
                                 } ${
                                   props.path.includes(node.url) &&
                                   `border-b-2 bg-blue-100 text-black font-semibold shadow-sm `
-                                } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                                } focus:text-white group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                               >
                                 {active ? (
                                   <MenuIcon

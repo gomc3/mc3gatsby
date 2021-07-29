@@ -12,11 +12,11 @@ export default function Layout({ children, path }) {
   };
   return (
     <MDXProvider components={components} className="relative">
-      <ul id="nav-access" className="absolute z-50 -top-20 w-full">
+      <ul id="nav-access" className="relative mx-auto">
         <li>
           <a
             href="#main-content"
-            className="text-2xl text-blue-700 block w-full text-center bg-blue-200 bg-opacity-30 absolute transition duration-500 ease-in-out focus:top-20"
+            className="absolute z-50 -top-20 sm:left-1/4 text-2xl text-blue-700 block w-full sm:w-1/2 text-center bg-blue-700 bg-opacity-10 transform focus:translate-y-20 transition-all duration-500 ease-in-out"
           >
             Skip to main content
           </a>
