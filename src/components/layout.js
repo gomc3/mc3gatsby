@@ -17,10 +17,10 @@ export default function Layout({ children, path }) {
         <li>
           <a
             href='#main-content'
-            className='absolute z-50 -top-20 sm:left-1/4 text-2xl text-blue-700 inline-block w-full sm:w-1/2 text-center bg-blue-700 bg-opacity-10 transform focus:translate-y-20 transition-all duration-500 ease-in-out'
+            className='h-10 flex justify-center items-center absolute z-50 -top-20 sm:left-1/4 text-xl text-blue-700 w-full sm:w-1/2 text-center bg-blue-700 bg-opacity-10 transform focus:translate-y-20 transition-all duration-500 ease-in-out'
           >
             Skip to main content{" "}
-            <span className='text-white px-3 py-0 bg-blue-700 text-base rounded-sm'>
+            <span className='text-white px-3 py-0 bg-blue-700 rounded-sm ml-3'>
               Return
               <BsArrowReturnLeft className='w-3 h-3 inline text-white ml-1' />
             </span>

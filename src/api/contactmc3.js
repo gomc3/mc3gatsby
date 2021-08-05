@@ -35,23 +35,58 @@ export default async function formHandler(req, res) {
       });
       const data = [[timeStamp, name, email, reason, question]];
       let today = new Date();
+      const boardMemberInfo = {
+        secretary1: {
+          id: "60eea4f359065f6284fa6099",
+          fullName: "Christine Formica",
+          username: "christineformica",
+        },
+        cochair1: {
+          id: "60efb6f44140a380d2f74c49",
+          fullName: "Luigi Laugelli",
+          username: "luigilaugelli",
+        },
+        cochair2: {
+          id: "60f022b305e787695ef6d2f3",
+          fullName: "Michael Ballone",
+          username: "michaelballone3",
+        },
+        secretary2: {
+          id: "60eee3c4d324bf0173803081",
+          fullName: "Sarah Seeley",
+          username: "sarahseeley4",
+        },
+        tech: {
+          id: "60ed997371e05577c0bb2ec9",
+          fullName: "Tech Consultant @MC3",
+          username: "mc3tech",
+        },
+        treasurer: {
+          id: "60ee3b02e3c5746147731e44",
+          fullName: "treasurer",
+          username: "treasurer612",
+        },
+      };
       const memberIds = {
-        "Agenda Item": ["60ee3b02a70c66502f74972a", "60ee3b0210af375d669d7c4d"],
-        Billing: ["60ee3b0290b94052ef2511c0", "60ee3b0303303083d5a2aaf9"],
+        "Agenda Item": [
+          boardMemberInfo.cochair1.id,
+          boardMemberInfo.cochair2.id,
+        ],
+        Billing: [boardMemberInfo.secretary1, boardMemberInfo.secretary2.id],
         "Professional Development": [
-          "60ee3b02a70c66502f74972a",
-          "60ee3b0210af375d669d7c4d",
+          boardMemberInfo.cochair1.id,
+          boardMemberInfo.cochair2.id,
         ],
         "Volunteer to Write a Blog Post": [
-          "60ee3b02a70c66502f74972a",
-          "60ee3b0210af375d669d7c4d",
+          boardMemberInfo.cochair1.id,
+          boardMemberInfo.cochair2.id,
         ],
         "Volunteer to Present": [
-          "60ee3b02a70c66502f74972a",
-          "60ee3b0210af375d669d7c4d",
+          boardMemberInfo.cochair1.id,
+          boardMemberInfo.cochair2.id,
         ],
-        Website: ["60ed997371e05577c0bb2ec9"],
-        "Other...": ["60ee3b02a70c66502f74972a", "60ee3b0210af375d669d7c4d"],
+        Website: [boardMemberInfo.tech.id],
+        "Other...": [boardMemberInfo.cochair1.id, boardMemberInfo.cochair2.id],
       };
       const listIds = {
         "Agenda Item": "60ed99f9efb5dc10411d6351",
