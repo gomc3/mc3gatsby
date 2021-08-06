@@ -72,7 +72,7 @@ export default async function formHandler(req, res) {
           boardMemberInfo.cochair1.id,
           boardMemberInfo.cochair2.id,
         ],
-        Billing: [boardMemberInfo.secretary1, boardMemberInfo.secretary2.id],
+        Billing: [boardMemberInfo.secretary1.id, boardMemberInfo.secretary2.id],
         "Professional Development": [
           boardMemberInfo.cochair1.id,
           boardMemberInfo.cochair2.id,
@@ -137,7 +137,7 @@ export default async function formHandler(req, res) {
           return JSON.stringify(err);
         }
       }
-      gsrun(client);
+      // gsrun(client);
     }
   }
   await getRecaptcha(recaptchaUrl);
