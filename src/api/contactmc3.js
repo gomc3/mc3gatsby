@@ -137,7 +137,7 @@ export default async function formHandler(req, res) {
           return JSON.stringify(err);
         }
       }
-      // gsrun(client);
+      gsrun(client);
     }
   }
   await getRecaptcha(recaptchaUrl);
