@@ -13,8 +13,10 @@ export default function IndexPage({ path }) {
       <header className="w-full bg-blue-50 px-4 lg:px-12">
         <div className="flex flex-wrap items-center justify-center mx-auto lg:space-x-12">
           <div className="pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2">
-            <h1 className="mb-6 font-medium tracking-wide uppercase text-blue-700 sm:leading-none text-xl lg:text-2xl xl:text-3xl text-center lg:text-left">
-              Monmouth County Curriculum Consortium
+            <h1 className="mb-6 font-medium tracking-wide uppercase text-blue-700 sm:leading-none text-5xl lg:text-6xl xl:text-7xl text-center">
+              M<span className="sr-only">.</span>C
+              <span className="sr-only">.</span>3
+              <span className="sr-only">.</span>
             </h1>
             <h2 className="mb-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-5xl sm:text-6xl text-center lg:text-left">
               Find and Share Ideas to Shape the
@@ -44,8 +46,10 @@ export default function IndexPage({ path }) {
             Ensure your leaders are getting the timely information they deserve.
           </h2>
           <p className="mt-3 text-xl leading-8 text-gray-700 sm:mt-4 max-w-screen-sm mx-auto">
-            In addition to the districts which make up the consortium, MC3 has
-            partnered with the
+            In addition to the districts which make up the consortium, M
+            <span className="sr-only">.</span>C
+            <span className="sr-only">.</span>3
+            <span className="sr-only">.</span> has partnered with the
             <a
               href="https://www.nj.gov/education/"
               className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
@@ -174,8 +178,12 @@ export default function IndexPage({ path }) {
           <p className="mt-6 text-lg leading-7 text-gray-600">
             Each year, students throughout our membership districts are awarded
             scholarships. These scholarships are awarded based on the merits of
-            the students. A team of MC3 members reviews submissions and selects
-            a group of winners. These winners are recognized at a MC3 meeting.{" "}
+            the students. A team of M<span className="sr-only">.</span>C
+            <span className="sr-only">.</span>3 members reviews submissions and
+            selects a group of winners. These winners are recognized at a M
+            <span className="sr-only">.</span>C
+            <span className="sr-only">.</span>3
+            <span className="sr-only">.</span> meeting.{" "}
             <strong>
               Your membership helps provide these important opportunities!
             </strong>
@@ -206,15 +214,3 @@ export default function IndexPage({ path }) {
     </Layout>
   );
 }
-// export const data = graphql`
-//   {
-//     allContentfulMenuItem(sort: { fields: menuOrder, order: ASC }) {
-//       nodes {
-//         linkText
-//         url
-//         type
-//         menuOrder
-//       }
-//     }
-//   }
-// `;
