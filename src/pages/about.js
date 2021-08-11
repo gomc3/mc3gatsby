@@ -76,35 +76,37 @@ export default function About({ path, data }) {
   ];
   return (
     <Layout path={path}>
-      <Seo title="About MC3" />
-      <header className="mb-2 px-5 md:px-0 sm:mb-1 lg:mb-3 flex flex-col items-center space-y-3">
+      <Seo title='About MC3' />
+      <header className='mb-2 px-5 md:px-0 sm:mb-1 lg:mb-3 flex flex-col items-center space-y-3'>
         <PageTitle
-          title="About Us"
+          title='About Us'
           icon={
-            <HiIdentification className="text-3xl sm:text-5xl lg:text-6xl text-blue-700 -mt-3 inline-block" />
+            <HiIdentification className='text-3xl sm:text-5xl lg:text-6xl text-blue-700 -mt-3 inline-block' />
           }
         />
-        <p className="text-lg text-gray-700 max-w-screen-sm">
+        <p className='text-lg text-gray-700 max-w-screen-sm'>
           The Monmouth County Curriculum Consortium (MC3) is a non-profit
           educational organization dedicated to sharing ideas and resources to
           improve learning and leadership in our schools. Since its founding in
-          2009, it has expanded beyond Monmouth County to include over 60
-          districts in central New Jersey. Its September-June monthly meeting
-          schedule presents a variety of opportunities to discuss topics like
-          assessment, curriculum, technology, and pedagogy. Attendees typically
-          include district and building administrators, teachers, tech
-          specialists, and representatives from the NJ Department of Education.
+          2009, it has expanded beyond Monmouth County to include over 60 school
+          districts. Monthly meetings provide opportunities to discuss timely
+          topics including assessment, curriculum, best practices, technology
+          and pedagogy. Members typically include district and building
+          administrators, teacher leaders and representatives from the NJ
+          Department of Education.
         </p>
-        <p className="text-lg text-gray-700 max-w-screen-sm">
-          MC3 also organizes workshops 3-4 times per year to provide in depth
-          training on educational issues. In the past few years, these have
-          included summits on Common Core, the Next Gen Science standards,
-          Instructional Technology, and ESL, to name a few.
+        <p className='text-lg text-gray-700 max-w-screen-sm'>
+          MC3 also organizes professional learning opportunities during the year
+          which provide in-depth training on new requirements, educational
+          issues and other topics that benefit our membership. In the past few
+          years, these have included summits on the implementation of the New
+          Jersey Student Learning Standards in various academic areas,
+          Assessment, ESL and Educational Technology, to name a few.
         </p>
-        <p className="text-lg text-gray-700 max-w-screen-sm">
+        <p className='text-lg text-gray-700 max-w-screen-sm'>
           In addition to the districts which make up the consortium, MC3 has
           partnered with the NJDOE, NJ School Boards Association, Monmouth
-          University, Rutgers University, and many education-related
+          University, Rutgers University, and other education-related
           organizations.
         </p>
       </header>
@@ -144,8 +146,8 @@ export default function About({ path, data }) {
         );
       })}
       <ExecTeam
-        execTeamName="Founding Members"
-        key="Founding Members"
+        execTeamName='Founding Members'
+        key='Founding Members'
         teamNumber={0}
       >
         {foundingMembers.map((member) => {
