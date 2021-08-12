@@ -11,8 +11,8 @@ export default function IndexPage({ path }) {
       <Seo title='Home' />
 
       <header className='w-full bg-blue-50 px-4 lg:px-12'>
-        <div className='flex flex-wrap items-center justify-center mx-auto lg:space-x-12'>
-          <div className='pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2'>
+        <div className='flex flex-wrap items-center justify-center max-w-screen-2xl mx-auto lg:space-x-12'>
+          <div className='pt-4 sm:pb-5 md:py-9 lg:py-6 px-4 sm:px-8 lg:w-1/2'>
             <h1 className='mb-6 font-medium tracking-wide uppercase text-blue-700 sm:leading-none text-5xl lg:text-6xl xl:text-7xl text-center'>
               M<span className='sr-only'>.</span>C
               <span className='sr-only'>.</span>3
@@ -23,8 +23,8 @@ export default function IndexPage({ path }) {
               <span className='text-blue-700'> Future of Education!</span>
             </h2>
             <p className='mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none'>
-              Join a group of leaders in education that include members from
-              over 60 districts in Monmouth and Ocean County.
+              Join a group of instructional and educational leaders from 60+
+              School Districts in Monmouth County and beyond.
             </p>
             <div className='flex flex-col items-center justify-center'>
               <Link
@@ -35,12 +35,12 @@ export default function IndexPage({ path }) {
               </Link>
             </div>
           </div>
-          <div className='flex pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 lg:w-1/2 flex-1 items-center justify-center'>
+          <div className='flex pt-10 sm:pb-5 md:py-9 lg:py-12 px-4 sm:px-8 lg:w-1/2 flex-1 items-center justify-center'>
             <HeroImage />
           </div>
         </div>
       </header>
-      <div className='bg-blue-50 pt-12 sm:pt-16'>
+      <div className='bg-blue-50 pt-2 sm:pt-4'>
         <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 className='text-center text-2xl sm:text-3xl leading-9 font-extrabold text-gray-900 sm:leading-10 mx-auto'>
             Ensure your instructional leaders are receiving timely information!
@@ -89,7 +89,7 @@ export default function IndexPage({ path }) {
                 <dl className='rounded-lg bg-white shadow-lg lg:grid lg:grid-cols-3 items-start'>
                   <div className='h-full border-b border-gray-100 p-6 text-center md:border-0 md:border-r'>
                     <dt className='text-2xl leading-none font-extrabold text-blue-700'>
-                      Expand your{" "}
+                      Expand Your{" "}
                       <abbr
                         className='no-underline'
                         title='professional learning network'
@@ -128,13 +128,13 @@ export default function IndexPage({ path }) {
         </div>
       </div>
       <div className='mt-12 lg:grid lg:grid-cols-2 max-w-7xl mx-auto'>
-        <div className='px-4 text-center'>
+        <div className='px-4 text-center flex items-center justify-center'>
           <StaticImage
             src='../images/igniteRocket.png'
             alt='person riding a rocket into flight'
             loading='lazy'
             placeholder='tracedSVG'
-            className='w-full sm:w-1/2 lg:w-full filter transition duration-500 ease-in-out contrast-100 hover:contrast-125'
+            className='w-1/2 sm:w-3/5 lg:w-3/4 filter transition duration-500 ease-in-out contrast-100 hover:contrast-125'
           />
         </div>
         <div className='px-4 py-8 sm:px-6 sm:py-12 lg:py-16 lg:ml-1/2 lg:pl-12'>
