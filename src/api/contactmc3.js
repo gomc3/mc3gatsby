@@ -41,15 +41,10 @@ export default async function formHandler(req, res) {
           fullName: "Christine Formica",
           username: "christineformica",
         },
-        cochair1: {
-          id: "60efb6f44140a380d2f74c49",
-          fullName: "Luigi Laugelli",
-          username: "luigilaugelli",
-        },
-        cochair2: {
-          id: "60f022b305e787695ef6d2f3",
+        cochairs: {
+          id: "6111518aa81646805af28d80",
           fullName: "Michael Ballone",
-          username: "michaelballone3",
+          username: "michaelballone4",
         },
         secretary2: {
           id: "60eee3c4d324bf0173803081",
@@ -68,25 +63,13 @@ export default async function formHandler(req, res) {
         },
       };
       const memberIds = {
-        "Agenda Item": [
-          boardMemberInfo.cochair1.id,
-          boardMemberInfo.cochair2.id,
-        ],
+        "Agenda Item": [boardMemberInfo.cochairs.id],
         Billing: [boardMemberInfo.secretary1.id, boardMemberInfo.secretary2.id],
-        "Professional Development": [
-          boardMemberInfo.cochair1.id,
-          boardMemberInfo.cochair2.id,
-        ],
-        "Volunteer to Write a Blog Post": [
-          boardMemberInfo.cochair1.id,
-          boardMemberInfo.cochair2.id,
-        ],
-        "Volunteer to Present": [
-          boardMemberInfo.cochair1.id,
-          boardMemberInfo.cochair2.id,
-        ],
+        "Professional Development": [boardMemberInfo.cochairs.id],
+        "Volunteer to Write a Blog Post": [boardMemberInfo.cochairs.id],
+        "Volunteer to Present": [boardMemberInfo.cochairs.id],
         Website: [boardMemberInfo.tech.id],
-        "Other...": [boardMemberInfo.cochair1.id, boardMemberInfo.cochair2.id],
+        "Other...": [boardMemberInfo.cochairs.id],
       };
       const listIds = {
         "Agenda Item": "60ed99f9efb5dc10411d6351",
