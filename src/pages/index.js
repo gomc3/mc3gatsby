@@ -98,7 +98,7 @@ export default function IndexPage({ path }) {
                       </abbr>
                     </dt>
                     <dd className='mt-3 text-gray-600 md:text-center'>
-                      Regardless of title or position, each member is invited to
+                      Regardless of your position, each member is invited to
                       contribute towards the good of the group.
                     </dd>
                   </div>
