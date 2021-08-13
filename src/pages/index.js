@@ -26,12 +26,18 @@ export default function IndexPage({ path }) {
               Join a group of instructional and educational leaders from 60+
               School Districts in Monmouth County and beyond.
             </p>
-            <div className='flex flex-col items-center justify-center'>
+            <div className='flex items-center justify-evenly flex-wrap'>
               <Link
                 to='/join'
-                className='flex items-center justify-center border border-transparent text-base leading-6 font-medium text-white bg-blue-700  focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150 hover:bg-blue-800 hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg'
+                className='flex items-center my-3 justify-center border border-transparent text-base leading-6 font-medium text-white bg-blue-700  focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150 hover:bg-blue-800 hover:shadow-xl transform px-8 py-3 md:py-4 md:px-10 md:text-lg'
               >
                 Become a Member
+              </Link>
+              <Link
+                to='/calendar'
+                className='flex items-center my-3 justify-center border border-gray-700 text-base text-gray-700 leading-6 font-medium hover:text-white hover:bg-gray-700  focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150 hover:shadow-xl transform px-8 py-3 md:py-4 md:px-10 md:text-lg'
+              >
+                Meeting Schedule
               </Link>
             </div>
           </div>
