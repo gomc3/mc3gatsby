@@ -41,13 +41,16 @@ export default function Blog({
           })}
         </section>
         {numPages > 1 && (
-          <Pagination
-            path={path}
-            numPages={numPages}
-            currentPage={currentPage}
-            limit={nodes.length}
-            totalPosts={totalPosts}
-          />
+          <>
+            <p className="text-center pt-3 md:pt-4 lg:pt-6">
+              Page {currentPage} of {numPages}
+            </p>
+            <Pagination
+              currentPage={currentPage}
+              pageCount={numPages}
+              basePath="/blog"
+            />
+          </>
         )}
       </div>
     </Layout>
@@ -55,7 +58,7 @@ export default function Blog({
 }
 
 export const data = graphql`
-  query($skip: Int!, $limit: Int!) {
+  query ($skip: Int!, $limit: Int!) {
     allGoogleDocs(
       filter: { template: { eq: "post" }, tags: { ne: "ignite" } }
       sort: { fields: date, order: DESC }
