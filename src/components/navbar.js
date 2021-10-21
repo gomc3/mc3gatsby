@@ -247,21 +247,23 @@ export default function Navbar(props) {
               : "hidden lg:flex space-x-10 text-blue-700 font-semibold"
           } `}
         >
-          {props.path !== "/" && (
-            <Link
-              to="/"
-              className="inline-flex items-center text-base leading-6 font-medium focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
-            >
-              Home
-            </Link>
-          )}
+          <Link
+            to="/"
+            className={`${
+              props.path === "/" &&
+              `transition ease-in-out duration-150 hover:border-blue-700 border-b-4 border-blue-500 pointer-events-none `
+            }inline-flex items-center text-base leading-6 font-medium focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150`}
+          >
+            Home
+          </Link>
+
           {nodes.map((node) => {
             if (node.type === "Internal") {
               return (
                 <Link
                   className={`${
                     props.path.includes(node.url) &&
-                    `transition ease-in-out duration-150 hover:border-blue-700 border-b-4 border-blue-500 `
+                    `transition ease-in-out duration-150 hover:border-blue-700 border-b-4 border-blue-500 pointer-events-none `
                   }inline-flex items-center text-base leading-6 font-medium focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150`}
                   to={node.url}
                   key={node.menuOrder}
