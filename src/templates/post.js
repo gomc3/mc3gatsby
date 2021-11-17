@@ -95,7 +95,7 @@ export default function PostTemplate({
             </h2>
           </div>
         </header>
-        <div className="mx-auto max-w-screen-md py-2 sm:py-3 md:py-4 lg:py-5 px-3 sm:px-4 md:px-6 lg:px-8 prose prose-blue md:prose-lg lg:prose-xl">
+        <div className="mx-auto max-w-screen-md py-2 sm:py-3 md:py-4 lg:py-5 px-3 sm:px-4 md:px-6 lg:px-8 prose prose-blue prose-lg md:prose-xl lg:prose-2xl">
           <MDXRenderer>{body}</MDXRenderer>
         </div>
       </article>
