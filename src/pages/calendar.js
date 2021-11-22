@@ -93,7 +93,7 @@ export default function Calendar({ path }) {
                 // const urlSearchParams = new URLSearchParams(item.htmlLink);
                 // const params = Object.fromEntries(urlSearchParams.entries());
                 // const copyUrl = `https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${params["https://www.google.com/calendar/event?eid"]}&tmsrc=${process.env.GATSBY_GOOGLE_CALENDAR_ID}&catt=false&pprop=HowCreated:DUPLICATE&hl=en&scp=ONE`;
-                let firstChar = item.summary.charAat(0);
+                let firstChar = item.summary.charAt(0);
                 return (
                   <div key={item.id}>
                     <div className="rounded-md shadow-md flex flex-col sm:flex-row mb-1 my-1 sm:my-2 lg:my-3 bg-gray-50 hover:bg-gray-100 hover:shadow-xl">
