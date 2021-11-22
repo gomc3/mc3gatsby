@@ -93,32 +93,38 @@ export default function Calendar({ path }) {
                 // const urlSearchParams = new URLSearchParams(item.htmlLink);
                 // const params = Object.fromEntries(urlSearchParams.entries());
                 // const copyUrl = `https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${params["https://www.google.com/calendar/event?eid"]}&tmsrc=${process.env.GATSBY_GOOGLE_CALENDAR_ID}&catt=false&pprop=HowCreated:DUPLICATE&hl=en&scp=ONE`;
+                let firstChar = item.summary.charAat(0);
                 return (
                   <div key={item.id}>
                     <div className="rounded-md shadow-md flex flex-col sm:flex-row mb-1 my-1 sm:my-2 lg:my-3 bg-gray-50 hover:bg-gray-100 hover:shadow-xl">
                       <aside className="bg-blue-700 flex-none rounded-tl-md rounded-tr-md sm:rounded-tr-none sm:rounded-bl-md text-white flex flex-col justify-center w-full sm:w-32 text-center p-2">
                         <p className="text-xl">
-                          {new Date(
-                            item.start.dateTime
-                          ).toLocaleDateString("en-US", { weekday: "long" })}
+                          {new Date(item.start.dateTime).toLocaleDateString(
+                            "en-US",
+                            { weekday: "long" }
+                          )}
                         </p>
                         <p className="text-md">
-                          {new Date(
-                            item.start.dateTime
-                          ).toLocaleDateString("en-US", { month: "long" })}
+                          {new Date(item.start.dateTime).toLocaleDateString(
+                            "en-US",
+                            { month: "long" }
+                          )}
                         </p>
                         <p className="text-5xl font-bold">
-                          {new Date(
-                            item.start.dateTime
-                          ).toLocaleDateString("en-US", { day: "numeric" })}
+                          {new Date(item.start.dateTime).toLocaleDateString(
+                            "en-US",
+                            { day: "numeric" }
+                          )}
                         </p>
                         <p className="text-lg">
-                          {new Date(item.start.dateTime).toLocaleTimeString(
-                            ["en-US"],
-                            {
-                              timeStyle: "short",
-                            }
-                          )}
+                          {firstChar !== "*"
+                            ? new Date(item.start.dateTime).toLocaleTimeString(
+                                ["en-US"],
+                                {
+                                  timeStyle: "short",
+                                }
+                              )
+                            : "TBA"}
                         </p>
                       </aside>
                       <article className="w-full flex items-center p-2 sm:p-3 lg:p-4 overflow-hidden">
