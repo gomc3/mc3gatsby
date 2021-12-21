@@ -19,11 +19,11 @@ export default function execTeam({ execTeamName, children, teamNumber }) {
         </h2>
       )}
       {teamNumber > 0 && (
-        <h3 className="text-3xl my-2 md:my-3 lg:my-5  text-gray-600 text-center">
+        <h3 className="text-3xl my-2 md:my-3 lg:my-5  text-slate-600 text-center">
           {execTeamName}
         </h3>
       )}
-      <div className="w-4/5  mx-auto rounded-md border border-gray-500 p-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div className="w-4/5  mx-auto rounded-md border border-slate-500 p-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {children}
       </div>
     </section>

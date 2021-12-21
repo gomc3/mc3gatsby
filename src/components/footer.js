@@ -5,7 +5,7 @@ import Subscribe from "../components/subscribe";
 
 export default function Footer() {
   return (
-    <footer className=" bg-gray-100 p-6 lg:p-12 mt-auto">
+    <footer className=" bg-slate-100 p-6 lg:p-12 mt-auto">
       <header className="max-w-lg mx-auto"></header>
       <div className="my-3 flex flex-col items-center sm:flex-row sm:justify-center text-center space-y-12 sm:space-y-0 sm:space-x-4">
         <Link
@@ -16,7 +16,7 @@ export default function Footer() {
         </Link>
         <Link
           to="/contact"
-          className="px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 hover:text-black bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition ease-in-out duration-150"
+          className="px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-slate-900 hover:text-black bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition ease-in-out duration-150"
         >
           Contact Us
         </Link>
@@ -24,31 +24,31 @@ export default function Footer() {
       <nav className="mx-auto my-6 flex flex-col sm:flex-row justify-between  max-w-xl text-center space-y-12 sm:space-y-0">
         <Link
           to="/terms"
-          className="text-gray-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
+          className="text-slate-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
         >
           Terms
         </Link>
         <Link
           to="/privacy"
-          className="text-gray-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
+          className="text-slate-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
         >
           Privacy
         </Link>
         <Link
           to="/scholarship"
-          className="text-gray-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
+          className="text-slate-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
         >
           Scholarships
         </Link>
         <Link
           to="/archive"
-          className="text-gray-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
+          className="text-slate-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
         >
           Archive
         </Link>
         <a
           href="https://www.nj.gov/education/broadcasts/"
-          className="text-gray-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
+          className="text-slate-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
         >
           NJDOE Broadcasts
         </a>
@@ -67,7 +67,10 @@ export default function Footer() {
         </a>
         <Subscribe />
       </div>
-      <div id="contact-info" className="text-center mt-1 text-sm text-gray-600">
+      <div
+        id="contact-info"
+        className="text-center mt-1 text-sm text-slate-600"
+      >
         <p>Monmouth County Curriculum Consortium</p>
         <p>PO Box 549</p>
         <p>Neptune, NJ 07754</p>

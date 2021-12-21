@@ -90,7 +90,7 @@ export default function Navbar(props) {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-yellow-300 ring-opacity-5 focus:outline-none">
+                <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-yellow-300 ring-opacity-5 focus:outline-none">
                   <div className="px-1 py-1 text-white">
                     {nodes.map((node) => {
                       const icons = {
@@ -127,7 +127,7 @@ export default function Navbar(props) {
                                 className={`${
                                   active
                                     ? "bg-blue-700 hover:text-white focus:text-white"
-                                    : "text-gray-900 "
+                                    : "text-slate-900 "
                                 } ${
                                   props.path.includes(node.url) &&
                                   `border-b-2 bg-blue-100 text-black font-semibold shadow-sm `
@@ -158,7 +158,7 @@ export default function Navbar(props) {
                                 className={`${
                                   active
                                     ? "bg-blue-700 text-white"
-                                    : "text-gray-900"
+                                    : "text-slate-900"
                                 } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                               >
                                 {active ? (
@@ -190,7 +190,7 @@ export default function Navbar(props) {
                               className={`${
                                 active
                                   ? "bg-blue-700 text-white"
-                                  : "text-gray-900"
+                                  : "text-slate-900"
                               } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                             >
                               {active ? (
@@ -215,7 +215,7 @@ export default function Navbar(props) {
                         <Link
                           to="/join"
                           className={`${
-                            active ? "bg-blue-700 text-white" : "text-gray-900"
+                            active ? "bg-blue-700 text-white" : "text-slate-900"
                           } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                         >
                           {active ? (

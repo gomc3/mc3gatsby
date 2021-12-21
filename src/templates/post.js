@@ -64,7 +64,7 @@ export default function PostTemplate({
         }
       />
       <article className="text-base md:text-lg lg:text-xl">
-        <header className="relative bg-gray-900 w-screen -z-10 text-center">
+        <header className="relative bg-slate-900 w-screen -z-10 text-center">
           {cover && (
             <GatsbyImage
               image={getImage(cover.image)}
@@ -75,17 +75,17 @@ export default function PostTemplate({
           <div
             className={
               cover
-                ? "bg-gray-900 bg-opacity-70 absolute inset-0 flex flex-col items-center justify-center"
+                ? "bg-slate-900 bg-opacity-70 absolute inset-0 flex flex-col items-center justify-center"
                 : "absolute inset-0 flex flex-col items-center justify-center"
             }
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold rounded-xl text-white px-3">
               {name}
             </h1>
-            <h2 className="text-gray-50 text-sm my-1">
+            <h2 className="text-slate-50 text-sm my-1">
               {timeToRead} minute read
             </h2>
-            <h2 className="text-sm text-gray-50 my-1">
+            <h2 className="text-sm text-slate-50 my-1">
               Last Updated:{" "}
               {new Date(modifiedTime).toLocaleDateString("en-US", {
                 month: "long",

@@ -72,14 +72,14 @@ export default Pagination;
 //     basePath = path.slice(0, -1);
 //   }
 //   return (
-//     <div className='bg-white px-4 py-3 flex flex-col items-center justify-between border-t border-gray-200 sm:px-6'>
+//     <div className='bg-white px-4 py-3 flex flex-col items-center justify-between border-t border-slate-200 sm:px-6'>
 //       <div className='flex-1 flex justify-between sm:hidden'>
 //         <Link
 //           to={currentPage > 2 ? `${basePath}${currentPage - 1}` : `${basePath}`}
 //           className={
 //             currentPage === 1
-//               ? `relative pointer-events-none inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-400 bg-white hover:bg-gray-50`
-//               : `relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50`
+//               ? `relative pointer-events-none inline-flex items-center px-4 py-2 border border-slate-300 text-sm font-medium rounded-md text-slate-400 bg-white hover:bg-slate-50`
+//               : `relative inline-flex items-center px-4 py-2 border border-slate-300 text-sm font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50`
 //           }
 //           disabled={currentPage === 1}
 //         >
@@ -89,8 +89,8 @@ export default Pagination;
 //           to={`${currentPage + 1}`}
 //           className={
 //             currentPage === numPages
-//               ? `relative pointer-events-none inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-400 bg-white hover:bg-gray-50`
-//               : `relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50`
+//               ? `relative pointer-events-none inline-flex items-center px-4 py-2 border border-slate-300 text-sm font-medium rounded-md text-slate-400 bg-white hover:bg-slate-50`
+//               : `relative inline-flex items-center px-4 py-2 border border-slate-300 text-sm font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50`
 //           }
 //           disabled={currentPage === numPages}
 //         >
@@ -99,7 +99,7 @@ export default Pagination;
 //       </div>
 //       <div className='hidden sm:flex sm:justify-center'>
 //         <div>
-//           <p className='text-sm text-gray-700'>
+//           <p className='text-sm text-slate-700'>
 //             Showing <span className='font-medium'>{limit}</span> of{" "}
 //             <span className='font-medium'>{totalPosts}</span> results
 //           </p>
@@ -119,8 +119,8 @@ export default Pagination;
 //               }
 //               className={
 //                 currentPage === 1
-//                   ? "relative pointer-events-none inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-200 hover:bg-gray-50"
-//                   : "relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+//                   ? "relative pointer-events-none inline-flex items-center px-2 py-2 rounded-l-md border border-slate-300 bg-white text-sm font-medium text-slate-200 hover:bg-slate-50"
+//                   : "relative inline-flex items-center px-2 py-2 rounded-l-md border border-slate-300 bg-white text-sm font-medium text-slate-500 hover:bg-slate-50"
 //               }
 //             >
 //               <span className='sr-only'>Previous</span>
@@ -135,7 +135,7 @@ export default Pagination;
 //                 className={
 //                   currentPage === i + 1
 //                     ? `z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
-//                     : `bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
+//                     : `bg-white border-slate-300 text-slate-500 hover:bg-slate-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
 //                 }
 //               >
 //                 {i + 1}
@@ -149,8 +149,8 @@ export default Pagination;
 //               }
 //               className={
 //                 currentPage === numPages
-//                   ? "relative pointer-events-none inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-200 hover:bg-gray-50"
-//                   : "relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+//                   ? "relative pointer-events-none inline-flex items-center px-2 py-2 rounded-r-md border border-slate-300 bg-white text-sm font-medium text-slate-200 hover:bg-slate-50"
+//                   : "relative inline-flex items-center px-2 py-2 rounded-r-md border border-slate-300 bg-white text-sm font-medium text-slate-500 hover:bg-slate-50"
 //               }
 //               disabled={currentPage === numPages}
 //             >

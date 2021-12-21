@@ -77,7 +77,7 @@ export default function Calendar({ path }) {
               />
             </div>
 
-            <h2 className="font-medium text-lg text-gray-700">
+            <h2 className="font-medium text-lg text-slate-700">
               Upcoming Events for MC3 Members
             </h2>
             <p className="text-md max-w-md italic mt-2 sm:mt-4 lg:mt-6">
@@ -96,7 +96,7 @@ export default function Calendar({ path }) {
                 let firstChar = item.summary.charAt(0);
                 return (
                   <div key={item.id}>
-                    <div className="rounded-md shadow-md flex flex-col sm:flex-row mb-1 my-1 sm:my-2 lg:my-3 bg-gray-50 hover:bg-gray-100 hover:shadow-xl">
+                    <div className="rounded-md shadow-md flex flex-col sm:flex-row mb-1 my-1 sm:my-2 lg:my-3 bg-slate-50 hover:bg-slate-100 hover:shadow-xl">
                       <aside className="bg-blue-700 flex-none rounded-tl-md rounded-tr-md sm:rounded-tr-none sm:rounded-bl-md text-white flex flex-col justify-center w-full sm:w-32 text-center p-2">
                         <p className="text-xl">
                           {new Date(item.start.dateTime).toLocaleDateString(
@@ -134,7 +134,7 @@ export default function Calendar({ path }) {
                           </h3>
                           {item.description && (
                             <>
-                              <h4 className="text-sm font-semibold text-gray-700">
+                              <h4 className="text-sm font-semibold text-slate-700">
                                 Additional Event Details:
                               </h4>
                               <div
@@ -147,7 +147,7 @@ export default function Calendar({ path }) {
                           )}
                           {item.location && (
                             <div className="text-center">
-                              <p className="text-sm font-semibold text-gray-700 my-1 text-left">
+                              <p className="text-sm font-semibold text-slate-700 my-1 text-left">
                                 Event Location
                               </p>
                               <p className="text-sm sm:text-xs my-1 text-left">
@@ -165,7 +165,7 @@ export default function Calendar({ path }) {
                           {/* <div className='flex justify-center'>
                             <a
                               href={copyUrl}
-                              className='inline-block mx-auto my-4 px-3 py-2 bg-gray-200 hover:bg-gray-300 rounded-md text-gray-800 hover:text-black'
+                              className='inline-block mx-auto my-4 px-3 py-2 bg-slate-200 hover:bg-slate-300 rounded-md text-slate-800 hover:text-black'
                             >
                               <FcGoogle className='inline mr-2 text-xl' /> Add
                               to Your Calendar
@@ -178,12 +178,12 @@ export default function Calendar({ path }) {
                                 return (
                                   <li
                                     key={file.fileId}
-                                    className="px-3 py-2 bg-gray-200 hover:bg-gray-300 rounded-md"
+                                    className="px-3 py-2 bg-slate-200 hover:bg-slate-300 rounded-md"
                                   >
                                     <a
                                       href={file.fileUrl}
                                       title={file.title}
-                                      className=" text-gray-800 hover:text-black"
+                                      className=" text-slate-800 hover:text-black"
                                     >
                                       <HiCloudDownload className="inline mr-2 text-xl" />
                                       Download Attachment

@@ -14,7 +14,7 @@ export default function BlogCard({
   },
 }) {
   return (
-    <div className="rounded-md shadow-md my-2 sm:my-3 lg:my-4 bg-gray-100 h-full">
+    <div className="rounded-md shadow-md my-2 sm:my-3 lg:my-4 bg-slate-100 h-full">
       {cover ? (
         <aside className="relative rounded-tl-md rounded-tr-md text-white h-40 sm:h-48 md:h-56 lg:h-60 w-full text-center overflow-hidden aspect-w-2 aspect-h-1">
           <Link
@@ -51,7 +51,7 @@ export default function BlogCard({
             </Link>
           </p>
         </header>
-        <div className="text-gray-700 text-sm sm:text-xs">
+        <div className="text-slate-700 text-sm sm:text-xs">
           Last Updated{" "}
           {new Date(modifiedTime).toLocaleDateString("en-US", {
             month: "short",

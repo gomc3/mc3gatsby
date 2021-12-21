@@ -122,7 +122,7 @@ export default function Subscribe() {
                   action="/api/subscribe"
                 >
                   <label htmlFor="name" className="block">
-                    <h3 className="text-xs text-gray-600 uppercase mb-2 text-center">
+                    <h3 className="text-xs text-slate-600 uppercase mb-2 text-center">
                       Your Name:
                     </h3>
                     <input
@@ -137,7 +137,7 @@ export default function Subscribe() {
                     />
                   </label>
                   <label htmlFor="email" className="block">
-                    <h3 className="text-xs text-gray-600 uppercase mb-2 text-center">
+                    <h3 className="text-xs text-slate-600 uppercase mb-2 text-center">
                       Your Email:
                     </h3>
                     <input
@@ -169,7 +169,7 @@ export default function Subscribe() {
                   />
                 </form>
                 <div className={`mt-2 ${formComplete && `hidden`}`}>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-slate-500">
                     You can unsubscribe anytime. For more details, review our{" "}
                     <Link
                       to="/privacy"
@@ -187,7 +187,7 @@ export default function Subscribe() {
                       closeModal();
                       setFormComplete(false);
                     }}
-                    className="px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 hover:text-black bg-gray-200 hover:bg-gray-300 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+                    className="px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-slate-900 hover:text-black bg-slate-200 hover:bg-slate-300 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
                   >
                     Close
                   </button>

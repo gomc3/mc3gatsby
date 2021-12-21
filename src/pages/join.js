@@ -85,7 +85,7 @@ export default function Join({ path }) {
             />
           </div>
 
-          <h2 className="text-lg text-gray-700 max-w-screen-sm">
+          <h2 className="text-lg text-slate-700 max-w-screen-sm">
             Ready to take the next step? If you or your district are interested
             in joining{" "}
             <abbr title="Monmouth County Curriculum Consortium">M.C.3</abbr>,
@@ -210,7 +210,7 @@ export default function Join({ path }) {
                     {...register("registrantName1", {
                       required: "Registrant full name is required.",
                     })}
-                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                   />
                   {errors.registrantEmail1 && (
                     <p className="text-red-700">
@@ -231,7 +231,7 @@ export default function Join({ path }) {
                     {...register("registrantEmail1", {
                       required: "This email address is required.",
                     })}
-                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                   />
                   {errors.registrantEmail1 && (
                     <p className="text-red-700">
@@ -257,7 +257,7 @@ export default function Join({ path }) {
                         {...register("registrantName2", {
                           required: "Registrant full name is required.",
                         })}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                       />
                       {errors.name && (
                         <p className="text-red-700">
@@ -277,7 +277,7 @@ export default function Join({ path }) {
                         {...register("registrantEmail2", {
                           required: "This email address is required.",
                         })}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                       />
                       {errors.registrantEmail2 && (
                         <p className="text-red-700">
@@ -299,7 +299,7 @@ export default function Join({ path }) {
                         id="registrantName3"
                         placeholder="Enter the full name of the third registrant here..."
                         {...register("registrantName3")}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                       />
                     </label>
                     <label htmlFor="registrantEmail3" className="block ml-6">
@@ -312,7 +312,7 @@ export default function Join({ path }) {
                         id="registrantEmail3"
                         placeholder="registrant3@example.com"
                         {...register("registrantEmail3")}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                       />
                     </label>
                     <label
@@ -328,7 +328,7 @@ export default function Join({ path }) {
                         id="registrantName$"
                         placeholder="Enter the full name of the fourth registrant here..."
                         {...register("registrantName4")}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                       />
                     </label>
                     <label htmlFor="registrantEmail4" className="block ml-6">
@@ -341,7 +341,7 @@ export default function Join({ path }) {
                         id="registrantEmail4"
                         placeholder="registrant4@example.com"
                         {...register("registrantEmail4")}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                       />
                     </label>
                     <label
@@ -357,7 +357,7 @@ export default function Join({ path }) {
                         id="registrantName$"
                         placeholder="Enter the full name of the fifth registrant here..."
                         {...register("registrantName5")}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                       />
                     </label>
                     <label htmlFor="registrantEmail5" className="block ml-6">
@@ -370,7 +370,7 @@ export default function Join({ path }) {
                         id="registrantEmail5"
                         placeholder="registrant5@example.com"
                         {...register("registrantEmail5")}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                       />
                     </label>
                   </>
@@ -403,7 +403,7 @@ export default function Join({ path }) {
                     {...register("leaName", {
                       required: "District/Organization name is required.",
                     })}
-                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                   />
                   {errors.leaName && (
                     <p className="text-red-700">
@@ -423,7 +423,7 @@ export default function Join({ path }) {
                     {...register("billingAddress", {
                       required: "Billing address is required.",
                     })}
-                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                   />
                   {errors.billingAddress && (
                     <p className="text-red-700">
@@ -441,7 +441,7 @@ export default function Join({ path }) {
                     id="purchaseOrder"
                     placeholder='Leave Blank for "Will Follow"'
                     {...register("purchaseOrder")}
-                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                   />
                 </label>
                 <label
@@ -459,7 +459,7 @@ export default function Join({ path }) {
                     {...register("accountsPayableName", {
                       required: "Accounts Payable Name Required",
                     })}
-                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                   />
                   {errors.accountsPayableName && (
                     <p className="text-red-700">
@@ -482,7 +482,7 @@ export default function Join({ path }) {
                     {...register("accountsPayableEmail", {
                       required: "Accounts Payable Email Required",
                     })}
-                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                   />
                   {errors.accountsPayableEmail && (
                     <p className="text-red-700">
@@ -499,7 +499,7 @@ export default function Join({ path }) {
                   value="Submit"
                   disabled={disabled}
                   className={`w-1/3 px-6 py-3 mt-6 font-medium rounded-md text-white bg-blue-700 ${
-                    disabled && ` opacity-40 text-gray-50 `
+                    disabled && ` opacity-40 text-slate-50 `
                   } transition duration-300 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm ease-in-out`}
                 />
                 <ReCAPTCHA
