@@ -1,7 +1,5 @@
-// const colors = require("tailwindcss/colors");
-
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
   theme: {
     extend: {
       zIndex: {
@@ -12,6 +10,6 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/custom-forms"),
+    require("@tailwindcss/forms"),
   ],
 };
