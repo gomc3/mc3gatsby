@@ -7,7 +7,7 @@ export default function BlogCard({
     childMdx: { excerpt, timeToRead },
     cover,
     id,
-    modifiedTime,
+    createdTime,
     name,
     slug,
     tags,
@@ -52,8 +52,8 @@ export default function BlogCard({
           </p>
         </header>
         <div className="text-slate-700 text-sm sm:text-xs">
-          Last Updated{" "}
-          {new Date(modifiedTime).toLocaleDateString("en-US", {
+          First Published on{" "}
+          {new Date(createdTime).toLocaleDateString("en-US", {
             month: "short",
             day: "numeric",
             year: "numeric",

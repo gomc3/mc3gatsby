@@ -23,6 +23,7 @@ export const postQuery = graphql`
         excerpt
       }
       locale
+      createdTime
       modifiedTime
     }
     site {
@@ -43,6 +44,7 @@ export default function PostTemplate({
       cover,
       childMdx: { body, timeToRead, excerpt },
       locale,
+      createdTime,
       modifiedTime,
     },
     site: {

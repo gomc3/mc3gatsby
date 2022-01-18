@@ -71,6 +71,7 @@ export const data = graphql`
           timeToRead
         }
         id
+        createdTime
         modifiedTime
         name
         slug
