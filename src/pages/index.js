@@ -162,7 +162,7 @@ export default function IndexPage({ path }) {
             <span className="inline-flex rounded-md shadow">
               <Link
                 to="/contact"
-                className="flex items-center justify-center border border-transparent text-base leading-6 font-medium text-white bg-blue-700 hover:bg-blue-600  focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
+                className="flex items-center justify-center border border-transparent text-base leading-6 font-medium text-white bg-blue-700 hover:bg-blue-600  focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-md transition ease-in-out duration-150hover:shadow-xl transform hover:scale-105 px-8 py-3 md:py-4 md:px-10 md:text-lg"
               >
                 Let Us Know You're Interested
               </Link>
