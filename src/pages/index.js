@@ -10,22 +10,19 @@ export default function IndexPage({ path }) {
     <Layout path={path}>
       <Seo title="Home" />
 
-      <header className="w-full bg-blue-50 px-4 lg:px-12">
+      <header id="hero" className="w-full bg-blue-50 px-4 lg:px-12">
         <div className="flex flex-wrap items-center justify-center max-w-screen-2xl mx-auto lg:space-x-12">
-          <div className="pt-4 sm:pb-5 md:py-9 lg:py-6 px-4 sm:px-8 lg:w-1/2">
+          <div className="pt-4 sm:pb-5 md:py-9 lg:py-6 px-4 sm:px-8 max-w-screen-lg">
             <h1 className="mb-6 font-medium tracking-wide uppercase text-blue-700 sm:leading-none text-5xl lg:text-6xl xl:text-7xl text-center">
               M<span className="sr-only">.</span>C
               <span className="sr-only">.</span>3
               <span className="sr-only">.</span>
             </h1>
-            <h2 className="mb-8 text-slate-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-5xl sm:text-6xl text-center lg:text-left">
+            <h2 className="mb-8 text-slate-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-5xl sm:text-6xl text-center">
               Find and Share Ideas to Shape the
               <span className="text-blue-700"> Future of Education!</span>
             </h2>
-            <p className="mb-10 mx-auto text-slate-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
-              Join a group of instructional and educational leaders from 60+
-              School Districts in Monmouth County and beyond.
-            </p>
+
             <div className="flex items-center justify-evenly flex-wrap">
               <Link
                 to="/join"
@@ -35,14 +32,15 @@ export default function IndexPage({ path }) {
               </Link>
               <Link
                 to="/calendar"
-                className="flex items-center my-3 justify-center border border-slate-700 text-base text-slate-700 leading-6 font-medium hover:text-white hover:bg-slate-700  focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150 hover:shadow-xl transform px-8 py-3 md:py-4 md:px-10 md:text-lg"
+                className="flex items-center my-3 justify-center border border-transparent bg-slate-700 text-base text-slate-50 leading-6 font-medium hover:text-white hover:bg-slate-800  focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150 hover:shadow-xl transform px-8 py-3 md:py-4 md:px-10 md:text-lg"
               >
                 Meeting Schedule
               </Link>
             </div>
-          </div>
-          <div className="flex pt-10 sm:pb-5 md:py-9 lg:py-12 px-4 sm:px-8 lg:w-1/2 flex-1 items-center justify-center">
-            <HeroImage />
+            <p className="mt-10 mx-auto text-slate-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
+              Join a group of instructional and educational leaders from 60+
+              School Districts in Monmouth County and beyond.
+            </p>
           </div>
         </div>
       </header>
