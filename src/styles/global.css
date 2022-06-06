@@ -5,6 +5,12 @@
 a {
   @apply focus:outline-none focus:ring-4 focus:ring-yellow-300 transition duration-150 ease-in-out rounded-md;
 }
+/* Home Page Styles */
+#hero {
+  background: linear-gradient(rgba(239, 246, 255, 0.45), rgba(239, 246, 255, 1)),
+    url("/2022mc3WinterSummit-19.jpg") no-repeat center;
+  background-size: cover;
+}
 /* Calendar Styles */
 .event-description a {
   text-decoration: underline;
