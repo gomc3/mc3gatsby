@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import Seo from "../components/seo";
-import HeroImage from "../components/heroImage";
 import Layout from "../components/layout";
 
 export default function IndexPage({ path }) {
