@@ -1,17 +1,17 @@
-import * as React from "react";
-import { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-import { Link } from "gatsby";
-import Layout from "../components/layout";
-import Seo from "../components/seo";
-import PageTitle from "../components/page-title";
-import { HiPlus } from "react-icons/hi";
-import { useForm } from "react-hook-form";
+import * as React from 'react'
+import { useState } from 'react'
+import ReCAPTCHA from 'react-google-recaptcha'
+import { Link } from 'gatsby'
+import Layout from '../components/layout'
+import Seo from '../components/seo'
+import PageTitle from '../components/page-title'
+import { HiPlus } from 'react-icons/hi'
+import { useForm } from 'react-hook-form'
 
 export default function Join({ path }) {
-  const [disabled, setDisabled] = useState(false);
-  const [formComplete, setFormComplete] = useState(false);
-  const [recaptchaPassed, setRecaptchaPassed] = useState(null);
+  const [disabled, setDisabled] = useState(false)
+  const [formComplete, setFormComplete] = useState(false)
+  const [recaptchaPassed, setRecaptchaPassed] = useState(null)
   const {
     register,
     handleSubmit,
@@ -19,62 +19,79 @@ export default function Join({ path }) {
     watch,
     setValue,
     formState: { errors },
-  } = useForm();
-  const watchSelectedPackage = watch("memberPackage", false);
-  const reRef = React.useRef();
+  } = useForm()
+  const watchSelectedPackage = watch('memberPackage', false)
+  const reRef = React.useRef()
   const onSubmit = async (data) => {
-    setDisabled(true);
-    const token = await reRef.current.executeAsync();
-    data.token = token;
-    data.timeStamp = `${new Date().toLocaleDateString("en-US", {
-      month: "2-digit",
-      day: "numeric",
-      year: "numeric",
-    })} ${new Date().toLocaleTimeString()}`;
-    !data.purchaseOrder && (data.purchaseOrder = "Will Follow");
+    setDisabled(true)
+    const token = await reRef.current.executeAsync()
+    data.token = token
+    data.timeStamp = `${new Date().toLocaleDateString('en-US', {
+      month: '2-digit',
+      day: 'numeric',
+      year: 'numeric',
+    })} ${new Date().toLocaleTimeString()}`
+    !data.purchaseOrder && (data.purchaseOrder = 'Will Follow')
     if (data.registrantName1 && !data.registrantEmail1) {
-      data.registrantEmail1 = "?";
+      data.registrantEmail1 = '?'
     }
     if (data.registrantName2 && !data.registrantEmail2) {
-      data.registrantEmail2 = "?";
+      data.registrantEmail2 = '?'
     }
     if (data.registrantName3 && !data.registrantEmail3) {
-      data.registrantEmail3 = "?";
+      data.registrantEmail3 = '?'
     }
     if (data.registrantName4 && !data.registrantEmail4) {
-      data.registrantEmail4 = "?";
+      data.registrantEmail4 = '?'
     }
     if (data.registrantName5 && !data.registrantEmail5) {
-      data.registrantEmail5 = "?";
+      data.registrantEmail5 = '?'
     }
     // console.log(data);
     try {
       await fetch(`/api/joinmc3`, {
         method: `POST`,
         headers: {
-          "content-type": "application/json; charset=UTF-8",
+          'content-type': 'application/json; charset=UTF-8',
         },
         body: JSON.stringify(data),
       }).then((res) => {
-        res.json();
+        res.json()
         //console.log(res);
         if (res.status === 200) {
-          reset();
-          setFormComplete(true);
-          setDisabled(false);
+          reset()
+          setFormComplete(true)
+          setDisabled(false)
         } else {
-          console.log(res.status);
-          setRecaptchaPassed(false);
+          console.log(res.status)
+          setRecaptchaPassed(false)
         }
-      });
+      })
     } catch (error) {
-      console.log(errors);
+      console.log(errors)
     }
-  };
+  }
   return (
     <Layout path={path}>
-      <Seo title="Join MC3" />
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <Seo title='Join MC3' />
+      <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12'>
+        <header className='mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center'>
+          <div>
+            <PageTitle
+              title='Join MC3'
+              icon={
+                <HiPlus className='text-3xl sm:text-5xl lg:text-6xl -mt-3 inline-block' />
+              }
+            />
+          </div>
+
+          <h2 className='text-lg text-slate-700 max-w-screen-sm'>
+            Membership information for the 2022-2023 is forthcoming. Please
+            check back soon.
+          </h2>
+        </header>
+      </div>
+      {/* <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <header className="mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center">
           <div>
             <PageTitle
@@ -517,7 +534,7 @@ export default function Join({ path }) {
             </p>
           )}
         </section>
-      </div>
+      </div> */}
     </Layout>
-  );
+  )
 }
