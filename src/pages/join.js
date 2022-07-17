@@ -121,9 +121,8 @@ export default function Join({ path }) {
           </div>
           <h2 className="text-lg text-slate-700 max-w-screen-sm">
             Ready to take the next step? If your district is interested in
-            joining{' '}
-            <abbr title="Monmouth County Curriculum Consortium">M.C.3</abbr>,
-            please complete the form below. Our mailing address is listed below.
+            joining MC3, please complete the form below. Our mailing address is
+            listed below.
           </h2>
           <div id="contact-info" className="text-center mt-4 text-sm">
             <p>Monmouth County Curriculum Consortium (MC3)</p>
