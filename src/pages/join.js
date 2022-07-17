@@ -7,6 +7,8 @@ import Seo from '../components/seo'
 import PageTitle from '../components/page-title'
 import { HiPlus } from 'react-icons/hi'
 import { useForm } from 'react-hook-form'
+import RegistrantInput from '../components/Registrant'
+import { counties } from '../../data'
 
 export default function Join({ path }) {
   const [disabled, setDisabled] = useState(false)
@@ -21,7 +23,20 @@ export default function Join({ path }) {
     formState: { errors },
   } = useForm()
   const watchSelectedPackage = watch('memberPackage', false)
+
   const reRef = React.useRef()
+  /**
+   * The function is called when the user clicks the submit button. It sets the disabled state to true,
+   * which disables the submit button. It then calls the reCaptcha API and stores the token in a
+   * variable. It then adds the token to the data object, along with a timestamp. It then checks to see
+   * if the user has entered a purchase order number, and if not, it adds a placeholder value. It then
+   * checks to see if the user has entered a name for each registrant, and if so, it checks to see if
+   * the user has entered an email address for that registrant. If not, it adds a placeholder value. It
+   * then sends the data object to the server, and if the server responds with a status of 200, it
+   * resets the form, sets the formComplete state to true, and sets the disabled state to false. If the
+   * server responds with a status other than 200, it sets the recaptchaPassed state to false
+   * @param data - the form data
+   */
   const onSubmit = async (data) => {
     setDisabled(true)
     const token = await reRef.current.executeAsync()
@@ -47,7 +62,28 @@ export default function Join({ path }) {
     if (data.registrantName5 && !data.registrantEmail5) {
       data.registrantEmail5 = '?'
     }
-    // console.log(data);
+    if (data.registrantName6 && !data.registrantEmail6) {
+      data.registrantEmail6 = '?'
+    }
+    if (data.registrantName7 && !data.registrantEmail6) {
+      data.registrantEmail7 = '?'
+    }
+    if (data.registrantName8 && !data.registrantEmail6) {
+      data.registrantEmail8 = '?'
+    }
+    if (data.registrantName9 && !data.registrantEmail6) {
+      data.registrantEmail9 = '?'
+    }
+    if (data.registrantName10 && !data.registrantEmail6) {
+      data.registrantEmail10 = '?'
+    }
+    if (data.registrantName11 && !data.registrantEmail6) {
+      data.registrantEmail11 = '?'
+    }
+    if (data.registrantName12 && !data.registrantEmail6) {
+      data.registrantEmail12 = '?'
+    }
+
     try {
       await fetch(`/api/joinmc3`, {
         method: `POST`,
@@ -57,7 +93,6 @@ export default function Join({ path }) {
         body: JSON.stringify(data),
       }).then((res) => {
         res.json()
-        //console.log(res);
         if (res.status === 200) {
           reset()
           setFormComplete(true)
@@ -73,25 +108,8 @@ export default function Join({ path }) {
   }
   return (
     <Layout path={path}>
-      <Seo title='Join MC3' />
-      <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12'>
-        <header className='mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center'>
-          <div>
-            <PageTitle
-              title='Join MC3'
-              icon={
-                <HiPlus className='text-3xl sm:text-5xl lg:text-6xl -mt-3 inline-block' />
-              }
-            />
-          </div>
-
-          <h2 className='text-lg text-slate-700 max-w-screen-sm'>
-            Membership information for the 2022-2023 is forthcoming. Please
-            check back soon.
-          </h2>
-        </header>
-      </div>
-      {/* <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <Seo title="Join MC3" />
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <header className="mb-2 sm:mb-4 lg:mb-6 flex flex-col items-center">
           <div>
             <PageTitle
@@ -101,10 +119,9 @@ export default function Join({ path }) {
               }
             />
           </div>
-
           <h2 className="text-lg text-slate-700 max-w-screen-sm">
-            Ready to take the next step? If you or your district are interested
-            in joining{" "}
+            Ready to take the next step? If your district is interested in
+            joining{' '}
             <abbr title="Monmouth County Curriculum Consortium">M.C.3</abbr>,
             please complete the form below. Our mailing address is listed below.
           </h2>
@@ -115,7 +132,7 @@ export default function Join({ path }) {
             <p>Tax ID: 462-572-217/000</p>
           </div>
           <p className="text-md max-w-md italic mt-2 sm:mt-4 lg:mt-6">
-            The information collected below is handled in accordance with{" "}
+            The information collected below is handled in accordance with{' '}
             <Link
               to="/privacy"
               className="text-blue-700 underline hover:no-underline not-italic"
@@ -140,8 +157,8 @@ export default function Join({ path }) {
               </h2>
               <button
                 onClick={() => {
-                  setFormComplete(!formComplete);
-                  setValue("memberPackage", false);
+                  setFormComplete(!formComplete)
+                  setValue('memberPackage', false)
                 }}
                 className="block mx-auto text-center items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 active:bg-blue-600 transition ease-in-out duration-150"
               >
@@ -160,50 +177,55 @@ export default function Join({ path }) {
                 Step 1: Select a Membership Package:
               </h3>
               <p className="text-sm mt-4 mb-6">
-                We offer two membership packages.{" "}
-                <span className="font-bold">General Membership</span> is for an
-                individual ($75).{" "}
-                <span className="font-bold">
-                  The Professional Development Package
-                </span>{" "}
-                is for up to five participants from the same District and
-                includes General Membership, attendance at the Winter Summit and
-                admittance to 5 Topical Breakout Sessions.
+                We offer two membership packages.
               </p>
+              <ol className="list-decimal ml-8">
+                <li>
+                  The{' '}
+                  <span className="font-bold">
+                    Professional Development Package (1-5 members)
+                  </span>
+                </li>
+                <li>
+                  The{' '}
+                  <span className="font-bold">
+                    Professional Development Package (6-12 members)
+                  </span>
+                </li>
+              </ol>
+
               {errors.memberPackage && (
                 <p className="text-red-700">
                   &darr; {errors.memberPackage.message}
                 </p>
               )}
-              <label
-                htmlFor="general-package"
-                className="flex items-center pb-3"
-              >
+              <label htmlFor="small-package" className="flex items-center pb-3">
                 <input
                   type="radio"
-                  id="general-package"
+                  id="small-package"
                   name="memberPackage"
-                  value="general"
-                  {...register("memberPackage", {
-                    required: "Please indicate which package you would like",
+                  value="small"
+                  {...register('memberPackage', {
+                    required: 'Please indicate which package you would like',
                   })}
                   className="form-radio text-blue-800 my-2 mr-3 h-5 w-5 border border-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition duration-150 ease-in-out"
                 />
-                General Membership - $75.00 (1 Participant)
+                Professional Development Package (1-5) - $350.00 (Up to 5
+                Members)
               </label>
-              <label htmlFor="pd-package" className="flex items-center">
+              <label htmlFor="large-package" className="flex items-center">
                 <input
                   type="radio"
-                  id="pd-package"
+                  id="large-package"
                   name="memberPackage"
-                  value="pd"
-                  {...register("memberPackage", {
-                    required: "Please indicate which package you would like",
+                  value="large"
+                  {...register('memberPackage', {
+                    required: 'Please indicate which package you would like',
                   })}
                   className="form-radio text-blue-800 my-2 mr-3 h-5 w-5 border border-blue-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition duration-150 ease-in-out"
                 />
-                Professional Development Package - $375.00 (Up to 5
-                Participants)
+                Professional Development Package (6-12) - $500.00 (Up to 12
+                Members)
               </label>
             </div>
             {watchSelectedPackage !== false && (
@@ -214,184 +236,19 @@ export default function Join({ path }) {
                 <p className="text-sm font-medium">
                   Please add the member details below.
                 </p>
-                <label htmlFor="registrantName1" className="block ml-6">
-                  <h3 className="font-semibold text-lg text-blue-800 mt-6">
-                    Full Name of {watchSelectedPackage === "pd" && `First `}{" "}
-                    Registrant:
-                  </h3>
-                  <input
-                    type="text"
-                    name="registrantName1"
-                    id="registrantName1"
-                    placeholder="Enter the full name of the registrant here..."
-                    {...register("registrantName1", {
-                      required: "Registrant full name is required.",
-                    })}
-                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
-                  />
-                  {errors.registrantEmail1 && (
-                    <p className="text-red-700">
-                      &uarr; {errors.registrantName1.message}
-                    </p>
-                  )}
-                </label>
-                <label htmlFor="registrantEmail1" className="block ml-6">
-                  <h3 className="font-semibold text-lg text-blue-800">
-                    Email of {watchSelectedPackage === "pd" && `First `}{" "}
-                    Registrant:
-                  </h3>
-                  <input
-                    type="email"
-                    name="registrantEmail1"
-                    id="registrantEmail1"
-                    placeholder="registrant@example.com"
-                    {...register("registrantEmail1", {
-                      required: "This email address is required.",
-                    })}
-                    className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
-                  />
-                  {errors.registrantEmail1 && (
-                    <p className="text-red-700">
-                      {" "}
-                      &uarr; {errors.registrantEmail1.message}
-                    </p>
-                  )}
-                </label>
-                {watchSelectedPackage === "pd" && (
-                  <>
-                    <label
-                      htmlFor="registrantName2"
-                      className="block border-t border-dashed border-blue-500 ml-6"
-                    >
-                      <h3 className="font-semibold text-lg text-blue-800 mt-6">
-                        Full Name of Second Registrant:
-                      </h3>
-                      <input
-                        type="text"
-                        name="registrantName2"
-                        id="registrantName2"
-                        placeholder="Enter the full name of the second registrant here..."
-                        {...register("registrantName2", {
-                          required: "Registrant full name is required.",
-                        })}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
-                      />
-                      {errors.name && (
-                        <p className="text-red-700">
-                          &uarr; {errors.registrantName2.message}
-                        </p>
-                      )}
-                    </label>
-                    <label htmlFor="registrantEmail2" className="block ml-6">
-                      <h3 className="font-semibold text-lg text-blue-800">
-                        Email of Second Registrant:
-                      </h3>
-                      <input
-                        type="email"
-                        name="registrantEmail2"
-                        id="registrantEmail2"
-                        placeholder="registrant2@example.com"
-                        {...register("registrantEmail2", {
-                          required: "This email address is required.",
-                        })}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
-                      />
-                      {errors.registrantEmail2 && (
-                        <p className="text-red-700">
-                          {" "}
-                          &uarr; {errors.registrantEmail2.message}
-                        </p>
-                      )}
-                    </label>
-                    <label
-                      htmlFor="registrantName3"
-                      className="block border-t border-dashed border-blue-500 ml-6"
-                    >
-                      <h3 className="font-semibold text-lg text-blue-800 mt-6">
-                        Full Name of Third Registrant:
-                      </h3>
-                      <input
-                        type="text"
-                        name="registrantName3"
-                        id="registrantName3"
-                        placeholder="Enter the full name of the third registrant here..."
-                        {...register("registrantName3")}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
-                      />
-                    </label>
-                    <label htmlFor="registrantEmail3" className="block ml-6">
-                      <h3 className="font-semibold text-lg text-blue-800">
-                        Email of Third Registrant:
-                      </h3>
-                      <input
-                        type="email"
-                        name="registrantEmail3"
-                        id="registrantEmail3"
-                        placeholder="registrant3@example.com"
-                        {...register("registrantEmail3")}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
-                      />
-                    </label>
-                    <label
-                      htmlFor="registrantName4"
-                      className="block border-t border-dashed border-blue-500 ml-6"
-                    >
-                      <h3 className="font-semibold text-lg text-blue-800 mt-6">
-                        Full Name of Fourth Registrant:
-                      </h3>
-                      <input
-                        type="text"
-                        name="registrantName4"
-                        id="registrantName$"
-                        placeholder="Enter the full name of the fourth registrant here..."
-                        {...register("registrantName4")}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
-                      />
-                    </label>
-                    <label htmlFor="registrantEmail4" className="block ml-6">
-                      <h3 className="font-semibold text-lg text-blue-800">
-                        Email of Fourth Registrant:
-                      </h3>
-                      <input
-                        type="email"
-                        name="registrantEmail4"
-                        id="registrantEmail4"
-                        placeholder="registrant4@example.com"
-                        {...register("registrantEmail4")}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
-                      />
-                    </label>
-                    <label
-                      htmlFor="registrantName5"
-                      className="block border-t border-dashed border-blue-500 ml-6"
-                    >
-                      <h3 className="font-semibold text-lg text-blue-800 mt-6">
-                        Full Name of Fifth Registrant:
-                      </h3>
-                      <input
-                        type="text"
-                        name="registrantName5"
-                        id="registrantName$"
-                        placeholder="Enter the full name of the fifth registrant here..."
-                        {...register("registrantName5")}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
-                      />
-                    </label>
-                    <label htmlFor="registrantEmail5" className="block ml-6">
-                      <h3 className="font-semibold text-lg text-blue-800">
-                        Email of Fifth Registrant:
-                      </h3>
-                      <input
-                        type="email"
-                        name="registrantEmail5"
-                        id="registrantEmail5"
-                        placeholder="registrant5@example.com"
-                        {...register("registrantEmail5")}
-                        className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
-                      />
-                    </label>
-                  </>
-                )}
+
+                {Array.from([1, 2, 3, 4, 5]).map((a) => {
+                  return (
+                    <RegistrantInput key={a} index={a} register={register} />
+                  )
+                })}
+
+                {watchSelectedPackage === 'large' &&
+                  Array.from([6, 7, 8, 9, 10, 11, 12]).map((a) => {
+                    return (
+                      <RegistrantInput key={a} index={a} register={register} />
+                    )
+                  })}
               </div>
             )}
             {watchSelectedPackage !== false && (
@@ -417,8 +274,8 @@ export default function Join({ path }) {
                     name="leaName"
                     id="leaName"
                     placeholder="Enter the school district/organization name here..."
-                    {...register("leaName", {
-                      required: "District/Organization name is required.",
+                    {...register('leaName', {
+                      required: 'District/Organization name is required.',
                     })}
                     className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                   />
@@ -437,8 +294,8 @@ export default function Join({ path }) {
                     name="billingAddress"
                     id="billingAddress"
                     placeholder="Example: 540 Broadway Long Branch, NJ 07740"
-                    {...register("billingAddress", {
-                      required: "Billing address is required.",
+                    {...register('billingAddress', {
+                      required: 'Billing address is required.',
                     })}
                     className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                   />
@@ -448,16 +305,38 @@ export default function Join({ path }) {
                     </p>
                   )}
                 </label>
+                <label htmlFor="county" className="block mt-6 ml-6">
+                  <h3 className="font-semibold text-lg text-blue-800">
+                    C) Select your county
+                  </h3>
+                  <select
+                    name="county"
+                    id="county"
+                    {...register('county', {
+                      required: 'A county is required.',
+                      pattern: '^((?!Select).)*$',
+                    })}
+                    className="form-select text-slate-500 block w-full mb-3 px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
+                  >
+                    {counties.map((county) => {
+                      return (
+                        <option key={county} value={county}>
+                          {county}
+                        </option>
+                      )
+                    })}
+                  </select>
+                </label>
                 <label htmlFor="purchaseOrder" className="block mt-6 ml-6">
                   <h3 className="font-semibold text-lg text-blue-800">
-                    C) Enter Purchase Order # or Leave Blank for Will Follow:
+                    D) Enter Purchase Order # or Leave Blank for Will Follow:
                   </h3>
                   <input
                     type="text"
                     name="purchaseOrder"
                     id="purchaseOrder"
                     placeholder='Leave Blank for "Will Follow"'
-                    {...register("purchaseOrder")}
+                    {...register('purchaseOrder')}
                     className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                   />
                 </label>
@@ -466,15 +345,15 @@ export default function Join({ path }) {
                   className="block mt-6 ml-6"
                 >
                   <h3 className="font-semibold text-lg text-blue-800">
-                    D) Name of Accounts Payable Contact:
+                    E) Name of Accounts Payable Contact:
                   </h3>
                   <input
                     type="text"
                     name="accountsPayableName"
                     id="accountsPayableName"
                     placeholder="Enter the full name accounts payable contact"
-                    {...register("accountsPayableName", {
-                      required: "Accounts Payable Name Required",
+                    {...register('accountsPayableName', {
+                      required: 'Accounts Payable Name Required',
                     })}
                     className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                   />
@@ -489,15 +368,15 @@ export default function Join({ path }) {
                   className="block mt-6 ml-6"
                 >
                   <h3 className="font-semibold text-lg text-blue-800">
-                    E) Email of Accounts Payable Contact:
+                    F) Email of Accounts Payable Contact:
                   </h3>
                   <input
                     type="email"
                     name="accountsPayableEmail"
                     id="accountsPayableEmail"
                     placeholder="email@accountspayable.com"
-                    {...register("accountsPayableEmail", {
-                      required: "Accounts Payable Email Required",
+                    {...register('accountsPayableEmail', {
+                      required: 'Accounts Payable Email Required',
                     })}
                     className="form-input my-3 max-w-sm block w-full px-0.5 font-medium border-b-2 border-slate-200 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition duration-150 ease-in-out"
                   />
@@ -534,7 +413,7 @@ export default function Join({ path }) {
             </p>
           )}
         </section>
-      </div> */}
+      </div>
     </Layout>
   )
 }
