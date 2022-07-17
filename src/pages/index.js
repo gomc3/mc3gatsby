@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
-import Seo from "../components/seo";
-import Layout from "../components/layout";
+import React from 'react'
+import { Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
+import Seo from '../components/seo'
+import Layout from '../components/layout'
 
 export default function IndexPage({ path }) {
   return (
@@ -57,24 +57,31 @@ export default function IndexPage({ path }) {
               href="https://www.nj.gov/education/"
               className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
             >
-              {" "}
+              {' '}
               New Jersey Department of Education
             </a>
-            ,{" "}
+            ,{' '}
             <a
               href="https://njsba.org"
               className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
             >
               New Jersey School Boards Association
             </a>
-            ,{" "}
+            ,{' '}
+            <a
+              href="https://www.brookdalecc.edu/"
+              className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
+            >
+              Brookdale Community College
+            </a>
+            ,{' '}
             <a
               href="https://monmouth.edu"
               className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
             >
               Monmouth University
             </a>
-            ,{" "}
+            ,{' '}
             <a
               href="https://rutgers.edu"
               className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
@@ -92,7 +99,7 @@ export default function IndexPage({ path }) {
                 <dl className="rounded-lg bg-white shadow-lg lg:grid lg:grid-cols-3 items-start">
                   <div className="h-full border-b border-slate-100 p-6 text-center md:border-0 md:border-r">
                     <dt className="text-2xl leading-none font-extrabold text-blue-700">
-                      Expand Your{" "}
+                      Expand Your{' '}
                       <abbr
                         className="no-underline"
                         title="professional learning network"
@@ -107,7 +114,7 @@ export default function IndexPage({ path }) {
                   </div>
                   <div className="h-full border-b border-slate-100 p-6 text-center md:border-0 md:border-r">
                     <dt className="text-2xl leading-none font-extrabold text-blue-700">
-                      <abbr title="professional development">PD</abbr>{" "}
+                      <abbr title="professional development">PD</abbr>{' '}
                       Opportunities
                     </dt>
                     <dd className="mt-3 text-slate-600 md:text-center">
@@ -142,14 +149,14 @@ export default function IndexPage({ path }) {
         </div>
         <div className="px-4 py-8 sm:px-6 sm:py-12 lg:py-16 lg:ml-1/2 lg:pl-12">
           <h2 className="text-center lg:text-right text-3xl sm:text-4xl leading-tight font-extrabold tracking-tight text-slate-900">
-            Answer the call, and{" "}
+            Answer the call, and{' '}
             <span className="whitespace-nowrap text-blue-700">
-              ignite the spark{" "}
+              ignite the spark{' '}
             </span>
             in others.
           </h2>
           <p className="mt-6 text-lg leading-7 text-slate-600">
-            Members are welcome to deliver Ignite presentations during meetings.{" "}
+            Members are welcome to deliver Ignite presentations during meetings.{' '}
             <strong>What are Ignite presentations?</strong> They are
             presentations in which members get 20 slides, which automatically
             advance every 15 seconds. The result is a fast and fun presentation
@@ -170,9 +177,9 @@ export default function IndexPage({ path }) {
       <div className="mt-6 lg:grid lg:grid-cols-2 max-w-7xl mx-auto">
         <div className="px-4 py-8 sm:px-6 sm:py-12 lg:py-16 lg:ml-1/2 lg:pl-12">
           <h2 className="text-center lg:text-left text-3xl sm:text-4xl leading-tight font-extrabold tracking-tight text-slate-900">
-            Help support{" "}
+            Help support{' '}
             <span className="whitespace-nowrap text-blue-700">
-              our future leaders{" "}
+              our future leaders{' '}
             </span>
             !
           </h2>
@@ -184,7 +191,7 @@ export default function IndexPage({ path }) {
             select a group of winners who are then recognized at a M
             <span className="sr-only">.</span>C
             <span className="sr-only">.</span>3
-            <span className="sr-only">.</span> meeting.{" "}
+            <span className="sr-only">.</span> meeting.{' '}
             <strong>Your membership helps provide this opportunity!</strong>
           </p>
           <div className="text-center lg:text-right mt-8">
@@ -211,5 +218,5 @@ export default function IndexPage({ path }) {
         </div>
       </div>
     </Layout>
-  );
+  )
 }
