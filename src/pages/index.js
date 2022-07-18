@@ -93,8 +93,10 @@ export default function IndexPage({ path }) {
           src="../images/2022mc3WinterSummit-19.jpg"
           layout="fullWidth"
           placeholder="blurred"
-          className="absolute inset-0 z-0 opacity-25"
+          className="inset-0 z-0 opacity-25"
+          style={{ position: 'absolute' }}
           alt="professonal development session at Brookdale Community College"
+          imgClassName="karma"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50 z-0"></div>
         {/* END ABSOLUTE */}
