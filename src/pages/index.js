@@ -9,9 +9,9 @@ export default function IndexPage({ path }) {
     <Layout path={path}>
       <Seo title="Home" />
 
-      <header id="hero" className="w-full bg-blue-50 px-4 lg:px-12">
+      <div id="hero" className="w-full bg-blue-50 relative">
         <div className="flex flex-wrap items-center justify-center max-w-screen-2xl mx-auto lg:space-x-12">
-          <div className="pt-4 sm:pb-5 md:py-9 lg:py-6 px-4 sm:px-8 max-w-screen-lg">
+          <div className="pt-4 sm:pb-5 md:py-9 lg:py-6 px-4 sm:px-8 max-w-screen-lg z-10">
             <h1 className="mb-6 font-medium tracking-wide uppercase text-blue-700 sm:leading-none text-5xl lg:text-6xl xl:text-7xl text-center">
               M<span className="sr-only">.</span>C
               <span className="sr-only">.</span>3
@@ -21,7 +21,6 @@ export default function IndexPage({ path }) {
               Find and Share Ideas to Shape the
               <span className="text-blue-700"> Future of Education!</span>
             </h2>
-
             <div className="flex items-center justify-evenly flex-wrap">
               <Link
                 to="/join"
@@ -41,56 +40,66 @@ export default function IndexPage({ path }) {
               School Districts in Monmouth County and beyond.
             </p>
           </div>
+          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+            <h2 className="text-center text-2xl sm:text-3xl leading-9 font-extrabold text-slate-900 sm:leading-10 mx-auto ">
+              Ensure your instructional leaders are receiving timely
+              information!
+            </h2>
+            <p className="mt-3 text-xl leading-8 text-slate-700 sm:mt-4 max-w-screen-sm mx-auto">
+              In addition to member districts which make up the consortium, M
+              <span className="sr-only">.</span>C
+              <span className="sr-only">.</span>3
+              <span className="sr-only">.</span> has partnered with the
+              <a
+                href="https://www.nj.gov/education/"
+                className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
+              >
+                {' '}
+                New Jersey Department of Education
+              </a>
+              ,{' '}
+              <a
+                href="https://njsba.org"
+                className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
+              >
+                New Jersey School Boards Association
+              </a>
+              ,{' '}
+              <a
+                href="https://www.brookdalecc.edu/"
+                className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
+              >
+                Brookdale Community College
+              </a>
+              ,{' '}
+              <a
+                href="https://monmouth.edu"
+                className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
+              >
+                Monmouth University
+              </a>
+              ,{' '}
+              <a
+                href="https://rutgers.edu"
+                className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
+              >
+                Rutgers University
+              </a>
+              , and many other education-related organizations.
+            </p>
+          </div>
         </div>
-      </header>
+        <StaticImage
+          src="../images/2022mc3WinterSummit-19.jpg"
+          layout="fullWidth"
+          placeholder="blurred"
+          className="absolute inset-0 z-0 opacity-25"
+          alt="professonal development session at Brookdale Community College"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50 z-0"></div>
+        {/* END ABSOLUTE */}
+      </div>
       <div className="bg-blue-50 pt-2 sm:pt-4">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl sm:text-3xl leading-9 font-extrabold text-slate-900 sm:leading-10 mx-auto">
-            Ensure your instructional leaders are receiving timely information!
-          </h2>
-          <p className="mt-3 text-xl leading-8 text-slate-700 sm:mt-4 max-w-screen-sm mx-auto">
-            In addition to member districts which make up the consortium, M
-            <span className="sr-only">.</span>C
-            <span className="sr-only">.</span>3
-            <span className="sr-only">.</span> has partnered with the
-            <a
-              href="https://www.nj.gov/education/"
-              className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
-            >
-              {' '}
-              New Jersey Department of Education
-            </a>
-            ,{' '}
-            <a
-              href="https://njsba.org"
-              className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
-            >
-              New Jersey School Boards Association
-            </a>
-            ,{' '}
-            <a
-              href="https://www.brookdalecc.edu/"
-              className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
-            >
-              Brookdale Community College
-            </a>
-            ,{' '}
-            <a
-              href="https://monmouth.edu"
-              className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
-            >
-              Monmouth University
-            </a>
-            ,{' '}
-            <a
-              href="https://rutgers.edu"
-              className="underline hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
-            >
-              Rutgers University
-            </a>
-            , and many other education-related organizations.
-          </p>
-        </div>
         <div className="mt-10 bg-white">
           <div className="relative">
             <div className="absolute inset-0 h-1/2 bg-blue-50"></div>
