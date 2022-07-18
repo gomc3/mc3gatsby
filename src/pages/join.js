@@ -119,11 +119,11 @@ export default function Join({ path }) {
               }
             />
           </div>
-          <h2 className="text-lg text-slate-700 max-w-screen-sm">
+          <p className=" prose prose-blue md:prose-lg lg:prose-xl text-slate-700 max-w-screen-sm">
             Ready to take the next step? If your district is interested in
             joining MC3, please complete the form below. Our mailing address is
-            listed below.
-          </h2>
+            listed below. Have questions? <Link to="/contact">Contact us</Link>!
+          </p>
           <div id="contact-info" className="text-center mt-4 text-sm">
             <p>Monmouth County Curriculum Consortium (MC3)</p>
             <p>PO Box 549</p>
