@@ -1,0 +1,24 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "executiverole",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "roletitle": "Cochair Person",
+    "rolenickname": "someone",
+    "roledescription": [
+      {
+        "type": "paragraph",
+        "text": "Exercitation mollit exercitation cupidatat adipisicing ipsum minim deserunt pariatur anim ad est excepteur quis. Voluptate tempor sint exercitation commodo enim. Amet consectetur eiusmod ipsum consequat ea velit.",
+        "spans": []
+      }
+    ]
+  }
+}

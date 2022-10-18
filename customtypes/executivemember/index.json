@@ -1,0 +1,48 @@
+{
+  "id": "executivemember",
+  "label": "Executive Member",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "memberfullname": {
+        "type": "Text",
+        "config": {
+          "label": "MemberFullName",
+          "placeholder": ""
+        }
+      },
+      "memberfirstname": {
+        "type": "Text",
+        "config": {
+          "label": "MemberFirstName",
+          "placeholder": ""
+        }
+      },
+      "memberlastname": {
+        "type": "Text",
+        "config": {
+          "label": "MemberLastName",
+          "placeholder": ""
+        }
+      },
+      "memberlink": {
+        "type": "Link",
+        "config": {
+          "label": "MemberLink",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "memberprofileimage": {
+        "type": "Image",
+        "config": {
+          "label": "MemberProfileImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

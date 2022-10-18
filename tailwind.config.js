@@ -2,6 +2,7 @@ module.exports = {
   content: [
     './pages/**/*.{js,jsx,ts,tsx,vue}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './slices/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {

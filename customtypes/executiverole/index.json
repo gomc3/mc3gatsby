@@ -1,0 +1,33 @@
+{
+  "id": "executiverole",
+  "label": "Executive Role",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "roletitle": {
+        "type": "Text",
+        "config": {
+          "label": "RoleTitle",
+          "placeholder": ""
+        }
+      },
+      "rolenickname": {
+        "type": "Text",
+        "config": {
+          "label": "RoleNickname",
+          "placeholder": ""
+        }
+      },
+      "roledescription": {
+        "type": "StructuredText",
+        "config": {
+          "label": "RoleDescription",
+          "placeholder": "Describe role and responsibilities",
+          "allowTargetBlank": true,
+          "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item"
+        }
+      }
+    }
+  }
+}

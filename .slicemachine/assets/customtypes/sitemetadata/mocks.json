@@ -1,0 +1,50 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "sitemetadata",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "sitetitle": [
+      {
+        "type": "heading1",
+        "text": "Place",
+        "spans": []
+      }
+    ],
+    "sitedescription": "This is the site description",
+    "sitemetaimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85"
+    },
+    "sitetwitterimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43"
+    },
+    "sitelogo": {
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1425082661705-1834bfd09dca"
+    }
+  }
+}

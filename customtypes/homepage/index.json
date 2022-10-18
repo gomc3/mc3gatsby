@@ -1,0 +1,60 @@
+{
+  "id": "homepage",
+  "label": "Homepage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "homepagetitle": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Homepage Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading2"
+        }
+      },
+      "homepagemetaimage": {
+        "type": "Image",
+        "config": {
+          "label": "Homepage Meta Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "homepagemetadescription": {
+        "type": "Text",
+        "config": {
+          "label": "Homepage Meta Description",
+          "placeholder": "Describe the homepage content"
+        }
+      },
+      "homepagetwitterimage": {
+        "type": "Image",
+        "config": {
+          "label": "Homepage Twitter Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "homepagecanonicalurl": {
+        "type": "Text",
+        "config": {
+          "label": "Homepage Canonical URL",
+          "placeholder": "Enter the canonical url"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "hero": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

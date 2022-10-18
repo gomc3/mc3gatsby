@@ -1,0 +1,54 @@
+{
+  "id": "executiveteam",
+  "label": "Executive Team",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "executiveteamtitle": {
+        "type": "Text",
+        "config": {
+          "label": "ExecutiveTeamTitle",
+          "placeholder": ""
+        }
+      },
+      "executiveteamcurrent": {
+        "type": "Boolean",
+        "config": {
+          "label": "ExecutiveTeamCurrent",
+          "placeholder_false": "Previous Team",
+          "placeholder_true": "Current Team",
+          "default_value": true
+        }
+      },
+      "executiveteammembers": {
+        "type": "Group",
+        "config": {
+          "label": "ExecutiveTeamMembers",
+          "fields": {
+            "executivemember": {
+              "type": "Link",
+              "config": {
+                "label": "ExecutiveMember",
+                "select": "document",
+                "customtypes": [
+                  "executivemember"
+                ]
+              }
+            },
+            "executiverole": {
+              "type": "Link",
+              "config": {
+                "label": "ExecutiveRole",
+                "select": "document",
+                "customtypes": [
+                  "executiverole"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

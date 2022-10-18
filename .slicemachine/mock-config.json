@@ -1,0 +1,115 @@
+{
+  "_cts": {
+    "executiveteam": {
+      "executiveteammembers": {}
+    },
+    "executivemember": {
+      "memberfullname": {
+        "content": "Bruce Preston"
+      },
+      "memberfirstname": {
+        "content": "Bruce"
+      },
+      "memberlastname": {
+        "content": "Preston"
+      },
+      "memberlink": {
+        "content": "https://linkedin.com"
+      },
+      "memberprofileimage": {
+        "content": "https://images.unsplash.com/photo-1474176857210-7287d38d27c6"
+      }
+    },
+    "executiverole": {
+      "roledescription": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "roletitle": {
+        "content": "Cochair Person"
+      }
+    },
+    "homepage": {
+      "homepagetitle": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "homepagemetaimage": {
+        "content": "https://images.unsplash.com/photo-1515923152115-758a6b16f35e"
+      },
+      "homepagemetadescription": {
+        "content": "This describes the homepage content"
+      },
+      "homepagetwitterimage": {
+        "content": "https://images.unsplash.com/photo-1463852247062-1bbca38f7805"
+      }
+    },
+    "sitemetadata": {
+      "sitetitle": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "sitedescription": {
+        "content": "This is the site description"
+      },
+      "sitemetaimage": {
+        "content": "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85"
+      },
+      "sitelogo": {
+        "content": "https://images.unsplash.com/photo-1425082661705-1834bfd09dca"
+      }
+    }
+  },
+  "slices": {
+    "Hero": {
+      "default": {
+        "primary": {
+          "herotitle": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "heroheadline": {
+            "content": "This is the hero headline "
+          },
+          "heroheadlinespan": {
+            "content": "text of another color"
+          },
+          "herodescription": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "herocta": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "heroctadescription": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "herobackgroundimage": {
+            "content": "https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6"
+          }
+        },
+        "items": {
+          "buttontext": {
+            "content": "Become a Member"
+          }
+        }
+      }
+    }
+  }
+}

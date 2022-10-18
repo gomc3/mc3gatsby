@@ -1,0 +1,106 @@
+{
+  "id": "hero",
+  "type": "SharedSlice",
+  "name": "Hero",
+  "description": "Hero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Hero",
+      "primary": {
+        "herotitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Hero Title",
+            "placeholder": "Enter Hero Title",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "herobackgroundimage": {
+          "type": "Image",
+          "config": {
+            "label": "HeroBackgroundImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "heroheadline": {
+          "type": "Text",
+          "config": {
+            "label": "HeroHeadline",
+            "placeholder": "Enter hero headline text"
+          }
+        },
+        "heroheadlinespan": {
+          "type": "Text",
+          "config": {
+            "label": "Hero Headline Span",
+            "placeholder": "This text will be colored"
+          }
+        },
+        "herodescription": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Hero Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "herocta": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Hero Call To Action",
+            "placeholder": "Enter call to action",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "heroctadescription": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Hero CTA Description",
+            "placeholder": "Describe the CTA",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {
+        "buttontext": {
+          "type": "Text",
+          "config": {
+            "label": "ButtonText",
+            "placeholder": ""
+          }
+        },
+        "buttonlink": {
+          "type": "Link",
+          "config": {
+            "label": "ButtonLink",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "buttoncolor": {
+          "type": "Select",
+          "config": {
+            "label": "ButtonColor",
+            "placeholder": "Select button color",
+            "options": [
+              "Blue",
+              "Gray"
+            ],
+            "default_value": "Blue"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

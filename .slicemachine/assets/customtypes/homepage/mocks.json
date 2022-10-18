@@ -1,0 +1,43 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "homepage",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "homepagetitle": [
+      {
+        "type": "heading2",
+        "text": "Feathers",
+        "spans": []
+      }
+    ],
+    "homepagemetaimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1515923152115-758a6b16f35e"
+    },
+    "homepagemetadescription": "This describes the homepage content",
+    "homepagetwitterimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1463852247062-1bbca38f7805"
+    },
+    "homepagecanonicalurl": "plural",
+    "slices": []
+  }
+}
