@@ -1,0 +1,44 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "footer",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "footerbuttons": [
+      {
+        "buttontext": "forget",
+        "buttonlink": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        },
+        "buttoncolor": "Gray"
+      }
+    ],
+    "footertextmenu": [
+      {
+        "linktext": "tip",
+        "linkurl": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      }
+    ],
+    "footericonmenu": [
+      {
+        "footericon": "Twitter",
+        "iconlink": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "screenreadertext": "wonder"
+      }
+    ]
+  }
+}

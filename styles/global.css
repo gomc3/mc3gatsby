@@ -3,7 +3,11 @@
 @tailwind utilities;
 /* Global Styles */
 a {
-  @apply focus:outline-none focus:ring-4 focus:ring-yellow-300 transition duration-150 ease-in-out rounded-md;
+  @apply rounded-md transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-yellow-300;
+}
+.headroom-wrapper > div {
+  @apply bg-white;
+  z-index: 50;
 }
 /* Home Page Styles */
 

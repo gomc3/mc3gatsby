@@ -1,37 +1,29 @@
-import * as React from "react";
-import { MDXProvider } from "@mdx-js/react";
-import YouTube from "./youtube";
-import AudioFile from "./audio";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import { BsArrowReturnLeft } from "react-icons/bs";
-
-export default function Layout({ children, path }) {
-  const components = {
-    YouTube: YouTube,
-    AudioFile: AudioFile,
-  };
+import Navbar from './navbar'
+import Footer from './footer'
+import { BsArrowReturnLeft } from 'react-icons/bs'
+const Layout = ({ children, data, footer, navigation, path }) => {
   return (
-    <MDXProvider components={components} className='relative'>
-      <ul id='nav-access' className='relative mx-auto'>
+    <>
+      <ul id="nav-access" className="relative mx-auto">
         <li>
           <a
-            href='#main-content'
-            className='h-10 flex justify-center items-center absolute z-50 -top-20 sm:left-1/4 text-xl text-blue-700 w-full sm:w-1/2 text-center bg-blue-700 bg-opacity-10 transform focus:translate-y-20 transition-all duration-500 ease-in-out'
+            href="#main-content"
+            className="absolute -top-20 z-50 flex h-10 w-full transform items-center justify-center bg-blue-700 bg-opacity-10 text-center text-xl text-blue-700 transition-all duration-500 ease-in-out focus:translate-y-20 sm:left-1/4 sm:w-1/2"
           >
-            Skip to main content{" "}
-            <span className='text-white px-3 py-0 bg-blue-700 rounded-sm ml-3'>
+            Skip to main content{' '}
+            <span className="ml-3 rounded-sm bg-blue-700 px-3 py-0 text-white">
               Return
-              <BsArrowReturnLeft className='w-3 h-3 inline text-white ml-1' />
+              <BsArrowReturnLeft className="ml-1 inline h-3 w-3 text-white" />
             </span>
           </a>
         </li>
       </ul>
-      <div className='flex flex-col min-h-screen space-between'>
-        <Navbar path={path} />
-        <main id='main-content'>{children}</main>
-        <Footer />
+      <div className="space-between flex min-h-screen flex-col">
+        <Navbar logo={data.sitelogo} navigation={navigation} path={path} />
+        <main id="main-content">{children}</main>
+        <Footer metadata={data} data={footer} />
       </div>
-    </MDXProvider>
-  );
+    </>
+  )
 }
+export default Layout

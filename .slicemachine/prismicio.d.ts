@@ -193,6 +193,150 @@ export interface ExecutiveteamDocumentDataExecutiveteammembersItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type ExecutiveteamDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ExecutiveteamDocumentData>, "executiveteam", Lang>;
+/** Content for Footer documents */
+interface FooterDocumentData {
+    /**
+     * FooterButtons field in *Footer*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.footerbuttons[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    footerbuttons: prismicT.GroupField<Simplify<FooterDocumentDataFooterbuttonsItem>>;
+    /**
+     * FooterTextMenu field in *Footer*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.footertextmenu[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    footertextmenu: prismicT.GroupField<Simplify<FooterDocumentDataFootertextmenuItem>>;
+    /**
+     * FooterIconMenu field in *Footer*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.footericonmenu[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    footericonmenu: prismicT.GroupField<Simplify<FooterDocumentDataFootericonmenuItem>>;
+}
+/**
+ * Item in Footer → FooterButtons
+ *
+ */
+export interface FooterDocumentDataFooterbuttonsItem {
+    /**
+     * ButtonText field in *Footer → FooterButtons*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.footerbuttons[].buttontext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    buttontext: prismicT.KeyTextField;
+    /**
+     * ButtonLink field in *Footer → FooterButtons*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.footerbuttons[].buttonlink
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    buttonlink: prismicT.LinkField;
+    /**
+     * ButtonColor field in *Footer → FooterButtons*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.footerbuttons[].buttoncolor
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    buttoncolor: prismicT.SelectField<"Blue" | "Gray">;
+}
+/**
+ * Item in Footer → FooterTextMenu
+ *
+ */
+export interface FooterDocumentDataFootertextmenuItem {
+    /**
+     * LinkText field in *Footer → FooterTextMenu*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.footertextmenu[].linktext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    linktext: prismicT.KeyTextField;
+    /**
+     * linkurl field in *Footer → FooterTextMenu*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.footertextmenu[].linkurl
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    linkurl: prismicT.LinkField;
+}
+/**
+ * Item in Footer → FooterIconMenu
+ *
+ */
+export interface FooterDocumentDataFootericonmenuItem {
+    /**
+     * FooterIcon field in *Footer → FooterIconMenu*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.footericonmenu[].footericon
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    footericon: prismicT.SelectField<"Twitter" | "Envelope">;
+    /**
+     * iconlink field in *Footer → FooterIconMenu*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.footericonmenu[].iconlink
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    iconlink: prismicT.LinkField;
+    /**
+     * ScreenReaderText field in *Footer → FooterIconMenu*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.footericonmenu[].screenreadertext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    screenreadertext: prismicT.KeyTextField;
+}
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<FooterDocumentData>, "footer", Lang>;
 /** Content for Homepage documents */
 interface HomepageDocumentData {
     /**
@@ -277,6 +421,145 @@ type HomepageDocumentDataSlicesSlice = HeroSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
+/** Content for Main Menu documents */
+interface MainmenuDocumentData {
+    /**
+     * MenuItems field in *Main Menu*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: mainmenu.menuitems[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    menuitems: prismicT.GroupField<Simplify<MainmenuDocumentDataMenuitemsItem>>;
+}
+/**
+ * Item in Main Menu → MenuItems
+ *
+ */
+export interface MainmenuDocumentDataMenuitemsItem {
+    /**
+     * Item Text field in *Main Menu → MenuItems*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: mainmenu.menuitems[].itemtext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    itemtext: prismicT.KeyTextField;
+    /**
+     * Item Link field in *Main Menu → MenuItems*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: mainmenu.menuitems[].itemlink
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    itemlink: prismicT.LinkField;
+    /**
+     * itemicon field in *Main Menu → MenuItems*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: mainmenu.menuitems[].itemicon
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    itemicon: prismicT.SelectField<"AcademicCap" | "Calendar" | "ChatAlt2" | "Cloud" | "Identification" | "Link" | "Newspaper" | "Sun" | "Home" | "Plus">;
+}
+/**
+ * Main Menu document from Prismic
+ *
+ * - **API ID**: `mainmenu`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MainmenuDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<MainmenuDocumentData>, "mainmenu", Lang>;
+/** Content for Page documents */
+interface PageDocumentData {
+    /**
+     * Title field in *Page*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Icon field in *Page*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.icon
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    icon: prismicT.SelectField<"1" | "2">;
+    /**
+     * MetaImage field in *Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.metaimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    metaimage: prismicT.ImageField<never>;
+    /**
+     * TwitterImage field in *Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.twitterimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    twitterimage: prismicT.ImageField<never>;
+    /**
+     * MetaDescription field in *Page*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.metadescription
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    metadescription: prismicT.KeyTextField;
+    /**
+     * CanonicalUrl field in *Page*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.canonicalurl
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    canonicalurl: prismicT.KeyTextField;
+}
+/**
+ * Page document from Prismic
+ *
+ * - **API ID**: `page`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 /** Content for Site Metadata documents */
 interface SitemetadataDocumentData {
     /**
@@ -334,6 +617,28 @@ interface SitemetadataDocumentData {
      *
      */
     sitelogo: prismicT.ImageField<never>;
+    /**
+     * Address field in *Site Metadata*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sitemetadata.address
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    address: prismicT.RichTextField;
+    /**
+     * Tax ID field in *Site Metadata*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sitemetadata.taxid
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    taxid: prismicT.KeyTextField;
 }
 /**
  * Site Metadata document from Prismic
@@ -345,7 +650,7 @@ interface SitemetadataDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SitemetadataDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SitemetadataDocumentData>, "sitemetadata", Lang>;
-export type AllDocumentTypes = ExecutivememberDocument | ExecutiveroleDocument | ExecutiveteamDocument | HomepageDocument | SitemetadataDocument;
+export type AllDocumentTypes = ExecutivememberDocument | ExecutiveroleDocument | ExecutiveteamDocument | FooterDocument | HomepageDocument | MainmenuDocument | PageDocument | SitemetadataDocument;
 /**
  * Primary content in Hero → Primary
  *
@@ -487,6 +792,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice };
+        export type { ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice };
     }
 }

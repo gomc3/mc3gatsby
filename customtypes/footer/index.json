@@ -1,0 +1,101 @@
+{
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "footerbuttons": {
+        "type": "Group",
+        "config": {
+          "label": "FooterButtons",
+          "fields": {
+            "buttontext": {
+              "type": "Text",
+              "config": {
+                "label": "ButtonText",
+                "placeholder": ""
+              }
+            },
+            "buttonlink": {
+              "type": "Link",
+              "config": {
+                "label": "ButtonLink",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "buttoncolor": {
+              "type": "Select",
+              "config": {
+                "label": "ButtonColor",
+                "placeholder": "",
+                "options": [
+                  "Blue",
+                  "Gray"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "footertextmenu": {
+        "type": "Group",
+        "config": {
+          "label": "FooterTextMenu",
+          "fields": {
+            "linktext": {
+              "type": "Text",
+              "config": {
+                "label": "LinkText",
+                "placeholder": ""
+              }
+            },
+            "linkurl": {
+              "type": "Link",
+              "config": {
+                "label": "linkurl",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "footericonmenu": {
+        "type": "Group",
+        "config": {
+          "label": "FooterIconMenu",
+          "fields": {
+            "footericon": {
+              "type": "Select",
+              "config": {
+                "label": "FooterIcon",
+                "placeholder": "",
+                "options": [
+                  "Twitter",
+                  "Envelope"
+                ]
+              }
+            },
+            "iconlink": {
+              "type": "Link",
+              "config": {
+                "label": "iconlink",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "screenreadertext": {
+              "type": "Text",
+              "config": {
+                "label": "ScreenReaderText",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

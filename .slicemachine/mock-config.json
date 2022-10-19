@@ -63,6 +63,27 @@
       },
       "sitelogo": {
         "content": "https://images.unsplash.com/photo-1425082661705-1834bfd09dca"
+      },
+      "address": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
+    "mainmenu": {
+      "menuitems": {}
+    },
+    "footer": {
+      "footerbuttons": {},
+      "footericonmenu": {}
+    },
+    "page": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
       }
     }
   },

@@ -9,7 +9,6 @@ import ButtonLink from '../../components/ButtonLink'
  * @param { HeroProps }
  */
 const Hero = ({ slice }) => {
-  console.log('HeroSlice ===> ', slice)
   const {
     primary: {
       herobackgroundimage,
@@ -42,10 +41,13 @@ const Hero = ({ slice }) => {
       </h3>
     ),
     paragraph: ({ node, children }) => {
-      return <p className="prose prose-lg mx-auto">{children}</p>
+      return (
+        <p className="prose mx-auto md:prose-lg lg:prose-xl xl:prose-2xl">
+          {children}
+        </p>
+      )
     },
     image: ({ node, children }) => {
-      console.log('COMPONENT NODE', node)
       return (
         <Image
           src={node.url}
@@ -58,16 +60,16 @@ const Hero = ({ slice }) => {
   }
   return (
     <section
-      className="relative min-h-[720px] w-full bg-blue-50"
+      className="relative w-full bg-blue-50 py-10"
       style={{
-        background: `linear-gradient(to bottom, rgba(255, 255, 255, .3), rgba(255, 255, 255, 1)), url(${herobackgroundimage.url}) no-repeat bottom left fixed`,
+        background: `linear-gradient(to bottom, rgba(255, 255, 255, .75), rgba(239, 246, 255, 1)), url(${herobackgroundimage.url}) no-repeat center bottom / cover scroll`,
       }}
     >
       <div className="mx-auto flex max-w-screen-2xl flex-col flex-wrap items-center justify-center lg:space-x-12">
-        <div className="z-10 max-w-screen-lg px-4 pt-4 sm:px-8 sm:pb-5 md:py-9 lg:py-6">
+        <div className="max-w-screen-lg px-4 pt-4 sm:px-8 sm:pb-5 md:py-9 lg:py-6">
           <PrismicRichText field={herotitle} components={components} />
           <h2 className="mb-8 text-center text-5xl font-extrabold leading-none tracking-tight text-slate-900 sm:text-6xl sm:tracking-normal">
-            {heroheadline}
+            {heroheadline}{' '}
             <span className="text-blue-700">{heroheadlinespan}</span>
           </h2>
           <div className="flex flex-wrap items-center justify-evenly">
@@ -94,14 +96,6 @@ const Hero = ({ slice }) => {
           />
         </div>
       </div>
-      {/* <Image
-        src={herobackgroundimage.url}
-        alt=""
-        width={herobackgroundimage.dimensions.width}
-        height={herobackgroundimage.dimensions.height}
-        className="absolute inset-0"
-      /> */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-blue-50" />
     </section>
   )
 }

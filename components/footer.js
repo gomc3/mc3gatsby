@@ -1,81 +1,68 @@
-import React from "react";
-import { Link } from "gatsby";
-import { FaTwitter } from "react-icons/fa";
-import Subscribe from "../components/subscribe";
+import { PrismicLink, PrismicRichText } from '@prismicio/react'
+import { Link } from 'next/link'
+import { FaTwitter } from 'react-icons/fa'
+import ButtonLink from './ButtonLink'
+// import Subscribe from "../components/subscribe";
 
-export default function Footer() {
+export default function Footer({ data, metadata }) {
+  const { footerbuttons, footericonmenu, footertextmenu } = data.data
   return (
-    <footer className=" bg-slate-100 p-6 lg:p-12 mt-auto">
-      <header className="max-w-lg mx-auto"></header>
-      <div className="my-3 flex flex-col items-center sm:flex-row sm:justify-center text-center space-y-12 sm:space-y-0 sm:space-x-4">
-        <Link
-          to="/join"
-          className="px-5 py-3 text-base leading-6 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition ease-in-out duration-150"
-        >
-          Become a Member
-        </Link>
-        <Link
-          to="/contact"
-          className="px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-slate-900 hover:text-black bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition ease-in-out duration-150"
-        >
-          Contact Us
-        </Link>
+    <footer className=" mt-auto bg-slate-100 p-6 lg:p-12">
+      <div className="my-3 flex flex-col items-center space-y-12 text-center sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+        {footerbuttons.length &&
+          footerbuttons.map(button => {
+            return (
+              <ButtonLink
+                key={button.buttonlink.id || button.buttonlink.url}
+                link={button.buttonlink}
+                color={button.buttoncolor}
+                text={button.buttontext}
+              />
+            )
+          })}
       </div>
-      <nav className="mx-auto my-6 flex flex-col sm:flex-row justify-between  max-w-xl text-center space-y-12 sm:space-y-0">
-        <Link
-          to="/terms"
-          className="text-slate-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
-        >
-          Terms
-        </Link>
-        <Link
-          to="/privacy"
-          className="text-slate-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
-        >
-          Privacy
-        </Link>
-        <Link
-          to="/scholarship"
-          className="text-slate-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
-        >
-          Scholarships
-        </Link>
-        <Link
-          to="/archive"
-          className="text-slate-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
-        >
-          Archive
-        </Link>
-        <a
-          href="https://www.nj.gov/education/broadcasts/"
-          className="text-slate-600 font-medium hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150"
-        >
-          NJDOE Broadcasts
-        </a>
+      <nav className="mx-auto my-6 flex max-w-xl flex-col justify-between  space-y-12 text-center sm:flex-row sm:space-y-0">
+        {footertextmenu.length &&
+          footertextmenu.map(item => {
+            return (
+              <PrismicLink
+                key={item.linkurl.id || item.linkurl.url}
+                field={item.linkurl}
+              >
+                {item.linktext}
+              </PrismicLink>
+            )
+          })}
       </nav>
-      <div className="my-3 sm:my-4 md:my-6 mx-auto max-w-sm flex items-center justify-around text-center">
-        <a
-          href="https://twitter.com/Mc3Network"
-          alt="Twitter bird icon"
-          className="w-10 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-sm transition ease-in-out duration-150 text-blue-400"
-        >
-          <FaTwitter
-            color="3B82F6"
-            className="w-6 h-6 inline transition duration-500 ease-in-out transform hover:scale-150"
-          />
-          <span className="sr-only">view the Twitter profile for MC3</span>
-        </a>
-        <Subscribe />
+      <div className="my-3 mx-auto flex max-w-sm items-center justify-around text-center sm:my-4 md:my-6">
+        {footericonmenu.length &&
+          footericonmenu.map(item => {
+            const icons = {
+              Twitter: FaTwitter,
+            }
+            const MenuIcon = icons[item.footericon]
+            return (
+              <PrismicLink
+                key={item.iconlink.id || item.iconlink.url}
+                field={item.iconlink}
+                className="w-10 rounded-sm text-blue-400 transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-yellow-300"
+              >
+                <MenuIcon
+                  className="inline h-6 w-6 transform transition duration-500 ease-in-out hover:scale-150"
+                  aria-hidden="true"
+                />
+              </PrismicLink>
+            )
+          })}
       </div>
       <div
         id="contact-info"
-        className="text-center mt-1 text-sm text-slate-600"
+        className="mt-1 text-center text-sm text-slate-600"
       >
-        <p>Monmouth County Curriculum Consortium</p>
-        <p>PO Box 549</p>
-        <p>Neptune, NJ 07754</p>
-        <p>Tax ID: 462-572-217/000</p>
+        <p>{metadata.sitetitle[0].text}</p>
+        <PrismicRichText field={metadata.address} />
+        <p>Tax ID: {metadata.taxid}</p>
       </div>
     </footer>
-  );
+  )
 }

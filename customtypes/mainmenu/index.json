@@ -1,0 +1,53 @@
+{
+  "id": "mainmenu",
+  "label": "Main Menu",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "menuitems": {
+        "type": "Group",
+        "config": {
+          "label": "MenuItems",
+          "fields": {
+            "itemtext": {
+              "type": "Text",
+              "config": {
+                "label": "Item Text",
+                "placeholder": ""
+              }
+            },
+            "itemlink": {
+              "type": "Link",
+              "config": {
+                "label": "Item Link",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "select": null
+              }
+            },
+            "itemicon": {
+              "type": "Select",
+              "config": {
+                "label": "itemicon",
+                "placeholder": "",
+                "options": [
+                  "AcademicCap",
+                  "Calendar",
+                  "ChatAlt2",
+                  "Cloud",
+                  "Identification",
+                  "Link",
+                  "Newspaper",
+                  "Sun",
+                  "Home",
+                  "Plus"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

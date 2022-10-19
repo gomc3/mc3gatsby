@@ -47,6 +47,22 @@
           },
           "thumbnails": []
         }
+      },
+      "address": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Address",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "taxid": {
+        "type": "Text",
+        "config": {
+          "label": "Tax ID",
+          "placeholder": ""
+        }
       }
     }
   }
