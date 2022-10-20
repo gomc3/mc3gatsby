@@ -131,6 +131,30 @@
           }
         }
       }
+    },
+    "Prose": {
+      "default": {
+        "primary": {
+          "content": {
+            "config": {
+              "patternType": "STORY",
+              "blocks": 2
+            }
+          }
+        }
+      }
+    },
+    "ExecutiveTeam": {
+      "default": {
+        "primary": {
+          "heading": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
+      }
     }
   }
 }

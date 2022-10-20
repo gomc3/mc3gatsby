@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/future/image'
-import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import { PrismicRichText } from '@prismicio/react'
 import ButtonLink from '../../components/ButtonLink'
 
 /**

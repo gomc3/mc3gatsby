@@ -1,6 +1,92 @@
 {
   "slices": {
     "components": {
+      "executive_team": {
+        "library": "slices",
+        "id": "executive_team",
+        "name": "ExecutiveTeam",
+        "description": "ExecutiveTeam",
+        "model": {
+          "id": "executive_team",
+          "type": "SharedSlice",
+          "name": "ExecutiveTeam",
+          "description": "ExecutiveTeam",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ExecutiveTeam",
+              "primary": {
+                "heading": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Heading",
+                    "placeholder": "Section Heading",
+                    "allowTargetBlank": true,
+                    "single": "heading2"
+                  }
+                },
+                "team": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Team",
+                    "select": "document",
+                    "customtypes": [
+                      "executiveteam"
+                    ]
+                  }
+                },
+                "backgroundcolor": {
+                  "type": "Color",
+                  "config": {
+                    "label": "Background Color",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "heading": [
+                {
+                  "type": "heading2",
+                  "text": "Refer",
+                  "spans": []
+                }
+              ],
+              "team": {
+                "id": "mock_document_id",
+                "link_type": "Document",
+                "type": "executiveteam",
+                "tags": [],
+                "lang": "en-us",
+                "slug": null,
+                "first_publication_date": "1970-01-01T00:00:01+0000",
+                "last_publication_date": "1970-01-01T01:00:00+0000"
+              },
+              "backgroundcolor": "#e264e4"
+            },
+            "slice_type": "executive_team"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
       "hero": {
         "library": "slices",
         "id": "hero",
@@ -179,6 +265,105 @@
             "path": "/Users/edtech/Documents/dev/next/mc3gatsby/.slicemachine/assets/slices/Hero/default/preview.png",
             "width": 800,
             "height": 518
+          }
+        }
+      },
+      "prose": {
+        "library": "slices",
+        "id": "prose",
+        "name": "Prose",
+        "description": "Prose",
+        "model": {
+          "id": "prose",
+          "type": "SharedSlice",
+          "name": "Prose",
+          "description": "Prose",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Prose",
+              "primary": {
+                "content": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Content",
+                    "placeholder": "Add your content",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "content": [
+                {
+                  "type": "heading2",
+                  "text": "Earlier",
+                  "spans": []
+                },
+                {
+                  "type": "image",
+                  "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+                  "alt": null,
+                  "copyright": null,
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  }
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Commodo ullamco reprehenderit consequat dolore.",
+                  "spans": []
+                },
+                {
+                  "type": "heading2",
+                  "text": "Damage",
+                  "spans": []
+                },
+                {
+                  "type": "image",
+                  "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
+                  "alt": null,
+                  "copyright": null,
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  }
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Proident culpa commodo est aliquip magna irure. Ullamco ea incididunt aute exercitation anim excepteur eiusmod do ex duis est incididunt.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "prose"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/edtech/Documents/dev/next/mc3gatsby/.slicemachine/assets/slices/Prose/default/preview.png",
+            "width": 800,
+            "height": 1474
           }
         }
       }

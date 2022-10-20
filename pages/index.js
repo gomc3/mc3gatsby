@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { SliceZone } from '@prismicio/react'
 import Head from 'next/head'
-// import {useRouter} from 'next/router'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import { createClient } from '../prismicio'
 import { components } from '../slices'
 
@@ -66,9 +65,9 @@ export async function getStaticProps({ previewData }) {
     //   'series.seriesimage',
     // ],
   })
-  const sliceTypes = [
-    ...new Set(page.data.slices.map(slice => slice.slice_type)),
-  ]
+  // const sliceTypes = [
+  //   ...new Set(page.data.slices.map(slice => slice.slice_type)),
+  // ]
   const navigation = await client.getSingle('mainmenu')
   const footer = await client.getSingle('footer')
 

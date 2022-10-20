@@ -1,0 +1,45 @@
+{
+  "id": "executive_team",
+  "type": "SharedSlice",
+  "name": "ExecutiveTeam",
+  "description": "ExecutiveTeam",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "ExecutiveTeam",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Section Heading",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "team": {
+          "type": "Link",
+          "config": {
+            "label": "Team",
+            "select": "document",
+            "customtypes": [
+              "executiveteam"
+            ]
+          }
+        },
+        "backgroundcolor": {
+          "type": "Color",
+          "config": {
+            "label": "Background Color",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

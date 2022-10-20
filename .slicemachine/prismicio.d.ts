@@ -410,7 +410,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice = HeroSlice | ProseSlice;
 /**
  * Homepage document from Prismic
  *
@@ -504,7 +504,7 @@ interface PageDocumentData {
      * - **Documentation**: https://prismic.io/docs/core-concepts/select
      *
      */
-    icon: prismicT.SelectField<"1" | "2">;
+    icon: prismicT.SelectField<"Calendar" | "Sun" | "Newspaper" | "Chat" | "Identification">;
     /**
      * MetaImage field in *Page*
      *
@@ -549,7 +549,23 @@ interface PageDocumentData {
      *
      */
     canonicalurl: prismicT.KeyTextField;
+    /**
+     * Slice Zone field in *Page*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *Page → Slice Zone*
+ *
+ */
+type PageDocumentDataSlicesSlice = ProseSlice | ExecutiveTeamSlice;
 /**
  * Page document from Prismic
  *
@@ -651,6 +667,65 @@ interface SitemetadataDocumentData {
  */
 export type SitemetadataDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SitemetadataDocumentData>, "sitemetadata", Lang>;
 export type AllDocumentTypes = ExecutivememberDocument | ExecutiveroleDocument | ExecutiveteamDocument | FooterDocument | HomepageDocument | MainmenuDocument | PageDocument | SitemetadataDocument;
+/**
+ * Primary content in ExecutiveTeam → Primary
+ *
+ */
+interface ExecutiveTeamSliceDefaultPrimary {
+    /**
+     * Heading field in *ExecutiveTeam → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Section Heading
+     * - **API ID Path**: executive_team.primary.heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heading: prismicT.TitleField;
+    /**
+     * Team field in *ExecutiveTeam → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: executive_team.primary.team
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    team: prismicT.RelationField<"executiveteam">;
+    /**
+     * Background Color field in *ExecutiveTeam → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: executive_team.primary.backgroundcolor
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    backgroundcolor: prismicT.ColorField;
+}
+/**
+ * Default variation for ExecutiveTeam Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ExecutiveTeam`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ExecutiveTeamSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ExecutiveTeamSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *ExecutiveTeam*
+ *
+ */
+type ExecutiveTeamSliceVariation = ExecutiveTeamSliceDefault;
+/**
+ * ExecutiveTeam Shared Slice
+ *
+ * - **API ID**: `executive_team`
+ * - **Description**: `ExecutiveTeam`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ExecutiveTeamSlice = prismicT.SharedSlice<"executive_team", ExecutiveTeamSliceVariation>;
 /**
  * Primary content in Hero → Primary
  *
@@ -787,11 +862,50 @@ type HeroSliceVariation = HeroSliceDefault;
  *
  */
 export type HeroSlice = prismicT.SharedSlice<"hero", HeroSliceVariation>;
+/**
+ * Primary content in Prose → Primary
+ *
+ */
+interface ProseSliceDefaultPrimary {
+    /**
+     * Content field in *Prose → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Add your content
+     * - **API ID Path**: prose.primary.content
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    content: prismicT.RichTextField;
+}
+/**
+ * Default variation for Prose Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Prose`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProseSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ProseSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Prose*
+ *
+ */
+type ProseSliceVariation = ProseSliceDefault;
+/**
+ * Prose Shared Slice
+ *
+ * - **API ID**: `prose`
+ * - **Description**: `Prose`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProseSlice = prismicT.SharedSlice<"prose", ProseSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice };
+        export type { ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice };
     }
 }

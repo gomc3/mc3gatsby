@@ -1,0 +1,9 @@
+import MyComponent from '../../../../slices/Prose';
+
+export default {
+  title: 'slices/Prose'
+}
+
+
+export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{}],"primary":{"content":[{"type":"heading2","text":"Earlier","spans":[]},{"type":"image","url":"https://images.unsplash.com/photo-1571126770897-2d612d1f7b89","alt":null,"copyright":null,"dimensions":{"width":900,"height":500}},{"type":"paragraph","text":"Commodo ullamco reprehenderit consequat dolore.","spans":[]},{"type":"heading2","text":"Damage","spans":[]},{"type":"image","url":"https://images.unsplash.com/photo-1589321578146-4c1ba445cc88","alt":null,"copyright":null,"dimensions":{"width":900,"height":500}},{"type":"paragraph","text":"Proident culpa commodo est aliquip magna irure. Ullamco ea incididunt aute exercitation anim excepteur eiusmod do ex duis est incididunt.","spans":[]}]},"slice_type":"prose","id":"_Default"}} />
+_Default.storyName = ''

@@ -32,8 +32,8 @@ const Navbar = ({ logo, navigation, path }) => {
   return (
     <Headroom>
       <div className="mx-auto w-full px-4 shadow-sm sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-screen-xl items-center justify-between py-6 md:justify-start md:space-x-10">
-          <div className="flex-1">
+        <div className="relative mx-auto flex max-w-screen-xl items-center justify-between py-6">
+          <div>
             <Link
               href="/"
               className="focus:outline-none focus:ring-4 focus:ring-yellow-300"
@@ -47,11 +47,7 @@ const Navbar = ({ logo, navigation, path }) => {
             </Link>
           </div>
           {/* Mobile Nav Begins Here */}
-          <div
-            className={`${
-              navigation.length > 5 ? '' : 'lg:hidden'
-            } -my-2 -mr-2`}
-          >
+          <div className={`${navigation.length > 5 ? '' : 'lg:hidden'} `}>
             <div className="text-right">
               <Menu as="div" className={`relative inline-block text-left`}>
                 <div>
@@ -120,7 +116,7 @@ const Navbar = ({ logo, navigation, path }) => {
                                       : 'text-slate-900 '
                                   } ${
                                     path === item.itemlink.url &&
-                                    `border-b-2 bg-blue-100 font-semibold text-black shadow-sm hover:text-yellow-500`
+                                    `cursor-default border-b-2 bg-blue-100 font-semibold text-black shadow-sm hover:text-yellow-500`
                                   } group flex w-full items-center rounded-md px-2 py-2 text-sm focus:text-white`}
                                 >
                                   {active ? (
@@ -153,7 +149,7 @@ const Navbar = ({ logo, navigation, path }) => {
                                       : 'text-slate-900 '
                                   } ${
                                     path === item.itemlink.url &&
-                                    `border-b-2 bg-blue-100 font-semibold text-black shadow-sm hover:text-blue-900`
+                                    `cursor-default border-b-2 bg-blue-100 font-semibold text-black shadow-sm hover:text-blue-900`
                                   } group flex w-full items-center rounded-md px-2 py-2 text-sm focus:text-white`}
                                 >
                                   {active ? (
@@ -185,7 +181,7 @@ const Navbar = ({ logo, navigation, path }) => {
                                       : 'text-slate-900 '
                                   } ${
                                     path === item.itemlink.url &&
-                                    `border-b-2 bg-blue-100 font-semibold text-black shadow-sm hover:text-blue-900`
+                                    `cursor-default border-b-2 bg-blue-100 font-semibold text-black shadow-sm hover:text-blue-900`
                                   } group flex w-full items-center rounded-md px-2 py-2 text-sm focus:text-white`}
                                 >
                                   {active ? (
@@ -216,42 +212,55 @@ const Navbar = ({ logo, navigation, path }) => {
           {/* Conditional Desktop Nav Begins Here */}
           {navigation.length < 6 && (
             <>
-              <nav className="hidden space-x-10 font-semibold text-blue-700 lg:flex">
+              <nav className="absolute left-1/2 top-1/2 hidden -translate-y-1/2 -translate-x-1/2 grid-flow-col justify-center gap-x-6 font-semibold text-blue-700 lg:grid">
                 {navigation.map(item => {
                   if (
                     item.itemlink.link_type === 'Document' &&
                     path !== item.itemlink.url
                   ) {
                     return (
-                      <Link key={item.itemlink.id} href={item.itemlink.url}>
+                      <Link
+                        key={item.itemlink.id}
+                        href={item.itemlink.url}
+                        className="rounded px-4 py-2 hover:bg-blue-50"
+                      >
                         {item.itemtext}
                       </Link>
                     )
                   } else if (path !== item.itemlink.url) {
                     return (
-                      <a key={item.itemlink.url} href={item.itemlink.url}>
+                      <a
+                        key={item.itemlink.url}
+                        href={item.itemlink.url}
+                        className="rounded px-4 py-2 hover:bg-blue-50"
+                      >
                         {item.itemtext}
                       </a>
                     )
                   } else {
                     return (
-                      <span key={item.itemlink.url} className="text-yellow-500">
+                      <span
+                        key={item.itemlink.url}
+                        className="cursor-default rounded px-4 py-2 text-yellow-500 hover:bg-blue-50"
+                      >
                         {item.itemtext}
                       </span>
                     )
                   }
                 })}
               </nav>
-              <div className="hidden items-center justify-end space-x-8 md:flex-1 lg:flex lg:w-0">
-                <span className="inline-flex flex-none rounded-md shadow-sm">
-                  <Link
-                    className=" whitespace-no-wrap items-center justify-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-center text-base font-medium leading-6 text-white transition duration-150 ease-in-out hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 active:bg-blue-600"
-                    href="/join"
-                  >
-                    Become a Member
-                  </Link>
-                </span>
-              </div>
+              {navigation.length < 6 && (
+                <div className="hidden items-center justify-end space-x-8 lg:block">
+                  <span className="inline-flex flex-none rounded-md shadow-sm">
+                    <Link
+                      className=" whitespace-no-wrap items-center justify-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-center text-base font-medium leading-6 text-white transition duration-150 ease-in-out hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 active:bg-blue-600"
+                      href="/join"
+                    >
+                      Become a Member
+                    </Link>
+                  </span>
+                </div>
+              )}
             </>
           )}
           {/* Conditional Desktop Nav Ends Here */}

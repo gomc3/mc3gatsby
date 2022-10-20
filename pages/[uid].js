@@ -2,22 +2,22 @@ import * as React from 'react'
 import { SliceZone, PrismicRichText } from '@prismicio/react'
 import * as prismicH from '@prismicio/helpers'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import { createClient } from '../prismicio'
 import { components } from '../slices'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
+import Icon from '../components/Icon'
 
 const Page = ({ page, navigation, siteMetadata, footer }) => {
-  const components = {
+  const templates = {
     heading1: ({ node, children }) => {
       return (
-        <h1 className="prose mx-auto my-4 px-4 text-center text-2xl md:prose-lg md:my-6 md:px-0 md:text-3xl lg:prose-xl lg:my-8 lg:text-4xl xl:prose-2xl xl:my-10 xl:text-5xl">
+        <h1 className="my-2 inline-block text-3xl font-bold text-blue-700 sm:my-4 sm:text-4xl lg:my-6 lg:text-5xl">
           {children}
         </h1>
       )
     },
   }
-  const router = useRouter()
+
   // let sliceTypes = []
   // page.data.slices.forEach(slice => sliceTypes.push(slice.slice_type))
   // const formOnPage = sliceTypes.indexOf('mailer_lite_sign_up') > 0
@@ -60,29 +60,46 @@ const Page = ({ page, navigation, siteMetadata, footer }) => {
       {...siteMetadata}
       navigation={navigation.data.menuitems}
       footer={footer}
+      path={page.url}
     >
       <Head>
-        <title>{`${page.data.title[0].text} • `}</title>
-        <link rel="canonical" href={`https://www.gomc3.org${router.asPath}`} />
+        <title>{`${page.data.title[0].text} • ${siteMetadata.data.sitetitle[0].text}`}</title>
+        <link
+          rel="canonical"
+          href={page.data.canonicalurl || `https://www.gomc3.org${page.url}`}
+        />
         <meta name="description" content={page.data.metadescription || ''} />
         <meta
           property="og:description"
           content={page.data.metadescription || ''}
         />
-        <meta property="og:url" content="https://www.gomc3.org" />
+        <meta property="og:url" content={`https://www.gomc3.org${page.url}`} />
         <meta property="og:type" content="website" />
-        {page.data.pagemetaimage && (
-          <meta property="og:image" content={page.data.metaimage.url} />
-        )}
-        <meta property="twitter:card" content="summary" />
-        {page.data.metaimage && (
-          <meta property="twitter:image" content={page.data.twitterimage.url} />
-        )}
-      </Head>
-      <PrismicRichText field={page.data.title} components={components} />
 
-      <div className="mb-2 min-h-[3px] rounded bg-gradient-to-r from-blue-100 to-transparent md:mb-4 lg:mb-6 xl:mb-8" />
-      {/* <SliceZone slices={page.data.slices} components={components} /> */}
+        <meta
+          property="og:image"
+          content={
+            page.data.metaimage.url || siteMetadata.data.sitemetaimage.url
+          }
+        />
+
+        <meta property="twitter:card" content="summary" />
+
+        <meta
+          property="twitter:image"
+          content={
+            page.data.twitterimage.url || siteMetadata.data.sitetwitterimage.url
+          }
+        />
+      </Head>
+      <header className="flex items-center justify-center py-4 text-center md:py-6 lg:py-8 xl:py-10 ">
+        <Icon
+          name={'Identification'}
+          className="inline-block text-3xl text-blue-700 sm:text-5xl lg:text-6xl"
+        />
+        <PrismicRichText field={page.data.title} components={templates} />
+      </header>
+      <SliceZone slices={page.data.slices} components={components} />
     </Layout>
   )
 }
@@ -91,7 +108,15 @@ export default Page
 
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData })
-  const page = await client.getByUID('page', params.uid)
+  const page = await client.getByUID('page', params.uid, {
+    fetchLinks: [
+      'executiveteam.executiveteamtitle',
+      'executiveteam.executiveteammembers',
+      'executivemember.memberfullname',
+      'executivemember.memberlink',
+      'executivemember.memberprofileimage',
+    ],
+  })
   const navigation = await client.getSingle('mainmenu')
   const siteMetadata = await client.getSingle('sitemetadata')
   const footer = await client.getSingle('footer')

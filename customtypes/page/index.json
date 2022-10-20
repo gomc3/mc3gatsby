@@ -20,8 +20,11 @@
           "label": "Icon",
           "placeholder": "",
           "options": [
-            "1",
-            "2"
+            "Calendar",
+            "Sun",
+            "Newspaper",
+            "Chat",
+            "Identification"
           ]
         }
       },
@@ -60,6 +63,20 @@
         "config": {
           "label": "CanonicalUrl",
           "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "prose": {
+              "type": "SharedSlice"
+            },
+            "executive_team": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     }

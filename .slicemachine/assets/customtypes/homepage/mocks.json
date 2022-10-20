@@ -14,7 +14,7 @@
     "homepagetitle": [
       {
         "type": "heading2",
-        "text": "Feathers",
+        "text": "During",
         "spans": []
       }
     ],
@@ -37,7 +37,7 @@
       "copyright": null,
       "url": "https://images.unsplash.com/photo-1463852247062-1bbca38f7805"
     },
-    "homepagecanonicalurl": "plural",
+    "homepagecanonicalurl": "walk",
     "slices": []
   }
 }

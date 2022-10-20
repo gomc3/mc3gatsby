@@ -1,4 +1,4 @@
-import Navbar from './navbar'
+import Navbar from './Navbar'
 import Footer from './footer'
 import { BsArrowReturnLeft } from 'react-icons/bs'
 const Layout = ({ children, data, footer, navigation, path }) => {
