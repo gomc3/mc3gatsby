@@ -5,6 +5,7 @@ import {
   HiIdentification,
   HiSun,
 } from 'react-icons/hi'
+import { FaLinkedin } from 'react-icons/fa'
 
 const Icon = ({ name, className }) => {
   const icons = {
@@ -13,6 +14,7 @@ const Icon = ({ name, className }) => {
     Chat: HiChatAlt2,
     Newspaper: HiNewspaper,
     Calendar: HiCalendar,
+    LinkedIn: FaLinkedin,
   }
   const TitleIcon = icons[name]
   return <TitleIcon className={className} />

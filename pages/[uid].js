@@ -115,6 +115,7 @@ export async function getStaticProps({ params, previewData }) {
       'executivemember.memberfullname',
       'executivemember.memberlink',
       'executivemember.memberprofileimage',
+      'executiverole.rolenickname',
     ],
   })
   const navigation = await client.getSingle('mainmenu')

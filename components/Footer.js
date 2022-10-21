@@ -1,5 +1,4 @@
 import { PrismicLink, PrismicRichText } from '@prismicio/react'
-import { Link } from 'next/link'
 import { FaTwitter } from 'react-icons/fa'
 import ButtonLink from './ButtonLink'
 // import Subscribe from "../components/subscribe";

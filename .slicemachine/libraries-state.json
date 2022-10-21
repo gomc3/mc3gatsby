@@ -85,7 +85,13 @@
           "fileName": "index",
           "extension": "js"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "/home/nmastroianni/linuxDev/next/mc3gatsby/slices/ExecutiveTeam/default/preview.png",
+            "width": 1183,
+            "height": 746
+          }
+        }
       },
       "hero": {
         "library": "slices",
@@ -262,7 +268,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/edtech/Documents/dev/next/mc3gatsby/.slicemachine/assets/slices/Hero/default/preview.png",
+            "path": "/home/nmastroianni/linuxDev/next/mc3gatsby/.slicemachine/assets/slices/Hero/default/preview.png",
             "width": 800,
             "height": 518
           }
@@ -361,7 +367,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/edtech/Documents/dev/next/mc3gatsby/.slicemachine/assets/slices/Prose/default/preview.png",
+            "path": "/home/nmastroianni/linuxDev/next/mc3gatsby/.slicemachine/assets/slices/Prose/default/preview.png",
             "width": 800,
             "height": 1474
           }

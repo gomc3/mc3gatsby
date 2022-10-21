@@ -241,7 +241,7 @@ const Navbar = ({ logo, navigation, path }) => {
                     return (
                       <span
                         key={item.itemlink.url}
-                        className="cursor-default rounded px-4 py-2 text-yellow-500 hover:bg-blue-50"
+                        className="cursor-default rounded px-4 py-2 text-yellow-600 hover:bg-blue-50"
                       >
                         {item.itemtext}
                       </span>
