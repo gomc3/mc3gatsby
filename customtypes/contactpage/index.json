@@ -1,0 +1,58 @@
+{
+  "id": "contactpage",
+  "label": "ContactPage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "Enter page title",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "metadescription": {
+        "type": "Text",
+        "config": {
+          "label": "MetaDescription",
+          "placeholder": ""
+        }
+      },
+      "metaimage": {
+        "type": "Image",
+        "config": {
+          "label": "MetaImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "twitterimage": {
+        "type": "Image",
+        "config": {
+          "label": "TwitterImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "canonicalurl": {
+        "type": "Text",
+        "config": {
+          "label": "CanonicalUrl",
+          "placeholder": ""
+        }
+      },
+      "pagedescription": {
+        "type": "StructuredText",
+        "config": {
+          "label": "PageDescription",
+          "placeholder": "Describe the purpose of this page",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}

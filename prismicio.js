@@ -18,6 +18,14 @@ const routes = [
     type: 'page',
     path: `/:uid`,
   },
+  {
+    type: 'calendarpage',
+    path: '/calendar',
+  },
+  {
+    type: 'contactpage',
+    path: '/contact',
+  },
 ]
 
 /**

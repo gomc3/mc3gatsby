@@ -6,6 +6,175 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for CalendarPage documents */
+interface CalendarpageDocumentData {
+    /**
+     * Title field in *CalendarPage*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Enter page title
+     * - **API ID Path**: calendarpage.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Meta Description field in *CalendarPage*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: Enter a custom metadescription
+     * - **API ID Path**: calendarpage.metadescription
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    metadescription: prismicT.KeyTextField;
+    /**
+     * Meta Image field in *CalendarPage*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: calendarpage.metaimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    metaimage: prismicT.ImageField<never>;
+    /**
+     * Twitter Image field in *CalendarPage*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: calendarpage.twitterimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    twitterimage: prismicT.ImageField<never>;
+    /**
+     * CanonicalUrl field in *CalendarPage*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: Enter canonical URL
+     * - **API ID Path**: calendarpage.canonicalurl
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    canonicalurl: prismicT.KeyTextField;
+    /**
+     * Page Heading field in *CalendarPage*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Enter page heading
+     * - **API ID Path**: calendarpage.pageheading
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    pageheading: prismicT.TitleField;
+    /**
+     * Page Description field in *CalendarPage*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Enter page description
+     * - **API ID Path**: calendarpage.pagedescription
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    pagedescription: prismicT.RichTextField;
+}
+/**
+ * CalendarPage document from Prismic
+ *
+ * - **API ID**: `calendarpage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CalendarpageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<CalendarpageDocumentData>, "calendarpage", Lang>;
+/** Content for ContactPage documents */
+interface ContactpageDocumentData {
+    /**
+     * Title field in *ContactPage*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Enter page title
+     * - **API ID Path**: contactpage.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * MetaDescription field in *ContactPage*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contactpage.metadescription
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    metadescription: prismicT.KeyTextField;
+    /**
+     * MetaImage field in *ContactPage*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contactpage.metaimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    metaimage: prismicT.ImageField<never>;
+    /**
+     * TwitterImage field in *ContactPage*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contactpage.twitterimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    twitterimage: prismicT.ImageField<never>;
+    /**
+     * CanonicalUrl field in *ContactPage*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contactpage.canonicalurl
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    canonicalurl: prismicT.KeyTextField;
+    /**
+     * PageDescription field in *ContactPage*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Describe the purpose of this page
+     * - **API ID Path**: contactpage.pagedescription
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    pagedescription: prismicT.RichTextField;
+}
+/**
+ * ContactPage document from Prismic
+ *
+ * - **API ID**: `contactpage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContactpageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ContactpageDocumentData>, "contactpage", Lang>;
 /** Content for Executive Member documents */
 interface ExecutivememberDocumentData {
     /**
@@ -666,7 +835,7 @@ interface SitemetadataDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SitemetadataDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SitemetadataDocumentData>, "sitemetadata", Lang>;
-export type AllDocumentTypes = ExecutivememberDocument | ExecutiveroleDocument | ExecutiveteamDocument | FooterDocument | HomepageDocument | MainmenuDocument | PageDocument | SitemetadataDocument;
+export type AllDocumentTypes = CalendarpageDocument | ContactpageDocument | ExecutivememberDocument | ExecutiveroleDocument | ExecutiveteamDocument | FooterDocument | HomepageDocument | MainmenuDocument | PageDocument | SitemetadataDocument;
 /**
  * Primary content in ExecutiveTeam → Primary
  *
@@ -986,6 +1155,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice };
+        export type { CalendarpageDocumentData, CalendarpageDocument, ContactpageDocumentData, ContactpageDocument, ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice };
     }
 }

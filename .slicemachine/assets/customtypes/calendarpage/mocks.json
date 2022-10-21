@@ -1,0 +1,56 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "calendarpage",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "title": [
+      {
+        "type": "heading1",
+        "text": "Popular",
+        "spans": []
+      }
+    ],
+    "metadescription": "possible",
+    "metaimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea"
+    },
+    "twitterimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa"
+    },
+    "canonicalurl": "word",
+    "pageheading": [
+      {
+        "type": "heading2",
+        "text": "Mighty",
+        "spans": []
+      }
+    ],
+    "pagedescription": [
+      {
+        "type": "paragraph",
+        "text": "Adipisicing dolor fugiat consequat magna enim laboris cillum cillum minim pariatur velit fugiat nostrud laboris. Velit ipsum commodo reprehenderit excepteur nisi eiusmod cillum quis cupidatat aute aliquip nisi nulla. Lorem et est culpa labore elit ex sunt laborum fugiat duis dolor sunt veniam amet.",
+        "spans": []
+      }
+    ]
+  }
+}

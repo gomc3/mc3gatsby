@@ -1,0 +1,67 @@
+{
+  "id": "calendarpage",
+  "label": "CalendarPage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "Enter page title",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "metadescription": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "Enter a custom metadescription"
+        }
+      },
+      "metaimage": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "twitterimage": {
+        "type": "Image",
+        "config": {
+          "label": "Twitter Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "canonicalurl": {
+        "type": "Text",
+        "config": {
+          "label": "CanonicalUrl",
+          "placeholder": "Enter canonical URL"
+        }
+      },
+      "pageheading": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Page Heading",
+          "placeholder": "Enter page heading",
+          "allowTargetBlank": true,
+          "single": "heading2"
+        }
+      },
+      "pagedescription": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Page Description",
+          "placeholder": "Enter page description",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}
