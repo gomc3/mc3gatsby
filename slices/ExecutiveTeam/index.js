@@ -1,10 +1,6 @@
 import React from 'react'
 import Image from 'next/future/image'
-import {
-  PrismicRichText,
-  PrismicNextImage,
-  PrismicLink,
-} from '@prismicio/react'
+import { PrismicRichText } from '@prismicio/react'
 import Icon from '../../components/Icon'
 
 /**
@@ -22,7 +18,6 @@ const ExecutiveTeam = ({ slice }) => {
       )
     },
   }
-  console.log('EXECTEAM => ', slice)
   const { backgroundcolor, heading, team } = slice.primary
   const {
     data: { executiveteammembers, executiveteamtitle },
@@ -58,7 +53,7 @@ const ExecutiveTeam = ({ slice }) => {
                       alt={memberprofileimage.alt || ''}
                       width={memberprofileimage.dimensions.width}
                       height={memberprofileimage.dimensions.height}
-                      className="gatsby-image-wrapper w-24 flex-initial rounded-full border border-slate-300 grayscale filter transition duration-500 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-slate-400 hover:grayscale-0 md:mr-4"
+                      className="w-24 flex-initial rounded-full border border-slate-300 grayscale filter transition duration-500 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-slate-400 hover:grayscale-0 md:mr-4"
                     />
                   </a>
                 ) : memberprofileimage ? (
@@ -67,14 +62,15 @@ const ExecutiveTeam = ({ slice }) => {
                     alt={memberprofileimage.alt || ''}
                     width={memberprofileimage.dimensions.width}
                     height={memberprofileimage.dimensions.height}
-                    className="gatsby-image-wrapper w-24 flex-initial rounded-full border border-slate-300 grayscale filter transition duration-500 ease-in-out hover:grayscale-0 md:mr-4"
+                    className="w-24 flex-initial rounded-full border border-slate-300 grayscale filter transition duration-500 ease-in-out hover:grayscale-0 md:mr-4"
                   />
                 ) : (
                   <Image
-                    src="https://picsum.photos/100"
+                    src="https://picsum.photos/id/317/100"
                     alt=""
                     width={100}
                     height={100}
+                    className="w-24 flex-initial rounded-full border border-slate-300 grayscale filter transition duration-500 ease-in-out hover:grayscale-0 md:mr-4"
                   />
                 )}
                 <div className="flex-1">

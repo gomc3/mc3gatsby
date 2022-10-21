@@ -54,7 +54,6 @@ const Page = ({ page, navigation, siteMetadata, footer }) => {
   //     }
   //   }
   // }, [formOnPage])
-
   return (
     <Layout
       {...siteMetadata}
@@ -64,6 +63,7 @@ const Page = ({ page, navigation, siteMetadata, footer }) => {
     >
       <Head>
         <title>{`${page.data.title[0].text} • ${siteMetadata.data.sitetitle[0].text}`}</title>
+        <meta name="robots" content="noindex,follow" />
         <link
           rel="canonical"
           href={page.data.canonicalurl || `https://www.gomc3.org${page.url}`}
@@ -94,7 +94,7 @@ const Page = ({ page, navigation, siteMetadata, footer }) => {
       </Head>
       <header className="flex items-center justify-center py-4 text-center md:py-6 lg:py-8 xl:py-10 ">
         <Icon
-          name={'Identification'}
+          name={page.data.icon}
           className="inline-block text-3xl text-blue-700 sm:text-5xl lg:text-6xl"
         />
         <PrismicRichText field={page.data.title} components={templates} />

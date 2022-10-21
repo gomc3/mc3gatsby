@@ -504,7 +504,7 @@ interface PageDocumentData {
      * - **Documentation**: https://prismic.io/docs/core-concepts/select
      *
      */
-    icon: prismicT.SelectField<"Calendar" | "Sun" | "Newspaper" | "Chat" | "Identification">;
+    icon: prismicT.SelectField<"Calendar" | "Sun" | "Newspaper" | "Chat" | "Identification" | "AcademicCap">;
     /**
      * MetaImage field in *Page*
      *
@@ -565,7 +565,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = ProseSlice | ExecutiveTeamSlice;
+type PageDocumentDataSlicesSlice = ProseSlice | ExecutiveTeamSlice | TextWithImageSlice;
 /**
  * Page document from Prismic
  *
@@ -901,11 +901,91 @@ type ProseSliceVariation = ProseSliceDefault;
  *
  */
 export type ProseSlice = prismicT.SharedSlice<"prose", ProseSliceVariation>;
+/**
+ * Primary content in TextWithImage → Primary
+ *
+ */
+interface TextWithImageSliceDefaultPrimary {
+    /**
+     * Heading field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Section heading
+     * - **API ID Path**: text_with_image.primary.heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heading: prismicT.TitleField;
+    /**
+     * Content field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Section content
+     * - **API ID Path**: text_with_image.primary.content
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    content: prismicT.RichTextField;
+    /**
+     * Image field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_with_image.primary.image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Image Location field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: text_with_image.primary.imagelocation
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    imagelocation: prismicT.BooleanField;
+    /**
+     * Background Color field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_with_image.primary.backgroundcolor
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    backgroundcolor: prismicT.ColorField;
+}
+/**
+ * Default variation for TextWithImage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `TextWithImage`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextWithImageSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextWithImageSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *TextWithImage*
+ *
+ */
+type TextWithImageSliceVariation = TextWithImageSliceDefault;
+/**
+ * TextWithImage Shared Slice
+ *
+ * - **API ID**: `text_with_image`
+ * - **Description**: `TextWithImage`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextWithImageSlice = prismicT.SharedSlice<"text_with_image", TextWithImageSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice };
+        export type { ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice };
     }
 }

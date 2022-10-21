@@ -15,6 +15,7 @@ export default function Home({ page, navigation, siteMetadata, footer }) {
     >
       <Head>
         <title>{`${page.data.homepagetitle[0].text} · ${siteMetadata.data.sitetitle[0].text}`}</title>
+        <meta name="robots" content="noindex,follow" />
         <link rel="canonical" href="https://www.gomc3.org" />
         <meta
           name="description"

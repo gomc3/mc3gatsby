@@ -3,15 +3,18 @@
 import ExecutiveTeam from './ExecutiveTeam';
 import Hero from './Hero';
 import Prose from './Prose';
+import TextWithImage from './TextWithImage';
 
 export {
 	ExecutiveTeam,
 	Hero,
 	Prose,
+	TextWithImage,
 };
 
 export const components = {
 	executive_team: ExecutiveTeam,
 	hero: Hero,
 	prose: Prose,
+	text_with_image: TextWithImage,
 };
