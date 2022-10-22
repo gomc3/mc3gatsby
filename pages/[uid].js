@@ -17,43 +17,7 @@ const Page = ({ page, navigation, siteMetadata, footer }) => {
       )
     },
   }
-
-  // let sliceTypes = []
-  // page.data.slices.forEach(slice => sliceTypes.push(slice.slice_type))
-  // const formOnPage = sliceTypes.indexOf('mailer_lite_sign_up') > 0
-  // React.useEffect(() => {
-  //   if (formOnPage) {
-  //     const recaptchaScript = document.createElement('script')
-  //     recaptchaScript.src = `https://www.google.com/recaptcha/api.js?render=6LdegF8iAAAAADDOMwVAXSvPRZwr2GC_O_5cxNgs`
-  //     recaptchaScript.async = true
-  //     document.head.appendChild(recaptchaScript)
-  //     return () => {
-  //       // Get all script tags: returns HTMLcollection
-  //       const scripts = document.getElementsByTagName('script')
-  //       // Loop through the HTMLcollection (array-like but not array)
-  //       for (var i = 0; i < scripts.length; i++) {
-  //         // find script whose src value includes "recaptcha/releases"
-  //         // this script is added when main recaptcha script is loaded
-
-  //         if (
-  //           scripts.item(i).attributes.getNamedItem('src') &&
-  //           scripts
-  //             .item(i)
-  //             .attributes.getNamedItem('src')
-  //             .value.includes('recaptcha/releases')
-  //         ) {
-  //           document.head.removeChild(scripts.item(i)) // remove script from head
-  //         }
-  //       }
-  //       document.head.removeChild(recaptchaScript) // remove main recaptcha script from head
-  //       // remove the recaptcha badge from the bottom right corner
-  //       let badge = document.querySelector('.grecaptcha-badge')
-  //       if (badge) {
-  //         badge.parentElement.remove()
-  //       }
-  //     }
-  //   }
-  // }, [formOnPage])
+  // console.log(page)
   return (
     <Layout
       {...siteMetadata}
@@ -93,10 +57,12 @@ const Page = ({ page, navigation, siteMetadata, footer }) => {
         />
       </Head>
       <header className="flex items-center justify-center py-4 text-center md:py-6 lg:py-8 xl:py-10 ">
-        <Icon
-          name={page.data.icon}
-          className="inline-block text-3xl text-blue-700 sm:text-5xl lg:text-6xl"
-        />
+        {page.data.icon ? (
+          <Icon
+            name={page.data.icon}
+            className="inline-block text-3xl text-blue-700 sm:text-5xl lg:text-6xl"
+          />
+        ) : null}
         <PrismicRichText field={page.data.title} components={templates} />
       </header>
       <SliceZone slices={page.data.slices} components={components} />

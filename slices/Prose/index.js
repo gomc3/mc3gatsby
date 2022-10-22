@@ -1,5 +1,5 @@
 import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
+import { PrismicRichText, PrismicLink } from '@prismicio/react'
 
 /**
  * @typedef {import("@prismicio/client").Content.ProseSlice} ProseSlice
@@ -10,6 +10,13 @@ const Prose = ({ slice }) => {
   const components = {
     paragraph: ({ node, children }) => {
       return <p>{children}</p>
+    },
+    hyperlink: ({ node, children }) => {
+      return (
+        <PrismicLink field={node.data} className="text-blue-700">
+          {children}
+        </PrismicLink>
+      )
     },
     image: ({ node, children }) => {
       return (

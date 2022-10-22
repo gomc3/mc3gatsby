@@ -81,7 +81,7 @@ const CalendarPage = ({ events, page, navigation, siteMetadata, footer }) => {
           <PrismicRichText field={pagedescription} components={templates} />
         </header>
         <hr />
-        <section className="mx-auto my-2 grid max-w-screen-sm grid-cols-1 gap-2 sm:my-4 lg:my-6">
+        <section className="mx-auto my-2 grid max-w-screen-sm grid-cols-1 gap-2 px-4 sm:my-4 md:px-0 lg:my-6">
           {events.length &&
             events.map((item, i) => {
               let firstChar = item.summary.charAt(0)
@@ -146,7 +146,7 @@ const CalendarPage = ({ events, page, navigation, siteMetadata, footer }) => {
                             </p>
                             <a
                               href={`https://maps.google.com/?daddr=${item.location}`}
-                              className="mx-auto my-3 inline-block rounded-md bg-blue-700 px-3 py-2 text-white sm:my-2"
+                              className="btn btn-secondary mx-auto my-3 text-base-100 sm:my-2"
                             >
                               <Icon name="Map" className="inline text-xl" /> Get
                               Directions
@@ -195,6 +195,6 @@ export async function getStaticProps({ previewData }) {
       footer,
       events,
     },
-    revalidate: 60,
+    revalidate: 60 * 15,
   }
 }

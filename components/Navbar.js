@@ -1,31 +1,21 @@
 import { Menu, Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
 import Headroom from 'react-headroom'
-import { PrismicImage } from '@prismicio/react'
+import { PrismicImage, PrismicLink } from '@prismicio/react'
 import Link from 'next/link'
 
 import {
   HiChevronDown,
   HiCalendar,
-  HiOutlineCalendar,
   HiSun,
-  HiOutlineSun,
   HiAcademicCap,
-  HiOutlineAcademicCap,
   HiNewspaper,
-  HiOutlineNewspaper,
   HiPlus,
-  HiOutlinePlus,
   HiExternalLink,
-  HiOutlineExternalLink,
   HiCloud,
-  HiOutlineCloud,
   HiHome,
-  HiOutlineHome,
   HiIdentification,
-  HiOutlineIdentification,
   HiChatAlt2,
-  HiOutlineChatAlt2,
 } from 'react-icons/hi'
 
 const Navbar = ({ logo, navigation, path }) => {
@@ -47,195 +37,97 @@ const Navbar = ({ logo, navigation, path }) => {
             </Link>
           </div>
           {/* Mobile Nav Begins Here */}
-          <div className={`${navigation.length > 5 ? '' : 'lg:hidden'} `}>
-            <div className="text-right">
-              <Menu as="div" className={`relative inline-block text-left`}>
-                <div>
-                  <Menu.Button className="inline-flex w-full justify-center rounded-md bg-blue-700 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-95 hover:text-blue-50 focus:outline-none focus:ring-4 focus:ring-yellow-300">
-                    Menu
-                    <HiChevronDown
-                      className="ml-2 -mr-1 h-5 w-5 text-blue-200"
-                      aria-hidden="true"
-                    />
-                  </Menu.Button>
-                </div>
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-slate-100 rounded-md bg-white shadow-lg ring-1 ring-yellow-300 ring-opacity-5 focus:outline-none">
-                    <div className="px-1 py-1 text-blue-900">
-                      {navigation.map(item => {
-                        const icons = {
-                          Calendar: HiCalendar,
-                          Sun: HiSun,
-                          AcademicCap: HiAcademicCap,
-                          Newspaper: HiNewspaper,
-                          Plus: HiPlus,
-                          Link: HiExternalLink,
-                          Cloud: HiCloud,
-                          Identification: HiIdentification,
-                          ChatAlt2: HiChatAlt2,
-                          Home: HiHome,
-                          Plus: HiPlus,
-                        }
-                        const iconsOutline = {
-                          Calendar: HiOutlineCalendar,
-                          Sun: HiOutlineSun,
-                          AcademicCap: HiOutlineAcademicCap,
-                          Newspaper: HiOutlineNewspaper,
-                          Plus: HiOutlinePlus,
-                          Link: HiOutlineExternalLink,
-                          Cloud: HiOutlineCloud,
-                          Identification: HiOutlineIdentification,
-                          ChatAlt2: HiOutlineChatAlt2,
-                          Home: HiOutlineHome,
-                          Plus: HiOutlinePlus,
-                        }
-                        const MenuIcon = icons[item.itemicon]
-                        const MenuIconOutline = iconsOutline[item.itemicon]
-                        if (
-                          item.itemlink.link_type === 'Document' &&
-                          path !== item.itemlink.url
-                        ) {
-                          return (
-                            <Menu.Item
-                              key={item.itemlink.id || item.itemlink.url}
-                            >
-                              {({ active }) => (
-                                <Link
-                                  href={item.itemlink.url}
-                                  className={`${
-                                    active
-                                      ? 'bg-blue-700 hover:text-white focus:text-white'
-                                      : 'text-slate-900 '
-                                  } ${
-                                    path === item.itemlink.url &&
-                                    `cursor-default border-b-2 bg-blue-100 font-semibold text-black shadow-sm hover:text-yellow-500`
-                                  } group flex w-full items-center rounded-md px-2 py-2 text-sm focus:text-white`}
-                                >
-                                  {active ? (
-                                    <MenuIcon
-                                      className="mr-2 inline h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  ) : (
-                                    <MenuIconOutline
-                                      className="mr-2 inline h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  )}
-                                  {item.itemtext}
-                                </Link>
-                              )}
-                            </Menu.Item>
-                          )
-                        } else if (path !== item.itemlink.url) {
-                          return (
-                            <Menu.Item
-                              key={item.itemlink.id || item.itemlink.url}
-                            >
-                              {({ active }) => (
-                                <a
-                                  href={item.itemlink.url}
-                                  className={`${
-                                    active
-                                      ? 'bg-blue-700 hover:text-white focus:text-white'
-                                      : 'text-slate-900 '
-                                  } ${
-                                    path === item.itemlink.url &&
-                                    `cursor-default border-b-2 bg-blue-100 font-semibold text-black shadow-sm hover:text-blue-900`
-                                  } group flex w-full items-center rounded-md px-2 py-2 text-sm focus:text-white`}
-                                >
-                                  {active ? (
-                                    <MenuIcon
-                                      className="mr-2 h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  ) : (
-                                    <MenuIconOutline
-                                      className="mr-2 h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  )}
-                                  {item.itemtext}
-                                </a>
-                              )}
-                            </Menu.Item>
-                          )
-                        } else {
-                          return (
-                            <Menu.Item
-                              key={item.itemlink.id || item.itemlink.url}
-                            >
-                              {({ active }) => (
-                                <span
-                                  className={`${
-                                    active
-                                      ? 'bg-blue-700 hover:text-white focus:text-white'
-                                      : 'text-slate-900 '
-                                  } ${
-                                    path === item.itemlink.url &&
-                                    `cursor-default border-b-2 bg-blue-100 font-semibold text-black shadow-sm hover:text-blue-900`
-                                  } group flex w-full items-center rounded-md px-2 py-2 text-sm focus:text-white`}
-                                >
-                                  {active ? (
-                                    <MenuIcon
-                                      className="mr-2 h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  ) : (
-                                    <MenuIconOutline
-                                      className="mr-2 h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  )}
-                                  {item.itemtext}
-                                </span>
-                              )}
-                            </Menu.Item>
-                          )
-                        }
-                      })}
-                    </div>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
+          <div className={`${navigation.length > 6 ? '' : 'xl:hidden'} `}>
+            <div className="dropdown-end dropdown">
+              <label
+                tabIndex={0}
+                className="btn btn-secondary m-1 rounded text-base-100"
+              >
+                Menu <HiChevronDown className="ml-3 inline h-5 w-5" />
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu w-52 rounded bg-base-100 p-2 shadow"
+              >
+                {navigation.length &&
+                  navigation.map((item, i) => {
+                    const icons = {
+                      Calendar: HiCalendar,
+                      Sun: HiSun,
+                      AcademicCap: HiAcademicCap,
+                      Newspaper: HiNewspaper,
+                      Plus: HiPlus,
+                      Link: HiExternalLink,
+                      Cloud: HiCloud,
+                      Identification: HiIdentification,
+                      ChatAlt2: HiChatAlt2,
+                      Home: HiHome,
+                      Plus: HiPlus,
+                    }
+                    const MenuIcon = icons[item.itemicon]
+                    if (path !== item.itemlink.url) {
+                      return (
+                        <PrismicLink
+                          key={item.itemlink.id || item.itemlink.url}
+                          field={item.itemlink}
+                          className={`group my-3 flex w-full items-center rounded px-2 py-2 text-blue-900 hover:bg-blue-900 hover:text-white focus:text-accent`}
+                        >
+                          <MenuIcon
+                            className="mr-2 inline text-2xl"
+                            aria-hidden="true"
+                          />
+                          {item.itemtext}
+                        </PrismicLink>
+                      )
+                    } else {
+                      return (
+                        <span
+                          key={item.itemlink.id || item.itemlink.url}
+                          className={`${
+                            path === item.itemlink.url &&
+                            `cursor-default border-b-2 bg-accent shadow-sm hover:text-blue-900`
+                          } group flex w-full items-center rounded-md px-2 py-2 focus:text-white`}
+                        >
+                          <MenuIcon
+                            className="mr-2 text-2xl"
+                            aria-hidden="true"
+                          />
+                          {item.itemtext}
+                        </span>
+                      )
+                    }
+                  })}
+              </ul>
             </div>
           </div>
           {/* Mobile Nav Ends Here */}
           {/* Conditional Desktop Nav Begins Here */}
-          {navigation.length < 6 && (
+          {navigation.length < 7 && (
             <>
-              <nav className="absolute left-1/2 top-1/2 hidden -translate-y-1/2 -translate-x-1/2 grid-flow-col justify-center gap-x-6 font-semibold text-blue-700 lg:grid">
+              <nav className="absolute left-1/2 top-1/2 hidden -translate-y-1/2 -translate-x-1/2 grid-flow-col justify-center gap-x-6 font-semibold text-blue-700 xl:grid">
                 {navigation.map(item => {
                   if (
                     item.itemlink.link_type === 'Document' &&
                     path !== item.itemlink.url
                   ) {
                     return (
-                      <Link
+                      <PrismicLink
                         key={item.itemlink.id}
-                        href={item.itemlink.url}
+                        field={item.itemlink}
                         className="rounded px-4 py-2 hover:bg-blue-50"
                       >
                         {item.itemtext}
-                      </Link>
+                      </PrismicLink>
                     )
                   } else if (path !== item.itemlink.url) {
                     return (
-                      <a
+                      <PrismicLink
                         key={item.itemlink.url}
-                        href={item.itemlink.url}
+                        field={item.itemlink}
                         className="rounded px-4 py-2 hover:bg-blue-50"
                       >
                         {item.itemtext}
-                      </a>
+                      </PrismicLink>
                     )
                   } else {
                     return (
@@ -249,14 +141,13 @@ const Navbar = ({ logo, navigation, path }) => {
                   }
                 })}
               </nav>
-              {navigation.length < 6 && (
-                <div className="hidden items-center justify-end space-x-8 lg:block">
+              {navigation.length < 7 && (
+                <div className="hidden items-center justify-end space-x-8 xl:block">
                   <span className="inline-flex flex-none rounded-md shadow-sm">
-                    <Link
-                      className=" whitespace-no-wrap items-center justify-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-center text-base font-medium leading-6 text-white transition duration-150 ease-in-out hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 active:bg-blue-600"
-                      href="/join"
-                    >
-                      Become a Member
+                    <Link href="/join">
+                      <a className="btn btn-secondary rounded border border-transparent text-base-100 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 ">
+                        Become a Member
+                      </a>
                     </Link>
                   </span>
                 </div>

@@ -1,0 +1,19 @@
+{
+  "id": "joinpage",
+  "label": "JoinPage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "Enter page title",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      }
+    }
+  }
+}

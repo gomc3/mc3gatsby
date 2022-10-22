@@ -7,7 +7,7 @@ export default function Footer({ data, metadata }) {
   const { footerbuttons, footericonmenu, footertextmenu } = data.data
   return (
     <footer className=" mt-auto bg-slate-100 p-6 lg:p-12">
-      <div className="my-3 flex flex-col items-center space-y-12 text-center sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+      <div className="my-3 mx-auto grid max-w-screen-sm gap-x-4 gap-y-6 md:grid-flow-col md:gap-y-0">
         {footerbuttons.length &&
           footerbuttons.map(button => {
             return (
@@ -20,13 +20,16 @@ export default function Footer({ data, metadata }) {
             )
           })}
       </div>
-      <nav className="mx-auto my-6 flex max-w-xl flex-col justify-between  space-y-12 text-center sm:flex-row sm:space-y-0">
+      <nav
+        className={`mx-auto my-6 grid place-items-center gap-y-6 md:grid-flow-col md:gap-y-0`}
+      >
         {footertextmenu.length &&
           footertextmenu.map(item => {
             return (
               <PrismicLink
                 key={item.linkurl.id || item.linkurl.url}
                 field={item.linkurl}
+                className="px-8 py-3 hover:bg-base-200"
               >
                 {item.linktext}
               </PrismicLink>

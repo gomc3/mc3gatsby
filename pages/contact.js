@@ -224,7 +224,7 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
               name="submit"
               type="submit"
               value="Submit"
-              className={`mt-6 w-1/3 rounded-md bg-blue-700 px-6 py-3 font-medium text-white ${
+              className={`btn btn-secondary w-32 rounded text-white ${
                 disabled && ` text-slate-50 opacity-40 `
               } rounded-sm transition duration-150 ease-in-out hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-yellow-300`}
             />

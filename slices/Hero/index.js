@@ -42,7 +42,7 @@ const Hero = ({ slice }) => {
     ),
     paragraph: ({ node, children }) => {
       return (
-        <p className="prose mx-auto md:prose-lg lg:prose-xl xl:prose-2xl">
+        <p className="prose mx-auto my-4 md:prose-lg md:my-6 lg:prose-xl lg:my-8 xl:prose-2xl xl:my-10">
           {children}
         </p>
       )
@@ -68,11 +68,11 @@ const Hero = ({ slice }) => {
       <div className="mx-auto flex max-w-screen-2xl flex-col flex-wrap items-center justify-center lg:space-x-12">
         <div className="max-w-screen-lg px-4 pt-4 sm:px-8 sm:pb-5 md:py-9 lg:py-6">
           <PrismicRichText field={herotitle} components={components} />
-          <h2 className="mb-8 text-center text-5xl font-extrabold leading-none tracking-tight text-slate-900 sm:text-6xl sm:tracking-normal">
+          <h2 className="my-4 text-center text-5xl font-extrabold leading-none tracking-tight text-slate-900 sm:text-6xl sm:tracking-normal md:my-6 lg:my-8 xl:my-10">
             {heroheadline}{' '}
             <span className="text-blue-700">{heroheadlinespan}</span>
           </h2>
-          <div className="flex flex-wrap items-center justify-evenly">
+          <div className="flex flex-wrap items-center justify-evenly gap-y-4 py-4 md:gap-y-0 md:py-6 lg:py-8 xl:py-10">
             {items &&
               items.length &&
               items.map((item, i) => {

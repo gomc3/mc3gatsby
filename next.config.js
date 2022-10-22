@@ -10,7 +10,7 @@ const nextConfig = {
     defaultLocale: 'en-us',
   },
   experimental: {
-    newNextLinkBehavior: true,
+    // newNextLinkBehavior: true,
   },
 }
 

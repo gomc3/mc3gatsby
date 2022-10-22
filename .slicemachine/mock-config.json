@@ -113,6 +113,14 @@
           "blocks": 1
         }
       }
+    },
+    "joinpage": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
     }
   },
   "slices": {
