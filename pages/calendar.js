@@ -176,7 +176,7 @@ export async function getStaticProps({ previewData }) {
 
   const events = await axios
     .get(
-      `https://content.googleapis.com/calendar/v3/calendars/${process.env.GOOGLE_CALENDAR_ID}/events?key=${process.env.GOOGLE_API_KEY}&singleEvents=true&orderBy=startTime`
+      `https://content.googleapis.com/calendar/v3/calendars/${process.env.GOOGLE_CALENDAR_API}/events?key=${process.env.GOOGLE_API_KEY}&singleEvents=true&orderBy=startTime`
     )
     .then(response => {
       const futureEvents = response.data.items.filter(
