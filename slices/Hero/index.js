@@ -88,7 +88,7 @@ const Hero = ({ slice }) => {
           </div>
           <PrismicRichText field={herodescription} components={components} />
         </div>
-        <div className="relative z-10 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <PrismicRichText field={herocta} components={components} />
           <PrismicRichText
             field={slice.primary.heroctadescription}

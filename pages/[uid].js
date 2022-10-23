@@ -17,7 +17,6 @@ const Page = ({ page, navigation, siteMetadata, footer }) => {
       )
     },
   }
-  // console.log(page)
   return (
     <Layout
       {...siteMetadata}

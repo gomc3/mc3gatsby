@@ -26,6 +26,10 @@ const routes = [
     type: 'contactpage',
     path: '/contact',
   },
+  {
+    type: 'joinpage',
+    path: '/join',
+  },
 ]
 
 /**

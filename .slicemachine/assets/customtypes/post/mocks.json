@@ -1,0 +1,79 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "post",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "title": [
+      {
+        "type": "heading1",
+        "text": "Machinery",
+        "spans": []
+      }
+    ],
+    "author": [
+      {
+        "type": "paragraph",
+        "text": "Dolore aute dolor commodo laborum cillum consequat veniam irure dolor commodo.",
+        "spans": []
+      }
+    ],
+    "featuredimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b"
+    },
+    "excerpt": [
+      {
+        "type": "paragraph",
+        "text": "Ullamco ipsum reprehenderit laborum deserunt ad cillum sint adipisicing voluptate irure cillum enim anim excepteur officia. Enim qui cillum incididunt incididunt laborum aliquip elit magna cillum commodo consequat quis anim fugiat nisi.",
+        "spans": []
+      }
+    ],
+    "tags": [
+      {
+        "tag": {
+          "id": "mock_document_id",
+          "link_type": "Document",
+          "type": "tag",
+          "tags": [],
+          "lang": "en-us",
+          "slug": null,
+          "first_publication_date": "1970-01-01T00:00:01+0000",
+          "last_publication_date": "1970-01-01T01:00:00+0000"
+        }
+      }
+    ],
+    "metadescription": "tribe",
+    "metaimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f"
+    },
+    "twitterimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a"
+    },
+    "slices": []
+  }
+}

@@ -1,5 +1,4 @@
-import { Menu, Transition } from '@headlessui/react'
-import React, { Fragment } from 'react'
+import Icon from './Icon'
 import Headroom from 'react-headroom'
 import { PrismicImage, PrismicLink } from '@prismicio/react'
 import Link from 'next/link'
@@ -43,7 +42,7 @@ const Navbar = ({ logo, navigation, path }) => {
                 tabIndex={0}
                 className="btn btn-secondary btn-sm m-1 rounded text-base-100 md:btn-md"
               >
-                Menu <HiChevronDown className="ml-3 inline" />
+                Menu <HiChevronDown className="ml-1 inline sm:ml-2 md:ml-3" />
               </label>
               <ul
                 tabIndex={0}
@@ -97,6 +96,20 @@ const Navbar = ({ logo, navigation, path }) => {
                       )
                     }
                   })}
+                <li>
+                  <Link href="/join">
+                    <a
+                      className={`group my-3 flex w-full items-center rounded px-2 py-2 text-blue-900 hover:bg-blue-900 hover:text-white focus:text-accent ${
+                        path === '/join'
+                          ? `btn-disabled bg-accent shadow-sm `
+                          : ``
+                      }`}
+                    >
+                      <Icon name="Plus" />
+                      Become a Member
+                    </a>
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
