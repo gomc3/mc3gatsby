@@ -120,6 +120,18 @@
           "patternType": "HEADING",
           "blocks": 1
         }
+      },
+      "pagedescription": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "privacyreminder": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
       }
     }
   },

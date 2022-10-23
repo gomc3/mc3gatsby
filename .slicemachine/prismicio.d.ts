@@ -603,6 +603,83 @@ interface JoinpageDocumentData {
      *
      */
     title: prismicT.TitleField;
+    /**
+     * MetaDescription field in *JoinPage*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: joinpage.metadescription
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    metadescription: prismicT.KeyTextField;
+    /**
+     * Meta Image field in *JoinPage*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: joinpage.metaimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    metaimage: prismicT.ImageField<never>;
+    /**
+     * Twitter Image field in *JoinPage*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: joinpage.twitterimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    twitterimage: prismicT.ImageField<never>;
+    /**
+     * Canonical Url field in *JoinPage*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: joinpage.canonicalurl
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    canonicalurl: prismicT.KeyTextField;
+    /**
+     * PageDescription field in *JoinPage*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Describe the page's purpose
+     * - **API ID Path**: joinpage.pagedescription
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    pagedescription: prismicT.RichTextField;
+    /**
+     * Privacy Reminder field in *JoinPage*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Remind about privacy with link
+     * - **API ID Path**: joinpage.privacyreminder
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    privacyreminder: prismicT.RichTextField;
+    /**
+     * FolderID field in *JoinPage*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: Folder ID for invoices
+     * - **API ID Path**: joinpage.folderid
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    folderid: prismicT.KeyTextField;
 }
 /**
  * JoinPage document from Prismic

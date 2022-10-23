@@ -28,12 +28,12 @@ const Navbar = ({ logo, navigation, path }) => {
               href="/"
               className="focus:outline-none focus:ring-4 focus:ring-yellow-300"
             >
-              <div className="flex flex-wrap items-center">
+              <a className="flex flex-wrap items-center">
                 <PrismicImage field={logo} className="mr-3 block h-16 w-16" />
                 <span className="text-sm font-medium text-blue-700 md:text-base lg:text-xl">
                   Monmouth County <br /> Curriculum Consortium
                 </span>
-              </div>
+              </a>
             </Link>
           </div>
           {/* Mobile Nav Begins Here */}
@@ -41,9 +41,9 @@ const Navbar = ({ logo, navigation, path }) => {
             <div className="dropdown-end dropdown">
               <label
                 tabIndex={0}
-                className="btn btn-secondary m-1 rounded text-base-100"
+                className="btn btn-secondary btn-sm m-1 rounded text-base-100 md:btn-md"
               >
-                Menu <HiChevronDown className="ml-3 inline h-5 w-5" />
+                Menu <HiChevronDown className="ml-3 inline" />
               </label>
               <ul
                 tabIndex={0}

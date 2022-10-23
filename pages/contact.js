@@ -117,7 +117,7 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
         />
       </Head>
       <div className="mx-auto max-w-screen-xl">
-        <header className="mb-2 flex flex-col items-center sm:mb-4 lg:mb-6">
+        <header className="mb-2 flex flex-col items-center px-4 sm:mb-4 sm:px-6 lg:mb-6 lg:px-8">
           <div className="flex items-center">
             <Icon
               name="Chat"
@@ -128,7 +128,7 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
           <PrismicRichText field={pagedescription} components={templates} />
         </header>
         <hr />
-        <section className="mx-auto my-2 grid max-w-screen-sm grid-cols-1 gap-2 sm:my-4 lg:my-6">
+        <section className="mx-auto my-2 grid max-w-screen-sm grid-cols-1 gap-2 px-4 sm:my-4 sm:px-6 lg:my-6 lg:px-8">
           {recaptchaPassed === false && (
             <p className="rounded-md border border-red-600 p-4 text-center text-xl text-red-600">
               Oops! It looks like Google blocked your submission because it
@@ -224,7 +224,7 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
               name="submit"
               type="submit"
               value="Submit"
-              className={`btn btn-secondary w-32 rounded text-white ${
+              className={`btn btn-secondary mx-auto my-4 block w-32 rounded text-white md:my-6 lg:my-8 xl:my-10${
                 disabled && ` text-slate-50 opacity-40 `
               } rounded-sm transition duration-150 ease-in-out hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-yellow-300`}
             />

@@ -6,6 +6,7 @@ import {
   HiSun,
   HiAcademicCap,
   HiMap,
+  HiPlus,
 } from 'react-icons/hi'
 import { FaLinkedin } from 'react-icons/fa'
 
@@ -19,6 +20,7 @@ const Icon = ({ name, className }) => {
     LinkedIn: FaLinkedin,
     AcademicCap: HiAcademicCap,
     Map: HiMap,
+    Plus: HiPlus,
   }
   const TitleIcon = icons[name]
   return <TitleIcon className={className} />

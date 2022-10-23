@@ -36,6 +36,7 @@ export default async function formHandler(req, res) {
     accountsPayableEmail,
     billingAddress,
     token,
+    folderId,
   } = req.body
   const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_SECRETKEY}&response=${token}`
   let gRc = false
@@ -43,10 +44,10 @@ export default async function formHandler(req, res) {
   async function getRecaptcha(url) {
     const axiosResponse = await axios
       .get(url)
-      .then((response) => {
+      .then(response => {
         return response.data
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error)
       })
 
@@ -116,8 +117,7 @@ export default async function formHandler(req, res) {
        * @param client - The OAuth2 client that was created in the previous step.
        * @returns the googleResponse.
        */
-      async function gsCopyInvoice(client) {
-        const folderId = '1Cc5mjm_tSr5ZFZaqM8RdjoYyDDjXioUo'
+      async function gsCopyInvoice(client, folderId) {
         const templateId = '1sqnjygHb1XUhjSMGjYixuR7powPG1z4f86sojOmsg7k'
         const gsapi = google.drive({ version: 'v3', auth: client })
         const request = {
@@ -145,7 +145,7 @@ export default async function formHandler(req, res) {
           console.log('Ther was an error copying: ', err)
         }
       }
-      gsCopyInvoice(client)
+      gsCopyInvoice(client, folderId)
 
       /**
        * This function takes in a client object, which is the result of the Google OAuth2.0

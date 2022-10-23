@@ -14,9 +14,44 @@
     "title": [
       {
         "type": "heading1",
-        "text": "Rabbit",
+        "text": "Military",
         "spans": []
       }
-    ]
+    ],
+    "metadescription": "train",
+    "metaimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764"
+    },
+    "twitterimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9"
+    },
+    "canonicalurl": "spin",
+    "pagedescription": [
+      {
+        "type": "paragraph",
+        "text": "Do do est in id dolor exercitation laborum voluptate minim eu sit.",
+        "spans": []
+      }
+    ],
+    "privacyreminder": [
+      {
+        "type": "paragraph",
+        "text": "Aute commodo adipisicing ut labore nulla officia mollit dolor.",
+        "spans": []
+      }
+    ],
+    "folderid": "right"
   }
 }

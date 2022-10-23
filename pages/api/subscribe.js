@@ -1,25 +1,25 @@
-import axios from "axios";
+import axios from 'axios'
 
 export default async function formHandler(req, res) {
-  const { name, email, token } = req.body;
+  const { name, email, token } = req.body
 
-  const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_SECRETKEY}&response=${token}`;
-  let gRc = false;
+  const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_SECRETKEY}&response=${token}`
+  let gRc = false
   async function getRecaptcha(url) {
     const axiosResponse = await axios
       .get(url)
-      .then((response) => {
-        return response.data;
+      .then(response => {
+        return response.data
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch(error => {
+        console.log(error)
+      })
 
     // axiosResponse.success = false; // uncomment this line to simulate a failed recaptcha test
-    gRc = axiosResponse.success;
+    gRc = axiosResponse.success
     // if reCaptcha passes, write the form to a Google Sheet
     if (axiosResponse.success === true) {
-      const mlUrl = `https://api.mailerlite.com/api/v2/groups/${process.env.MAILERLITE_MC3_GROUP_ID}/subscribers`;
+      const mlUrl = `https://api.mailerlite.com/api/v2/groups/${process.env.MAILERLITE_MC3_GROUP_ID}/subscribers`
       async function addToMailerLite(mlUrl) {
         const mlResponse = await axios
           .post(
@@ -28,28 +28,28 @@ export default async function formHandler(req, res) {
               email: email,
               name: name,
               autoresponders: true,
-              type: "unconfirmed",
+              type: 'unconfirmed',
             },
             {
               headers: {
-                "Content-Type": "application/json",
-                "X-MailerLite-ApiKey": `${process.env.MAILERLITE_API_KEY}`,
+                'Content-Type': 'application/json',
+                'X-MailerLite-ApiKey': `${process.env.MAILERLITE_API_KEY}`,
               },
             }
           )
-          .then((response) => {
-            return response.data;
+          .then(response => {
+            return response.data
           })
-          .catch((error) => {
-            console.log(error);
-          });
+          .catch(error => {
+            console.log(error)
+          })
       }
-      await addToMailerLite(mlUrl);
+      await addToMailerLite(mlUrl)
     }
   }
-  await getRecaptcha(recaptchaUrl);
+  await getRecaptcha(recaptchaUrl)
   if (gRc === false) {
-    return res.status(422).json(`ReCaptcha Error`);
+    return res.status(422).json(`ReCaptcha Error`)
   }
-  return res.json(`ok`);
+  return res.json(`ok`)
 }

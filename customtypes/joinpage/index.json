@@ -13,6 +13,61 @@
           "allowTargetBlank": true,
           "single": "heading1"
         }
+      },
+      "metadescription": {
+        "type": "Text",
+        "config": {
+          "label": "MetaDescription",
+          "placeholder": ""
+        }
+      },
+      "metaimage": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "twitterimage": {
+        "type": "Image",
+        "config": {
+          "label": "Twitter Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "canonicalurl": {
+        "type": "Text",
+        "config": {
+          "label": "Canonical Url",
+          "placeholder": ""
+        }
+      },
+      "pagedescription": {
+        "type": "StructuredText",
+        "config": {
+          "label": "PageDescription",
+          "placeholder": "Describe the page's purpose",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,list-item,o-list-item,hyperlink,image"
+        }
+      },
+      "privacyreminder": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Privacy Reminder",
+          "placeholder": "Remind about privacy with link",
+          "allowTargetBlank": true,
+          "multi": "paragraph,hyperlink,strong,em,list-item,o-list-item"
+        }
+      },
+      "folderid": {
+        "type": "Text",
+        "config": {
+          "label": "FolderID",
+          "placeholder": "Folder ID for invoices"
+        }
       }
     }
   }
