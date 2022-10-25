@@ -1,0 +1,19 @@
+{
+  "id": "blogpage",
+  "label": "BlogPage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "Enter page title",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      }
+    }
+  }
+}

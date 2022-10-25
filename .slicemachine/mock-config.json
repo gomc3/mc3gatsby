@@ -149,16 +149,24 @@
           "blocks": 1
         }
       },
-      "author": {
+      "tags": {},
+      "excerpt": {
         "config": {
           "patternType": "PARAGRAPH",
           "blocks": 1
         }
       },
-      "tags": {},
-      "excerpt": {
+      "author": {
         "config": {
           "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
+    "blogpage": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
           "blocks": 1
         }
       }

@@ -30,6 +30,14 @@ const routes = [
     type: 'joinpage',
     path: '/join',
   },
+  {
+    type: 'blogpage',
+    path: '/blog',
+  },
+  {
+    type: 'post',
+    path: '/blog/:uid',
+  },
 ]
 
 /**

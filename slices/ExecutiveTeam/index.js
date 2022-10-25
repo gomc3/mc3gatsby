@@ -9,6 +9,7 @@ import Icon from '../../components/Icon'
  * @param { ExecutiveTeamProps }
  */
 const ExecutiveTeam = ({ slice }) => {
+  console.log(slice)
   const templates = {
     heading2: ({ node, children }) => {
       return (
@@ -37,7 +38,12 @@ const ExecutiveTeam = ({ slice }) => {
             const {
               executivemember: {
                 id,
-                data: { memberfullname, memberprofileimage, memberlink },
+                data: {
+                  memberfullname,
+                  memberprofileimage,
+                  memberlink,
+                  leftposition,
+                },
               },
               executiverole,
             } = member
@@ -46,33 +52,40 @@ const ExecutiveTeam = ({ slice }) => {
                 key={id}
                 className="flex flex-col flex-wrap items-center p-4 text-center md:flex-row  md:text-left"
               >
-                {memberlink && memberlink.url !== '' && memberprofileimage ? (
-                  <a href={memberlink.url}>
+                <div className="indicator">
+                  {leftposition && (
+                    <span className="badge-neutral badge indicator-item">
+                      inactive
+                    </span>
+                  )}
+                  {memberlink && memberlink.url !== '' && memberprofileimage ? (
+                    <a href={memberlink.url}>
+                      <Image
+                        src={memberprofileimage.url}
+                        alt={memberprofileimage.alt || ''}
+                        width={memberprofileimage.dimensions.width}
+                        height={memberprofileimage.dimensions.height}
+                        className="w-24 flex-initial rounded-full border border-slate-300 grayscale filter transition duration-500 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-slate-400 hover:grayscale-0 md:mr-4"
+                      />
+                    </a>
+                  ) : memberprofileimage ? (
                     <Image
                       src={memberprofileimage.url}
                       alt={memberprofileimage.alt || ''}
                       width={memberprofileimage.dimensions.width}
                       height={memberprofileimage.dimensions.height}
-                      className="w-24 flex-initial rounded-full border border-slate-300 grayscale filter transition duration-500 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-slate-400 hover:grayscale-0 md:mr-4"
+                      className="w-24 flex-initial rounded-full border border-slate-300 grayscale filter transition duration-500 ease-in-out hover:grayscale-0 md:mr-4"
                     />
-                  </a>
-                ) : memberprofileimage ? (
-                  <Image
-                    src={memberprofileimage.url}
-                    alt={memberprofileimage.alt || ''}
-                    width={memberprofileimage.dimensions.width}
-                    height={memberprofileimage.dimensions.height}
-                    className="w-24 flex-initial rounded-full border border-slate-300 grayscale filter transition duration-500 ease-in-out hover:grayscale-0 md:mr-4"
-                  />
-                ) : (
-                  <Image
-                    src="https://picsum.photos/id/317/100"
-                    alt=""
-                    width={100}
-                    height={100}
-                    className="w-24 flex-initial rounded-full border border-slate-300 grayscale filter transition duration-500 ease-in-out hover:grayscale-0 md:mr-4"
-                  />
-                )}
+                  ) : (
+                    <Image
+                      src="https://picsum.photos/id/317/100"
+                      alt=""
+                      width={100}
+                      height={100}
+                      className="w-24 flex-initial rounded-full border border-slate-300 grayscale filter transition duration-500 ease-in-out hover:grayscale-0 md:mr-4"
+                    />
+                  )}
+                </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-medium">{memberfullname}</h3>
                   <h4 className="text-sm">{executiverole.data.rolenickname}</h4>

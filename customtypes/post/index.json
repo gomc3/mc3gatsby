@@ -27,7 +27,7 @@
           "label": "Author",
           "placeholder": "Enter author name",
           "allowTargetBlank": true,
-          "single": "paragraph,hyperlink,strong,em"
+          "single": "paragraph"
         }
       },
       "featuredimage": {

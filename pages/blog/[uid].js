@@ -1,13 +1,11 @@
-import * as React from 'react'
 import { SliceZone, PrismicRichText } from '@prismicio/react'
 import * as prismicH from '@prismicio/helpers'
 import Head from 'next/head'
-import { createClient } from '../prismicio'
-import { components } from '../slices'
-import Layout from '../components/Layout'
-import Icon from '../components/Icon'
+import { createClient } from '../../prismicio'
+import { components } from '../../slices'
+import Layout from '../../components/Layout'
 
-const Page = ({ page, navigation, siteMetadata, footer }) => {
+const Post = ({ page, siteMetadata, navigation, footer }) => {
   const templates = {
     heading1: ({ node, children }) => {
       return (
@@ -25,7 +23,9 @@ const Page = ({ page, navigation, siteMetadata, footer }) => {
       path={page.url}
     >
       <Head>
-        <title>{`${page.data.title[0].text} • ${siteMetadata.data.sitetitle[0].text}`}</title>
+        <title>{`${prismicH.asText(page.data.title)} • ${prismicH.asText(
+          siteMetadata.data.sitetitle
+        )}`}</title>
         <meta name="robots" content="noindex,follow" />
         <link
           rel="canonical"
@@ -56,33 +56,21 @@ const Page = ({ page, navigation, siteMetadata, footer }) => {
         />
       </Head>
       <header className="flex items-center justify-center py-4 text-center md:py-6 lg:py-8 xl:py-10 ">
-        {page.data.icon ? (
-          <Icon
-            name={page.data.icon}
-            className="inline-block text-3xl text-blue-700 sm:text-5xl lg:text-6xl"
-          />
-        ) : null}
         <PrismicRichText field={page.data.title} components={templates} />
       </header>
       <SliceZone slices={page.data.slices} components={components} />
     </Layout>
   )
 }
+export default Post
 
-export default Page
-
+/**
+ * Get Props
+ */
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData })
-  const page = await client.getByUID('page', params.uid, {
-    fetchLinks: [
-      'executiveteam.executiveteamtitle',
-      'executiveteam.executiveteammembers',
-      'executivemember.memberfullname',
-      'executivemember.memberlink',
-      'executivemember.memberprofileimage',
-      'executivemember.leftposition',
-      'executiverole.rolenickname',
-    ],
+  const page = await client.getByUID('post', params.uid, {
+    fetchLinks: 'tag.title',
   })
   const navigation = await client.getSingle('mainmenu')
   const siteMetadata = await client.getSingle('sitemetadata')
@@ -99,9 +87,10 @@ export async function getStaticProps({ params, previewData }) {
 
 export async function getStaticPaths() {
   const client = createClient()
-  const pages = await client.getAllByType('page')
+  const posts = await client.getAllByType('post')
+
   return {
-    paths: pages.map(page => prismicH.asLink(page)),
+    paths: posts.map(post => prismicH.asLink(post)),
     fallback: false,
   }
 }

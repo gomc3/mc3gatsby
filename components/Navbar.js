@@ -84,7 +84,7 @@ const Navbar = ({ logo, navigation, path }) => {
                           key={item.itemlink.id || item.itemlink.url}
                           className={`${
                             path === item.itemlink.url &&
-                            `cursor-default border-b-2 bg-accent shadow-sm hover:text-blue-900`
+                            `cursor-default border-b-2 bg-accent shadow-sm hover:bg-yellow-600 hover:text-white`
                           } group flex w-full items-center rounded-md px-2 py-2 focus:text-white`}
                         >
                           <MenuIcon

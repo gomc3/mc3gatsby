@@ -6,6 +6,30 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for BlogPage documents */
+interface BlogpageDocumentData {
+    /**
+     * Title field in *BlogPage*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Enter page title
+     * - **API ID Path**: blogpage.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+}
+/**
+ * BlogPage document from Prismic
+ *
+ * - **API ID**: `blogpage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogpageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<BlogpageDocumentData>, "blogpage", Lang>;
 /** Content for CalendarPage documents */
 interface CalendarpageDocumentData {
     /**
@@ -232,6 +256,18 @@ interface ExecutivememberDocumentData {
      *
      */
     memberprofileimage: prismicT.ImageField<never>;
+    /**
+     * LeftPosition field in *Executive Member*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: executivemember.leftposition
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    leftposition: prismicT.BooleanField;
 }
 /**
  * Executive Member document from Prismic
@@ -1093,7 +1129,7 @@ interface TagDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type TagDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<TagDocumentData>, "tag", Lang>;
-export type AllDocumentTypes = CalendarpageDocument | ContactpageDocument | ExecutivememberDocument | ExecutiveroleDocument | ExecutiveteamDocument | FooterDocument | HomepageDocument | JoinpageDocument | MainmenuDocument | PageDocument | PostDocument | SitemetadataDocument | TagDocument;
+export type AllDocumentTypes = BlogpageDocument | CalendarpageDocument | ContactpageDocument | ExecutivememberDocument | ExecutiveroleDocument | ExecutiveteamDocument | FooterDocument | HomepageDocument | JoinpageDocument | MainmenuDocument | PageDocument | PostDocument | SitemetadataDocument | TagDocument;
 /**
  * Primary content in ExecutiveTeam → Primary
  *
@@ -1413,6 +1449,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { CalendarpageDocumentData, CalendarpageDocument, ContactpageDocumentData, ContactpageDocument, ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, JoinpageDocumentData, JoinpageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, PostDocumentData, PostDocumentDataTagsItem, PostDocumentDataSlicesSlice, PostDocument, SitemetadataDocumentData, SitemetadataDocument, TagDocumentData, TagDocument, AllDocumentTypes, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice };
+        export type { BlogpageDocumentData, BlogpageDocument, CalendarpageDocumentData, CalendarpageDocument, ContactpageDocumentData, ContactpageDocument, ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, JoinpageDocumentData, JoinpageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, PostDocumentData, PostDocumentDataTagsItem, PostDocumentDataSlicesSlice, PostDocument, SitemetadataDocumentData, SitemetadataDocument, TagDocumentData, TagDocument, AllDocumentTypes, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice };
     }
 }
