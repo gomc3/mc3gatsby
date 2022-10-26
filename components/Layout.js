@@ -1,5 +1,6 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
+import Consent from './Consent'
 import { BsArrowReturnLeft } from 'react-icons/bs'
 const Layout = ({ children, data, footer, navigation, path }) => {
   return (
@@ -22,6 +23,7 @@ const Layout = ({ children, data, footer, navigation, path }) => {
         <Navbar logo={data.sitelogo} navigation={navigation} path={path} />
         <main id="main-content">{children}</main>
         <Footer metadata={data} data={footer} />
+        <Consent />
       </div>
     </>
   )

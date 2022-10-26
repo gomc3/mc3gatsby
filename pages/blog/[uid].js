@@ -26,7 +26,6 @@ const Post = ({ page, siteMetadata, navigation, footer }) => {
         <title>{`${prismicH.asText(page.data.title)} • ${prismicH.asText(
           siteMetadata.data.sitetitle
         )}`}</title>
-        <meta name="robots" content="noindex,follow" />
         <link
           rel="canonical"
           href={page.data.canonicalurl || `https://www.gomc3.org${page.url}`}

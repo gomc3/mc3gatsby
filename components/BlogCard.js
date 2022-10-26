@@ -5,12 +5,13 @@ import { PrismicNextImage } from '@prismicio/next'
 import { PrismicRichText } from '@prismicio/react'
 
 export default function BlogCard({
-  data: { author, excerpt, featuredimage, tags, title },
+  data: { author, excerpt, featuredimage, title },
   // first_publication_date,
   // id,
   // last_publication_date,
   uid,
   url,
+  tags,
 }) {
   return (
     <div className="card mx-auto my-4 max-w-screen-sm bg-base-100 shadow-xl md:my-6 lg:my-8 xl:my-10">
@@ -33,10 +34,11 @@ export default function BlogCard({
           </Link>
         </div>
         <ul className="flex flex-wrap space-x-3">
-          {tags.length > 0 &&
+          {tags &&
+            tags.length > 0 &&
             tags.map(tag => (
-              <li key={tag.tag.id} className="badge badge-accent">
-                {prismicH.asText(tag.tag.data.title)}
+              <li key={tag} className="badge badge-accent">
+                {tag}
               </li>
             ))}
         </ul>

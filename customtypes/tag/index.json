@@ -1,26 +1,9 @@
 {
   "id": "tag",
-  "label": "Tag",
+  "label": "Tag(DoNotUse)",
   "repeatable": false,
   "status": true,
   "json": {
-    "Main": {
-      "title": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Title",
-          "placeholder": "Enter tag title",
-          "allowTargetBlank": true,
-          "single": "heading1"
-        }
-      },
-      "uid": {
-        "type": "UID",
-        "config": {
-          "label": "UID",
-          "placeholder": ""
-        }
-      }
-    }
+    "Main": {}
   }
 }

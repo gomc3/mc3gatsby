@@ -1,7 +1,6 @@
 {
   "id": "mock-doc-id",
-  "uid": "meal",
-  "url": "/meal",
+  "url": null,
   "type": "tag",
   "href": null,
   "tags": [],
@@ -11,13 +10,5 @@
   "linked_documents": [],
   "lang": "en-us",
   "alternate_languages": [],
-  "data": {
-    "title": [
-      {
-        "type": "heading1",
-        "text": "Establish",
-        "spans": []
-      }
-    ]
-  }
+  "data": {}
 }

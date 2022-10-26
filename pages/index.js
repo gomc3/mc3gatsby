@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as prismicH from '@prismicio/helpers'
 import { SliceZone } from '@prismicio/react'
 import Head from 'next/head'
 import Layout from '../components/Layout'
@@ -14,8 +15,9 @@ export default function Home({ page, navigation, siteMetadata, footer }) {
       footer={footer}
     >
       <Head>
-        <title>{`${page.data.homepagetitle[0].text} · ${siteMetadata.data.sitetitle[0].text}`}</title>
-        <meta name="robots" content="noindex,follow" />
+        <title>{`${prismicH.asText(
+          page.data.homepagetitle
+        )} · ${prismicH.asText(siteMetadata.data.sitetitle)}`}</title>
         <link rel="canonical" href="https://www.gomc3.org" />
         <meta
           name="description"

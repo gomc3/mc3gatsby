@@ -94,8 +94,10 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
     >
       <Head>
         <title>{`${title[0].text} · ${sitetitle[0].text}`}</title>
-        <meta name="robots" content="noindex,follow" />
-        <link rel="canonical" href={canonicalurl} />
+        <link
+          rel="canonical"
+          href={canonicalurl || 'https://gomc3.org/contact'}
+        />
         <meta name="description" content={metadescription || sitedescription} />
         <meta
           property="og:description"

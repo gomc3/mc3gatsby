@@ -1103,22 +1103,10 @@ interface SitemetadataDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SitemetadataDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SitemetadataDocumentData>, "sitemetadata", Lang>;
-/** Content for Tag documents */
-interface TagDocumentData {
-    /**
-     * Title field in *Tag*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: Enter tag title
-     * - **API ID Path**: tag.title
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-}
+/** Content for Tag(DoNotUse) documents */
+type TagDocumentData = Record<string, never>;
 /**
- * Tag document from Prismic
+ * Tag(DoNotUse) document from Prismic
  *
  * - **API ID**: `tag`
  * - **Repeatable**: `false`
@@ -1126,7 +1114,7 @@ interface TagDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type TagDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<TagDocumentData>, "tag", Lang>;
+export type TagDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<TagDocumentData>, "tag", Lang>;
 export type AllDocumentTypes = BlogpageDocument | CalendarpageDocument | ContactpageDocument | ExecutivememberDocument | ExecutiveroleDocument | ExecutiveteamDocument | FooterDocument | HomepageDocument | JoinpageDocument | MainmenuDocument | PageDocument | PostDocument | SitemetadataDocument | TagDocument;
 /**
  * Primary content in DefinitionList → Primary

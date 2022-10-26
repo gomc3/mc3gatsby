@@ -145,7 +145,6 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
     >
       <Head>
         <title>{`${title[0].text} · ${sitetitle[0].text}`}</title>
-        <meta name="robots" content="noindex,follow" />
         <link rel="canonical" href={canonicalurl} />
         <meta name="description" content={metadescription || sitedescription} />
         <meta

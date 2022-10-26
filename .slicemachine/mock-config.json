@@ -134,14 +134,7 @@
         }
       }
     },
-    "tag": {
-      "title": {
-        "config": {
-          "patternType": "HEADING",
-          "blocks": 1
-        }
-      }
-    },
+    "tag": {},
     "post": {
       "title": {
         "config": {

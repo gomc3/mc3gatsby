@@ -26,7 +26,6 @@ const Page = ({ page, navigation, siteMetadata, footer }) => {
     >
       <Head>
         <title>{`${page.data.title[0].text} • ${siteMetadata.data.sitetitle[0].text}`}</title>
-        <meta name="robots" content="noindex,follow" />
         <link
           rel="canonical"
           href={page.data.canonicalurl || `https://www.gomc3.org${page.url}`}
