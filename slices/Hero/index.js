@@ -17,6 +17,8 @@ const Hero = ({ slice }) => {
       heroheadline,
       heroheadlinespan,
       herotitle,
+      gradientstartcolor,
+      gradientendcolor,
     },
     items,
   } = slice
@@ -62,7 +64,11 @@ const Hero = ({ slice }) => {
     <section
       className="relative w-full bg-blue-50 py-10"
       style={{
-        background: `linear-gradient(to bottom, rgba(255, 255, 255, .75), rgba(239, 246, 255, 1)), url(${herobackgroundimage.url}) no-repeat center bottom / cover scroll`,
+        background: `linear-gradient(to bottom, ${
+          gradientstartcolor || '#FFFFFF'
+        }BF, ${gradientendcolor || '#FFFFFF'}FF), url(${
+          herobackgroundimage.url
+        }) no-repeat center bottom / cover scroll`,
       }}
     >
       <div className="mx-auto flex max-w-screen-2xl flex-col flex-wrap items-center justify-center lg:space-x-12">

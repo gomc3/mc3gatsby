@@ -68,6 +68,20 @@
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
+        },
+        "gradientstartcolor": {
+          "type": "Color",
+          "config": {
+            "label": "GradientStartColor",
+            "placeholder": ""
+          }
+        },
+        "gradientendcolor": {
+          "type": "Color",
+          "config": {
+            "label": "GradientEndColor",
+            "placeholder": ""
+          }
         }
       },
       "items": {

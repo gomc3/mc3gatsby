@@ -1337,6 +1337,26 @@ interface HeroSliceDefaultPrimary {
      *
      */
     heroctadescription: prismicT.RichTextField;
+    /**
+     * GradientStartColor field in *Hero → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero.primary.gradientstartcolor
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    gradientstartcolor: prismicT.ColorField;
+    /**
+     * GradientEndColor field in *Hero → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero.primary.gradientendcolor
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    gradientendcolor: prismicT.ColorField;
 }
 /**
  * Item in Hero → Items

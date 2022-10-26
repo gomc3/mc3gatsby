@@ -7,16 +7,16 @@
         "buttontext": "Become a Member",
         "buttonlink": {
           "link_type": "Web",
-          "url": "http://google.com"
+          "url": "http://twitter.com"
         },
-        "buttoncolor": "Blue"
+        "buttoncolor": "Gray"
       }
     ],
     "primary": {
       "herotitle": [
         {
           "type": "heading1",
-          "text": "Return",
+          "text": "Event",
           "spans": []
         }
       ],
@@ -34,24 +34,26 @@
       "herodescription": [
         {
           "type": "paragraph",
-          "text": "Elit nisi exercitation culpa cillum anim pariatur. Et reprehenderit esse laborum esse officia irure. Laborum duis officia sunt.",
+          "text": "Consequat consectetur excepteur est sunt cillum esse. Cillum adipisicing laborum esse amet. Enim dolore ea proident tempor ea consectetur dolor.",
           "spans": []
         }
       ],
       "herocta": [
         {
           "type": "heading3",
-          "text": "Declared",
+          "text": "Village",
           "spans": []
         }
       ],
       "heroctadescription": [
         {
           "type": "paragraph",
-          "text": "Proident fugiat cupidatat elit est voluptate. Do qui ipsum non exercitation.",
+          "text": "Occaecat tempor est sint nisi sunt id fugiat eu labore deserunt Lorem consequat.",
           "spans": []
         }
-      ]
+      ],
+      "gradientstartcolor": "#1ed565",
+      "gradientendcolor": "#8521b3"
     },
     "slice_type": "hero"
   }
