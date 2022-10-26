@@ -56,6 +56,86 @@
       },
       "items": {},
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    },
+    {
+      "id": "textWithImageAndButton",
+      "name": "TextWithImage - And Button",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "TextWithImage",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "colortext": {
+          "type": "Text",
+          "config": {
+            "label": "ColorText",
+            "placeholder": ""
+          }
+        },
+        "colortextcolor": {
+          "type": "Color",
+          "config": {
+            "label": "ColorTextColor",
+            "placeholder": ""
+          }
+        },
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "Section content",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "buttonlink": {
+          "type": "Link",
+          "config": {
+            "label": "ButtonLink",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "buttontext": {
+          "type": "Text",
+          "config": {
+            "label": "ButtonText",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imagelocation": {
+          "type": "Boolean",
+          "config": {
+            "label": "Image Location",
+            "placeholder_false": "Left",
+            "placeholder_true": "Right",
+            "default_value": false
+          }
+        },
+        "backgroundcolor": {
+          "type": "Color",
+          "config": {
+            "label": "Background Color",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]
 }

@@ -615,7 +615,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HeroSlice | ProseSlice;
+type HomepageDocumentDataSlicesSlice = HeroSlice | ProseSlice | DefinitionListSlice | TextWithImageSlice;
 /**
  * Homepage document from Prismic
  *
@@ -871,7 +871,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = ProseSlice | ExecutiveTeamSlice | TextWithImageSlice;
+type PageDocumentDataSlicesSlice = ProseSlice | ExecutiveTeamSlice | TextWithImageSlice | DefinitionListSlice;
 /**
  * Page document from Prismic
  *
@@ -1004,7 +1004,7 @@ export interface PostDocumentDataTagsItem {
  * Slice for *Post → Slice Zone*
  *
  */
-type PostDocumentDataSlicesSlice = ProseSlice | TextWithImageSlice;
+type PostDocumentDataSlicesSlice = ProseSlice | TextWithImageSlice | DefinitionListSlice;
 /**
  * Post document from Prismic
  *
@@ -1130,6 +1130,81 @@ interface TagDocumentData {
  */
 export type TagDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<TagDocumentData>, "tag", Lang>;
 export type AllDocumentTypes = BlogpageDocument | CalendarpageDocument | ContactpageDocument | ExecutivememberDocument | ExecutiveroleDocument | ExecutiveteamDocument | FooterDocument | HomepageDocument | JoinpageDocument | MainmenuDocument | PageDocument | PostDocument | SitemetadataDocument | TagDocument;
+/**
+ * Primary content in DefinitionList → Primary
+ *
+ */
+interface DefinitionListSliceDefaultPrimary {
+    /**
+     * UpperColor field in *DefinitionList → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: definition_list.primary.uppercolor
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    uppercolor: prismicT.ColorField;
+    /**
+     * BackgroundColor field in *DefinitionList → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: definition_list.primary.backgroundcolor
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    backgroundcolor: prismicT.ColorField;
+}
+/**
+ * Item in DefinitionList → Items
+ *
+ */
+export interface DefinitionListSliceDefaultItem {
+    /**
+     * Term field in *DefinitionList → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: Enter term or topic
+     * - **API ID Path**: definition_list.items[].term
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    term: prismicT.KeyTextField;
+    /**
+     * Definition field in *DefinitionList → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Enter definition or explanation
+     * - **API ID Path**: definition_list.items[].definition
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    definition: prismicT.RichTextField;
+}
+/**
+ * Default variation for DefinitionList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `DefinitionList`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type DefinitionListSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<DefinitionListSliceDefaultPrimary>, Simplify<DefinitionListSliceDefaultItem>>;
+/**
+ * Slice variation for *DefinitionList*
+ *
+ */
+type DefinitionListSliceVariation = DefinitionListSliceDefault;
+/**
+ * DefinitionList Shared Slice
+ *
+ * - **API ID**: `definition_list`
+ * - **Description**: `DefinitionList`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type DefinitionListSlice = prismicT.SharedSlice<"definition_list", DefinitionListSliceVariation>;
 /**
  * Primary content in ExecutiveTeam → Primary
  *
@@ -1431,10 +1506,116 @@ interface TextWithImageSliceDefaultPrimary {
  */
 export type TextWithImageSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextWithImageSliceDefaultPrimary>, never>;
 /**
+ * Primary content in TextWithImage → Primary
+ *
+ */
+interface TextWithImageSliceTextWithImageAndButtonPrimary {
+    /**
+     * Heading field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_with_image.primary.heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    heading: prismicT.KeyTextField;
+    /**
+     * ColorText field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_with_image.primary.colortext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    colortext: prismicT.KeyTextField;
+    /**
+     * ColorTextColor field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_with_image.primary.colortextcolor
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    colortextcolor: prismicT.ColorField;
+    /**
+     * Content field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Section content
+     * - **API ID Path**: text_with_image.primary.content
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    content: prismicT.RichTextField;
+    /**
+     * ButtonLink field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_with_image.primary.buttonlink
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    buttonlink: prismicT.LinkField;
+    /**
+     * ButtonText field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_with_image.primary.buttontext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    buttontext: prismicT.KeyTextField;
+    /**
+     * Image field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_with_image.primary.image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Image Location field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: text_with_image.primary.imagelocation
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    imagelocation: prismicT.BooleanField;
+    /**
+     * Background Color field in *TextWithImage → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_with_image.primary.backgroundcolor
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    backgroundcolor: prismicT.ColorField;
+}
+/**
+ * TextWithImage - And Button variation for TextWithImage Slice
+ *
+ * - **API ID**: `textWithImageAndButton`
+ * - **Description**: `TextWithImage`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextWithImageSliceTextWithImageAndButton = prismicT.SharedSliceVariation<"textWithImageAndButton", Simplify<TextWithImageSliceTextWithImageAndButtonPrimary>, never>;
+/**
  * Slice variation for *TextWithImage*
  *
  */
-type TextWithImageSliceVariation = TextWithImageSliceDefault;
+type TextWithImageSliceVariation = TextWithImageSliceDefault | TextWithImageSliceTextWithImageAndButton;
 /**
  * TextWithImage Shared Slice
  *
@@ -1449,6 +1630,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogpageDocumentData, BlogpageDocument, CalendarpageDocumentData, CalendarpageDocument, ContactpageDocumentData, ContactpageDocument, ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, JoinpageDocumentData, JoinpageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, PostDocumentData, PostDocumentDataTagsItem, PostDocumentDataSlicesSlice, PostDocument, SitemetadataDocumentData, SitemetadataDocument, TagDocumentData, TagDocument, AllDocumentTypes, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceVariation, TextWithImageSlice };
+        export type { BlogpageDocumentData, BlogpageDocument, CalendarpageDocumentData, CalendarpageDocument, ContactpageDocumentData, ContactpageDocument, ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, JoinpageDocumentData, JoinpageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, PostDocumentData, PostDocumentDataTagsItem, PostDocumentDataSlicesSlice, PostDocument, SitemetadataDocumentData, SitemetadataDocument, TagDocumentData, TagDocument, AllDocumentTypes, DefinitionListSliceDefaultPrimary, DefinitionListSliceDefaultItem, DefinitionListSliceDefault, DefinitionListSliceVariation, DefinitionListSlice, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceTextWithImageAndButtonPrimary, TextWithImageSliceTextWithImageAndButton, TextWithImageSliceVariation, TextWithImageSlice };
     }
 }

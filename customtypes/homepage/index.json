@@ -54,6 +54,12 @@
             },
             "prose": {
               "type": "SharedSlice"
+            },
+            "definition_list": {
+              "type": "SharedSlice"
+            },
+            "text_with_image": {
+              "type": "SharedSlice"
             }
           }
         }

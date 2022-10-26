@@ -9,19 +9,19 @@
       "heading": [
         {
           "type": "heading2",
-          "text": "Broke",
+          "text": "Nodded",
           "spans": []
         }
       ],
       "content": [
         {
           "type": "paragraph",
-          "text": "Irure quis deserunt enim ea quis adipisicing duis nostrud consectetur dolor ipsum deserunt enim cillum. Adipisicing consectetur eiusmod elit veniam officia culpa nisi magna esse.",
+          "text": "Nisi adipisicing eiusmod quis esse reprehenderit occaecat ex sit ex proident.",
           "spans": []
         },
         {
           "type": "paragraph",
-          "text": "Irure exercitation eiusmod adipisicing proident anim sint sit qui exercitation ad eu ipsum aute ex tempor.",
+          "text": "Exercitation exercitation id magna qui in sunt veniam sint commodo quis. In in incididunt est laboris tempor proident esse adipisicing ad id id officia officia. Adipisicing ad magna officia minim amet dolor.",
           "spans": []
         }
       ],
@@ -35,7 +35,43 @@
         "url": "https://images.unsplash.com/photo-1521227889351-bf6f5b2e4e37"
       },
       "imagelocation": true,
-      "backgroundcolor": "#3d8280"
+      "backgroundcolor": "#75caed"
+    },
+    "slice_type": "text_with_image"
+  },
+  {
+    "variation": "textWithImageAndButton",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "heading": "breathing",
+      "colortext": "avoid",
+      "colortextcolor": "#a8f876",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Tempor occaecat ullamco qui ad quis et eiusmod proident.",
+          "spans": []
+        }
+      ],
+      "buttonlink": {
+        "link_type": "Web",
+        "url": "https://slicemachine.dev"
+      },
+      "buttontext": "wave",
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04"
+      },
+      "imagelocation": true,
+      "backgroundcolor": "#c650c4"
     },
     "slice_type": "text_with_image"
   }

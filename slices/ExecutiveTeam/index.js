@@ -9,7 +9,6 @@ import Icon from '../../components/Icon'
  * @param { ExecutiveTeamProps }
  */
 const ExecutiveTeam = ({ slice }) => {
-  console.log(slice)
   const templates = {
     heading2: ({ node, children }) => {
       return (

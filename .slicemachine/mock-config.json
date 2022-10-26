@@ -260,6 +260,26 @@
             "content": "https://images.unsplash.com/photo-1521227889351-bf6f5b2e4e37"
           }
         }
+      },
+      "textWithImageAndButton": {
+        "primary": {
+          "imagelocation": {
+            "content": true
+          }
+        }
+      }
+    },
+    "DefinitionList": {
+      "default": {
+        "primary": {},
+        "items": {
+          "definition": {
+            "config": {
+              "patternType": "STORY",
+              "blocks": 1
+            }
+          }
+        }
       }
     }
   }
