@@ -8,7 +8,6 @@ import { PrismicNextImage } from '@prismicio/next'
  * @param { TextWithImageProps }
  */
 const TextWithImage = ({ slice }) => {
-  console.log(slice)
   const {
     primary: {
       backgroundcolor,

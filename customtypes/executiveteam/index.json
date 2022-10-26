@@ -45,6 +45,13 @@
                   "executiverole"
                 ]
               }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "label",
+                "placeholder": ""
+              }
             }
           }
         }

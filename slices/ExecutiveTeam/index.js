@@ -37,14 +37,10 @@ const ExecutiveTeam = ({ slice }) => {
             const {
               executivemember: {
                 id,
-                data: {
-                  memberfullname,
-                  memberprofileimage,
-                  memberlink,
-                  leftposition,
-                },
+                data: { memberfullname, memberprofileimage, memberlink },
               },
               executiverole,
+              label,
             } = member
             return (
               <div
@@ -52,9 +48,9 @@ const ExecutiveTeam = ({ slice }) => {
                 className="flex flex-col flex-wrap items-center p-4 text-center md:flex-row  md:text-left"
               >
                 <div className="indicator">
-                  {leftposition && (
+                  {label && (
                     <span className="badge-neutral badge indicator-item">
-                      inactive
+                      {label}
                     </span>
                   )}
                   {memberlink && memberlink.url !== '' && memberprofileimage ? (

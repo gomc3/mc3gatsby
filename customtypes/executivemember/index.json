@@ -42,15 +42,6 @@
           "constraint": {},
           "thumbnails": []
         }
-      },
-      "leftposition": {
-        "type": "Boolean",
-        "config": {
-          "label": "LeftPosition",
-          "placeholder_false": "false",
-          "placeholder_true": "Left Early",
-          "default_value": false
-        }
       }
     }
   }

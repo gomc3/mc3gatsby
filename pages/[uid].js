@@ -80,7 +80,6 @@ export async function getStaticProps({ params, previewData }) {
       'executivemember.memberfullname',
       'executivemember.memberlink',
       'executivemember.memberprofileimage',
-      'executivemember.leftposition',
       'executiverole.rolenickname',
     ],
   })

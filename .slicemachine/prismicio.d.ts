@@ -256,18 +256,6 @@ interface ExecutivememberDocumentData {
      *
      */
     memberprofileimage: prismicT.ImageField<never>;
-    /**
-     * LeftPosition field in *Executive Member*
-     *
-     * - **Field Type**: Boolean
-     * - **Placeholder**: *None*
-     * - **Default Value**: false
-     * - **API ID Path**: executivemember.leftposition
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
-     *
-     */
-    leftposition: prismicT.BooleanField;
 }
 /**
  * Executive Member document from Prismic
@@ -387,6 +375,16 @@ export interface ExecutiveteamDocumentDataExecutiveteammembersItem {
      *
      */
     executiverole: prismicT.RelationField<"executiverole">;
+    /**
+     * label field in *Executive Team → ExecutiveTeamMembers*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: executiveteam.executiveteammembers[].label
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    label: prismicT.KeyTextField;
 }
 /**
  * Executive Team document from Prismic
