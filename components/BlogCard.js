@@ -38,7 +38,13 @@ export default function BlogCard({
             tags.length > 0 &&
             tags.map(tag => (
               <li key={tag} className="badge badge-accent">
-                {tag}
+                {tag === 'ignite' ? (
+                  <Link href={`/ignite`}>
+                    <a className="">{tag}</a>
+                  </Link>
+                ) : (
+                  tag
+                )}
               </li>
             ))}
         </ul>

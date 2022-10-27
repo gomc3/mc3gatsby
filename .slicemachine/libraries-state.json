@@ -100,7 +100,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/edtech/Documents/dev/next/mc3gatsby/slices/DefinitionList/default/preview.png",
+            "path": "/home/nmastroianni/linuxDev/next/mc3gatsby/slices/DefinitionList/default/preview.png",
             "width": 497,
             "height": 449
           }
@@ -192,7 +192,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/edtech/Documents/dev/next/mc3gatsby/slices/ExecutiveTeam/default/preview.png",
+            "path": "/home/nmastroianni/linuxDev/next/mc3gatsby/slices/ExecutiveTeam/default/preview.png",
             "width": 1183,
             "height": 746
           }
@@ -389,7 +389,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/edtech/Documents/dev/next/mc3gatsby/.slicemachine/assets/slices/Hero/default/preview.png",
+            "path": "/home/nmastroianni/linuxDev/next/mc3gatsby/.slicemachine/assets/slices/Hero/default/preview.png",
             "width": 800,
             "height": 518
           }
@@ -488,7 +488,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/edtech/Documents/dev/next/mc3gatsby/.slicemachine/assets/slices/Prose/default/preview.png",
+            "path": "/home/nmastroianni/linuxDev/next/mc3gatsby/.slicemachine/assets/slices/Prose/default/preview.png",
             "width": 800,
             "height": 1474
           }
@@ -724,12 +724,12 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/edtech/Documents/dev/next/mc3gatsby/slices/TextWithImage/default/preview.png",
+            "path": "/home/nmastroianni/linuxDev/next/mc3gatsby/slices/TextWithImage/default/preview.png",
             "width": 1026,
             "height": 704
           },
           "textWithImageAndButton": {
-            "path": "/Users/edtech/Documents/dev/next/mc3gatsby/slices/TextWithImage/textWithImageAndButton/preview.png",
+            "path": "/home/nmastroianni/linuxDev/next/mc3gatsby/slices/TextWithImage/textWithImageAndButton/preview.png",
             "width": 689,
             "height": 692
           }

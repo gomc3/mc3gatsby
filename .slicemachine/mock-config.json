@@ -163,6 +163,20 @@
           "blocks": 1
         }
       }
+    },
+    "ignitepage": {
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
     }
   },
   "slices": {

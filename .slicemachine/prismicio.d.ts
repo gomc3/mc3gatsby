@@ -624,6 +624,41 @@ type HomepageDocumentDataSlicesSlice = HeroSlice | ProseSlice | DefinitionListSl
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
+/** Content for IgnitePage documents */
+interface IgnitepageDocumentData {
+    /**
+     * Title field in *IgnitePage*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ignitepage.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *IgnitePage*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Describe ignite presentations
+     * - **API ID Path**: ignitepage.description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * IgnitePage document from Prismic
+ *
+ * - **API ID**: `ignitepage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type IgnitepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<IgnitepageDocumentData>, "ignitepage", Lang>;
 /** Content for JoinPage documents */
 interface JoinpageDocumentData {
     /**
@@ -1115,7 +1150,7 @@ type TagDocumentData = Record<string, never>;
  * @typeParam Lang - Language API ID of the document.
  */
 export type TagDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<TagDocumentData>, "tag", Lang>;
-export type AllDocumentTypes = BlogpageDocument | CalendarpageDocument | ContactpageDocument | ExecutivememberDocument | ExecutiveroleDocument | ExecutiveteamDocument | FooterDocument | HomepageDocument | JoinpageDocument | MainmenuDocument | PageDocument | PostDocument | SitemetadataDocument | TagDocument;
+export type AllDocumentTypes = BlogpageDocument | CalendarpageDocument | ContactpageDocument | ExecutivememberDocument | ExecutiveroleDocument | ExecutiveteamDocument | FooterDocument | HomepageDocument | IgnitepageDocument | JoinpageDocument | MainmenuDocument | PageDocument | PostDocument | SitemetadataDocument | TagDocument;
 /**
  * Primary content in DefinitionList → Primary
  *
@@ -1636,6 +1671,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogpageDocumentData, BlogpageDocument, CalendarpageDocumentData, CalendarpageDocument, ContactpageDocumentData, ContactpageDocument, ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, JoinpageDocumentData, JoinpageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, PostDocumentData, PostDocumentDataTagsItem, PostDocumentDataSlicesSlice, PostDocument, SitemetadataDocumentData, SitemetadataDocument, TagDocumentData, TagDocument, AllDocumentTypes, DefinitionListSliceDefaultPrimary, DefinitionListSliceDefaultItem, DefinitionListSliceDefault, DefinitionListSliceVariation, DefinitionListSlice, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceTextWithImageAndButtonPrimary, TextWithImageSliceTextWithImageAndButton, TextWithImageSliceVariation, TextWithImageSlice };
+        export type { BlogpageDocumentData, BlogpageDocument, CalendarpageDocumentData, CalendarpageDocument, ContactpageDocumentData, ContactpageDocument, ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, IgnitepageDocumentData, IgnitepageDocument, JoinpageDocumentData, JoinpageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, PostDocumentData, PostDocumentDataTagsItem, PostDocumentDataSlicesSlice, PostDocument, SitemetadataDocumentData, SitemetadataDocument, TagDocumentData, TagDocument, AllDocumentTypes, DefinitionListSliceDefaultPrimary, DefinitionListSliceDefaultItem, DefinitionListSliceDefault, DefinitionListSliceVariation, DefinitionListSlice, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceTextWithImageAndButtonPrimary, TextWithImageSliceTextWithImageAndButton, TextWithImageSliceVariation, TextWithImageSlice };
     }
 }

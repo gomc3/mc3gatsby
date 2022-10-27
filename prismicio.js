@@ -35,6 +35,10 @@ const routes = [
     path: '/blog',
   },
   {
+    type: 'ignitepage',
+    path: '/ignite',
+  },
+  {
     type: 'post',
     path: '/blog/:uid',
   },
