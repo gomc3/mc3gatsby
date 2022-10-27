@@ -53,10 +53,10 @@ const BlogIndex = ({ page, posts, navigation, siteMetadata, footer }) => {
           siteMetadata.data.sitetitle
         )}`}</title>
         <link rel="canonical" href="https://www.gomc3.org/blog" />
-        <meta name="description" content={siteMetadata.data.description} />
+        <meta name="description" content={siteMetadata.data.sitedescription} />
         <meta
           property="og:description"
-          content={siteMetadata.data.description}
+          content={siteMetadata.data.sitedescription}
         />
         <meta property="og:url" content="https://www.gomc3.org" />
         <meta property="og:type" content="website" />

@@ -7,6 +7,8 @@ import { createClient } from '../prismicio'
 import { components } from '../slices'
 
 export default function Home({ page, navigation, siteMetadata, footer }) {
+  console.log('page--------', page)
+  console.log('siteMetadata --------- ', siteMetadata)
   return (
     <Layout
       {...siteMetadata}
@@ -22,13 +24,15 @@ export default function Home({ page, navigation, siteMetadata, footer }) {
         <meta
           name="description"
           content={
-            page.data.homepagemetadescription || siteMetadata.data.description
+            page.data.homepagemetadescription ||
+            siteMetadata.data.sitedescription
           }
         />
         <meta
           property="og:description"
           content={
-            page.data.homepagemetadescription || siteMetadata.data.description
+            page.data.homepagemetadescription ||
+            siteMetadata.data.sitedescription
           }
         />
         <meta property="og:url" content="https://www.gomc3.org" />
