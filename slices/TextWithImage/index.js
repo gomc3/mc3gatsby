@@ -22,6 +22,15 @@ const TextWithImage = ({ slice }) => {
     },
     variation,
   } = slice
+  const templates = {
+    paragraph: ({ node, children }) => {
+      return (
+        <p className="prose mt-6 text-lg leading-7 text-slate-600 lg:prose-lg xl:prose-xl">
+          {children}
+        </p>
+      )
+    },
+  }
   switch (variation) {
     case 'textWithImageAndButton':
       return (
@@ -51,29 +60,26 @@ const TextWithImage = ({ slice }) => {
                   className="whitespace-nowrap"
                   style={{ color: colortextcolor || '#1d4ed8' }}
                 >
-                  {colortext}
+                  {colortext ? colortext : null}
                 </span>
               </h2>
-              <p className="mt-6 text-lg leading-7 text-slate-600">
-                Members are welcome to deliver Ignite presentations during
-                meetings. <strong>What are Ignite presentations?</strong> They
-                are presentations in which members get 20 slides, which
-                automatically advance every 15 seconds. The result is a fast and
-                fun presentation which lasts just 5 minutes!
-              </p>
+              <PrismicRichText field={content} components={templates} />
+              {/*  */}
               <div
                 className={`mt-8 text-center ${
                   imagelocation ? `lg:text-left` : `lg:text-right`
                 }`}
               >
-                <span className="inline-flex rounded-md shadow">
-                  <PrismicLink
-                    field={buttonlink}
-                    className="btn btn-secondary text-base-100 focus:outline-none focus:ring-4 focus:ring-yellow-300 "
-                  >
-                    {buttontext}
-                  </PrismicLink>
-                </span>
+                {buttonlink && buttonlink.url && (
+                  <span className="inline-flex rounded-md shadow">
+                    <PrismicLink
+                      field={buttonlink}
+                      className="btn btn-secondary text-base-100 focus:outline-none focus:ring-4 focus:ring-yellow-300 "
+                    >
+                      {buttontext}
+                    </PrismicLink>
+                  </span>
+                )}
               </div>
             </div>
           </div>

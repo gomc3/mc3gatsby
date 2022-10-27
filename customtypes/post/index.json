@@ -47,24 +47,6 @@
           "single": "paragraph,strong,em,hyperlink"
         }
       },
-      "tags": {
-        "type": "Group",
-        "config": {
-          "label": "Tags",
-          "fields": {
-            "tag": {
-              "type": "Link",
-              "config": {
-                "label": "Tag",
-                "select": "document",
-                "customtypes": [
-                  "tag"
-                ]
-              }
-            }
-          }
-        }
-      },
       "metadescription": {
         "type": "Text",
         "config": {

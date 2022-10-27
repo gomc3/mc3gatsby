@@ -115,7 +115,7 @@ export async function getStaticProps({ previewData }) {
   const posts = await client.getByType('post', {
     orderings: {
       field: 'document.first_publication_date',
-      direction: 'desc',
+      direction: 'asc',
     },
     pageSize: 10,
     page: 1,

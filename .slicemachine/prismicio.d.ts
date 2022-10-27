@@ -962,17 +962,6 @@ interface PostDocumentData {
      */
     excerpt: prismicT.RichTextField;
     /**
-     * Tags field in *Post*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: post.tags[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    tags: prismicT.GroupField<Simplify<PostDocumentDataTagsItem>>;
-    /**
      * Meta Description field in *Post*
      *
      * - **Field Type**: Text
@@ -1016,22 +1005,6 @@ interface PostDocumentData {
      *
      */
     slices: prismicT.SliceZone<PostDocumentDataSlicesSlice>;
-}
-/**
- * Item in Post → Tags
- *
- */
-export interface PostDocumentDataTagsItem {
-    /**
-     * Tag field in *Post → Tags*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: post.tags[].tag
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    tag: prismicT.RelationField<"tag">;
 }
 /**
  * Slice for *Post → Slice Zone*
@@ -1671,6 +1644,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogpageDocumentData, BlogpageDocument, CalendarpageDocumentData, CalendarpageDocument, ContactpageDocumentData, ContactpageDocument, ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, IgnitepageDocumentData, IgnitepageDocument, JoinpageDocumentData, JoinpageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, PostDocumentData, PostDocumentDataTagsItem, PostDocumentDataSlicesSlice, PostDocument, SitemetadataDocumentData, SitemetadataDocument, TagDocumentData, TagDocument, AllDocumentTypes, DefinitionListSliceDefaultPrimary, DefinitionListSliceDefaultItem, DefinitionListSliceDefault, DefinitionListSliceVariation, DefinitionListSlice, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceTextWithImageAndButtonPrimary, TextWithImageSliceTextWithImageAndButton, TextWithImageSliceVariation, TextWithImageSlice };
+        export type { BlogpageDocumentData, BlogpageDocument, CalendarpageDocumentData, CalendarpageDocument, ContactpageDocumentData, ContactpageDocument, ExecutivememberDocumentData, ExecutivememberDocument, ExecutiveroleDocumentData, ExecutiveroleDocument, ExecutiveteamDocumentData, ExecutiveteamDocumentDataExecutiveteammembersItem, ExecutiveteamDocument, FooterDocumentData, FooterDocumentDataFooterbuttonsItem, FooterDocumentDataFootertextmenuItem, FooterDocumentDataFootericonmenuItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, IgnitepageDocumentData, IgnitepageDocument, JoinpageDocumentData, JoinpageDocument, MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, PostDocumentData, PostDocumentDataSlicesSlice, PostDocument, SitemetadataDocumentData, SitemetadataDocument, TagDocumentData, TagDocument, AllDocumentTypes, DefinitionListSliceDefaultPrimary, DefinitionListSliceDefaultItem, DefinitionListSliceDefault, DefinitionListSliceVariation, DefinitionListSlice, ExecutiveTeamSliceDefaultPrimary, ExecutiveTeamSliceDefault, ExecutiveTeamSliceVariation, ExecutiveTeamSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, ProseSliceDefaultPrimary, ProseSliceDefault, ProseSliceVariation, ProseSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceTextWithImageAndButtonPrimary, TextWithImageSliceTextWithImageAndButton, TextWithImageSliceVariation, TextWithImageSlice };
     }
 }
