@@ -7,8 +7,6 @@ import { createClient } from '../prismicio'
 import { components } from '../slices'
 
 export default function Home({ page, navigation, siteMetadata, footer }) {
-  console.log('page--------', page)
-  console.log('siteMetadata --------- ', siteMetadata)
   return (
     <Layout
       {...siteMetadata}
