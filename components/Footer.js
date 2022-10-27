@@ -53,6 +53,7 @@ export default function Footer({ data, metadata }) {
                   className="inline h-6 w-6 transform transition duration-500 ease-in-out hover:scale-150"
                   aria-hidden="true"
                 />
+                <span className="sr-only">Visit our Twitter Page</span>
               </PrismicLink>
             )
           })}
