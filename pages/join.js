@@ -222,7 +222,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
           >
             <div className="rounded-md border-2 border-dotted border-blue-400 p-4">
               <h3 className="text-lg font-semibold text-blue-800">
-                Step 1: Select a Membership Package:
+                Step 1: Please select a Membership Package:
               </h3>
               <p className="mt-4 mb-6 text-sm">
                 We offer two membership packages.
