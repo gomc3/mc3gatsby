@@ -100,7 +100,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
       await fetch(`/api/joinmc3`, {
         method: `POST`,
         headers: {
-          'content-type': 'application/json; charset=UTF-8',
+          'Accept': 'application/json', 'Content-Type': 'application/json; charset=UTF-8',
         },
         body: JSON.stringify(data),
       }).then(res => {
@@ -114,9 +114,9 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
           console.log(res.status)
           setRecaptchaPassed(false)
         }
-      }).then(resJson => {
-        console.log("resJson")
-         console.log(resJson)
+      }).then(resData => {
+        console.log("resData")
+        console.log(resData)
       })
     } catch (error) {
       console.log(errors)
