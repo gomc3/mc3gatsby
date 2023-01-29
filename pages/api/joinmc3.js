@@ -131,18 +131,11 @@ export default async function formHandler(req, res) {
               fileId: templateId,
               requestBody: request,
               supportsAllDrives: true,
-            },
-            (err, file) => {
-              console.log(file.data)
-              if (err) {
-                console.log('Error in the line files.copy: ', err)
-                return 'test'
-              } else {
-                
-                return file.data
-              }
-            }
-          )
+            }).then(response => {
+              console.log('test')
+              console.log(response)
+              return response
+            })
           console.log('Google Response');
           return googleResponse
         } catch (err) {
