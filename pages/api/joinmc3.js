@@ -132,11 +132,11 @@ export default async function formHandler(req, res) {
               requestBody: request,
               supportsAllDrives: true,
             }).then(response => {
-              console.log('test')
-              console.log(response)
+              //console.log('test')
+              //console.log(response)
               return response
             })
-          console.log('Google Response');
+          //console.log('Google Response');
           return googleResponse
         } catch (err) {
           console.log('Ther was an error copying: ', err)
@@ -323,13 +323,16 @@ export default async function formHandler(req, res) {
           return JSON.stringify(err)
         }
       }
-      console.log('running gsrun')
+     //console.log('running gsrun')
 
       const gsCopyInvoiceTest = await gsCopyInvoice(client)
-      console.log(gsCopyInvoiceTest)
+      console.log(gsCopyInvoiceTest.data.id)
 
       const gsrunTest = await gsrun(client)
-      console.log(gsrunTest)
+
+
+      const gsUpdateInvoice = await gsInvoice(client, gsCopyInvoiceTest.data.id)
+      console.log(gsUpdateInvoice)
 
 
       //const gsCopyInvoiceRunning = await gsCopyInvoice(client)
