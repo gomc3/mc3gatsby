@@ -139,7 +139,7 @@ export default async function formHandler(req, res) {
               if (err) {
                 console.log('Error in the line files.copy: ', err)
               } else {
-                const gsInvoiceTest = await gsInvoice(client, file.data.id)
+                gsInvoice(client, file.data.id)
               }
             }
           )
