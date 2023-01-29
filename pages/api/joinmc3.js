@@ -45,6 +45,7 @@ export default async function formHandler(req, res) {
     const axiosResponse = await axios
       .get(url)
       .then(response => {
+        console.log("Working - returning response data - joinmc3.js - line 48");
         return response.data
       })
       .catch(error => {
@@ -318,6 +319,8 @@ export default async function formHandler(req, res) {
         }
         try {
           let googleResponse = await gsapi.spreadsheets.values.append(request)
+          console.log('Google Response');
+          console.log(googleResponse.status;
           return googleResponse.status
         } catch (err) {
           console.log('Errors in appending: ', err)
