@@ -334,7 +334,9 @@ export default async function formHandler(req, res) {
         }
       }
       console.log('running gsrun')
-      gsrun(client).then(response => console.log(response))
+      //gsrun(client).then(response => console.log(response))
+      const gsrunTest = await gsrun(client)
+      console.log("Testing GSRUN:", gsrunTest)
     }
   }
   await getRecaptcha(recaptchaUrl)
