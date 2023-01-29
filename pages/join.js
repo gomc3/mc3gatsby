@@ -93,6 +93,8 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
       data.registrantEmail12 = '?'
     }
 
+     console.log('Data');
+    console.log(data);
     try {
       data.folderId = folderid
       await fetch(`/api/joinmc3`, {
@@ -102,9 +104,11 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
         },
         body: JSON.stringify(data),
       }).then(res => {
+        console.log(res)
+        console.log(res.data)
         res.json()
         if (res.status === 200) {
-          console.log(res.json())
+          console.log(res)
           reset()
           setFormComplete(true)
           setDisabled(false)
