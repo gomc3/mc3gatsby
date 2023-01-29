@@ -141,7 +141,11 @@ export default async function formHandler(req, res) {
                 return file.data.id
               }
             }
-          )
+          ).then(response => {
+            console.log('response run')
+            console.log(response)
+            return response.data
+          })
           return googleResponse
         } catch (err) {
           console.log('Ther was an error copying: ', err)
