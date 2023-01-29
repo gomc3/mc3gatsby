@@ -136,6 +136,7 @@ export default async function formHandler(req, res) {
               if (err) {
                 console.log('Error in the line files.copy: ', err)
               } else {
+                console.log(file)
                 return file.data.id
               }
             }
