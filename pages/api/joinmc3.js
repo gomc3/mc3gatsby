@@ -320,7 +320,7 @@ export default async function formHandler(req, res) {
         try {
           let googleResponse = await gsapi.spreadsheets.values.append(request)
           console.log('Google Response');
-          console.log(googleResponse.status;
+          console.log(googleResponse.status);
           return googleResponse.status
         } catch (err) {
           console.log('Errors in appending: ', err)
