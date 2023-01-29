@@ -138,14 +138,12 @@ export default async function formHandler(req, res) {
                 console.log('Error in the line files.copy: ', err)
               } else {
                 console.log(file)
-                return file.data.id
+                //return file.data.id
               }
             }
-          ).then(response => {
-            console.log('response run')
-            console.log(response)
-            return response.data
-          })
+          )
+          console.log('Google Response');
+          console.log(googleResponse);
           return googleResponse
         } catch (err) {
           console.log('Ther was an error copying: ', err)
