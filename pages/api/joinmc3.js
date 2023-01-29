@@ -116,7 +116,7 @@ export default async function formHandler(req, res) {
        * @param client - The OAuth2 client that was created in the previous step.
        * @returns the googleResponse.
        */
-      async function gsCopyInvoice(client) {
+      function gsCopyInvoice(client) {
         const folderId = '1Cc5mjm_tSr5ZFZaqM8RdjoYyDDjXioUo';
         const templateId = '1sqnjygHb1XUhjSMGjYixuR7powPG1z4f86sojOmsg7k'
         const gsapi = google.drive({ version: 'v3', auth: client })
@@ -149,9 +149,7 @@ export default async function formHandler(req, res) {
           console.log('Ther was an error copying: ', err)
         }
       }
-      const gsCopyInvoiceRunning = await gsCopyInvoice(client).then('response' => {
-        console.log(response)
-      })
+      const gsCopyInvoiceRunning = await gsCopyInvoice(client)
 
       /**
        * This function takes in a client object, which is the result of the Google OAuth2.0
