@@ -44,8 +44,6 @@ export default async function formHandler(req, res) {
     const axiosResponse = await axios
       .get(url)
       .then(response => {
-        console.log("Working - returning response data - joinmc3.js - line 48");
-        console.log(response.data)
         return response.data
       })
       .catch(error => {
@@ -55,7 +53,6 @@ export default async function formHandler(req, res) {
     // axiosResponse.success = false; // uncomment this line to simulate a failed recaptcha test
     gRc = axiosResponse.success
     // if reCaptcha passes, write the form to a Google Sheet
-    console.log('gRC: ' + gRc)
 
     if (axiosResponse.success === true) {
       const keys = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEYS)
@@ -139,7 +136,7 @@ export default async function formHandler(req, res) {
               if (err) {
                 console.log('Error in the line files.copy: ', err)
               } else {
-                gsInvoice(client, file.data.id)
+                return file.data.id
               }
             }
           )
@@ -304,6 +301,10 @@ export default async function formHandler(req, res) {
           console.log('Errors in the catch')
         }
       }
+
+      const gsInvoiceTest = await gsInvoice(client, gsCopyInvoiceRunning)
+
+
 
       /**
        * It takes the data from the form and appends it to the Google Sheet
