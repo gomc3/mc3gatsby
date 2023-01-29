@@ -132,7 +132,7 @@ export default async function formHandler(req, res) {
               requestBody: request,
               supportsAllDrives: true,
             },
-            async (err, file) => {
+            (err, file) => {
               console.log('running response')
               if (err) {
                 console.log('Error in the line files.copy: ', err)
@@ -149,7 +149,9 @@ export default async function formHandler(req, res) {
           console.log('Ther was an error copying: ', err)
         }
       }
-      const gsCopyInvoiceRunning = await gsCopyInvoice(client)
+      const gsCopyInvoiceRunning = await gsCopyInvoice(client).then('response' => {
+        console.log(response)
+      })
 
       /**
        * This function takes in a client object, which is the result of the Google OAuth2.0
