@@ -36,7 +36,6 @@ export default async function formHandler(req, res) {
     accountsPayableEmail,
     billingAddress,
     token,
-    folderId,
   } = req.body
   const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_SECRETKEY}&response=${token}`
   let gRc = false
@@ -121,7 +120,8 @@ export default async function formHandler(req, res) {
        * @param client - The OAuth2 client that was created in the previous step.
        * @returns the googleResponse.
        */
-      async function gsCopyInvoice(client, folderId) {
+      async function gsCopyInvoice(client) {
+        const folderId = '1Cc5mjm_tSr5ZFZaqM8RdjoYyDDjXioUo';
         const templateId = '1sqnjygHb1XUhjSMGjYixuR7powPG1z4f86sojOmsg7k'
         const gsapi = google.drive({ version: 'v3', auth: client })
         const request = {
@@ -140,6 +140,7 @@ export default async function formHandler(req, res) {
               if (err) {
                 console.log('Error in the line files.copy: ', err)
               } else {
+                console.log('running gsInvoice')
                 gsInvoice(client, file.data.id)
               }
             }
@@ -149,7 +150,8 @@ export default async function formHandler(req, res) {
           console.log('Ther was an error copying: ', err)
         }
       }
-      gsCopyInvoice(client, folderId)
+      console.log('running gsCopyInvoice')
+      gsCopyInvoice(client)
 
       /**
        * This function takes in a client object, which is the result of the Google OAuth2.0
@@ -330,7 +332,9 @@ export default async function formHandler(req, res) {
           return JSON.stringify(err)
         }
       }
-      gsrun(client)
+      console.log('running gsrun')
+      const gsrunConst = gsrun(client)
+      console.log(gsrunConst)
     }
   }
   await getRecaptcha(recaptchaUrl)
