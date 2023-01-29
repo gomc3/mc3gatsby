@@ -132,7 +132,7 @@ export default async function formHandler(req, res) {
               requestBody: request,
               supportsAllDrives: true,
             },
-            (err, file) => {
+            async (err, file) => {
               console.log('running response')
               if (err) {
                 console.log('Error in the line files.copy: ', err)
@@ -141,7 +141,7 @@ export default async function formHandler(req, res) {
                 //return file.data.id
               }
             }
-          )
+          ).promise()
           console.log('Google Response');
           console.log(googleResponse);
           return googleResponse
