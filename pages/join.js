@@ -104,7 +104,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
       }).then(res => {
         res.json()
         if (res.status === 200) {
-          console.log(res)
+          console.log(res.json())
           reset()
           setFormComplete(true)
           setDisabled(false)
