@@ -114,7 +114,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
           console.log(res.status)
           setRecaptchaPassed(false)
         }
-        return res
+        return res.json()
       }).then(resData => {
         console.log("resData")
         console.log(resData)
