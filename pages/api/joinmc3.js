@@ -307,10 +307,6 @@ export default async function formHandler(req, res) {
           console.log('Errors in the catch')
         }
       }
-      const gsCopyInvoiceRunning = await gsCopyInvoice(client)
-      console.log(gsCopyInvoiceRunning)
-      const gsInvoiceTest = await gsInvoice(client, gsCopyInvoiceRunning)
-
 
 
       /**
@@ -336,8 +332,15 @@ export default async function formHandler(req, res) {
         }
       }
       console.log('running gsrun')
-      //gsrun(client).then(response => console.log(response))
-      const gsrunTest = await gsrun(client)
+      const callTasks = () => gsCopyInvoiceRunning = await gsCopyInvoice(client)
+        .then(gsInvoiceTest = await gsInvoice(client, gsCopyInvoiceRunning))
+        .then(gsrunTest = await gsrun(client))
+        .catch(console.error);
+
+      callTasks();
+      //const gsCopyInvoiceRunning = await gsCopyInvoice(client)
+      //const gsInvoiceTest = await gsInvoice(client, gsCopyInvoiceRunning)
+      //const gsrunTest = await gsrun(client)
     }
   }
   await getRecaptcha(recaptchaUrl)
