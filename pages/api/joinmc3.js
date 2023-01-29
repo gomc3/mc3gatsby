@@ -133,13 +133,13 @@ export default async function formHandler(req, res) {
               supportsAllDrives: true,
             },
             (err, file) => {
-              console.log('running response')
+              console.log(file.data)
               if (err) {
                 console.log('Error in the line files.copy: ', err)
-                return
+                return 'test'
               } else {
-                console.log(file)
-                return file
+                
+                return file.data
               }
             }
           )
