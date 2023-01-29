@@ -307,6 +307,7 @@ export default async function formHandler(req, res) {
           console.log('Errors in the catch')
         }
       }
+      const gsCopyInvoiceRunning = await gsCopyInvoice(client)
       console.log(gsCopyInvoiceRunning)
       const gsInvoiceTest = await gsInvoice(client, gsCopyInvoiceRunning)
 
