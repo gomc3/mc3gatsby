@@ -112,7 +112,6 @@ export default async function formHandler(req, res) {
           county,
         ],
       ]
-      console.log(data)
 
       /**
        * This function copies the invoice template from the Google Drive folder and creates a new
@@ -140,8 +139,7 @@ export default async function formHandler(req, res) {
               if (err) {
                 console.log('Error in the line files.copy: ', err)
               } else {
-                console.log('running gsInvoice')
-                gsInvoice(client, file.data.id)
+                const gsInvoiceTest = await gsInvoice(client, file.data.id)
               }
             }
           )
@@ -150,8 +148,7 @@ export default async function formHandler(req, res) {
           console.log('Ther was an error copying: ', err)
         }
       }
-      console.log('running gsCopyInvoice')
-      gsCopyInvoice(client)
+      const gsCopyInvoiceRunning = await gsCopyInvoice(client)
 
       /**
        * This function takes in a client object, which is the result of the Google OAuth2.0
@@ -322,11 +319,8 @@ export default async function formHandler(req, res) {
           insertDataOption: 'INSERT_ROWS',
           resource: { values: data },
         }
-        console.log(request)
         try {
           let googleResponse = await gsapi.spreadsheets.values.append(request)
-          console.log('Google Response');
-          console.log(googleResponse.status);
           return googleResponse.status
         } catch (err) {
           console.log('Errors in appending: ', err)
@@ -336,7 +330,6 @@ export default async function formHandler(req, res) {
       console.log('running gsrun')
       //gsrun(client).then(response => console.log(response))
       const gsrunTest = await gsrun(client)
-      console.log("Testing GSRUN:", gsrunTest)
     }
   }
   await getRecaptcha(recaptchaUrl)
