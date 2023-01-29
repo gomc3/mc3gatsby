@@ -141,7 +141,7 @@ export default async function formHandler(req, res) {
                 //return file.data.id
               }
             }
-          ).promise()
+          )
           console.log('Google Response');
           console.log(googleResponse);
           return googleResponse
