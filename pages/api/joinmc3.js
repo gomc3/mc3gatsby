@@ -332,32 +332,11 @@ export default async function formHandler(req, res) {
         }
       }
       console.log('running gsrun')
-      let gsCopyInvoiceRunning = null;
-      let gsInvoiceTest = null;
-      let gsrunTest = null;
-      const callTasks = () => ({
-          console.log('gscopyinvoice')
-          gsCopyInvoiceRunning = await gsCopyInvoice(client)
-          return gsCopyInvoiceRunning
-        })
-        .then(response => ({
-          console.log('gsinvoice task')
-          console.log(response)
-          gsInvoiceTest = await gsInvoice(client, gsCopyInvoiceRunning))
-        })
-        .then(response => ({
-          console.log('spreadsheet')
-          console.log(response)
 
-          gsrunTest = await gsrun(client)
-        })
-        .catch(console.error);
 
-      callTasks();
+      const gsrunTest = await gsrun(client)
+      console.log(gsrunTest)
 
-      console.log('gsCopyInvoiceRunning', gsCopyInvoiceRunning)
-      console.log('gsInvoiceTest', gsInvoiceTest)
-      console.log('gsrunTest', gsrunTest)
 
       //const gsCopyInvoiceRunning = await gsCopyInvoice(client)
       //const gsInvoiceTest = await gsInvoice(client, gsCopyInvoiceRunning)
