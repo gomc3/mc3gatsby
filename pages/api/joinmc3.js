@@ -322,6 +322,7 @@ export default async function formHandler(req, res) {
           insertDataOption: 'INSERT_ROWS',
           resource: { values: data },
         }
+        console.log(request)
         try {
           let googleResponse = await gsapi.spreadsheets.values.append(request)
           console.log('Google Response');
@@ -333,8 +334,7 @@ export default async function formHandler(req, res) {
         }
       }
       console.log('running gsrun')
-      const gsrunConst = gsrun(client)
-      console.log(gsrunConst)
+      gsrun(client).then(response => console.log(response))
     }
   }
   await getRecaptcha(recaptchaUrl)
