@@ -288,12 +288,10 @@ export default async function formHandler(req, res) {
               resource: {
                 requests,
               },
-            },
-            (err, data) => {
-              if (err) return console.log('The API returned an error: ' + err)
-              console.log(data)
-            }
-          )
+            }).then(response => {
+              console.log(response)
+              return response
+            })
           return googleResponse
         } catch (err) {
           console.log('Errors in the catch')
