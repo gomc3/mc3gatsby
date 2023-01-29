@@ -104,8 +104,6 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
         },
         body: JSON.stringify(data),
       }).then(res => {
-        console.log(res)
-        console.log(res.data)
         res.json()
         if (res.status === 200) {
           console.log(res)
@@ -116,6 +114,9 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
           console.log(res.status)
           setRecaptchaPassed(false)
         }
+      }).then(resJson => {
+        console.log("resJson")
+         console.log(resJson)
       })
     } catch (error) {
       console.log(errors)
