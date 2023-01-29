@@ -46,6 +46,7 @@ export default async function formHandler(req, res) {
       .get(url)
       .then(response => {
         console.log("Working - returning response data - joinmc3.js - line 48");
+        console.log(response.data)
         return response.data
       })
       .catch(error => {
@@ -55,6 +56,7 @@ export default async function formHandler(req, res) {
     // axiosResponse.success = false; // uncomment this line to simulate a failed recaptcha test
     gRc = axiosResponse.success
     // if reCaptcha passes, write the form to a Google Sheet
+    console.log('gRC: ' + gRc)
 
     if (axiosResponse.success === true) {
       const keys = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEYS)
@@ -111,6 +113,7 @@ export default async function formHandler(req, res) {
           county,
         ],
       ]
+      console.log(data)
 
       /**
        * This function copies the invoice template from the Google Drive folder and creates a new
