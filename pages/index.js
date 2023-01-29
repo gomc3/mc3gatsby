@@ -18,7 +18,7 @@ export default function Home({ page, navigation, siteMetadata, footer }) {
         <title>{`${prismicH.asText(
           page.data.homepagetitle
         )} · ${prismicH.asText(siteMetadata.data.sitetitle)}`}</title>
-        <link rel="canonical" href="https://www.gomc3.org" />
+        <link rel="canonical" href="https://gomc3.org" />
         <meta
           name="description"
           content={
@@ -33,7 +33,7 @@ export default function Home({ page, navigation, siteMetadata, footer }) {
             siteMetadata.data.sitedescription
           }
         />
-        <meta property="og:url" content="https://www.gomc3.org" />
+        <meta property="og:url" content="https://gomc3.org" />
         <meta property="og:type" content="website" />
 
         <meta

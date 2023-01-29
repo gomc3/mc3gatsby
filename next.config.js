@@ -9,9 +9,6 @@ const nextConfig = {
     locales: ['en-us'],
     defaultLocale: 'en-us',
   },
-  experimental: {
-    // newNextLinkBehavior: true,
-  },
 }
 
 module.exports = nextConfig
