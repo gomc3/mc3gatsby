@@ -144,7 +144,6 @@ export default async function formHandler(req, res) {
             }
           )
           console.log('Google Response');
-          console.log(googleResponse);
           return googleResponse
         } catch (err) {
           console.log('Ther was an error copying: ', err)
@@ -333,6 +332,8 @@ export default async function formHandler(req, res) {
       }
       console.log('running gsrun')
 
+      const gsCopyInvoiceTest = await gsCopyInvoice(client)
+      console.log(gsCopyInvoiceTest)
 
       const gsrunTest = await gsrun(client)
       console.log(gsrunTest)
