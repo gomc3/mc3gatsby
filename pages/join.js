@@ -93,8 +93,8 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
       data.registrantEmail12 = '?'
     }
 
-     console.log('Data');
-    console.log(data);
+    // console.log('Data');
+    //console.log(data);
     try {
       data.folderId = folderid
       await fetch(`/api/joinmc3`, {
