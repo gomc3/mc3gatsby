@@ -473,7 +473,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
   )
 }
 //export default JoinPage
-export default function join() {
+export default function join({ page, navigation, siteMetadata, footer }) {
 const {
     data: {
       canonicalurl,
