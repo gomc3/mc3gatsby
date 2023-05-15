@@ -495,6 +495,24 @@ const {
       taxid,
     },
   } = siteMetadata
+  
+  const templates = {
+    heading1: ({ node, children }) => (
+      <h1 className="my-2 inline-block text-3xl font-bold text-blue-700 sm:my-4 sm:text-4xl lg:my-6 lg:text-5xl">
+        {children}
+      </h1>
+    ),
+    paragraph: ({ node, children }) => (
+      <p className="prose mt-2 max-w-screen-sm sm:mt-4 md:prose-lg lg:prose-xl lg:mt-6">
+        {children}
+      </p>
+    ),
+    hyperlink: ({ node, children }) => (
+      <PrismicLink field={node.data} className="text-blue-700">
+        {children}
+      </PrismicLink>
+    ),
+  }
 
   return (
   <Layout
