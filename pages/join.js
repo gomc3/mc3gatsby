@@ -474,6 +474,28 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
 }
 //export default JoinPage
 export default function join() {
+const {
+    data: {
+      canonicalurl,
+      metadescription,
+      metaimage,
+      privacyreminder,
+      title,
+      twitterimage,
+      folderid,
+    },
+  } = page
+  const {
+    data: {
+      address,
+      sitedescription,
+      sitemetaimage,
+      sitetitle,
+      sitetwitterimage,
+      taxid,
+    },
+  } = siteMetadata
+
   return (
   <Layout
       {...siteMetadata}
