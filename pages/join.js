@@ -31,7 +31,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
       taxid,
     },
   } = siteMetadata
-  const [disabled, setDisabled] = React.useState(true)
+  const [disabled, setDisabled] = React.useState(false)
   const [formComplete, setFormComplete] = React.useState(false)
   const [recaptchaPassed, setRecaptchaPassed] = React.useState(null)
   const {
@@ -473,7 +473,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
   )
 }
 //export default JoinPage
-export default function {
+export default function join() {
   return (
     <div>
       <h1>2023-2024 Membership Registration will be Open Soon</h1>
