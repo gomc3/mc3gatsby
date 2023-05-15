@@ -475,9 +475,65 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
 //export default JoinPage
 export default function join() {
   return (
-    <div>
-      <h1>2023-2024 Membership Registration will be Open Soon</h1>
+  <Layout
+      {...siteMetadata}
+      navigation={navigation.data.menuitems}
+      path={page.url}
+      footer={footer}
+    >
+      <Head>
+        <title>{`${title[0].text} · ${sitetitle[0].text}`}</title>
+        <link rel="canonical" href={canonicalurl} />
+        <meta name="description" content={metadescription || sitedescription} />
+        <meta
+          property="og:description"
+          content={metadescription || sitedescription}
+        />
+        <meta property="og:url" content={canonicalurl} />
+        <meta property="og:type" content="website" />
+
+        <meta
+          property="og:image"
+          content={metaimage.url || sitemetaimage.url}
+        />
+
+        <meta property="twitter:card" content="summary" />
+
+        <meta
+          property="twitter:image"
+          content={twitterimage.url || sitetwitterimage.url}
+        />
+      </Head>
+      <div className="mx-auto mb-12 max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <header className="mb-2 flex flex-col items-center sm:mb-4 lg:mb-6">
+          <div className="flex items-center">
+            <Icon
+              name="Plus"
+              className="inline-block text-3xl text-blue-700 sm:text-5xl lg:text-6xl"
+            />
+            <PrismicRichText field={page.data.title} components={templates} />
+          </div>
+          <PrismicRichText
+            field={page.data.pagedescription}
+            components={templates}
+          />
+          <div
+            id="contact-info"
+            className="my-4 text-center text-sm md:my-6 lg:my-8 xl:my-10"
+          >
+            <PrismicRichText field={address} />
+            <p>Tax ID: {taxid}</p>
+          </div>
+          <div className="max-w-lg">
+            <PrismicRichText field={privacyreminder} components={templates} />
+          </div>
+        </header>
+        <hr />
+        <div>
+          <h1>2023-2024 Membership Registration will be Open Soon</h1>
+        </div>
     </div>
+    </Layout>
   );
 }
 
