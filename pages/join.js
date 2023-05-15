@@ -31,7 +31,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
       taxid,
     },
   } = siteMetadata
-  const [disabled, setDisabled] = React.useState(false)
+  const [disabled, setDisabled] = React.useState(true)
   const [formComplete, setFormComplete] = React.useState(false)
   const [recaptchaPassed, setRecaptchaPassed] = React.useState(null)
   const {
