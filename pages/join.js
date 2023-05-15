@@ -472,7 +472,14 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
     </Layout>
   )
 }
-export default JoinPage
+//export default JoinPage
+export default function {
+  return (
+    <div>
+      <h1>2023-2024 Membership Registration will be Open Soon</h1>
+    </div>
+  );
+}
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
