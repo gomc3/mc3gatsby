@@ -324,7 +324,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                     )
                   })}
                 {watchSelectedPackage === 'large' &&
-                  Array.from([6, 7, 8, 9, 10, 11, 12]).map(a => {
+                  Array.from([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]).map(a => {
                     return (
                       <RegistrantInput key={a} index={a} register={register} />
                     )
