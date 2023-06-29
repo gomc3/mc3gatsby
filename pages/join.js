@@ -271,7 +271,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                   })}
                   className="form-radio my-2 mr-3 h-5 w-5 border border-blue-700 text-blue-800 transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-yellow-300"
                 />
-                Individual Professional Development Package (1 member) - 250.00
+                Individual Professional Development Package (1 member) - $250.00
               </label>
               <label htmlFor="small-package" className="flex items-center pb-3">
                 <input
@@ -284,7 +284,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                   })}
                   className="form-radio my-2 mr-3 h-5 w-5 border border-blue-700 text-blue-800 transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-yellow-300"
                 />
-                Professional Development Package (1-5) - 500.00 (Up to 5
+                Professional Development Package (1-5) - $500.00 (Up to 5
                 Members)
               </label>
               <label htmlFor="large-package" className="flex items-center">
@@ -298,7 +298,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                   })}
                   className="form-radio my-2 mr-3 h-5 w-5 border border-blue-800 text-blue-800 transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-yellow-300"
                 />
-                Professional Development Package (6-12) - 800.00 (Up to 10
+                Professional Development Package (6-12) - $800.00 (Up to 10
                 Members)
               </label>
             </div>
@@ -324,7 +324,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                     )
                   })}
                 {watchSelectedPackage === 'large' &&
-                  Array.from([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]).map(a => {
+                  Array.from([2, 3, 4, 5, 6, 7, 8, 9, 10]).map(a => {
                     return (
                       <RegistrantInput key={a} index={a} register={register} />
                     )
