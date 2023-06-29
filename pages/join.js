@@ -232,9 +232,15 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                 Step 1: Please select a Membership Package:
               </h3>
               <p className="mt-4 mb-6 text-sm">
-                We offer two membership packages.
+                We offer three membership packages.
               </p>
               <ol className="ml-8 list-decimal">
+                <li>
+                  The{' '}
+                  <span className="font-bold">
+                    Individual Professional Development Package (1 members)
+                  </span>
+                </li>
                 <li>
                   The{' '}
                   <span className="font-bold">
@@ -254,6 +260,19 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                   &darr; {errors.memberPackage.message}
                 </p>
               )}
+              <label htmlFor="individual-package" className="flex items-center pb-3">
+                <input
+                  type="radio"
+                  id="small-package"
+                  name="memberPackage"
+                  value="individual"
+                  {...register('memberPackage', {
+                    required: 'Please indicate which package you would like',
+                  })}
+                  className="form-radio my-2 mr-3 h-5 w-5 border border-blue-700 text-blue-800 transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-yellow-300"
+                />
+                Individual Professional Development Package (1 member) - 250.00
+              </label>
               <label htmlFor="small-package" className="flex items-center pb-3">
                 <input
                   type="radio"
@@ -265,7 +284,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                   })}
                   className="form-radio my-2 mr-3 h-5 w-5 border border-blue-700 text-blue-800 transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-yellow-300"
                 />
-                Professional Development Package (1-5) - $350.00 (Up to 5
+                Professional Development Package (1-5) - 500.00 (Up to 5
                 Members)
               </label>
               <label htmlFor="large-package" className="flex items-center">
@@ -279,7 +298,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                   })}
                   className="form-radio my-2 mr-3 h-5 w-5 border border-blue-800 text-blue-800 transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-yellow-300"
                 />
-                Professional Development Package (6-12) - $500.00 (Up to 12
+                Professional Development Package (6-12) - 800.00 (Up to 10
                 Members)
               </label>
             </div>
@@ -292,12 +311,18 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                   Please add the member details below.
                 </p>
 
-                {Array.from([1, 2, 3, 4, 5]).map(a => {
+                {Array.from([1]).map(a => {
                   return (
                     <RegistrantInput key={a} index={a} register={register} />
                   )
                 })}
 
+                 {watchSelectedPackage === 'small' &&
+                  Array.from([2, 3, 4, 5]).map(a => {
+                    return (
+                      <RegistrantInput key={a} index={a} register={register} />
+                    )
+                  })}
                 {watchSelectedPackage === 'large' &&
                   Array.from([6, 7, 8, 9, 10, 11, 12]).map(a => {
                     return (
@@ -472,110 +497,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
     </Layout>
   )
 }
-//export default JoinPage
-export default function join({ page, navigation, siteMetadata, footer }) {
-const {
-    data: {
-      canonicalurl,
-      metadescription,
-      metaimage,
-      privacyreminder,
-      title,
-      twitterimage,
-      folderid,
-    },
-  } = page
-  const {
-    data: {
-      address,
-      sitedescription,
-      sitemetaimage,
-      sitetitle,
-      sitetwitterimage,
-      taxid,
-    },
-  } = siteMetadata
-  
-  const templates = {
-    heading1: ({ node, children }) => (
-      <h1 className="my-2 inline-block text-3xl font-bold text-blue-700 sm:my-4 sm:text-4xl lg:my-6 lg:text-5xl">
-        {children}
-      </h1>
-    ),
-    paragraph: ({ node, children }) => (
-      <p className="prose mt-2 max-w-screen-sm sm:mt-4 md:prose-lg lg:prose-xl lg:mt-6">
-        {children}
-      </p>
-    ),
-    hyperlink: ({ node, children }) => (
-      <PrismicLink field={node.data} className="text-blue-700">
-        {children}
-      </PrismicLink>
-    ),
-  }
-
-  return (
-  <Layout
-      {...siteMetadata}
-      navigation={navigation.data.menuitems}
-      path={page.url}
-      footer={footer}
-    >
-      <Head>
-        <title>{`${title[0].text} · ${sitetitle[0].text}`}</title>
-        <link rel="canonical" href={canonicalurl} />
-        <meta name="description" content={metadescription || sitedescription} />
-        <meta
-          property="og:description"
-          content={metadescription || sitedescription}
-        />
-        <meta property="og:url" content={canonicalurl} />
-        <meta property="og:type" content="website" />
-
-        <meta
-          property="og:image"
-          content={metaimage.url || sitemetaimage.url}
-        />
-
-        <meta property="twitter:card" content="summary" />
-
-        <meta
-          property="twitter:image"
-          content={twitterimage.url || sitetwitterimage.url}
-        />
-      </Head>
-      <div className="mx-auto mb-12 max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <header className="mb-2 flex flex-col items-center sm:mb-4 lg:mb-6">
-          <div className="flex items-center">
-            <Icon
-              name="Plus"
-              className="inline-block text-3xl text-blue-700 sm:text-5xl lg:text-6xl"
-            />
-            <PrismicRichText field={page.data.title} components={templates} />
-          </div>
-          <PrismicRichText
-            field={page.data.pagedescription}
-            components={templates}
-          />
-          <div
-            id="contact-info"
-            className="my-4 text-center text-sm md:my-6 lg:my-8 xl:my-10"
-          >
-            <PrismicRichText field={address} />
-            <p>Tax ID: {taxid}</p>
-          </div>
-          <div className="max-w-lg">
-            <PrismicRichText field={privacyreminder} components={templates} />
-          </div>
-        </header>
-        <hr />
-        <div>
-          <h1>2023-2024 Membership Registration will be Open Soon</h1>
-        </div>
-    </div>
-    </Layout>
-  );
-}
+export default JoinPage
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
