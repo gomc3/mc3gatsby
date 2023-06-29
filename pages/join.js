@@ -238,7 +238,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                 <li>
                   The{' '}
                   <span className="font-bold">
-                    Individual Professional Development Package (1 members)
+                    Individual Professional Development Package (1 member)
                   </span>
                 </li>
                 <li>
@@ -250,7 +250,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                 <li>
                   The{' '}
                   <span className="font-bold">
-                    Professional Development Package (6-12 members)
+                    Professional Development Package (6-10 members)
                   </span>
                 </li>
               </ol>
