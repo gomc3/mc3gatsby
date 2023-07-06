@@ -244,7 +244,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                 <li>
                   The{' '}
                   <span className="font-bold">
-                    Professional Development Package (1-5 members)
+                    Professional Development Package (2-5 members)
                   </span>
                 </li>
                 <li>
@@ -284,7 +284,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                   })}
                   className="form-radio my-2 mr-3 h-5 w-5 border border-blue-700 text-blue-800 transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-yellow-300"
                 />
-                Professional Development Package (1-5) - $500.00 (Up to 5
+                Professional Development Package (2-5) - $500.00 (Up to 5
                 Members)
               </label>
               <label htmlFor="large-package" className="flex items-center">
@@ -298,7 +298,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
                   })}
                   className="form-radio my-2 mr-3 h-5 w-5 border border-blue-800 text-blue-800 transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-yellow-300"
                 />
-                Professional Development Package (6-12) - $800.00 (Up to 10
+                Professional Development Package (6-10) - $800.00 (Up to 10
                 Members)
               </label>
             </div>
