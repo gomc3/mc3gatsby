@@ -116,6 +116,7 @@ export default async function formHandler(req, res) {
           resource: { values: data },
         }
         try {
+          console.log('trying to send request to google')
           let googleResponse = await gsapi.spreadsheets.values.append(request)
           console.log('Sent to Google.')
           console.log(googleResponse)
