@@ -110,7 +110,7 @@ export default async function formHandler(req, res) {
         const gsapi = google.sheets({ version: 'v4', auth: client })
         const request = {
           spreadsheetId: '1y_sMor7OYiU4rxGABQeXJbjvR3MDHNg6jaZ9xFTG-K0',
-          range: 'Sheet1!A1:E1',
+          range: 'Sheet1',
           valueInputOption: 'USER_ENTERED',
           insertDataOption: 'INSERT_ROWS',
           resource: { values: data },
