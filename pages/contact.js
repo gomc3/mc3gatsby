@@ -59,6 +59,7 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
         body: JSON.stringify(data),
       }).then(res => {
         res.json()
+        console.log(res)
         if (res.status === 200) {
           reset()
           setFormComplete(true)
