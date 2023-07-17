@@ -35,75 +35,8 @@ export default async function formHandler(req, res) {
         }
       })
       const data = [[timeStamp, name, email, reason, question]]
-      let today = new Date()
-      const boardMemberInfo = {
-        secretary1: {
-          id: '60eea4f359065f6284fa6099',
-          fullName: 'Christine Formica',
-          username: 'christineformica',
-        },
-        cochairs: {
-          id: '6111518aa81646805af28d80',
-          fullName: 'Michael Ballone',
-          username: 'michaelballone4',
-        },
-        secretary2: {
-          id: '60eee3c4d324bf0173803081',
-          fullName: 'Sarah Seeley',
-          username: 'sarahseeley4',
-        },
-        tech: {
-          id: '60ed997371e05577c0bb2ec9',
-          fullName: 'Tech Consultant @MC3',
-          username: 'mc3tech',
-        },
-        treasurer: {
-          id: '60ee3b02e3c5746147731e44',
-          fullName: 'treasurer',
-          username: 'treasurer612',
-        },
-      }
-      const memberIds = {
-        'Agenda Item': [boardMemberInfo.cochairs.id],
-        Billing: [boardMemberInfo.secretary1.id, boardMemberInfo.secretary2.id],
-        'Professional Development': [boardMemberInfo.cochairs.id],
-        'Volunteer to Write a Blog Post': [boardMemberInfo.cochairs.id],
-        'Volunteer to Present': [boardMemberInfo.cochairs.id],
-        Website: [boardMemberInfo.tech.id],
-        'Other...': [boardMemberInfo.cochairs.id],
-      }
-      const listIds = {
-        'Agenda Item': '60ed99f9efb5dc10411d6351',
-        Billing: '60ed99f9efb5dc10411d6352',
-        'Professional Development': '60ed99f9efb5dc10411d6353',
-        'Volunteer to Write a Blog Post': '60ed9a480120b927354896af',
-        'Volunteer to Present': '60ed9a7e70f26f2c734c60b6',
-        Website: '60ed9a8a0a7f247611069009',
-        'Other...': '60ed9a8e7b89df0e1ca5cef1',
-      }
-      axios
-        .post(
-          `https://api.trello.com/1/cards?key=${process.env.TRELLO_API}&token=${process.env.TRELLO_TOKEN}&idList=${listIds[reason]}`,
-          {
-            name: `Question from ${name}: ${email}`,
-            desc: question,
-            pos: 'bottom',
-            idMembers: memberIds[reason],
-            due: `${today.setDate(today.getDate() + 2)}`,
-            idLabels: ['60ed99f9c824613830751364'],
-          },
-          {
-            method: 'POST',
-          }
-        )
-        .then(response => {
-          //console.log(`Response: ${response.status} ${response.statusText}`);
-          return JSON.stringify(response.data)
-        })
-        //.then((text) => console.log(text))
-        .catch(err => {
-          console.error(err)
-        })
+      
+      
       async function gsrun(client) {
         console.log('updating google sheet')
         console.log(data)
