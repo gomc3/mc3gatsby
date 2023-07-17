@@ -9,6 +9,7 @@ export default async function formHandler(req, res) {
     const axiosResponse = await axios
       .get(url)
       .then(response => {
+        console.log('Captcha Good')
         return response.data
       })
       .catch(error => {
@@ -104,6 +105,7 @@ export default async function formHandler(req, res) {
           console.error(err)
         })
       async function gsrun(client) {
+        console.log('updating google sheet')
         const gsapi = google.sheets({ version: 'v4', auth: client })
         const request = {
           spreadsheetId: '1y_sMor7OYiU4rxGABQeXJbjvR3MDHNg6jaZ9xFTG-K0',
@@ -120,6 +122,7 @@ export default async function formHandler(req, res) {
           return JSON.stringify(err)
         }
       }
+      console.log('running gsrun')
       gsrun(client)
     }
   }
