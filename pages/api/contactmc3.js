@@ -106,6 +106,7 @@ export default async function formHandler(req, res) {
         })
       async function gsrun(client) {
         console.log('updating google sheet')
+        console.log(data)
         const gsapi = google.sheets({ version: 'v4', auth: client })
         const request = {
           spreadsheetId: '1y_sMor7OYiU4rxGABQeXJbjvR3MDHNg6jaZ9xFTG-K0',
@@ -116,6 +117,8 @@ export default async function formHandler(req, res) {
         }
         try {
           let googleResponse = await gsapi.spreadsheets.values.append(request)
+          console.log('Sent to Google.')
+          console.log(googleResponse)
           return googleResponse.status
         } catch (err) {
           console.log('Errors in appending: ', err)
