@@ -38,8 +38,6 @@ export default async function formHandler(req, res) {
       
       
       async function gsrun(client) {
-        console.log('updating google sheet')
-        console.log(data)
         const gsapi = google.sheets({ version: 'v4', auth: client })
         const request = {
           spreadsheetId: '1y_sMor7OYiU4rxGABQeXJbjvR3MDHNg6jaZ9xFTG-K0',
@@ -59,8 +57,7 @@ export default async function formHandler(req, res) {
           return JSON.stringify(err)
         }
       }
-      console.log('running gsrun')
-      gsrun(client)
+      const gsrunTest = await gsrun(client)
     }
   }
   await getRecaptcha(recaptchaUrl)
