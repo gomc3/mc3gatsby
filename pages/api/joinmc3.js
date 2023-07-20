@@ -230,9 +230,9 @@ export default async function formHandler(req, res) {
                 matchCase: true,
               },
               replaceText: `${
-                memberPackage === 'large'
+                (memberPackage === 'large')
                   ? 'Professional Development (6-12)'
-                  : 'Professional Development (1-5)'
+                  : (memberPackage === 'small') ? 'Professional Development (2-5)' : 'Professional Development (1 Member)'
               }`,
             },
           },
@@ -265,7 +265,7 @@ export default async function formHandler(req, res) {
                 matchCase: true,
               },
               replaceText: `${
-                memberPackage === 'small' ? '$350.00' : '$500.00'
+                (memberPackage === 'small') ? '500.00' : (memberPackage === 'large') ? '800.00' : '250.00'
               }`,
             },
           },
@@ -276,7 +276,8 @@ export default async function formHandler(req, res) {
                 matchCase: true,
               },
               replaceText: `${
-                memberPackage === 'small' ? '$350.00' : '$500.00'
+                (memberPackage === 'small') ? '500.00' : (memberPackage === 'large') ? '800.00' : '250.00'
+                
               }`,
             },
           },
