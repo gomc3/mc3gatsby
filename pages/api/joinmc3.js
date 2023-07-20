@@ -265,7 +265,7 @@ export default async function formHandler(req, res) {
                 matchCase: true,
               },
               replaceText: `${
-                (memberPackage === 'small') ? '500.00' : (memberPackage === 'large') ? '800.00' : '250.00'
+                (memberPackage === 'small') ? '$500.00' : (memberPackage === 'large') ? '$800.00' : '$250.00'
               }`,
             },
           },
@@ -276,7 +276,7 @@ export default async function formHandler(req, res) {
                 matchCase: true,
               },
               replaceText: `${
-                (memberPackage === 'small') ? '500.00' : (memberPackage === 'large') ? '800.00' : '250.00'
+                (memberPackage === 'small') ? '$500.00' : (memberPackage === 'large') ? '$800.00' : '$250.00'
                 
               }`,
             },
