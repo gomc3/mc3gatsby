@@ -263,7 +263,7 @@ const JoinPage = ({ page, navigation, siteMetadata, footer }) => {
               <label htmlFor="individual-package" className="flex items-center pb-3">
                 <input
                   type="radio"
-                  id="small-package"
+                  id="individual-package"
                   name="memberPackage"
                   value="individual"
                   {...register('memberPackage', {
