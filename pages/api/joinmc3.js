@@ -117,7 +117,7 @@ export default async function formHandler(req, res) {
        * @returns the googleResponse.
        */
       async function gsCopyInvoice(client) {
-        const folderId = '1Cc5mjm_tSr5ZFZaqM8RdjoYyDDjXioUo';
+        const folderId = '1uhjV_iKaRDpyRqIdSl-d1is6OO_ovdzn';
         const templateId = '1sqnjygHb1XUhjSMGjYixuR7powPG1z4f86sojOmsg7k'
         const gsapi = google.drive({ version: 'v3', auth: client })
         const request = {
