@@ -38,7 +38,7 @@ export default async function formHandler(req, res) {
     token,
   } = req.body
   const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_SECRETKEY}&response=${token}`
-  let gRc = false
+  let gRc = true //default true to disable the recaptcha
 
   async function getRecaptcha(url) {
     const axiosResponse = await axios
@@ -51,7 +51,7 @@ export default async function formHandler(req, res) {
       })
 
     // axiosResponse.success = false; // uncomment this line to simulate a failed recaptcha test
-    gRc = axiosResponse.success
+    //gRc = axiosResponse.success
     // if reCaptcha passes, write the form to a Google Sheet
 
     if (axiosResponse.success === true) {
