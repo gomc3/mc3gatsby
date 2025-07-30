@@ -52,13 +52,13 @@ const BlogIndex = ({ page, posts, navigation, siteMetadata, footer }) => {
         <title>{`${prismicH.asText(page.data.title)} · ${prismicH.asText(
           siteMetadata.data.sitetitle
         )}`}</title>
-        <link rel="canonical" href="https://www.gomc3.org/blog" />
+        <link rel="canonical" href="https://gomc3.org/blog" />
         <meta name="description" content={siteMetadata.data.sitedescription} />
         <meta
           property="og:description"
           content={siteMetadata.data.sitedescription}
         />
-        <meta property="og:url" content="https://www.gomc3.org" />
+        <meta property="og:url" content="https://gomc3.org" />
         <meta property="og:type" content="website" />
 
         <meta

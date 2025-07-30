@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/future/image'
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
 import { PrismicNextImage } from '@prismicio/next'
 
@@ -22,6 +23,7 @@ const TextWithImage = ({ slice }) => {
     },
     variation,
   } = slice
+  console.log(image)
   const templates = {
     paragraph: ({ node, children }) => {
       return (
@@ -44,9 +46,12 @@ const TextWithImage = ({ slice }) => {
                 imagelocation ? `order-last` : ``
               }`}
             >
-              <PrismicNextImage
-                field={image}
-                className="w-1/2 rounded-lg contrast-100 filter transition duration-500 ease-in-out hover:contrast-125 sm:w-3/5 lg:w-3/4"
+              <Image
+                src={image.url}
+                alt={image.alt}
+                width={image.dimensions.width}
+                height={image.dimensions.height}
+                className=" rounded-lg contrast-100 filter transition duration-500 ease-in-out hover:contrast-125"
               />
             </div>
             <div className="lg:ml-1/2 px-4 py-8 sm:px-6 sm:py-12 lg:py-16 lg:pl-12">

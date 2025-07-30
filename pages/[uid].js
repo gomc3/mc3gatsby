@@ -28,14 +28,14 @@ const Page = ({ page, navigation, siteMetadata, footer }) => {
         <title>{`${page.data.title[0].text} • ${siteMetadata.data.sitetitle[0].text}`}</title>
         <link
           rel="canonical"
-          href={page.data.canonicalurl || `https://www.gomc3.org${page.url}`}
+          href={page.data.canonicalurl || `https://gomc3.org${page.url}`}
         />
         <meta name="description" content={page.data.metadescription || ''} />
         <meta
           property="og:description"
           content={page.data.metadescription || ''}
         />
-        <meta property="og:url" content={`https://www.gomc3.org${page.url}`} />
+        <meta property="og:url" content={`https://gomc3.org${page.url}`} />
         <meta property="og:type" content="website" />
 
         <meta
