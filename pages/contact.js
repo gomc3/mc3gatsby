@@ -87,6 +87,9 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
     ),
   }
   return (
+    <div></div>
+    )
+  return (
     <Layout
       {...siteMetadata}
       navigation={navigation.data.menuitems}
