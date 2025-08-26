@@ -86,9 +86,7 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
       <p className="text-md mt-2 max-w-md italic sm:mt-4 lg:mt-6">{children}</p>
     ),
   }
-  return (
-    <div></div>
-    )
+ 
   return (
     <Layout
       {...siteMetadata}
@@ -133,6 +131,7 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
           </div>
           <PrismicRichText field={pagedescription} components={templates} />
         </header>
+        /*
         <hr />
         <section className="mx-auto my-2 grid max-w-screen-sm grid-cols-1 gap-2 px-4 sm:my-4 sm:px-6 lg:my-6 lg:px-8">
           {recaptchaPassed === false && (
@@ -241,6 +240,7 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
             />
           </form>
         </section>
+        */
       </div>
     </Layout>
   
