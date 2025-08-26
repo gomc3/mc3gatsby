@@ -87,7 +87,6 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
     ),
   }
   return (
-    /*
     <Layout
       {...siteMetadata}
       navigation={navigation.data.menuitems}
@@ -241,7 +240,7 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
         </section>
       </div>
     </Layout>
-  */
+  
   )
 }
 export default ContactPage
