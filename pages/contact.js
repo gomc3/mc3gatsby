@@ -132,6 +132,7 @@ const ContactPage = ({ page, navigation, siteMetadata, footer }) => {
           <PrismicRichText field={pagedescription} components={templates} />
         </header>
 {
+  <>
         <hr />
         <section className="mx-auto my-2 grid max-w-screen-sm grid-cols-1 gap-2 px-4 sm:my-4 sm:px-6 lg:my-6 lg:px-8">
           {recaptchaPassed === false && (
