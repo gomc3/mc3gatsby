@@ -5,23 +5,25 @@ export default async function formHandler(req, res) {
   const { name, email, reason, question, timeStamp, token } = req.body
   const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_SECRETKEY}&response=${token}`
   let gRc = false
+
   async function getRecaptcha(url) {
     const axiosResponse = await axios
       .get(url)
       .then(response => {
-        //console.log('Captcha Good')
         return response.data
       })
       .catch(error => {
         console.log(error)
       })
 
-    // axiosResponse.success = false; // uncomment this line to simulate a failed recaptcha test
     gRc = axiosResponse.success
-    // if reCaptcha passes, write the form to a Google Sheet
+
     if (axiosResponse.success === true) {
       const keys = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEYS)
-      const SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+      const SCOPES = [
+        'https://www.googleapis.com/auth/spreadsheets',
+        'https://www.googleapis.com/auth/gmail.send',
+      ]
       const client = new google.auth.JWT(
         keys.client_email,
         null,
@@ -34,9 +36,9 @@ export default async function formHandler(req, res) {
           return
         }
       })
+
       const data = [[timeStamp, name, email, reason, question]]
-      
-      
+
       async function gsrun(client) {
         const gsapi = google.sheets({ version: 'v4', auth: client })
         const request = {
@@ -47,19 +49,52 @@ export default async function formHandler(req, res) {
           resource: { values: data },
         }
         try {
-          //console.log('trying to send request to google')
           let googleResponse = await gsapi.spreadsheets.values.append(request)
-          //console.log('Sent to Google.')
-          //console.log(googleResponse)
           return googleResponse.status
         } catch (err) {
           console.log('Errors in appending: ', err)
           return JSON.stringify(err)
         }
       }
-      const gsrunTest = await gsrun(client)
+
+      async function sendEmail(client) {
+        const gmail = google.gmail({ version: 'v1', auth: client })
+        const emailBody = [
+          `To: cochairs@gomc3.org`,
+          `Subject: New Contact Form Submission - ${reason}`,
+          `Content-Type: text/plain; charset=utf-8`,
+          ``,
+          `A new contact form submission was received:`,
+          ``,
+          `Date: ${timeStamp}`,
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Reason: ${reason}`,
+          `Message: ${question}`,
+        ].join('\n')
+
+        const encodedMessage = Buffer.from(emailBody)
+          .toString('base64')
+          .replace(/\+/g, '-')
+          .replace(/\//g, '_')
+          .replace(/=+$/, '')
+
+        try {
+          await gmail.users.messages.send({
+            userId: 'me',
+            requestBody: { raw: encodedMessage },
+          })
+          console.log('Email sent successfully')
+        } catch (err) {
+          console.log('Error sending email: ', err)
+        }
+      }
+
+      await gsrun(client)
+      await sendEmail(client)
     }
   }
+
   await getRecaptcha(recaptchaUrl)
   if (gRc === false) {
     return res.status(422).json(`ReCaptcha Error`)
